@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    // Collection: users
+    // Document ID: userId (Auth UID)
+    // Fields:
+    //   - email: string (required, valid email)
+    //   - role: string (required, ['aluno', 'professor', 'admin'])
+    //
+    // Collection: perfis_aluno
+    // Document ID: alunoId (Auth UID)
+    // Fields:
+    //   - userId: string (required, immutable)
+    //   - faixa: string (required, < 20 chars)
+    //   - grau: number (required, 0-6)
+    //
+    // Collection: treinos
+    // Document ID: auto-generated
+    // Fields:
+    //   - alunoId: string (required, immutable)
+    //   - tecnicaFoco: string (required, < 100 chars)
+    //   - dificuldade: number (required, 1-5)
+    //   - data: timestamp (required)
+    //
+    // Collection: tecnicas
+    // Document ID: auto-generated
+    // Fields:
+    //   - titulo: string (required, < 100 chars)
+    //   - categoria: string (required, < 50 chars)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() { return request.auth != null; }
+    function isOwner(userId) { return isAuthenticated() && request.auth.uid == userId; }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function isProfessorOrAdmin() {
+      return isAuthenticated() && getUserData().role in ['professor', 'admin'];
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /perfis_aluno/{alunoId} {
+      allow read: if isOwner(alunoId) || isProfessorOrAdmin();
+      allow write: if isOwner(alunoId);
+    }
+
+    match /treinos/{treinoId} {
+      // Allow read/write only if the user owns the training record
+      allow read, write: if isAuthenticated() && request.auth.uid == resource.data.alunoId;
+      // Allow create if the user is creating a record for themselves
+      allow create: if isAuthenticated() && request.auth.uid == request.resource.data.alunoId;
+    }
+
+    match /tecnicas/{tecnicaId} {
+      allow read: if isAuthenticated();
+      allow write: if isProfessorOrAdmin();
+    }
+  }
+}
