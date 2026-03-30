@@ -1,76 +1,684 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-
-    // ===============================================================
-    // Assumed Data Model
-    // ===============================================================
-    // Collection: users
-    // Document ID: userId (Auth UID)
-    // Fields:
-    //   - email: string (required, valid email)
-    //   - role: string (required, ['aluno', 'professor', 'admin'])
-    //
-    // Collection: perfis_aluno
-    // Document ID: alunoId (Auth UID)
-    // Fields:
-    //   - userId: string (required, immutable)
-    //   - faixa: string (required, < 20 chars)
-    //   - grau: number (required, 0-6)
-    //
-    // Collection: treinos
-    // Document ID: auto-generated
-    // Fields:
-    //   - alunoId: string (required, immutable)
-    //   - tecnicaFoco: string (required, < 100 chars)
-    //   - dificuldade: number (required, 1-5)
-    //   - data: timestamp (required)
-    //
-    // Collection: tecnicas
-    // Document ID: auto-generated
-    // Fields:
-    //   - titulo: string (required, < 100 chars)
-    //   - categoria: string (required, < 50 chars)
-    //
-    // ===============================================================
-
-    // ===============================================================
-    // Helper Functions
-    // ===============================================================
-    function isAuthenticated() { return request.auth != null; }
-    function isOwner(userId) { return isAuthenticated() && request.auth.uid == userId; }
-    
-    function getUserData() {
-      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    function signedIn() {
+      return request.auth != null;
     }
-    
+
+    function uid() {
+      return request.auth.uid;
+    }
+
+    function hasRole(role) {
+      return signedIn() && request.auth.token.role == role;
+    }
+
     function isProfessorOrAdmin() {
-      return isAuthenticated() && getUserData().role in ['professor', 'admin'];
+      return hasRole('professor') || hasRole('admin');
     }
 
-    // ===============================================================
-    // Rules
-    // ===============================================================
-
-    match /users/{userId} {
-      allow read, write: if isOwner(userId);
+    function isFinanceOwner() {
+      return hasRole('admin');
     }
 
-    match /perfis_aluno/{alunoId} {
-      allow read: if isOwner(alunoId) || isProfessorOrAdmin();
-      allow write: if isOwner(alunoId);
+    function isSelf(userId) {
+      return signedIn() && uid() == userId;
+    }
+
+    function hasTenant() {
+      return signedIn() && request.auth.token.tenantId is string && request.auth.token.tenantId.size() > 0;
+    }
+
+    function sameTenant(data) {
+      return hasTenant() && data.tenantId is string && data.tenantId == request.auth.token.tenantId;
+    }
+
+    function validAlunoCreate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'nome',
+        'faixa',
+        'grau',
+        'dataCadastro',
+        'horasTotais',
+        'status',
+        'statusFinanceiro',
+        'valorMensalidade',
+        'vencimentoMensalidade',
+        'avatarUrl',
+        'email'
+      ]) &&
+      request.resource.data.id == uid() &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.email == request.auth.token.email &&
+      request.resource.data.nome is string &&
+      request.resource.data.nome.size() > 0 &&
+      request.resource.data.nome.size() <= 120 &&
+      request.resource.data.faixa in ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] &&
+      request.resource.data.grau is int &&
+      request.resource.data.grau >= 0 &&
+      request.resource.data.grau <= 6 &&
+      request.resource.data.dataCadastro is timestamp &&
+      request.resource.data.horasTotais == 0 &&
+      request.resource.data.status == 'Ativo' &&
+      request.resource.data.statusFinanceiro in ['em_dia', 'isento'] &&
+      request.resource.data.valorMensalidade is number &&
+      request.resource.data.valorMensalidade >= 0 &&
+      (!('vencimentoMensalidade' in request.resource.data) || (request.resource.data.vencimentoMensalidade is int && request.resource.data.vencimentoMensalidade >= 1 && request.resource.data.vencimentoMensalidade <= 31)) &&
+      (!('avatarUrl' in request.resource.data) || request.resource.data.avatarUrl is string);
+    }
+
+    function validAlunoUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'nome',
+        'faixa',
+        'grau',
+        'dataCadastro',
+        'horasTotais',
+      'status',
+      'statusFinanceiro',
+      'valorMensalidade',
+      'avatarUrl',
+      'email',
+      'updatedAt'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.email == resource.data.email &&
+      request.resource.data.faixa == resource.data.faixa &&
+      request.resource.data.grau == resource.data.grau &&
+      request.resource.data.dataCadastro == resource.data.dataCadastro &&
+      request.resource.data.status == resource.data.status &&
+      request.resource.data.nome == resource.data.nome &&
+      request.resource.data.avatarUrl == resource.data.avatarUrl &&
+      request.resource.data.horasTotais == resource.data.horasTotais + 1.5 &&
+      request.resource.data.statusFinanceiro == resource.data.statusFinanceiro &&
+      request.resource.data.valorMensalidade == resource.data.valorMensalidade &&
+      request.resource.data.nome is string &&
+      request.resource.data.nome.size() > 0 &&
+      request.resource.data.nome.size() <= 120;
+    }
+
+    function validAlunoTeacherUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'nome',
+        'faixa',
+        'grau',
+        'dataCadastro',
+        'horasTotais',
+        'status',
+        'statusFinanceiro',
+        'valorMensalidade',
+        'vencimentoMensalidade',
+        'avatarUrl',
+        'email',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.email == resource.data.email &&
+      request.resource.data.nome == resource.data.nome &&
+      request.resource.data.avatarUrl == resource.data.avatarUrl &&
+      request.resource.data.horasTotais == resource.data.horasTotais &&
+      request.resource.data.dataCadastro == resource.data.dataCadastro &&
+      request.resource.data.faixa in ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] &&
+      request.resource.data.grau is int &&
+      request.resource.data.grau >= 0 &&
+      request.resource.data.grau <= 4 &&
+      request.resource.data.status in ['Ativo', 'Inativo', 'Suspenso'] &&
+      (!('statusFinanceiro' in request.resource.data) || request.resource.data.statusFinanceiro in ['em_dia', 'atrasado', 'isento']) &&
+      (!('valorMensalidade' in request.resource.data) || (request.resource.data.valorMensalidade is number && request.resource.data.valorMensalidade >= 0)) &&
+      (!('vencimentoMensalidade' in request.resource.data) || (request.resource.data.vencimentoMensalidade is int && request.resource.data.vencimentoMensalidade >= 1 && request.resource.data.vencimentoMensalidade <= 31)) &&
+      request.resource.data.updatedAt is timestamp;
+    }
+
+    function validAlunoAttendanceUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'nome',
+        'faixa',
+        'grau',
+        'dataCadastro',
+        'horasTotais',
+        'status',
+        'statusFinanceiro',
+        'valorMensalidade',
+        'vencimentoMensalidade',
+        'avatarUrl',
+        'email',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.email == resource.data.email &&
+      request.resource.data.nome == resource.data.nome &&
+      request.resource.data.avatarUrl == resource.data.avatarUrl &&
+      request.resource.data.dataCadastro == resource.data.dataCadastro &&
+      request.resource.data.faixa == resource.data.faixa &&
+      request.resource.data.grau == resource.data.grau &&
+      request.resource.data.status == resource.data.status &&
+      request.resource.data.horasTotais == resource.data.horasTotais + 1.5 &&
+      request.resource.data.statusFinanceiro == resource.data.statusFinanceiro &&
+      request.resource.data.valorMensalidade == resource.data.valorMensalidade &&
+      request.resource.data.vencimentoMensalidade == resource.data.vencimentoMensalidade &&
+      request.resource.data.updatedAt is timestamp;
+    }
+
+    function validPagamentoCreate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'valor',
+        'dataPagamento',
+        'mesReferencia',
+        'metodo'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId is string &&
+      request.resource.data.alunoId.size() > 0 &&
+      request.resource.data.valor is number &&
+      request.resource.data.valor > 0 &&
+      request.resource.data.dataPagamento is timestamp &&
+      request.resource.data.mesReferencia is string &&
+      request.resource.data.mesReferencia.matches('^\\d{4}-(0[1-9]|1[0-2])$') &&
+      request.resource.data.metodo in ['pix', 'dinheiro', 'cartao', 'transferencia', 'outro'];
+    }
+
+    function validTreinoData() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'tecnicaFoco',
+        'dificuldade',
+        'data',
+        'observacoes'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == uid() &&
+      request.resource.data.tecnicaFoco is string &&
+      request.resource.data.tecnicaFoco.size() > 0 &&
+      request.resource.data.tecnicaFoco.size() <= 120 &&
+      request.resource.data.dificuldade is int &&
+      request.resource.data.dificuldade >= 1 &&
+      request.resource.data.dificuldade <= 5 &&
+      request.resource.data.data is timestamp &&
+      request.resource.data.observacoes is string &&
+      request.resource.data.observacoes.size() <= 1000;
+    }
+
+    function validFalhaData() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'lutaId',
+        'categoria',
+        'descricao',
+        'gravidade',
+        'data'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == uid() &&
+      request.resource.data.categoria in [
+        'Defesa de Queda',
+        'Retencao de Guarda',
+        'Defesa de Finalizacao',
+        'Posicionamento',
+        'Gas',
+        'Mental'
+      ] &&
+      request.resource.data.descricao is string &&
+      request.resource.data.descricao.size() > 0 &&
+      request.resource.data.descricao.size() <= 500 &&
+      request.resource.data.gravidade is int &&
+      request.resource.data.gravidade >= 1 &&
+      request.resource.data.gravidade <= 5 &&
+      request.resource.data.data is timestamp &&
+      (!('lutaId' in request.resource.data) || request.resource.data.lutaId is string);
+    }
+
+    function validLutaData() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'campeonatoId',
+        'alunoId',
+        'resultado',
+        'finalizacaoAplicada',
+        'finalizacaoSofrida',
+        'padraoErroInimigo',
+        'padraoErroAluno',
+        'pontosPro',
+        'pontosContra',
+        'data'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == uid() &&
+      request.resource.data.campeonatoId is string &&
+      request.resource.data.campeonatoId.size() > 0 &&
+      request.resource.data.resultado in ['Vitoria', 'Derrota', 'Empate'] &&
+      request.resource.data.finalizacaoAplicada in ['Chave de Braco', 'Triangulo', 'Mata-Leao', 'Chave de Pe', 'Kimura', 'Guilhotina', 'Nenhuma'] &&
+      request.resource.data.finalizacaoSofrida in ['Chave de Braco', 'Triangulo', 'Mata-Leao', 'Chave de Pe', 'Kimura', 'Guilhotina', 'Nenhuma'] &&
+      request.resource.data.pontosPro is int &&
+      request.resource.data.pontosPro >= 0 &&
+      request.resource.data.pontosContra is int &&
+      request.resource.data.pontosContra >= 0 &&
+      request.resource.data.data is timestamp &&
+      (!('padraoErroInimigo' in request.resource.data) || request.resource.data.padraoErroInimigo is string) &&
+      (!('padraoErroAluno' in request.resource.data) || request.resource.data.padraoErroAluno is string);
+    }
+
+    function feedbackPriorityFromGravidade(gravidade) {
+      return gravidade >= 5 ? 'critica' :
+        gravidade == 4 ? 'alta' :
+        gravidade == 3 ? 'media' :
+        'baixa';
+    }
+
+    function validFeedbackCreate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'professorId',
+        'origemTipo',
+        'origemId',
+        'categoriaFalha',
+        'titulo',
+        'descricao',
+        'gravidade',
+        'prioridade',
+        'status',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == uid() &&
+      request.resource.data.professorId is string &&
+      request.resource.data.professorId.size() > 0 &&
+      request.resource.data.origemTipo in ['falha', 'treino', 'luta', 'campeonato'] &&
+      request.resource.data.origemId is string &&
+      request.resource.data.origemId.size() > 0 &&
+      (!('categoriaFalha' in request.resource.data) || request.resource.data.categoriaFalha in [
+        'Defesa de Queda',
+        'Retencao de Guarda',
+        'Defesa de Finalizacao',
+        'Posicionamento',
+        'Gas',
+        'Mental'
+      ]) &&
+      request.resource.data.titulo is string &&
+      request.resource.data.titulo.size() > 0 &&
+      request.resource.data.titulo.size() <= 120 &&
+      request.resource.data.descricao is string &&
+      request.resource.data.descricao.size() > 0 &&
+      request.resource.data.descricao.size() <= 2000 &&
+      request.resource.data.gravidade is int &&
+      request.resource.data.gravidade >= 1 &&
+      request.resource.data.gravidade <= 5 &&
+      request.resource.data.prioridade == feedbackPriorityFromGravidade(request.resource.data.gravidade) &&
+      request.resource.data.status == 'aberto' &&
+      request.resource.data.createdAt is timestamp &&
+      request.resource.data.updatedAt is timestamp;
+    }
+
+    function validFeedbackUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'professorId',
+        'origemTipo',
+        'origemId',
+        'categoriaFalha',
+        'titulo',
+        'descricao',
+        'gravidade',
+        'prioridade',
+        'status',
+        'recomendacaoProfessor',
+        'conclusaoAluno',
+        'createdAt',
+        'updatedAt',
+        'reviewedAt',
+        'resolvedAt'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == resource.data.alunoId &&
+      request.resource.data.professorId == resource.data.professorId &&
+      request.resource.data.createdAt == resource.data.createdAt &&
+      request.resource.data.origemTipo in ['falha', 'treino', 'luta', 'campeonato'] &&
+      request.resource.data.origemId is string &&
+      request.resource.data.origemId.size() > 0 &&
+      (!('categoriaFalha' in request.resource.data) || request.resource.data.categoriaFalha in [
+        'Defesa de Queda',
+        'Retencao de Guarda',
+        'Defesa de Finalizacao',
+        'Posicionamento',
+        'Gas',
+        'Mental'
+      ]) &&
+      request.resource.data.titulo is string &&
+      request.resource.data.titulo.size() > 0 &&
+      request.resource.data.titulo.size() <= 120 &&
+      request.resource.data.descricao is string &&
+      request.resource.data.descricao.size() > 0 &&
+      request.resource.data.descricao.size() <= 2000 &&
+      request.resource.data.gravidade is int &&
+      request.resource.data.gravidade >= 1 &&
+      request.resource.data.gravidade <= 5 &&
+      request.resource.data.prioridade in ['baixa', 'media', 'alta', 'critica'] &&
+      request.resource.data.status in ['aberto', 'em_analise', 'em_andamento', 'aguardando_aluno', 'corrigido', 'encerrado', 'descartado'] &&
+      request.resource.data.updatedAt is timestamp &&
+      (!('recomendacaoProfessor' in request.resource.data) || (request.resource.data.recomendacaoProfessor is string && request.resource.data.recomendacaoProfessor.size() <= 5000)) &&
+      (!('conclusaoAluno' in request.resource.data) || (request.resource.data.conclusaoAluno is string && request.resource.data.conclusaoAluno.size() <= 2000)) &&
+      (!('reviewedAt' in request.resource.data) || request.resource.data.reviewedAt is timestamp) &&
+      (!('resolvedAt' in request.resource.data) || request.resource.data.resolvedAt is timestamp);
+    }
+
+    function validCampeonatoCreate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'nome',
+        'data'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.nome is string &&
+      request.resource.data.nome.size() > 0 &&
+      request.resource.data.nome.size() <= 120 &&
+      request.resource.data.data is timestamp;
+    }
+
+    function validCampeonatoUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'nome',
+        'data'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.nome is string &&
+      request.resource.data.nome.size() > 0 &&
+      request.resource.data.nome.size() <= 120 &&
+      request.resource.data.data is timestamp;
+    }
+
+    function validTrilhaCreate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'titulo',
+        'descricao',
+        'faixaAlvo',
+        'status',
+        'tecnicasIds',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.titulo is string &&
+      request.resource.data.titulo.size() > 0 &&
+      request.resource.data.titulo.size() <= 120 &&
+      request.resource.data.descricao is string &&
+      request.resource.data.descricao.size() > 0 &&
+      request.resource.data.descricao.size() <= 1000 &&
+      request.resource.data.faixaAlvo in ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] &&
+      request.resource.data.status in ['rascunho', 'publicada'] &&
+      request.resource.data.tecnicasIds is list &&
+      request.resource.data.tecnicasIds.size() > 0 &&
+      request.resource.data.createdAt is timestamp &&
+      request.resource.data.updatedAt is timestamp;
+    }
+
+    function validTrilhaUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'titulo',
+        'descricao',
+        'faixaAlvo',
+        'status',
+        'tecnicasIds',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.titulo is string &&
+      request.resource.data.titulo.size() > 0 &&
+      request.resource.data.titulo.size() <= 120 &&
+      request.resource.data.descricao is string &&
+      request.resource.data.descricao.size() > 0 &&
+      request.resource.data.descricao.size() <= 1000 &&
+      request.resource.data.faixaAlvo in ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] &&
+      request.resource.data.status in ['rascunho', 'publicada'] &&
+      request.resource.data.tecnicasIds is list &&
+      request.resource.data.tecnicasIds.size() > 0 &&
+      request.resource.data.createdAt == resource.data.createdAt &&
+      request.resource.data.updatedAt is timestamp;
+    }
+
+    function validCheckinIntentCreate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'qrToken',
+        'issuedAt',
+        'expiresAt',
+        'status',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id is string &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == uid() &&
+      request.resource.data.qrToken is string &&
+      request.resource.data.qrToken.size() > 0 &&
+      request.resource.data.issuedAt is timestamp &&
+      request.resource.data.expiresAt is timestamp &&
+      request.resource.data.expiresAt > request.resource.data.issuedAt &&
+      request.resource.data.status == 'pending' &&
+      request.resource.data.createdAt is timestamp &&
+      request.resource.data.updatedAt is timestamp;
+    }
+
+    function validCheckinIntentUpdate() {
+      return request.resource.data.keys().hasOnly([
+        'id',
+        'tenantId',
+        'alunoId',
+        'qrToken',
+        'issuedAt',
+        'expiresAt',
+        'status',
+        'consumedAt',
+        'consumedByUid',
+        'createdAt',
+        'updatedAt'
+      ]) &&
+      request.resource.data.id == resource.data.id &&
+      sameTenant(resource.data) &&
+      sameTenant(request.resource.data) &&
+      request.resource.data.alunoId == resource.data.alunoId &&
+      request.resource.data.qrToken == resource.data.qrToken &&
+      request.resource.data.issuedAt == resource.data.issuedAt &&
+      request.resource.data.expiresAt == resource.data.expiresAt &&
+      request.resource.data.status in ['pending', 'consumed', 'expired', 'revoked'] &&
+      request.resource.data.createdAt == resource.data.createdAt &&
+      request.resource.data.updatedAt is timestamp &&
+      (!('consumedAt' in request.resource.data) || request.resource.data.consumedAt is timestamp) &&
+      (!('consumedByUid' in request.resource.data) || request.resource.data.consumedByUid is string);
+    }
+
+    match /alunos/{userId} {
+      allow get: if sameTenant(resource.data) && (isSelf(userId) || isProfessorOrAdmin());
+      allow list: if sameTenant(resource.data) && isProfessorOrAdmin();
+      allow create: if isSelf(userId) && validAlunoCreate();
+      allow update: if isProfessorOrAdmin() && (validAlunoTeacherUpdate() || validAlunoAttendanceUpdate());
+      allow delete: if false;
     }
 
     match /treinos/{treinoId} {
-      // Allow read/write only if the user owns the training record
-      allow read, write: if isAuthenticated() && request.auth.uid == resource.data.alunoId;
-      // Allow create if the user is creating a record for themselves
-      allow create: if isAuthenticated() && request.auth.uid == request.resource.data.alunoId;
+      allow get: if sameTenant(resource.data) && (resource.data.alunoId == uid() || isProfessorOrAdmin());
+      allow list: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
+      allow create: if signedIn() && validTreinoData();
+      allow update, delete: if false;
+    }
+
+    match /falhas/{falhaId} {
+      allow get: if sameTenant(resource.data) && (resource.data.alunoId == uid() || isProfessorOrAdmin());
+      allow list: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
+      allow create: if signedIn() && validFalhaData();
+      allow update, delete: if false;
+    }
+
+    match /lutas/{lutaId} {
+      allow get: if sameTenant(resource.data) && (resource.data.alunoId == uid() || isProfessorOrAdmin());
+      allow list: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
+      allow create: if signedIn() && validLutaData();
+      allow update, delete: if false;
+    }
+
+    match /feedbacks/{feedbackId} {
+      allow get: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
+      allow list: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
+      allow create: if signedIn() && validFeedbackCreate();
+      allow update: if isProfessorOrAdmin() && validFeedbackUpdate();
+      allow delete: if false;
+    }
+
+    match /campeonatos/{campeonatoId} {
+      allow get: if sameTenant(resource.data);
+      allow list: if sameTenant(resource.data);
+      allow create: if isProfessorOrAdmin() && validCampeonatoCreate();
+      allow update: if isProfessorOrAdmin() && validCampeonatoUpdate();
+      allow delete: if false;
     }
 
     match /tecnicas/{tecnicaId} {
-      allow read: if isAuthenticated();
-      allow write: if isProfessorOrAdmin();
+      allow get, list: if sameTenant(resource.data);
+      allow create: if isProfessorOrAdmin() && sameTenant(request.resource.data);
+      allow update: if isProfessorOrAdmin() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isProfessorOrAdmin() && sameTenant(resource.data);
+    }
+
+    match /trilhas/{trilhaId} {
+      allow get, list: if signedIn() && sameTenant(resource.data);
+      allow create: if isProfessorOrAdmin() && validTrilhaCreate();
+      allow update: if isProfessorOrAdmin() && validTrilhaUpdate();
+      allow delete: if isProfessorOrAdmin() && sameTenant(resource.data);
+    }
+
+    match /checkinIntencoes/{intentId} {
+      allow get, list: if signedIn() && sameTenant(resource.data) && (isProfessorOrAdmin() || isSelf(resource.data.alunoId));
+      allow create: if signedIn() && validCheckinIntentCreate();
+      allow update: if isProfessorOrAdmin() && validCheckinIntentUpdate();
+      allow delete: if false;
+    }
+
+    match /financeiroExecutivo/{snapshotId} {
+      allow get, list: if sameTenant(resource.data) && isFinanceOwner();
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if isFinanceOwner() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
+    match /stripeCustomers/{customerId} {
+      allow get, list: if sameTenant(resource.data) && (isFinanceOwner() || isSelf(resource.data.alunoId));
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if isFinanceOwner() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
+    match /stripeSubscriptions/{subscriptionId} {
+      allow get, list: if sameTenant(resource.data) && (isFinanceOwner() || isSelf(resource.data.alunoId));
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if isFinanceOwner() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
+    match /stripeEvents/{eventId} {
+      allow get, list: if sameTenant(resource.data) && (isFinanceOwner() || isSelf(resource.data.alunoId));
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if false;
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
+    match /notificacoesEnviadas/{notificacaoId} {
+      allow get, list: if sameTenant(resource.data) && isFinanceOwner();
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if isFinanceOwner() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
+    match /relatoriosGerenciais/{relatorioId} {
+      allow get, list: if sameTenant(resource.data) && isFinanceOwner();
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if isFinanceOwner() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
+    match /presencas/{presencaId} {
+      allow get, list: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
+      allow create: if isProfessorOrAdmin() && sameTenant(request.resource.data);
+      allow update, delete: if false;
+    }
+
+    match /pagamentos/{pagamentoId} {
+      allow get, list: if isProfessorOrAdmin() && sameTenant(resource.data);
+      allow create: if isProfessorOrAdmin() && validPagamentoCreate();
+      allow update, delete: if false;
+    }
+
+    match /notificacoes/{notificacaoId} {
+      allow get, list: if sameTenant(resource.data) && resource.data.destinatarioId == uid();
+      allow create: if false;
+      allow update: if sameTenant(resource.data)
+        && resource.data.destinatarioId == uid()
+        && request.resource.data.tenantId == resource.data.tenantId
+        && request.resource.data.destinatarioId == resource.data.destinatarioId
+        && request.resource.data.titulo == resource.data.titulo
+        && request.resource.data.mensagem == resource.data.mensagem
+        && request.resource.data.tipo == resource.data.tipo
+        && request.resource.data.createdAt == resource.data.createdAt
+        && resource.data.lida == false
+        && request.resource.data.lida == true;
+      allow delete: if false;
+    }
+
+    match /avisos/{avisoId} {
+      allow get, list: if sameTenant(resource.data) && (request.auth.token.role == 'admin' || resource.data.professorId == uid());
+      allow create: if false;
+      allow update, delete: if false;
+    }
+
+    match /convites/{conviteId} {
+      allow read, write: if false;
     }
   }
 }

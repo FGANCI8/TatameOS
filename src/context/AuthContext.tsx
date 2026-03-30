@@ -1,22 +1,17 @@
-'use client';
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { onAuthStateChanged, User } from 'firebase/auth';
-import { auth } from '@/src/lib/firebase/client';
+import { createContext } from 'react';
+import { User } from 'firebase/auth';
 
-const AuthContext = createContext<{ user: User | null; loading: boolean }>({ user: null, loading: true });
+export type UserRole = 'aluno' | 'professor' | 'admin' | null;
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    return onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
-    });
-  }, []);
-
-  return <AuthContext.Provider value={{ user, loading }}>{children}</AuthContext.Provider>;
+interface AuthContextData {
+  user: User | null;
+  loading: boolean;
+  isAuthenticated: boolean;
+  role: UserRole;
+  tenantId: string | null;
+  isProfessor: boolean;
+  isAdmin: boolean;
+  refreshClaims: () => Promise<UserRole>;
 }
 
-export const useAuth = () => useContext(AuthContext);
+export const AuthContext = createContext<AuthContextData>({} as AuthContextData);

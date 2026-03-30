@@ -1,4 +1,7 @@
 import * as admin from 'firebase-admin';
+import { config as loadEnv } from 'dotenv';
+
+loadEnv();
 
 if (!admin.apps.length) {
   admin.initializeApp({

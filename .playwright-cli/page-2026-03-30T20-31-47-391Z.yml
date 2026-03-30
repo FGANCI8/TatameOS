@@ -1,0 +1,16 @@
+- generic [ref=e6]:
+  - generic [ref=e8]:
+    - generic [ref=e10]: bolt
+    - heading "TATAMEOS" [level=1] [ref=e11]
+  - paragraph [ref=e12]: System Authentication
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - text: Recruta (E-mail)
+      - textbox "seu@jiujitsu.com" [ref=e15]
+    - generic [ref=e16]:
+      - text: Chave de acesso
+      - textbox "••••••••" [ref=e17]
+    - button "login Iniciar missão" [ref=e18]:
+      - generic [ref=e19]: login
+      - text: Iniciar missão
+  - button "Novo no tatame? Cadastrar" [ref=e21]
