@@ -20,8 +20,8 @@ export default function BibliotecaDeTecnicas() {
           <span className="text-brand-red">técnicas</span>
         </h2>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-400">
-          Cada técnica pode receber um vídeo do YouTube vinculado pelo professor, sempre filtrado por tenant e
-          validado antes da exibição.
+          Cada técnica pode receber um vídeo do YouTube vinculado pelo professor, sempre filtrado por tenant e validado
+          antes da exibição.
         </p>
       </section>
 

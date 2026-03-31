@@ -60,10 +60,10 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
       <div className="flex items-center justify-between gap-4">
         <Link to="/" className="group flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-brand-red/20 bg-brand-red/10 text-brand-red transition duration-200 group-hover:scale-105">
-            <span className="material-symbols-outlined text-lg font-black">bolt</span>
+            <span className="material-symbols-outlined text-lg font-black">sports_martial_arts</span>
           </div>
           <h1 className="font-headline text-xl font-black uppercase leading-none tracking-[0.2em] text-white">
-            TATAME<span className="text-brand-red">OSS</span>
+            Tatame <span className="text-brand-red">OSS</span>
           </h1>
         </Link>
 
@@ -98,7 +98,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
             value=""
           >
             <option value="" className="bg-zinc-950">
-              Telas (Auto-map)
+              Telas do sistema
             </option>
             {routes
               .filter((r) => {

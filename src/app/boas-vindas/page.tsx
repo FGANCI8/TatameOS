@@ -22,7 +22,7 @@ export default function BoasVindas() {
               <span className="text-brand-red">ARTE SUAVE</span>
             </h1>
             <p className="max-w-2xl text-sm leading-relaxed text-zinc-300 md:text-base">
-              Bem-vindo ao TatameOS. Uma plataforma pensada para elevar seu Jiu-Jitsu com tecnologia, consistência e
+              Bem-vindo ao Tatame OSS. Uma plataforma pensada para elevar seu Jiu-Jitsu com tecnologia, consistência e
               visão de evolução.
             </p>
           </div>
@@ -106,7 +106,7 @@ export default function BoasVindas() {
       <section className="px-6 py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:flex-row md:p-8">
           <div className="hidden md:block">
-            <span className="font-headline text-2xl font-black italic text-brand-red">TatameOS</span>
+            <span className="font-headline text-2xl font-black italic text-brand-red">Tatame OSS</span>
           </div>
           <button className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-brand-red/20 bg-brand-red/10 px-8 py-4 text-white transition duration-200 hover:scale-105 hover:bg-brand-red/20 md:w-auto">
             <span className="font-headline text-lg font-black uppercase tracking-[0.22em] text-brand-red">

@@ -1,7 +1,7 @@
 export default function CausasDoErro() {
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Análise de combate</p>
         <div className="mt-3 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
@@ -19,7 +19,7 @@ export default function CausasDoErro() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <span className="material-symbols-outlined text-4xl text-zinc-300">psychology</span>
             <span className="font-headline text-3xl font-black italic text-brand-red">85%</span>
@@ -39,13 +39,13 @@ export default function CausasDoErro() {
           </div>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <span className="material-symbols-outlined text-4xl text-zinc-300">visibility</span>
             <span className="font-headline text-3xl font-black italic text-zinc-100">62%</span>
           </div>
           <h2 className="mt-6 font-headline text-2xl font-black uppercase tracking-tight text-zinc-100">
-            Leitura Ruim
+            Leitura ruim
           </h2>
           <p className="mt-2 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Falta de antecipação</p>
           <div className="mt-6 space-y-3">
@@ -58,7 +58,7 @@ export default function CausasDoErro() {
           </div>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <span className="material-symbols-outlined text-4xl text-zinc-300">fitness_center</span>
             <span className="font-headline text-3xl font-black italic text-zinc-100">44%</span>
@@ -75,7 +75,7 @@ export default function CausasDoErro() {
           </div>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <span className="material-symbols-outlined text-4xl text-zinc-300">school</span>
             <span className="font-headline text-3xl font-black italic text-zinc-100">31%</span>
@@ -93,7 +93,7 @@ export default function CausasDoErro() {
         </article>
       </section>
 
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Consistência de decisão</p>
         <h2 className="mt-3 font-headline text-2xl font-black uppercase tracking-tight text-zinc-100">
           Últimos 10 treinos
@@ -117,7 +117,7 @@ export default function CausasDoErro() {
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <button className="flex items-center justify-between rounded-2xl border border-brand-red/20 bg-brand-red/10 px-6 py-4 text-left text-brand-red transition hover:bg-brand-red/20 active:scale-95">
-          <span className="font-headline text-sm font-black uppercase tracking-widest">Corrigir com TatameOS</span>
+          <span className="font-headline text-sm font-black uppercase tracking-widest">Corrigir com Tatame OSS</span>
           <span className="material-symbols-outlined">arrow_forward</span>
         </button>
         <button className="flex items-center justify-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-950/60 px-6 py-4 text-zinc-100 transition hover:bg-zinc-800 active:scale-95">

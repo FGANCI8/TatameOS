@@ -65,7 +65,7 @@ export default function AtivarContaPage() {
   if (!token) {
     return (
       <section className="flex min-h-screen items-center justify-center bg-zinc-950 px-6 text-white">
-        <div className="w-full max-w-lg rounded-3xl border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center md:p-8">
+        <div className="w-full max-w-lg rounded-[28px] border border-zinc-800 bg-zinc-900/80 p-6 text-center md:p-8">
           <h1 className="font-headline text-3xl font-black uppercase tracking-tight text-white">Token ausente</h1>
           <p className="mt-3 text-sm text-zinc-400">Abra o link enviado por e-mail para ativar sua conta.</p>
         </div>
@@ -76,7 +76,7 @@ export default function AtivarContaPage() {
   if (!validacao || !validacao.valid) {
     return (
       <section className="flex min-h-screen items-center justify-center bg-zinc-950 px-6 text-white">
-        <div className="w-full max-w-xl rounded-3xl border border-brand-red/20 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center md:p-8">
+        <div className="w-full max-w-xl rounded-[28px] border border-brand-red/20 bg-zinc-900/80 p-6 text-center md:p-8">
           <h1 className="font-headline text-3xl font-black uppercase tracking-tight text-white">Convite inválido</h1>
           <p className="mt-3 text-sm text-zinc-400">
             {validacao?.expired
@@ -93,7 +93,7 @@ export default function AtivarContaPage() {
   return (
     <section className="min-h-screen bg-zinc-950 px-4 py-6 text-white md:px-6 md:py-10">
       <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.35em] text-brand-red">Ativação</p>
           <h1 className="mt-4 font-headline text-4xl font-black uppercase tracking-tight text-white">
             Bem-vindo à {validacao.academyName}
@@ -132,7 +132,7 @@ export default function AtivarContaPage() {
           )}
         </div>
 
-        <div className="rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400">Acesso</p>
@@ -194,7 +194,9 @@ export default function AtivarContaPage() {
           </div>
 
           {(error || localMessage) && (
-            <div className={`mt-6 rounded-2xl border p-4 text-sm ${error ? 'border-brand-red/30 bg-brand-red/10 text-brand-red' : 'border-zinc-700 bg-zinc-900 text-white'}`}>
+            <div
+              className={`mt-6 rounded-2xl border p-4 text-sm ${error ? 'border-brand-red/30 bg-brand-red/10 text-brand-red' : 'border-zinc-700 bg-zinc-900 text-white'}`}
+            >
               {error || localMessage}
             </div>
           )}
