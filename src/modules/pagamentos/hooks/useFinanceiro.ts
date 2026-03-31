@@ -12,8 +12,9 @@ function getDefaultPeriod() {
   };
 }
 
-export function useFinanceiro() {
+export function useFinanceiro(gymId?: string | null) {
   const { tenantId, isProfessorOrAdmin } = useAuth();
+  const resolvedTenantId = gymId === undefined ? tenantId : gymId;
   const defaultPeriod = useMemo(() => getDefaultPeriod(), []);
   const [mes, setMes] = useState(defaultPeriod.mes);
   const [ano, setAno] = useState(defaultPeriod.ano);
@@ -23,8 +24,17 @@ export function useFinanceiro() {
   const [error, setError] = useState<string | null>(null);
 
   const carregarResumo = useCallback(async (mesAtual = mes, anoAtual = ano) => {
-    if (!tenantId || !isProfessorOrAdmin) {
+    if (!resolvedTenantId) {
       setResumo(null);
+      setAlunosEmRisco([]);
+      setError(null);
+      setLoading(false);
+      return false;
+    }
+
+    if (!isProfessorOrAdmin) {
+      setResumo(null);
+      setAlunosEmRisco([]);
       setError('Apenas professor ou admin podem acessar o financeiro.');
       setLoading(false);
       return false;
@@ -35,8 +45,8 @@ export function useFinanceiro() {
 
     try {
       const [resumoResult, riscoResult] = await Promise.all([
-        pagamentosService.obterResumoFinanceiro(tenantId, isProfessorOrAdmin, mesAtual, anoAtual),
-        alunoService.identificarAlunosEmRisco(tenantId),
+        pagamentosService.obterResumoFinanceiro(resolvedTenantId, isProfessorOrAdmin, mesAtual, anoAtual),
+        alunoService.identificarAlunosEmRisco(resolvedTenantId),
       ]);
 
       if (!resumoResult.success || !resumoResult.data) {
@@ -61,11 +71,11 @@ export function useFinanceiro() {
     } finally {
       setLoading(false);
     }
-  }, [ano, isProfessorOrAdmin, mes, tenantId]);
+  }, [ano, isProfessorOrAdmin, mes, resolvedTenantId]);
 
   useEffect(() => {
     void carregarResumo(mes, ano);
-  }, [carregarResumo, mes, ano]);
+  }, [carregarResumo, mes, ano, resolvedTenantId]);
 
   return {
     resumo,

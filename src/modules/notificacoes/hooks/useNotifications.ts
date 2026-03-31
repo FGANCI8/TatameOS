@@ -3,14 +3,15 @@ import { useAuth } from '../../../hooks/useAuth';
 import { notificacoesService } from '../../instances';
 import type { Notificacao, NotificacoesResumo } from '../types';
 
-export function useNotifications(limite = 5) {
+export function useNotifications(limite = 5, gymId?: string | null) {
   const { tenantId, userId, isAuthenticated } = useAuth();
   const [notificacoes, setNotificacoes] = useState<Notificacao[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const scopeTenantId = gymId?.trim() || tenantId;
 
   const carregar = useCallback(async () => {
-    if (!isAuthenticated || !tenantId || !userId) {
+    if (!isAuthenticated || !scopeTenantId || !userId) {
       setNotificacoes([]);
       setLoading(false);
       return false;
@@ -21,14 +22,14 @@ export function useNotifications(limite = 5) {
 
     try {
       const result = await notificacoesService.listarNotificacoes({
-        tenantId,
+        tenantId: scopeTenantId,
         destinatarioId: userId,
         limite,
       });
 
       if (!result.success || !result.data) {
         setNotificacoes([]);
-        setError(result.error || 'Falha ao carregar notificações.');
+        setError(result.error || 'Falha ao carregar notifica\u00e7\u00f5es.');
         return false;
       }
 
@@ -36,47 +37,47 @@ export function useNotifications(limite = 5) {
       return true;
     } catch (err: any) {
       setNotificacoes([]);
-      setError(err?.message || 'Falha ao carregar notificações.');
+      setError(err?.message || 'Falha ao carregar notifica\u00e7\u00f5es.');
       return false;
     } finally {
       setLoading(false);
     }
-  }, [isAuthenticated, limite, tenantId, userId]);
+  }, [isAuthenticated, limite, scopeTenantId, userId]);
 
   const marcarComoLida = useCallback(async (notificacaoId: string) => {
-    if (!tenantId || !userId) {
+    if (!scopeTenantId || !userId) {
       return false;
     }
 
     const result = await notificacoesService.marcarComoLida({
-      tenantId,
+      tenantId: scopeTenantId,
       destinatarioId: userId,
       notificacaoId,
     });
 
     if (!result.success) {
-      setError(result.error || 'Falha ao marcar notificação como lida.');
+      setError(result.error || 'Falha ao marcar notifica\u00e7\u00e3o como lida.');
       return false;
     }
 
     setNotificacoes((current) => current.map((item) => (item.id === notificacaoId ? { ...item, lida: true } : item)));
     return true;
-  }, [tenantId, userId]);
+  }, [scopeTenantId, userId]);
 
   const marcarTodasComoLidas = useCallback(async () => {
-    if (!tenantId || !userId) {
+    if (!scopeTenantId || !userId) {
       return false;
     }
 
-    const result = await notificacoesService.marcarTodasComoLidas(tenantId, userId);
+    const result = await notificacoesService.marcarTodasComoLidas(scopeTenantId, userId);
     if (!result.success) {
-      setError(result.error || 'Falha ao marcar notificações como lidas.');
+      setError(result.error || 'Falha ao marcar notifica\u00e7\u00f5es como lidas.');
       return false;
     }
 
     setNotificacoes((current) => current.map((item) => ({ ...item, lida: true })));
     return true;
-  }, [tenantId, userId]);
+  }, [scopeTenantId, userId]);
 
   useEffect(() => {
     void carregar();

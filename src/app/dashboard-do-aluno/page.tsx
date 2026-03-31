@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NotificationCenterWidget } from '../../components/NotificationCenterWidget';
+import { NotificationCenterWidget } from '../../components/dashboard/NotificationCenterWidget';
 import { useAuth } from '../../hooks/useAuth';
 import { useTreino } from '../../hooks/useTreino';
 import { useAluno } from '../../modules/aluno/hooks/useAluno';

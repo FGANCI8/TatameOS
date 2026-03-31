@@ -3,14 +3,22 @@ import { alunoService } from '../../instances';
 import { Aluno } from '../types';
 import { useAuth } from '../../../hooks/useAuth';
 
-export function useAlunos() {
+export function useAlunos(gymId?: string | null) {
   const { isProfessorOrAdmin, tenantId } = useAuth();
+  const resolvedTenantId = gymId === undefined ? tenantId : gymId;
   const [data, setData] = useState<Aluno[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchAlunos = useCallback(async () => {
-    if (!isProfessorOrAdmin || !tenantId) {
+    if (!resolvedTenantId) {
+      setData([]);
+      setError(null);
+      setLoading(false);
+      return;
+    }
+
+    if (!isProfessorOrAdmin) {
       setData([]);
       setError('Apenas professor ou admin pode acessar esta visão.');
       setLoading(false);
@@ -20,7 +28,7 @@ export function useAlunos() {
     setLoading(true);
     setError(null);
     try {
-      const res = await alunoService.listarTodosAlunos(tenantId);
+      const res = await alunoService.listarTodosAlunos(resolvedTenantId);
       if (res.success && res.data) {
         setData(res.data);
       } else {
@@ -31,11 +39,11 @@ export function useAlunos() {
     } finally {
       setLoading(false);
     }
-  }, [isProfessorOrAdmin, tenantId]);
+  }, [isProfessorOrAdmin, resolvedTenantId]);
 
   useEffect(() => {
-    fetchAlunos();
-  }, [fetchAlunos]);
+    void fetchAlunos();
+  }, [fetchAlunos, resolvedTenantId]);
 
   return {
     data,

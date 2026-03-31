@@ -3,21 +3,25 @@ import { treinoService } from '../modules/instances';
 import { Treino } from '../modules/treino/types';
 import { useAuth } from './useAuth';
 
-export function useTreino() {
+export function useTreino(gymId?: string | null) {
   const { userId, tenantId } = useAuth();
+  const resolvedTenantId = gymId === undefined ? tenantId : gymId;
   const [data, setData] = useState<Treino[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchTreinos = useCallback(async () => {
-    if (!userId || !tenantId) {
+    if (!resolvedTenantId || !userId) {
+      setData([]);
+      setError(null);
       setLoading(false);
       return;
     }
+
     setLoading(true);
     setError(null);
     try {
-      const result = await treinoService.listarTreinos(userId, tenantId);
+      const result = await treinoService.listarTreinos(userId, resolvedTenantId);
       if (result.success) {
         setData(result.data || []);
       } else {
@@ -28,14 +32,14 @@ export function useTreino() {
     } finally {
       setLoading(false);
     }
-  }, [userId, tenantId]);
+  }, [resolvedTenantId, userId]);
 
   useEffect(() => {
-    fetchTreinos();
-  }, [fetchTreinos]);
+    void fetchTreinos();
+  }, [fetchTreinos, resolvedTenantId]);
 
   const registrarTreino = async (tecnicaId: string, observacoes: string, dificuldadePercebida: number) => {
-    if (!userId || !tenantId) {
+    if (!resolvedTenantId || !userId) {
       setError('Usuário não autenticado.');
       return false;
     }
@@ -45,7 +49,7 @@ export function useTreino() {
       tecnicaId,
       observacoes,
       dificuldadePercebida
-    }, tenantId);
+    }, resolvedTenantId);
 
     if (!result.success) {
       setError(result.error || 'Erro ao registrar.');

@@ -4,6 +4,7 @@ import { LoginScreen } from './components/LoginScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MainLayout } from './components/layout/MainLayout';
 import { AuthProvider } from './context/AuthProvider';
+import { GymProvider } from './contexts/GymContext';
 import { useAuth } from './hooks/useAuth';
 
 interface AppRoute {
@@ -112,52 +113,54 @@ function AppRouterContent() {
   }
 
   return (
-    <MainLayout routes={mainLayoutRoutes}>
-      <Routes>
-        <Route path="/" element={<Navigate to="/boas-vindas" replace />} />
+    <GymProvider>
+      <MainLayout routes={mainLayoutRoutes}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/boas-vindas" replace />} />
 
-        {routes
-          .filter((route) => !!route.Component && !publicRoutes.has(route.pathName))
-          .map(({ pathName, Component, name }) =>
-            React.createElement(Route, {
-              key: pathName,
-              path: pathName,
-              element:
-                (restrictedProfessorRoutes.has(pathName) && !isProfessorOrAdmin) ||
-                (restrictedAdminRoutes.has(pathName) && !isAdmin) ? (
-                  <Navigate to="/boas-vindas" replace />
-                ) : (
-                  <ErrorBoundary routeName={name}>
-                    <Suspense fallback={<RouteFallback />}>
-                      <Component />
-                    </Suspense>
-                  </ErrorBoundary>
-                ),
-            }),
-          )}
+          {routes
+            .filter((route) => !!route.Component && !publicRoutes.has(route.pathName))
+            .map(({ pathName, Component, name }) =>
+              React.createElement(Route, {
+                key: pathName,
+                path: pathName,
+                element:
+                  (restrictedProfessorRoutes.has(pathName) && !isProfessorOrAdmin) ||
+                  (restrictedAdminRoutes.has(pathName) && !isAdmin) ? (
+                    <Navigate to="/boas-vindas" replace />
+                  ) : (
+                    <ErrorBoundary routeName={name}>
+                      <Suspense fallback={<RouteFallback />}>
+                        <Component />
+                      </Suspense>
+                    </ErrorBoundary>
+                  ),
+              }),
+            )}
 
-        <Route
-          path="*"
-          element={
-            <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-950 px-6 py-10 text-center text-zinc-100">
-              <div className="mb-10 flex h-20 w-20 rotate-45 items-center justify-center border border-brand-red/20 bg-brand-red/10">
-                <span className="material-symbols-outlined -rotate-45 text-4xl text-brand-red">error</span>
+          <Route
+            path="*"
+            element={
+              <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-950 px-6 py-10 text-center text-zinc-100">
+                <div className="mb-10 flex h-20 w-20 rotate-45 items-center justify-center border border-brand-red/20 bg-brand-red/10">
+                  <span className="material-symbols-outlined -rotate-45 text-4xl text-brand-red">error</span>
+                </div>
+                <h1 className="mb-4 font-headline text-6xl font-black italic tracking-tighter">404</h1>
+                <p className="mb-8 w-full max-w-xs border-y border-zinc-800 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
+                  Rota não mapeada no sistema
+                </p>
+                <Link
+                  to="/"
+                  className="rounded-2xl border border-brand-red/20 bg-brand-red/10 px-10 py-4 font-headline uppercase font-black tracking-widest text-brand-red transition-all hover:bg-brand-red/20 active:scale-95"
+                >
+                  Reiniciar Sistema
+                </Link>
               </div>
-              <h1 className="mb-4 font-headline text-6xl font-black italic tracking-tighter">404</h1>
-              <p className="mb-8 w-full max-w-xs border-y border-zinc-800 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
-                Rota não mapeada no sistema
-              </p>
-              <Link
-                to="/"
-                className="rounded-2xl border border-brand-red/20 bg-brand-red/10 px-10 py-4 font-headline uppercase font-black tracking-widest text-brand-red transition-all hover:bg-brand-red/20 active:scale-95"
-              >
-                Reiniciar Sistema
-              </Link>
-            </div>
-          }
-        />
-      </Routes>
-    </MainLayout>
+            }
+          />
+        </Routes>
+      </MainLayout>
+    </GymProvider>
   );
 }
 
