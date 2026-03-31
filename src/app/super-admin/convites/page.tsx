@@ -56,7 +56,7 @@ export default function SuperAdminConvitesPage() {
   if (!isAdmin) {
     return (
       <div className="flex min-h-[70vh] items-center justify-center px-4">
-        <div className="w-full max-w-xl rounded-3xl border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center">
+        <div className="w-full max-w-xl rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 text-center">
           <span className="material-symbols-outlined text-5xl text-brand-red">lock</span>
           <h1 className="mt-4 text-3xl font-black uppercase tracking-tight text-white">Acesso restrito</h1>
           <p className="mt-3 text-sm text-zinc-400">Apenas administradores podem acessar o painel de gestão de convites.</p>
@@ -73,7 +73,7 @@ export default function SuperAdminConvitesPage() {
 
   return (
     <main className="mx-auto max-w-7xl space-y-6 px-4 pb-28 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="space-y-3">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-red/20 bg-brand-red/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-brand-red">
@@ -82,7 +82,7 @@ export default function SuperAdminConvitesPage() {
             <div>
               <h1 className="text-4xl font-black uppercase tracking-tight text-white md:text-5xl">Gestão de Convites</h1>
               <p className="mt-2 max-w-2xl text-sm text-zinc-400">
-                Acompanhe pendências, reenvie convites e revogue acessos antes da ativação.
+                Acompanhe pendências, reenvie convites e revogue acessos com leitura rápida do estado da operação.
               </p>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function SuperAdminConvitesPage() {
           </div>
         )}
 
-        <div className="mt-6 grid gap-3 grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {resumo.map((item) => (
             <div
               key={item.label}
@@ -148,7 +148,7 @@ export default function SuperAdminConvitesPage() {
             ))}
           </div>
         ) : convites.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center">
+          <div className="rounded-[28px] border border-dashed border-zinc-800 bg-zinc-900/80 p-6 text-center">
             <span className="material-symbols-outlined text-4xl text-brand-red">mail</span>
             <p className="mt-3 text-lg font-black uppercase tracking-tight text-white">Nenhum convite encontrado</p>
             <p className="mt-2 text-sm text-zinc-400">
