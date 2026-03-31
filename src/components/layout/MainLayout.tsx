@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationBase } from '../NavigationBase';
 import { BottomNavBar } from './BottomNavBar';
-import { StudentSidebar } from './StudentSidebar';
+import { StudentSidebar } from './StudentSidebar.tsx';
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -21,7 +21,7 @@ export function MainLayout({ children, routes = [] }: MainLayoutProps) {
       <NavigationBase routes={routes} />
 
       {showStudentSidebar ? (
-        <div className="mx-auto flex w-full max-w-7xl flex-1 gap-6 px-4 md:px-6">
+        <div className="mx-auto flex w-full max-w-7xl flex-1 gap-6 px-4 pb-[calc(6.5rem+env(safe-area-inset-bottom))] md:px-6 xl:pb-0">
           <StudentSidebar />
 
           <main className="relative min-w-0 flex-1 overflow-x-hidden pt-6 md:pt-8">
@@ -29,7 +29,7 @@ export function MainLayout({ children, routes = [] }: MainLayoutProps) {
           </main>
         </div>
       ) : (
-        <main className="relative w-full flex-1 overflow-x-hidden pt-6 md:pt-8">
+        <main className="relative w-full flex-1 overflow-x-hidden px-4 pb-[calc(6.5rem+env(safe-area-inset-bottom))] pt-6 md:px-6 md:pt-8 xl:pb-0">
           {children}
         </main>
       )}

@@ -15,7 +15,7 @@ const CHECKIN_WINDOW_MINUTES = 3;
 const MARCOS_PADRAO = [10, 50];
 
 function getSecret(): string {
-  const secret = import.meta.env.VITE_CHECKIN_QR_SECRET || import.meta.env.VITE_APP_CHECKIN_QR_SECRET;
+  const secret = import.meta.env.VITE_CHECKIN_QR_SECRET;
 
   if (!secret?.trim()) {
     throw new Error('Variável obrigatória ausente: VITE_CHECKIN_QR_SECRET.');

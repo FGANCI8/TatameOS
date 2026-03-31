@@ -1,15 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.onAlunoMilestoneReached = exports.activateInvite = exports.broadcastAvisoGeral = exports.revokeInvite = exports.resendInvite = exports.listStudentInvites = exports.listInvites = exports.inviteStudent = exports.validateInvite = exports.provisionAcademia = void 0;
+exports.gerarSnapshotsMensaisAgendado = exports.onAlunoMilestoneReached = exports.activateInvite = exports.broadcastAvisoGeral = exports.revokeInvite = exports.resendInvite = exports.listStudentInvites = exports.listInvites = exports.inviteStudent = exports.validateInvite = exports.provisionAcademia = void 0;
 const node_crypto_1 = require("node:crypto");
 const app_1 = require("firebase-admin/app");
 const firestore_1 = require("firebase-admin/firestore");
 const https_1 = require("firebase-functions/v2/https");
 const firestore_2 = require("firebase-functions/v2/firestore");
+const scheduler_1 = require("firebase-functions/v2/scheduler");
 const firebase_admin_1 = require("./lib/firebase-admin");
 const repository_1 = require("./modules/convites/repository");
 const email_service_1 = require("./modules/convites/email.service");
 const service_1 = require("./modules/convites/service");
+const runner_1 = require("./modules/snapshots-mensais/runner");
 const FAIXAS_PADRAO = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'];
 const MILESTONE_HOURS = 40;
 const CATEGORIAS_FALHAS = [
@@ -30,12 +32,39 @@ const TECNICAS_INICIAIS = [
     'Triangulo',
     'Chave de Braco',
 ];
+const callableCooldowns = new Map();
+function isPlaceholderValue(value) {
+    const normalized = value.toLowerCase();
+    return (normalized.startsWith('dummy') ||
+        normalized.includes('placeholder') ||
+        normalized.startsWith('sua_') ||
+        normalized.startsWith('seu_'));
+}
+function readRequiredServerEnv(name, value) {
+    const normalized = value?.trim();
+    if (!normalized) {
+        throw new Error(`Variável obrigatória ausente: ${name}.`);
+    }
+    if (isPlaceholderValue(normalized)) {
+        throw new Error(`Variável ${name} contém placeholder e não pode ser usada como configuração válida.`);
+    }
+    return normalized;
+}
+function assertCallableCooldown(scope, key, cooldownMs) {
+    const cacheKey = `${scope}:${key}`;
+    const now = Date.now();
+    const lastRun = callableCooldowns.get(cacheKey);
+    if (typeof lastRun === 'number' && now - lastRun < cooldownMs) {
+        throw new https_1.HttpsError('resource-exhausted', 'Aguarde alguns segundos antes de repetir esta ação.');
+    }
+    callableCooldowns.set(cacheKey, now);
+}
 function initAdminApp() {
     if ((0, app_1.getApps)().length) {
         return;
     }
-    const projectId = process.env.FIREBASE_PROJECT_ID;
-    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const projectId = readRequiredServerEnv('FIREBASE_PROJECT_ID', process.env.FIREBASE_PROJECT_ID);
+    const clientEmail = readRequiredServerEnv('FIREBASE_CLIENT_EMAIL', process.env.FIREBASE_CLIENT_EMAIL);
     const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
     if (!projectId || !clientEmail || !privateKey) {
         throw new Error('Credenciais administrativas ausentes para inicializar o Firebase Admin SDK.');
@@ -261,6 +290,7 @@ exports.provisionAcademia = (0, https_1.onCall)(async (request) => {
         throw new https_1.HttpsError('permission-denied', 'Apenas administradores podem provisionar academias.');
     }
     initAdminApp();
+    assertCallableCooldown('provisionAcademia', request.auth.uid, 30000);
     validateInput(request.data);
     const db = (0, firestore_1.getFirestore)();
     const emailService = (0, email_service_1.createEmailService)();
@@ -270,7 +300,8 @@ exports.provisionAcademia = (0, https_1.onCall)(async (request) => {
     const academiaDoc = createAcademiaDoc(tenantId, { nome, plano, responsavelEmail, responsavelNome, responsavelRole });
     const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000);
     const inviteToken = (0, node_crypto_1.randomUUID)();
-    const inviteUrl = `${process.env.APP_URL}/ativar-conta?token=${encodeURIComponent(inviteToken)}`;
+    const appUrl = readRequiredServerEnv('APP_URL', process.env.APP_URL);
+    const inviteUrl = `${appUrl}/ativar-conta?token=${encodeURIComponent(inviteToken)}`;
     const academiaRef = db.collection('academias').doc(tenantId);
     const inviteRef = db.collection('convites').doc(inviteToken);
     const batch = db.batch();
@@ -361,6 +392,7 @@ exports.inviteStudent = (0, https_1.onCall)(async (request) => {
     if (!tenantId) {
         throw new https_1.HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
     }
+    assertCallableCooldown('inviteStudent', `${request.auth.uid}:${tenantId}`, 10000);
     const data = request.data;
     if (!data.nome?.trim()) {
         throw new https_1.HttpsError('invalid-argument', 'O nome do aluno é obrigatório.');
@@ -427,6 +459,7 @@ exports.resendInvite = (0, https_1.onCall)(async (request) => {
     if (!token) {
         throw new https_1.HttpsError('invalid-argument', 'Token de convite é obrigatório.');
     }
+    assertCallableCooldown('resendInvite', request.auth.uid, 10000);
     const tenantId = String(request.auth.token.tenantId || '').trim();
     if (!tenantId && request.auth.token.role !== 'admin') {
         throw new https_1.HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
@@ -447,6 +480,7 @@ exports.revokeInvite = (0, https_1.onCall)(async (request) => {
     if (!token) {
         throw new https_1.HttpsError('invalid-argument', 'Token de convite é obrigatório.');
     }
+    assertCallableCooldown('revokeInvite', request.auth.uid, 10000);
     const tenantId = String(request.auth.token.tenantId || '').trim();
     if (!tenantId && request.auth.token.role !== 'admin') {
         throw new https_1.HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
@@ -467,6 +501,7 @@ exports.broadcastAvisoGeral = (0, https_1.onCall)(async (request) => {
     if (!tenantId) {
         throw new https_1.HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
     }
+    assertCallableCooldown('broadcastAvisoGeral', `${request.auth.uid}:${tenantId}`, 10000);
     const professorId = String(request.data?.professorId || request.auth.uid || '').trim();
     if (professorId !== request.auth.uid && request.auth.token.role !== 'admin') {
         throw new https_1.HttpsError('permission-denied', 'Professor não autorizado para esse remetente.');
@@ -556,5 +591,37 @@ exports.onAlunoMilestoneReached = (0, firestore_2.onDocumentUpdated)('alunos/{al
             idSeed: `professor-${event.params.alunoId}-${milestoneHours}`,
         });
         await markMilestoneAsNotified(event.params.alunoId, milestoneHours);
+    }
+});
+exports.gerarSnapshotsMensaisAgendado = (0, scheduler_1.onSchedule)({
+    schedule: '1 0 1 * *',
+    timeZone: 'America/Sao_Paulo',
+    region: 'southamerica-east1',
+}, async () => {
+    const startedAt = new Date();
+    console.info(JSON.stringify({
+        level: 'info',
+        event: 'snapshots_mensais_scheduler_triggered',
+        startedAt: startedAt.toISOString(),
+    }));
+    try {
+        const summary = await (0, runner_1.executarSnapshotsMensaisCron)(startedAt);
+        console.info(JSON.stringify({
+            level: 'info',
+            event: 'snapshots_mensais_scheduler_finished',
+            startedAt: startedAt.toISOString(),
+            finishedAt: new Date().toISOString(),
+            summary,
+        }));
+    }
+    catch (error) {
+        const message = error instanceof Error ? error.message : 'Erro desconhecido.';
+        console.error(JSON.stringify({
+            level: 'error',
+            event: 'snapshots_mensais_scheduler_failed',
+            startedAt: startedAt.toISOString(),
+            message,
+        }));
+        throw error;
     }
 });

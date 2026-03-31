@@ -90,13 +90,51 @@ const TECNICAS_INICIAIS = [
   'Chave de Braco',
 ];
 
+const callableCooldowns = new Map<string, number>();
+
+function isPlaceholderValue(value: string): boolean {
+  const normalized = value.toLowerCase();
+  return (
+    normalized.startsWith('dummy') ||
+    normalized.includes('placeholder') ||
+    normalized.startsWith('sua_') ||
+    normalized.startsWith('seu_')
+  );
+}
+
+function readRequiredServerEnv(name: string, value: string | undefined): string {
+  const normalized = value?.trim();
+
+  if (!normalized) {
+    throw new Error(`Variável obrigatória ausente: ${name}.`);
+  }
+
+  if (isPlaceholderValue(normalized)) {
+    throw new Error(`Variável ${name} contém placeholder e não pode ser usada como configuração válida.`);
+  }
+
+  return normalized;
+}
+
+function assertCallableCooldown(scope: string, key: string, cooldownMs: number) {
+  const cacheKey = `${scope}:${key}`;
+  const now = Date.now();
+  const lastRun = callableCooldowns.get(cacheKey);
+
+  if (typeof lastRun === 'number' && now - lastRun < cooldownMs) {
+    throw new HttpsError('resource-exhausted', 'Aguarde alguns segundos antes de repetir esta ação.');
+  }
+
+  callableCooldowns.set(cacheKey, now);
+}
+
 function initAdminApp() {
   if (getApps().length) {
     return;
   }
 
-  const projectId = process.env.FIREBASE_PROJECT_ID;
-  const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+  const projectId = readRequiredServerEnv('FIREBASE_PROJECT_ID', process.env.FIREBASE_PROJECT_ID);
+  const clientEmail = readRequiredServerEnv('FIREBASE_CLIENT_EMAIL', process.env.FIREBASE_CLIENT_EMAIL);
   const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 
   if (!projectId || !clientEmail || !privateKey) {
@@ -371,6 +409,7 @@ export const provisionAcademia = onCall(async (request) => {
   }
 
   initAdminApp();
+  assertCallableCooldown('provisionAcademia', request.auth.uid, 30000);
   validateInput(request.data as Partial<ProvisionAcademiaInput>);
 
   const db = getFirestore();
@@ -382,7 +421,8 @@ export const provisionAcademia = onCall(async (request) => {
   const academiaDoc = createAcademiaDoc(tenantId, { nome, plano, responsavelEmail, responsavelNome, responsavelRole });
   const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000);
   const inviteToken = randomUUID();
-  const inviteUrl = `${process.env.APP_URL}/ativar-conta?token=${encodeURIComponent(inviteToken)}`;
+  const appUrl = readRequiredServerEnv('APP_URL', process.env.APP_URL);
+  const inviteUrl = `${appUrl}/ativar-conta?token=${encodeURIComponent(inviteToken)}`;
   const academiaRef = db.collection('academias').doc(tenantId);
   const inviteRef = db.collection('convites').doc(inviteToken);
 
@@ -485,6 +525,8 @@ export const inviteStudent = onCall(async (request) => {
     throw new HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
   }
 
+  assertCallableCooldown('inviteStudent', `${request.auth.uid}:${tenantId}`, 10000);
+
   const data = request.data as Partial<InviteStudentInput>;
   if (!data.nome?.trim()) {
     throw new HttpsError('invalid-argument', 'O nome do aluno é obrigatório.');
@@ -566,6 +608,8 @@ export const resendInvite = onCall(async (request) => {
     throw new HttpsError('invalid-argument', 'Token de convite é obrigatório.');
   }
 
+  assertCallableCooldown('resendInvite', request.auth.uid, 10000);
+
   const tenantId = String(request.auth.token.tenantId || '').trim();
   if (!tenantId && request.auth.token.role !== 'admin') {
     throw new HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
@@ -592,6 +636,8 @@ export const revokeInvite = onCall(async (request) => {
     throw new HttpsError('invalid-argument', 'Token de convite é obrigatório.');
   }
 
+  assertCallableCooldown('revokeInvite', request.auth.uid, 10000);
+
   const tenantId = String(request.auth.token.tenantId || '').trim();
   if (!tenantId && request.auth.token.role !== 'admin') {
     throw new HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
@@ -617,6 +663,8 @@ export const broadcastAvisoGeral = onCall(async (request) => {
   if (!tenantId) {
     throw new HttpsError('permission-denied', 'Tenant ausente no token autenticado.');
   }
+
+  assertCallableCooldown('broadcastAvisoGeral', `${request.auth.uid}:${tenantId}`, 10000);
 
   const professorId = String(request.data?.professorId || request.auth.uid || '').trim();
   if (professorId !== request.auth.uid && request.auth.token.role !== 'admin') {
