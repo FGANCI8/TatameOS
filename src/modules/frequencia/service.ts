@@ -15,11 +15,18 @@ const CHECKIN_WINDOW_MINUTES = 3;
 const MARCOS_PADRAO = [10, 50];
 
 function getSecret(): string {
-  return (
-    import.meta.env.VITE_CHECKIN_QR_SECRET ||
-    import.meta.env.VITE_APP_CHECKIN_QR_SECRET ||
-    'tatameos-checkin-dev-secret'
-  );
+  const secret = import.meta.env.VITE_CHECKIN_QR_SECRET || import.meta.env.VITE_APP_CHECKIN_QR_SECRET;
+
+  if (!secret?.trim()) {
+    throw new Error('Variável obrigatória ausente: VITE_CHECKIN_QR_SECRET.');
+  }
+
+  const normalized = secret.trim().toLowerCase();
+  if (normalized.startsWith('sua_') || normalized.startsWith('seu_') || normalized.includes('placeholder') || normalized.startsWith('dummy')) {
+    throw new Error('VITE_CHECKIN_QR_SECRET contém placeholder e não pode ser usada como segredo válido.');
+  }
+
+  return secret.trim();
 }
 
 function bytesToBase64Url(bytes: Uint8Array): string {
