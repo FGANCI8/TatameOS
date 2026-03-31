@@ -39,6 +39,7 @@ import { SnapshotMensalService } from './snapshots-mensais/service';
 import { StripeAdapterTatameOS } from './stripe/adapter';
 import { StripeRepositoryFirestore } from './stripe/repository';
 import { StripeServiceTatameOS } from './stripe/service';
+import { readOptionalEnv } from '../lib/env';
 
 // Repositories Firestore Reais
 export const treinoRepo = new TreinoRepositoryFirestore(db);
@@ -67,7 +68,7 @@ export const relatoriosGerenciaisRepo = new RelatoriosGerenciaisRepositoryFirest
   convitesRepo,
 );
 export const stripeAdapter = new StripeAdapterTatameOS({
-  customerPortalUrl: import.meta.env.VITE_STRIPE_CUSTOMER_PORTAL_URL,
+  customerPortalUrl: readOptionalEnv('VITE_STRIPE_CUSTOMER_PORTAL_URL', import.meta.env.VITE_STRIPE_CUSTOMER_PORTAL_URL),
 });
 export const resendAdapter = new ResendAdapterTatameOS();
 export const whatsappCloudAdapter = new WhatsAppCloudAdapterTatameOS();

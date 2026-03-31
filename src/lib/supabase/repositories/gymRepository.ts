@@ -1,4 +1,4 @@
-﻿import { supabase } from '../client';
+import { getSupabaseClient } from '../client';
 
 export interface Academia {
   id: string;
@@ -9,6 +9,7 @@ export interface Academia {
 
 export class GymRepository {
   async getGymById(gym_id: string): Promise<Academia | null> {
+    const supabase = getSupabaseClient();
     const { data, error } = await supabase
       .from('gyms')
       .select('id, name, owner_id, created_at')
@@ -23,6 +24,7 @@ export class GymRepository {
   }
 
   async listGymsForOwner(owner_id: string): Promise<Academia[]> {
+    const supabase = getSupabaseClient();
     const { data, error } = await supabase
       .from('gyms')
       .select('id, name, owner_id, created_at')

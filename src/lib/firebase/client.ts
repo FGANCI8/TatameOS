@@ -2,29 +2,15 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions';
-
-function requireEnv(name: string, value: string | undefined): string {
-  const trimmed = value?.trim();
-
-  if (!trimmed) {
-    throw new Error(`Variável obrigatória ausente: ${name}.`);
-  }
-
-  const normalized = trimmed.toLowerCase();
-  if (normalized.startsWith('dummy') || normalized.includes('placeholder') || normalized.startsWith('sua_') || normalized.startsWith('seu_')) {
-    throw new Error(`Variável ${name} contém placeholder e não pode ser usada como config válida.`);
-  }
-
-  return trimmed;
-}
+import { readRequiredEnv } from '../env';
 
 const firebaseConfig = {
-  apiKey: requireEnv('VITE_FIREBASE_API_KEY', import.meta.env.VITE_FIREBASE_API_KEY),
-  authDomain: requireEnv('VITE_FIREBASE_AUTH_DOMAIN', import.meta.env.VITE_FIREBASE_AUTH_DOMAIN),
-  projectId: requireEnv('VITE_FIREBASE_PROJECT_ID', import.meta.env.VITE_FIREBASE_PROJECT_ID),
-  storageBucket: requireEnv('VITE_FIREBASE_STORAGE_BUCKET', import.meta.env.VITE_FIREBASE_STORAGE_BUCKET),
-  messagingSenderId: requireEnv('VITE_FIREBASE_MESSAGING_SENDER_ID', import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID),
-  appId: requireEnv('VITE_FIREBASE_APP_ID', import.meta.env.VITE_FIREBASE_APP_ID),
+  apiKey: readRequiredEnv('VITE_FIREBASE_API_KEY', import.meta.env.VITE_FIREBASE_API_KEY),
+  authDomain: readRequiredEnv('VITE_FIREBASE_AUTH_DOMAIN', import.meta.env.VITE_FIREBASE_AUTH_DOMAIN),
+  projectId: readRequiredEnv('VITE_FIREBASE_PROJECT_ID', import.meta.env.VITE_FIREBASE_PROJECT_ID),
+  storageBucket: readRequiredEnv('VITE_FIREBASE_STORAGE_BUCKET', import.meta.env.VITE_FIREBASE_STORAGE_BUCKET),
+  messagingSenderId: readRequiredEnv('VITE_FIREBASE_MESSAGING_SENDER_ID', import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID),
+  appId: readRequiredEnv('VITE_FIREBASE_APP_ID', import.meta.env.VITE_FIREBASE_APP_ID),
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();

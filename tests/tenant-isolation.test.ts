@@ -1,5 +1,6 @@
 import { config as loadEnv } from 'dotenv';
 import assert from 'node:assert/strict';
+import net from 'node:net';
 import { initializeApp, deleteApp, type FirebaseApp } from 'firebase/app';
 import {
   connectAuthEmulator,
@@ -64,6 +65,23 @@ process.env.FIRESTORE_EMULATOR_HOST = FIRESTORE_EMULATOR_HOST;
 const AUTH_EMULATOR_URL = `http://${AUTH_EMULATOR_HOST}`;
 const [firestoreHost, firestorePortRaw] = FIRESTORE_EMULATOR_HOST.split(':');
 const FIRESTORE_EMULATOR_PORT = Number(firestorePortRaw || '8080');
+
+async function canConnect(host: string, port: number, timeoutMs = 800): Promise<boolean> {
+  return new Promise((resolve) => {
+    const socket = new net.Socket();
+    const finalize = (result: boolean) => {
+      socket.removeAllListeners();
+      socket.destroy();
+      resolve(result);
+    };
+
+    socket.setTimeout(timeoutMs);
+    socket.once('connect', () => finalize(true));
+    socket.once('timeout', () => finalize(false));
+    socket.once('error', () => finalize(false));
+    socket.connect(port, host);
+  });
+}
 
 function createClientApp(name: string) {
   return initializeApp(
@@ -292,6 +310,18 @@ async function expectDenied(title: string, fn: () => Promise<unknown>) {
 }
 
 async function main() {
+  const [authReady, firestoreReady] = await Promise.all([
+    canConnect(AUTH_EMULATOR_HOST.split(':')[0], Number(AUTH_EMULATOR_HOST.split(':')[1] || '9099')),
+    canConnect(firestoreHost, FIRESTORE_EMULATOR_PORT),
+  ]);
+
+  if (!authReady || !firestoreReady) {
+    console.log(
+      `SKIPPED | Emuladores Firebase ausentes. Auth: ${authReady ? 'ok' : 'offline'} | Firestore: ${firestoreReady ? 'ok' : 'offline'}. Inicie os emuladores para executar a verificação de isolamento.`,
+    );
+    return;
+  }
+
   const seed = await seedData();
 
   const alunoA = await createSession('aluno-a', 'aluno-a@exemplo.com', 'Senha@123', seed.tenantA, 'aluno');
