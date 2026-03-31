@@ -11,6 +11,8 @@ import { FeedbacksRepositoryFirestore } from './feedbacks/repositories/feedbacks
 import { FeedbacksServiceImpl } from './feedbacks/services/feedbacksServiceImpl';
 import { AcademiaProvisioningRepositoryFirebase } from './academias/provisioning.repository';
 import { AcademiaProvisioningServiceImpl } from './academias/provisioning.service';
+import { AcademiasFirestoreClientRepository } from './academias/client.repository';
+import { AcademiasClientServiceImpl } from './academias/client.service';
 import { ConvitesRepositoryFirebase } from './convites/repository';
 import { ConvitesServiceImpl } from './convites/service';
 import { PagamentosRepositoryFirestore } from './pagamentos/repository';
@@ -32,6 +34,8 @@ import { ResendAdapterTatameOS } from './notificacoes-transacionais/adapters/res
 import { WhatsAppCloudAdapterTatameOS } from './notificacoes-transacionais/adapters/whatsapp-cloud.adapter';
 import { RelatoriosGerenciaisRepositoryFirestore } from './relatorios-gerenciais/repository';
 import { RelatoriosGerenciaisService } from './relatorios-gerenciais/service';
+import { SnapshotMensalRepositoryFirestore } from './snapshots-mensais/repository';
+import { SnapshotMensalService } from './snapshots-mensais/service';
 import { StripeAdapterTatameOS } from './stripe/adapter';
 import { StripeRepositoryFirestore } from './stripe/repository';
 import { StripeServiceTatameOS } from './stripe/service';
@@ -43,6 +47,7 @@ export const falhasRepo = new FalhasRepository(db);
 export const campeonatoRepo = new CampeonatoRepository(db);
 export const feedbacksRepo = new FeedbacksRepositoryFirestore(db);
 export const academiaProvisioningRepo = new AcademiaProvisioningRepositoryFirebase();
+export const academiasRepo = new AcademiasFirestoreClientRepository();
 export const convitesRepo = new ConvitesRepositoryFirebase();
 export const pagamentosRepo = new PagamentosRepositoryFirestore();
 export const presencasRepo = new PresencasRepositoryFirestore(db);
@@ -53,9 +58,11 @@ export const trilhasRepo = new TrilhasRepositoryFirestore(db);
 export const financeiroExecutivoRepo = new FinanceiroExecutivoRepositoryFirestore(alunoRepo, pagamentosRepo);
 export const stripeRepo = new StripeRepositoryFirestore(db);
 export const notificacoesTransacionaisRepo = new NotificacoesTransacionaisRepositoryFirestore(db);
+export const snapshotMensalRepo = new SnapshotMensalRepositoryFirestore(db);
 export const relatoriosGerenciaisRepo = new RelatoriosGerenciaisRepositoryFirestore(
   alunoRepo,
   pagamentosRepo,
+  snapshotMensalRepo,
   stripeRepo,
   convitesRepo,
 );
@@ -72,6 +79,7 @@ export const falhasService = new FalhasService(falhasRepo);
 export const campeonatoService = new CampeonatoService(campeonatoRepo);
 export const feedbacksService = new FeedbacksServiceImpl(feedbacksRepo);
 export const academiaProvisioningService = new AcademiaProvisioningServiceImpl(academiaProvisioningRepo);
+export const academiasService = new AcademiasClientServiceImpl(academiasRepo);
 export const convitesService = new ConvitesServiceImpl(convitesRepo);
 export const pagamentosService = new PagamentosServiceImpl(pagamentosRepo, alunoRepo);
 export const presencasService = new PresencasServiceImpl(presencasRepo, alunoRepo);
@@ -85,3 +93,4 @@ export const notificacoesTransacionaisService = new NotificacoesTransacionaisSer
 );
 export const stripeService = new StripeServiceTatameOS(stripeAdapter, stripeRepo, alunoRepo, notificacoesTransacionaisService);
 export const relatoriosGerenciaisService = new RelatoriosGerenciaisService(relatoriosGerenciaisRepo);
+export const snapshotMensalService = new SnapshotMensalService(alunoRepo, snapshotMensalRepo);

@@ -3,19 +3,28 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions';
 
-const isConfigured = !!import.meta.env.VITE_FIREBASE_API_KEY;
+function requireEnv(name: string, value: string | undefined): string {
+  const trimmed = value?.trim();
 
-if (!isConfigured) {
-  console.error("🔥 AVISO CRÍTICO: VITE_FIREBASE_API_KEY não foi encontrada no ambiente (.env). Usando chaves dummy para evitar o colapso da renderização React. Funções de Auth e Database falharão até serem configuradas.");
+  if (!trimmed) {
+    throw new Error(`Variável obrigatória ausente: ${name}.`);
+  }
+
+  const normalized = trimmed.toLowerCase();
+  if (normalized.startsWith('dummy') || normalized.includes('placeholder') || normalized.startsWith('sua_') || normalized.startsWith('seu_')) {
+    throw new Error(`Variável ${name} contém placeholder e não pode ser usada como config válida.`);
+  }
+
+  return trimmed;
 }
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "dummy-api-key",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "dummy.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "dummy-project",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "dummy.appspot.com",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "00000000",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:00000000:web:000000",
+  apiKey: requireEnv('VITE_FIREBASE_API_KEY', import.meta.env.VITE_FIREBASE_API_KEY),
+  authDomain: requireEnv('VITE_FIREBASE_AUTH_DOMAIN', import.meta.env.VITE_FIREBASE_AUTH_DOMAIN),
+  projectId: requireEnv('VITE_FIREBASE_PROJECT_ID', import.meta.env.VITE_FIREBASE_PROJECT_ID),
+  storageBucket: requireEnv('VITE_FIREBASE_STORAGE_BUCKET', import.meta.env.VITE_FIREBASE_STORAGE_BUCKET),
+  messagingSenderId: requireEnv('VITE_FIREBASE_MESSAGING_SENDER_ID', import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID),
+  appId: requireEnv('VITE_FIREBASE_APP_ID', import.meta.env.VITE_FIREBASE_APP_ID),
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
