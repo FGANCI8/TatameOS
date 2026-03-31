@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { auth } from '../lib/firebase/client';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth';
 
 export function useAuth() {
   const context = useContext(AuthContext);
@@ -18,6 +18,10 @@ export function useAuth() {
     return createUserWithEmailAndPassword(auth, email, pass);
   };
 
+  const resetPassword = async (email: string) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   const logout = async () => {
     return signOut(auth);
   };
@@ -30,6 +34,7 @@ export function useAuth() {
     refreshClaims: context.refreshClaims,
     login,
     register,
+    resetPassword,
     logout
   };
 }

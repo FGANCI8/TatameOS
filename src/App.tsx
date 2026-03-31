@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import React, { Suspense, useEffect } from 'react';
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { LoginScreen } from './components/LoginScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MainLayout } from './components/layout/MainLayout';
@@ -50,12 +50,24 @@ const routes: AppRoute[] = routeComponentEntries.map(({ name, pathName, Componen
   Component,
 }));
 
+function getLandingRoute(isAdmin: boolean, isProfessorOrAdmin: boolean) {
+  if (isAdmin) {
+    return '/super-admin/onboarding';
+  }
+
+  if (isProfessorOrAdmin) {
+    return '/area-do-professor';
+  }
+
+  return '/dashboard-do-aluno';
+}
+
 function RouteFallback() {
   return (
     <div className="flex min-h-[60vh] items-center justify-center px-4 py-12 text-center">
       <div className="rounded-[28px] border border-zinc-800 bg-zinc-900/80 px-6 py-8">
         <div className="mx-auto mb-4 h-10 w-10 animate-pulse rounded-full border-4 border-zinc-700 border-t-brand-red" />
-        <p className="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400">TatameOS</p>
+        <p className="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400">Tatame OSS</p>
         <p className="mt-3 text-sm text-zinc-400">Carregando módulo...</p>
       </div>
     </div>
@@ -66,7 +78,7 @@ function ShellFallback() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-950 px-4 text-center text-zinc-100">
       <div className="rounded-[28px] border border-zinc-800 bg-zinc-900/80 px-6 py-8">
-        <p className="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400">TatameOS</p>
+        <p className="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400">Tatame OSS</p>
         <div className="mt-4 animate-pulse text-2xl font-black uppercase tracking-[0.3em] text-brand-red">
           Carregando motor...
         </div>
@@ -77,9 +89,21 @@ function ShellFallback() {
 
 function AppRouterContent() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { isAuthenticated, loading, isProfessorOrAdmin, isAdmin } = useAuth();
   const isPublicRoute = publicRoutes.has(location.pathname);
   const mainLayoutRoutes = routes.filter((route) => !publicRoutes.has(route.pathName));
+  const landingRoute = getLandingRoute(isAdmin, isProfessorOrAdmin);
+
+  useEffect(() => {
+    if (!isAuthenticated || loading || isPublicRoute) {
+      return;
+    }
+
+    if (location.pathname === '/' || location.pathname === '/boas-vindas') {
+      navigate(landingRoute, { replace: true });
+    }
+  }, [isAuthenticated, loading, isPublicRoute, location.pathname, landingRoute, navigate]);
 
   if (loading) {
     return <ShellFallback />;
@@ -116,7 +140,7 @@ function AppRouterContent() {
     <GymProvider>
       <MainLayout routes={mainLayoutRoutes}>
         <Routes>
-          <Route path="/" element={<Navigate to="/boas-vindas" replace />} />
+          <Route path="/" element={<Navigate to={landingRoute} replace />} />
 
           {routes
             .filter((route) => !!route.Component && !publicRoutes.has(route.pathName))
@@ -127,7 +151,7 @@ function AppRouterContent() {
                 element:
                   (restrictedProfessorRoutes.has(pathName) && !isProfessorOrAdmin) ||
                   (restrictedAdminRoutes.has(pathName) && !isAdmin) ? (
-                    <Navigate to="/boas-vindas" replace />
+                    <Navigate to={landingRoute} replace />
                   ) : (
                     <ErrorBoundary routeName={name}>
                       <Suspense fallback={<RouteFallback />}>
