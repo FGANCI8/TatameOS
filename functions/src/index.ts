@@ -3,10 +3,12 @@ import { cert, getApps, initializeApp } from 'firebase-admin/app';
 import { FieldValue, getFirestore, Timestamp } from 'firebase-admin/firestore';
 import { onCall, HttpsError } from 'firebase-functions/v2/https';
 import { onDocumentUpdated } from 'firebase-functions/v2/firestore';
+import { onSchedule } from 'firebase-functions/v2/scheduler';
 import { adminDb } from './lib/firebase-admin';
 import { ConvitesRepositoryFirestore } from './modules/convites/repository';
 import { buildInviteEmailPayload, buildMilestoneEmailPayload, createEmailService } from './modules/convites/email.service';
 import { ConvitesServiceFirestore } from './modules/convites/service';
+import { executarSnapshotsMensaisCron } from './modules/snapshots-mensais/runner';
 
 type AcademiaPlano = 'starter' | 'pro' | 'enterprise';
 type ResponsavelRole = 'admin' | 'professor';
@@ -731,3 +733,39 @@ export const onAlunoMilestoneReached = onDocumentUpdated('alunos/{alunoId}', asy
     await markMilestoneAsNotified(event.params.alunoId, milestoneHours);
   }
 });
+
+export const gerarSnapshotsMensaisAgendado = onSchedule(
+  {
+    schedule: '1 0 1 * *',
+    timeZone: 'America/Sao_Paulo',
+    region: 'southamerica-east1',
+  },
+  async () => {
+    const startedAt = new Date();
+    console.info(JSON.stringify({
+      level: 'info',
+      event: 'snapshots_mensais_scheduler_triggered',
+      startedAt: startedAt.toISOString(),
+    }));
+
+    try {
+      const summary = await executarSnapshotsMensaisCron(startedAt);
+      console.info(JSON.stringify({
+        level: 'info',
+        event: 'snapshots_mensais_scheduler_finished',
+        startedAt: startedAt.toISOString(),
+        finishedAt: new Date().toISOString(),
+        summary,
+      }));
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Erro desconhecido.';
+      console.error(JSON.stringify({
+        level: 'error',
+        event: 'snapshots_mensais_scheduler_failed',
+        startedAt: startedAt.toISOString(),
+        message,
+      }));
+      throw error;
+    }
+  },
+);
