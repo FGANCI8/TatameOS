@@ -95,7 +95,10 @@ function ensureAdminApp() {
 }
 
 function requirePermissionDenied(error: unknown, context: string) {
-  const code = typeof error === 'object' && error !== null && 'code' in error ? String((error as { code: unknown }).code) : '';
+  const code =
+    typeof error === 'object' && error !== null && 'code' in error
+      ? String((error as { code: unknown }).code)
+      : '';
   const message = error instanceof Error ? error.message : String(error);
 
   const isDenied =
@@ -350,7 +353,7 @@ async function main() {
 
   console.log('\n=== RELATÓRIO DE ISOLAMENTO MULTI-TENANT ===');
   for (const result of results) {
-    console.log(`${result.pass ? 'PASSA' : 'NAO PASSA'} | ${result.id} | ${result.title} | ${result.detail}`);
+    console.log(`${result.pass ? 'PASSA' : 'NÃO PASSA'} | ${result.id} | ${result.title} | ${result.detail}`);
   }
 
   const failed = results.filter((result) => !result.pass);

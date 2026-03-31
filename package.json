@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
+    "test": "npm run test:tenant",
+    "test:tenant": "tsx tests/tenant-isolation.test.ts",
     "provision:role": "tsx scripts/provision-role.ts",
     "provision:academia": "tsx scripts/provision-academia.ts",
     "deploy:firebase": "npm run build && npx firebase-tools deploy --only hosting,firestore:rules,functions",
