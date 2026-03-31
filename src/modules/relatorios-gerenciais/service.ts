@@ -2,6 +2,7 @@ import type { ServiceResult } from '../core/types';
 import type { Aluno } from '../aluno/types';
 import type { ConviteListItem } from '../convites/types';
 import type { Pagamento } from '../pagamentos/types';
+import type { SnapshotMensalResumo } from '../snapshots-mensais/types';
 import type {
   IRelatoriosGerenciaisRepository,
   IRelatoriosGerenciaisService,
@@ -16,7 +17,7 @@ import type {
 const MONTHS_PT = [
   'Janeiro',
   'Fevereiro',
-  'Março',
+  'MarÃ§o',
   'Abril',
   'Maio',
   'Junho',
@@ -40,21 +41,25 @@ function parseMesReferencia(value: string): { ano: number; mes: number } {
   };
 }
 
+function previousMonthRef(mes: number, ano: number): string {
+  const date = new Date(ano, mes - 2, 1);
+  return formatMesReferencia(date);
+}
+
 function getMonthDate(ano: number, mes: number): Date {
   return new Date(ano, mes - 1, 1);
 }
 
 function buildMonthSeries(mes: number, ano: number, quantidade = 6): RelatorioGerencialPeriodo[] {
   const base = getMonthDate(ano, mes);
-  return Array.from({ length: quantidade })
-    .map((_, index) => {
-      const date = new Date(base.getFullYear(), base.getMonth() - (quantidade - 1 - index), 1);
-      return {
-        mes: date.getMonth() + 1,
-        ano: date.getFullYear(),
-        mesReferencia: formatMesReferencia(date),
-      };
-    });
+  return Array.from({ length: quantidade }).map((_, index) => {
+    const date = new Date(base.getFullYear(), base.getMonth() - (quantidade - 1 - index), 1);
+    return {
+      mes: date.getMonth() + 1,
+      ano: date.getFullYear(),
+      mesReferencia: formatMesReferencia(date),
+    };
+  });
 }
 
 function monthLabel(mes: number, ano: number): string {
@@ -131,7 +136,7 @@ function buildCancelReasonDistribution(
 
     const aluno = evento.alunoId ? alunosById.get(evento.alunoId) : undefined;
     if (aluno?.status === 'Suspenso' && aluno.statusFinanceiro === 'atrasado') {
-      add('delinquency', 'Inadimplência recorrente');
+      add('delinquency', 'InadimplÃªncia recorrente');
       return;
     }
 
@@ -140,7 +145,7 @@ function buildCancelReasonDistribution(
       return;
     }
 
-    add('unknown', 'Motivo não informado');
+    add('unknown', 'Motivo nÃ£o informado');
   });
 
   const total = Array.from(buckets.values()).reduce((sum, item) => sum + item.total, 0);
@@ -155,7 +160,7 @@ function buildCancelReasonDistribution(
     .sort((a, b) => b.total - a.total);
 }
 
-function buildSerieMensal(
+function buildFallbackSerieMensal(
   series: RelatorioGerencialPeriodo[],
   pagamentosByMonth: Map<string, number>,
   stripeEventsByMonth: Map<string, Array<{ action?: string; type: string }>>,
@@ -180,6 +185,83 @@ function buildSerieMensal(
   });
 }
 
+function groupStripeByMonth(
+  events: Array<{ mesReferencia: string; action?: string; type: string; alunoId?: string }>,
+): Map<string, Array<{ action?: string; type: string; alunoId?: string }>> {
+  const map = new Map<string, Array<{ action?: string; type: string; alunoId?: string }>>();
+
+  events.forEach((evento) => {
+    const current = map.get(evento.mesReferencia) || [];
+    current.push({
+      action: evento.action,
+      type: evento.type,
+      alunoId: evento.alunoId,
+    });
+    map.set(evento.mesReferencia, current);
+  });
+
+  return map;
+}
+
+function buildSnapshotTicketMedio(snapshots: SnapshotMensalResumo[]): number {
+  const tickets = snapshots
+    .filter((snapshot) => snapshot.alunosAtivos > 0)
+    .map((snapshot) => snapshot.valorMensalidadeTotal / snapshot.alunosAtivos)
+    .filter((value) => Number.isFinite(value) && value > 0);
+
+  return average(tickets);
+}
+
+function buildSnapshotSerie(
+  series: RelatorioGerencialPeriodo[],
+  snapshotsByRef: Map<string, SnapshotMensalResumo>,
+  fallbackSeries: RelatorioSerieMensalItem[],
+): RelatorioSerieMensalItem[] {
+  return series.map((item, index) => {
+    const fallback = fallbackSeries[index];
+    const current = snapshotsByRef.get(item.mesReferencia) || null;
+    const previous = snapshotsByRef.get(previousMonthRef(item.mes, item.ano)) || null;
+
+    if (!current) {
+      return fallback;
+    }
+
+    const receita = current.valorMensalidadeTotal;
+    const baseAtivaEstimativa = current.alunosAtivos;
+
+    if (!previous) {
+      return {
+        ...fallback,
+        ...item,
+        label: monthLabel(item.mes, item.ano),
+        receita,
+        baseAtivaEstimativa,
+      };
+    }
+
+    const baseInicio = Math.max(1, previous.alunosAtivos);
+    const cancelamentos = Math.max(0, previous.alunosAtivos - current.alunosAtivos);
+    const churnRate = Number(((cancelamentos / baseInicio) * 100).toFixed(1));
+
+    return {
+      ...item,
+      label: monthLabel(item.mes, item.ano),
+      receita,
+      cancelamentos,
+      churnRate,
+      baseAtivaEstimativa: previous.alunosAtivos,
+    };
+  });
+}
+
+function buildFallbackLtv(receitaBaseMensal: number, churnRateMensal: number): number {
+  if (churnRateMensal > 0) {
+    return Number((receitaBaseMensal / (churnRateMensal / 100)).toFixed(2));
+  }
+
+  return Number((receitaBaseMensal * 24).toFixed(2));
+}
+
 export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService {
   constructor(private readonly repository: IRelatoriosGerenciaisRepository) {}
 
@@ -195,7 +277,7 @@ export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService
       }
 
       if (!isAdmin) {
-        return { success: false, error: 'Apenas administradores podem consultar relatórios gerenciais.' };
+        return { success: false, error: 'Apenas administradores podem consultar relatÃ³rios gerenciais.' };
       }
 
       const mesSeguro = Number.isInteger(mes) && mes >= 1 && mes <= 12 ? mes : new Date().getMonth() + 1;
@@ -203,6 +285,10 @@ export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService
 
       const base: RelatorioGerencialBase = await this.repository.carregarBase(tenantId, anoSeguro);
       const alunosById = new Map(base.alunos.map((aluno) => [aluno.id, aluno]));
+      const snapshotsByRef = new Map(base.snapshotsMensaisRecentes.map((snapshot) => [snapshot.periodo.mesReferencia, snapshot]));
+      const orderedSnapshots = [...base.snapshotsMensaisRecentes].sort(
+        (a, b) => a.periodo.dataReferencia.getTime() - b.periodo.dataReferencia.getTime(),
+      );
 
       const pagamentosTodos = [...base.pagamentosAnoAnterior, ...base.pagamentosAnoAtual];
       const stripeTodos = [...base.stripeEventsAnoAnterior, ...base.stripeEventsAnoAtual].map((evento) => ({
@@ -223,27 +309,64 @@ export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService
       const periodRef = monthRefFromDate(currentPeriod);
       const series = buildMonthSeries(mesSeguro, anoSeguro, 6);
       const baseAtiva = base.alunos.filter((aluno) => aluno.status === 'Ativo').length;
-      const serie6Meses = buildSerieMensal(series, pagamentosValorByMonth, groupStripeByMonth(stripeTodos), baseAtiva);
+      const fallbackSeries = buildFallbackSerieMensal(series, pagamentosValorByMonth, groupStripeByMonth(stripeTodos), baseAtiva);
+      const serie6Meses = buildSnapshotSerie(series, snapshotsByRef, fallbackSeries);
 
-      const pagamentosDoPeriodo = pagamentosTodos.filter((pagamento) => pagamento.mesReferencia === periodRef);
-      const receitaPeriodo = currency(pagamentosDoPeriodo.reduce((sum, pagamento) => sum + Number(pagamento.valor || 0), 0));
-      const alunosAtivos = base.alunos.filter((aluno) => aluno.status === 'Ativo');
+      const currentSnapshot = snapshotsByRef.get(periodRef) || null;
+      const previousSnapshot = snapshotsByRef.get(previousMonthRef(mesSeguro, anoSeguro)) || null;
+      const currentSeriesItem = serie6Meses[serie6Meses.length - 1] || fallbackSeries[fallbackSeries.length - 1];
+      const fallbackCurrentItem = fallbackSeries[fallbackSeries.length - 1];
+
+      const pagosPeriodo = pagamentosTodos.filter((pagamento) => pagamento.mesReferencia === periodRef);
+      const receitaPeriodoFallback = currency(pagosPeriodo.reduce((sum, pagamento) => sum + Number(pagamento.valor || 0), 0));
+
+      const alunosAtivos = currentSnapshot?.alunosAtivos ?? baseAtiva;
       const alunosSuspensos = base.alunos.filter((aluno) => aluno.status === 'Suspenso').length;
       const alunosInativos = base.alunos.filter((aluno) => aluno.status === 'Inativo').length;
       const inadimplentesAtivos = base.alunos.filter(
         (aluno) => aluno.status === 'Ativo' && aluno.statusFinanceiro === 'atrasado',
       ).length;
-      const cancelamentosNoPeriodo = serie6Meses[serie6Meses.length - 1]?.cancelamentos || 0;
-      const churnRateMensal = serie6Meses[serie6Meses.length - 1]?.churnRate || 0;
-      const churnRateAcumulado6m = Number(
-        (
-          serie6Meses.reduce((sum, item) => sum + item.cancelamentos, 0) /
-          Math.max(1, baseAtiva * serie6Meses.length)
-        ).toFixed(1),
-      );
+
+      const faturamentoMensal = currentSnapshot?.valorMensalidadeTotal ?? currentSeriesItem.receita ?? receitaPeriodoFallback;
+
+      const churnRateMensal = currentSnapshot && previousSnapshot
+        ? Number((((Math.max(0, previousSnapshot.alunosAtivos - currentSnapshot.alunosAtivos)) / Math.max(1, previousSnapshot.alunosAtivos)) * 100).toFixed(1))
+        : currentSeriesItem.churnRate ?? fallbackCurrentItem.churnRate;
+
+      const churnRateAcumulado6m = (() => {
+        const realSnapshots = series
+          .map((item) => snapshotsByRef.get(item.mesReferencia))
+          .filter((snapshot): snapshot is SnapshotMensalResumo => !!snapshot);
+
+        if (realSnapshots.length >= 2) {
+          const first = realSnapshots[0];
+          const last = realSnapshots[realSnapshots.length - 1];
+          return first.alunosAtivos > 0
+            ? Number((((first.alunosAtivos - last.alunosAtivos) / first.alunosAtivos) * 100).toFixed(1))
+            : 0;
+        }
+
+        return Number(
+          (
+            serie6Meses.reduce((sum, item) => sum + item.cancelamentos, 0) /
+            Math.max(1, baseAtiva * serie6Meses.length)
+          ).toFixed(1),
+        );
+      })();
+
+      const ticketMedioReal = buildSnapshotTicketMedio(orderedSnapshots);
       const receitaMediaMensal = Number(average(serie6Meses.map((item) => item.receita)).toFixed(2));
-      const receitaMediaBase = alunosAtivos.length > 0 ? receitaPeriodo / alunosAtivos.length : 0;
-      const ltvEstimado = churnRateMensal > 0 ? Number((receitaMediaBase / (churnRateMensal / 100)).toFixed(2)) : Number((receitaMediaBase * 24).toFixed(2));
+      const receitaMediaBase = alunosAtivos > 0 ? faturamentoMensal / alunosAtivos : receitaMediaMensal;
+      const ltvEstimado = ticketMedioReal > 0
+        ? (churnRateMensal > 0
+          ? Number((ticketMedioReal / (churnRateMensal / 100)).toFixed(2))
+          : Number((ticketMedioReal * 24).toFixed(2)))
+        : buildFallbackLtv(receitaMediaBase, churnRateMensal);
+
+      const cancelamentosNoPeriodo = currentSnapshot && previousSnapshot
+        ? Math.max(0, previousSnapshot.alunosAtivos - currentSnapshot.alunosAtivos)
+        : currentSeriesItem.cancelamentos;
+
       const convites = buildConviteFunnel(base.convitesEstudantes, anoSeguro);
       const motivosCancelamento = buildCancelReasonDistribution(stripeTodos, alunosById);
       const statusFinanceiroDistribuicao = [
@@ -262,7 +385,7 @@ export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService
       ];
       const topSinaisRisco = [
         { label: 'Alunos inadimplentes', total: inadimplentesAtivos },
-        { label: 'Cancelamentos no mês', total: cancelamentosNoPeriodo },
+        { label: 'Cancelamentos no mÃªs', total: cancelamentosNoPeriodo },
         { label: 'Convites pendentes', total: convites.convitesPendentes },
       ].sort((a, b) => b.total - a.total);
 
@@ -275,11 +398,11 @@ export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService
             ano: anoSeguro,
             mesReferencia: periodRef,
           },
-          alunosAtivos: alunosAtivos.length,
+          alunosAtivos,
           alunosSuspensos,
           alunosInativos,
           inadimplentesAtivos,
-          faturamentoMensal: receitaPeriodo,
+          faturamentoMensal,
           receitaMediaMensal,
           churnRateMensal,
           churnRateAcumulado6m,
@@ -293,25 +416,7 @@ export class RelatoriosGerenciaisService implements IRelatoriosGerenciaisService
         },
       };
     } catch (error: any) {
-      return { success: false, error: error?.message || 'Falha ao gerar relatório gerencial.' };
+      return { success: false, error: error?.message || 'Falha ao gerar relatÃ³rio gerencial.' };
     }
   }
-}
-
-function groupStripeByMonth(
-  events: Array<{ mesReferencia: string; action?: string; type: string; alunoId?: string }>,
-): Map<string, Array<{ action?: string; type: string; alunoId?: string }>> {
-  const map = new Map<string, Array<{ action?: string; type: string; alunoId?: string }>>();
-
-  events.forEach((evento) => {
-    const current = map.get(evento.mesReferencia) || [];
-    current.push({
-      action: evento.action,
-      type: evento.type,
-      alunoId: evento.alunoId,
-    });
-    map.set(evento.mesReferencia, current);
-  });
-
-  return map;
 }

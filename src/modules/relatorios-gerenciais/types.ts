@@ -2,6 +2,7 @@ import type { ServiceResult } from '../core/types';
 import type { Aluno } from '../aluno/types';
 import type { ConviteListItem } from '../convites/types';
 import type { Pagamento } from '../pagamentos/types';
+import type { SnapshotMensalResumo } from '../snapshots-mensais/types';
 import type { StripeWebhookAction, StripeWebhookEvent } from '../stripe/types';
 
 export interface RelatorioGerencialPeriodo {
@@ -60,6 +61,7 @@ export interface RelatorioGerencialBase {
   pagamentosAnoAtual: Pagamento[];
   pagamentosAnoAnterior: Pagamento[];
   convitesEstudantes: ConviteListItem[];
+  snapshotsMensaisRecentes: SnapshotMensalResumo[];
   stripeEventsAnoAtual: StripeWebhookEvent[];
   stripeEventsAnoAnterior: StripeWebhookEvent[];
 }

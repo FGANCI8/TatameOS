@@ -1,6 +1,7 @@
 import type { IConvitesRepository } from '../convites/repository';
 import type { AlunoRepositoryFirestore } from '../aluno/aluno.repository';
 import type { PagamentosRepositoryFirestore } from '../pagamentos/repository';
+import type { SnapshotMensalRepositoryFirestore } from '../snapshots-mensais/repository';
 import type { StripeRepositoryFirestore } from '../stripe/repository';
 import type {
   IRelatoriosGerenciaisRepository,
@@ -11,17 +12,19 @@ export class RelatoriosGerenciaisRepositoryFirestore implements IRelatoriosGeren
   constructor(
     private readonly alunoRepository: AlunoRepositoryFirestore,
     private readonly pagamentosRepository: PagamentosRepositoryFirestore,
+    private readonly snapshotRepository: SnapshotMensalRepositoryFirestore,
     private readonly stripeRepository: StripeRepositoryFirestore,
     private readonly convitesRepository: IConvitesRepository,
   ) {}
 
   async carregarBase(tenantId: string, anoBase: number): Promise<RelatorioGerencialBase> {
-    const [alunos, pagamentosAnoAtual, pagamentosAnoAnterior, convitesEstudantes, stripeEventsAnoAtual, stripeEventsAnoAnterior] =
+    const [alunos, pagamentosAnoAtual, pagamentosAnoAnterior, convitesEstudantes, snapshotsMensaisRecentes, stripeEventsAnoAtual, stripeEventsAnoAnterior] =
       await Promise.all([
         this.alunoRepository.listAll(tenantId),
         this.pagamentosRepository.listarPagamentosDoAno(tenantId, anoBase),
         this.pagamentosRepository.listarPagamentosDoAno(tenantId, anoBase - 1),
         this.convitesRepository.listarConvitesEstudantes().then((result) => result.convites || []),
+        this.snapshotRepository.listarRecentes(tenantId, 13),
         this.stripeRepository.listarEventosDoAno(tenantId, anoBase),
         this.stripeRepository.listarEventosDoAno(tenantId, anoBase - 1),
       ]);
@@ -31,6 +34,7 @@ export class RelatoriosGerenciaisRepositoryFirestore implements IRelatoriosGeren
       pagamentosAnoAtual,
       pagamentosAnoAnterior,
       convitesEstudantes,
+      snapshotsMensaisRecentes,
       stripeEventsAnoAtual,
       stripeEventsAnoAnterior,
     };
