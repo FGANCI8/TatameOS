@@ -643,6 +643,13 @@ service cloud.firestore {
       allow delete: if isFinanceOwner() && sameTenant(resource.data);
     }
 
+    match /snapshotsMensais/{snapshotId} {
+      allow get, list: if sameTenant(resource.data) && isFinanceOwner();
+      allow create: if isFinanceOwner() && sameTenant(request.resource.data);
+      allow update: if isFinanceOwner() && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if isFinanceOwner() && sameTenant(resource.data);
+    }
+
     match /presencas/{presencaId} {
       allow get, list: if sameTenant(resource.data) && (isProfessorOrAdmin() || resource.data.alunoId == uid());
       allow create: if isProfessorOrAdmin() && sameTenant(request.resource.data);
