@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, orderBy, query, Timestamp, where } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, query, Timestamp, where } from 'firebase/firestore';
 import { db } from '../lib/firebase/client';
 import type { Academia } from '../modules/academias/types';
 
@@ -91,11 +91,12 @@ export class GymService {
     }
 
     const snapshot = await getDocs(
-      query(collection(db, 'academias'), where('administradorResponsavelId', '==', normalizedOwnerId), orderBy('createdAt', 'desc')),
+      query(collection(db, 'academias'), where('administradorResponsavelId', '==', normalizedOwnerId)),
     );
 
     return snapshot.docs
       .map((document) => toAcademia(document.data() as Record<string, unknown>, document.id))
+      .sort((left, right) => right.createdAt.getTime() - left.createdAt.getTime())
       .filter((academia): academia is Academia => Boolean(academia));
   }
 }

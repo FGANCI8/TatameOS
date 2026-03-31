@@ -23,9 +23,11 @@ export function StudentSidebar() {
     { to: '/dashboard-do-aluno/assinatura', label: 'Assinatura', icon: 'workspace_premium' },
   ];
 
+  const isActiveRoute = (to: string) => location.pathname === to || location.pathname.startsWith(`${to}/`);
+
   return (
-    <aside className="hidden w-72 shrink-0 xl:flex">
-      <div className="sticky top-[96px] flex max-h-[calc(100vh-120px)] w-full flex-col rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-5 backdrop-blur-xl">
+    <aside className="hidden w-72 shrink-0 xl:flex" aria-label="Navegação do aluno">
+      <div className="sticky top-[96px] flex max-h-[calc(100vh-120px)] w-full flex-col overflow-y-auto rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-5 backdrop-blur-xl">
         <div className="border-b border-zinc-800/80 pb-5">
           <p className="text-[10px] font-black uppercase tracking-[0.35em] text-zinc-400">Painel do aluno</p>
           <h2 className="mt-2 font-headline text-2xl font-black uppercase italic tracking-tight text-white">
@@ -36,25 +38,21 @@ export function StudentSidebar() {
           </p>
         </div>
 
-        <nav className="mt-5 flex flex-col gap-2">
-          {navItems.map((item) => {
-            const isActive = location.pathname === item.to;
-
-            return (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] transition duration-200 ${
-                  isActive
-                    ? 'border-brand-red/20 bg-brand-red/10 text-brand-red shadow-[0_0_0_1px_rgba(255,26,26,0.18)]'
-                    : 'border-zinc-800/80 bg-zinc-950/60 text-zinc-400 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white'
-                }`}
-              >
-                <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
-                <span>{item.label}</span>
-              </Link>
-            );
-          })}
+        <nav className="mt-5 flex flex-col gap-2" aria-label="Links rápidos do aluno">
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] transition duration-200 ${
+                isActiveRoute(item.to)
+                  ? 'border-brand-red/20 bg-brand-red/10 text-brand-red shadow-[0_0_0_1px_rgba(255,26,26,0.18)]'
+                  : 'border-zinc-800/80 bg-zinc-950/60 text-zinc-400 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
+              <span>{item.label}</span>
+            </Link>
+          ))}
         </nav>
 
         <div className="mt-auto border-t border-zinc-800/80 pt-5">

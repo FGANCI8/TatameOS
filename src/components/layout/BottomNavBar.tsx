@@ -38,10 +38,15 @@ export function BottomNavBar() {
     return true;
   });
 
+  const isActiveRoute = (to: string) => location.pathname === to || location.pathname.startsWith(`${to}/`);
+
   return (
-    <nav className="fixed bottom-0 left-0 z-50 flex h-[5.25rem] w-full items-center justify-around border-t border-zinc-800/80 bg-zinc-950/90 px-2 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-xl">
+    <nav
+      className="fixed bottom-0 left-0 z-50 flex h-[5.25rem] w-full items-center justify-around border-t border-zinc-800/80 bg-zinc-950/92 px-2 pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-12px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl xl:hidden"
+      aria-label="Navegação principal"
+    >
       {navItems.map((item) => {
-        const isActive = location.pathname === item.to;
+        const isActive = isActiveRoute(item.to);
         return (
           <Link
             key={item.to}

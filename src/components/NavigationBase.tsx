@@ -55,8 +55,10 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
     return true;
   });
 
+  const isActiveRoute = (to: string) => location.pathname === to || location.pathname.startsWith(`${to}/`);
+
   return (
-    <nav className="sticky top-0 z-[100] border-b border-zinc-800/80 bg-zinc-950/90 px-4 py-4 backdrop-blur-xl md:px-6">
+    <nav className="sticky top-0 z-[100] border-b border-zinc-800/80 bg-zinc-950/90 px-4 py-4 backdrop-blur-xl md:px-6" aria-label="Navegação principal">
       <div className="flex items-center justify-between gap-4">
         <Link to="/" className="group flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-brand-red/20 bg-brand-red/10 text-brand-red transition duration-200 group-hover:scale-105">
@@ -73,7 +75,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
               key={link.to}
               to={link.to}
               className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] transition duration-200 ${
-                location.pathname === link.to
+                isActiveRoute(link.to)
                   ? 'border-brand-red/20 bg-brand-red/10 text-brand-red shadow-[0_0_0_1px_rgba(255,26,26,0.18)]'
                   : 'border-zinc-800/80 bg-transparent text-zinc-400 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white'
               }`}
@@ -96,6 +98,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
               }
             }}
             value=""
+            aria-label="Selecionar tela do sistema"
           >
             <option value="" className="bg-zinc-950">
               Telas do sistema
@@ -124,6 +127,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
         <div className="hidden h-8 w-[1px] bg-zinc-800/80 md:block" />
 
         <button
+          type="button"
           onClick={logout}
           className="inline-flex items-center gap-2 rounded-2xl border border-brand-red/30 bg-brand-red/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition duration-200 hover:scale-105 hover:bg-brand-red/20 hover:text-white active:scale-95"
         >
@@ -132,15 +136,22 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
         </button>
 
         <button
+          type="button"
           className="rounded-2xl border border-zinc-800/80 bg-zinc-900/80 p-2 text-white transition hover:bg-zinc-800 xl:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation-menu"
+          aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         >
           <span className="material-symbols-outlined">{isMenuOpen ? 'close' : 'menu'}</span>
         </button>
       </div>
 
       {isMenuOpen ? (
-        <div className="animate-in fade-in slide-in-from-top fixed inset-0 top-[72px] z-[90] bg-zinc-950/95 p-6 backdrop-blur-xl xl:hidden duration-300">
+        <div
+          id="mobile-navigation-menu"
+          className="animate-in fade-in slide-in-from-top fixed inset-0 top-[72px] z-[90] overflow-y-auto bg-zinc-950/95 p-6 backdrop-blur-xl xl:hidden duration-300"
+        >
           <div className="flex flex-col gap-4">
             {mainLinks.map((link) => (
               <Link
@@ -148,7 +159,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
                 to={link.to}
                 onClick={() => setIsMenuOpen(false)}
                 className={`flex items-center gap-4 border-l-4 p-4 text-xs font-bold uppercase tracking-widest transition-all ${
-                  location.pathname === link.to
+                  isActiveRoute(link.to)
                     ? 'border-brand-red bg-brand-red/10 text-brand-red'
                     : 'border-transparent text-zinc-400 hover:bg-zinc-900 hover:text-white'
                 }`}
