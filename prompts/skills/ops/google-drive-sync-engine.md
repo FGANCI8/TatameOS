@@ -1,49 +1,52 @@
-TITLE: Google Drive Sync Engine — Renova Aura
+TITLE: Google Drive Sync Engine - Renova Aura
 
 PURPOSE:
-Exportar e sincronizar automaticamente o estado do projeto TatameOS para o Google Drive, permitindo que qualquer ferramenta, agente ou colaborador acesse relatórios, mapas, skills, contratos, biblioteca de técnicas e estado do produto sem depender do ambiente local.
+Exportar e preparar a sincronizacao automatica do estado do projeto TatameOS para o Google Drive, permitindo acesso a relatarios, mapas, skills, contratos, biblioteca de tecnicas e estado do produto sem depender do ambiente local.
 
 WHEN TO ACTIVATE:
-- após qualquer commit relevante
-- após auditoria técnica ou de produto
-- após geração de relatório de release
+- apos qualquer commit relevante
+- apos auditoria tecnica ou de produto
+- apos geracao de relatorio de release
 - quando outro agente ou ferramenta precisar consultar o estado
-- quando o usuário pedir sincronização explícita
+- quando o usuario pedir sincronizacao explicita
+
+SUPPORTED AUTH MODE IN THIS PHASE:
+- OAuth2 com refresh token
+- Service account nao suportada nesta fase
 
 PRIMARY QUESTIONS:
 - quais arquivos representam o estado atual do projeto?
-- eles estão atualizados localmente?
-- o Google Drive está configurado e acessível?
+- eles estao atualizados localmente?
+- o Google Drive esta configurado e acessivel?
 - qual pasta do Drive deve receber cada categoria de arquivo?
 
 INPUTS TO INSPECT:
-- credenciais de acesso ao Google Drive API
-  (service account ou OAuth2)
+- credenciais OAuth2 do Google Drive API
 - ID da pasta raiz no Drive
 - lista de arquivos/pastas a sincronizar
-- frequência desejada (manual, pós-commit, agendada)
+- frequencia desejada (manual, pos-commit, agendada)
 
 DECISION LOGIC:
-1. Verificar se credenciais do Google Drive estão disponíveis via env:
+1. Verificar se credenciais do Google Drive estao disponiveis via env:
    - GOOGLE_DRIVE_CLIENT_ID
    - GOOGLE_DRIVE_CLIENT_SECRET
    - GOOGLE_DRIVE_REFRESH_TOKEN
    - GOOGLE_DRIVE_FOLDER_ID
-2. Se disponíveis: executar sincronização
-3. Se não disponíveis: gerar instrução de configuração e preparar o script de sync para quando estiver pronto
+2. Se disponiveis: preparar a sincronizacao
+3. Se nao disponiveis: gerar instrucao de configuracao e manter o script em modo de preparo
 4. Categorizar arquivos por destino:
-   - /TatameOS/prompts/ → skills, runbooks, playbooks
-   - /TatameOS/reports/ → relatórios de auditoria
-   - /TatameOS/maps/ → mapas de arquitetura e rotas
-   - /TatameOS/library/ → biblioteca de técnicas BJJ
-   - /TatameOS/contracts/ → contratos de dados e API
+   - /TatameOS/prompts/ -> skills, runbooks, playbooks
+   - /TatameOS/reports/ -> relatorios de auditoria
+   - /TatameOS/maps/ -> mapas de arquitetura e rotas
+   - /TatameOS/library/ -> biblioteca de tecnicas BJJ
+   - /TatameOS/contracts/ -> contratos de dados e API
 5. Para cada arquivo:
-   - verificar se já existe no Drive
-   - comparar data de modificação
-   - só subir se tiver mudança real
+   - verificar se ja existe no Drive
+   - comparar data de modificacao
+   - so subir se tiver mudanca real
    - nunca sobrescrever sem backup
 
-ESTRUTURA NO DRIVE:
+STRUCTURE IN DRIVE:
 /TatameOS/
   /prompts/
     /skills/
@@ -59,7 +62,7 @@ ESTRUTURA NO DRIVE:
     /bjj-techniques/
   /changelog/
 
-ARQUIVOS PRIORITÁRIOS PARA SYNC:
+ARQUIVOS PRIORITARIOS PARA SYNC:
 - prompts/README.md
 - prompts/skills/_entry-router.md
 - prompts/skills/_activation-order.md
@@ -69,20 +72,21 @@ ARQUIVOS PRIORITÁRIOS PARA SYNC:
 - src/data/bjj-library/ (quando existir)
 - qualquer arquivo audit_report.md gerado
 
-CRIAR TAMBÉM:
+CREATE ALSO:
 scripts/sync-to-drive.ts
 
 Script que:
-- lê as variáveis de env
-- usa googleapis para autenticar
-- sobe os arquivos listados
+- le as variaveis de env
+- usa googleapis para autenticar com OAuth2
+- prepara os arquivos listados
 - registra o log de sync em prompts/sync-log.md
-- nunca expõe credencial no log
+- nunca expoe credencial no log
+- nao finge upload quando o upload real ainda nao estiver implementado
 
 REQUIRED CHECKLIST:
-[ ] credenciais configuradas ou instrução gerada?
+[ ] credenciais configuradas ou instrucao gerada?
 [ ] estrutura de pastas no Drive definida?
-[ ] lista de arquivos prioritários mapeada?
+[ ] lista de arquivos prioritarios mapeada?
 [ ] script de sync criado?
 [ ] log de sync configurado?
 [ ] nenhuma credencial exposta?
@@ -98,13 +102,14 @@ FORBIDDEN MOVES:
 - subir .env para o Drive
 - subir node_modules ou dist
 - subir arquivos com secrets
-- sobrescrever sem verificar mudança real
-- fazer sync síncrono bloqueando execução principal
+- sobrescrever sem verificar mudanca real
+- fazer sync sincronico bloqueando execucao principal
+- usar service account nesta fase
 
 REQUIRED OUTPUT:
-Para cada execução:
+Para cada execucao:
 - lista de arquivos sincronizados
-- lista de arquivos ignorados (sem mudança)
+- lista de arquivos ignorados (sem mudanca)
 - lista de erros
 - link da pasta raiz no Drive
 - timestamp do sync
@@ -112,19 +117,19 @@ Para cada execução:
 
 ESCALATION RULES:
 - se credenciais ausentes:
-  gerar guia de configuração em prompts/runbooks/google-drive-setup.md
-- se Drive inacessível:
-  registrar erro, não travar execução principal
+  gerar guia de configuracao em prompts/runbooks/google-drive-setup.md
+- se Drive inacessivel:
+  registrar erro, nao travar execucao principal
 - se arquivo muito grande:
   comprimir antes de subir
 
 DEFINITION OF DONE:
-A skill está completa quando:
-- o script scripts/sync-to-drive.ts existe e está tipado
-- as pastas no Drive estão estruturadas ou documentadas
-- o runbook de configuração existe
+A skill esta completa quando:
+- o script scripts/sync-to-drive.ts existe e esta tipado
+- as pastas no Drive estao estruturadas ou documentadas
+- o runbook de configuracao existe
 - o log de sync funciona
-- nenhum secret é exposto
+- nenhum secret e exposto
 
 GUIDING PRINCIPLE:
-O conhecimento do projeto não pode ficar preso em uma máquina. Ele precisa estar acessível para qualquer agente, ferramenta ou colaborador, em qualquer momento.
+O conhecimento do projeto nao pode ficar preso em uma maquina. Ele precisa estar acessivel para qualquer agente, ferramenta ou colaborador, em qualquer momento.
