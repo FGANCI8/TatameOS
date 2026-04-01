@@ -4,6 +4,7 @@ import net from 'node:net';
 import { initializeApp, deleteApp, type FirebaseApp } from 'firebase/app';
 import {
   connectAuthEmulator,
+  createUserWithEmailAndPassword,
   getIdTokenResult,
   inMemoryPersistence,
   initializeAuth,
@@ -46,7 +47,7 @@ type ClientSession = {
   role: string;
 };
 
-const PROJECT_ID =
+let PROJECT_ID =
   process.env.FIREBASE_PROJECT_ID ||
   process.env.VITE_FIREBASE_PROJECT_ID ||
   'jj-emulator';
@@ -65,6 +66,23 @@ process.env.FIRESTORE_EMULATOR_HOST = FIRESTORE_EMULATOR_HOST;
 const AUTH_EMULATOR_URL = `http://${AUTH_EMULATOR_HOST}`;
 const [firestoreHost, firestorePortRaw] = FIRESTORE_EMULATOR_HOST.split(':');
 const FIRESTORE_EMULATOR_PORT = Number(firestorePortRaw || '8080');
+
+function decodeJwtPayload(token: string) {
+  const payload = token.split('.')[1];
+  if (!payload) {
+    return {};
+  }
+
+  const normalized = payload.replace(/-/g, '+').replace(/_/g, '/');
+  const padded = `${normalized}${'='.repeat((4 - (normalized.length % 4)) % 4)}`;
+  const json = Buffer.from(padded, 'base64').toString('utf8');
+
+  try {
+    return JSON.parse(json) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+}
 
 async function canConnect(host: string, port: number, timeoutMs = 800): Promise<boolean> {
   return new Promise((resolve) => {
@@ -92,6 +110,47 @@ function createClientApp(name: string) {
     },
     name,
   );
+}
+
+async function resolveProjectIdFromAuthEmulator() {
+  const probeEmail = `tenant-probe-${Date.now()}-${Math.random().toString(36).slice(2)}@exemplo.com`;
+  const response = await fetch(
+    `${AUTH_EMULATOR_URL}/identitytoolkit.googleapis.com/v1/accounts:signUp?key=${encodeURIComponent(FIREBASE_API_KEY)}`,
+    {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        email: probeEmail,
+        password: 'Senha@123',
+        returnSecureToken: true,
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`Falha ao descobrir projectId do auth emulator: ${response.status}`);
+  }
+
+  const payload = (await response.json()) as {
+    idToken?: string;
+    localId?: string;
+  };
+
+  const claims = payload.idToken ? decodeJwtPayload(payload.idToken) : {};
+  const resolvedProjectId =
+    typeof claims.aud === 'string' && claims.aud ? claims.aud : PROJECT_ID;
+
+  if (payload.localId) {
+    try {
+      PROJECT_ID = resolvedProjectId;
+      ensureAdminApp();
+      await getAdminAuth().deleteUser(payload.localId);
+    } catch {
+      // The probe user lives only in the emulator; cleanup failures should not block the harness.
+    }
+  }
+
+  return resolvedProjectId;
 }
 
 function createClientDb(app: FirebaseApp) {
@@ -130,19 +189,28 @@ function requirePermissionDenied(error: unknown, context: string) {
 async function ensureUser(email: string, password: string, tenantId: string, role: 'aluno' | 'professor') {
   ensureAdminApp();
   const auth = getAdminAuth();
+  let uid: string;
 
-  let user;
   try {
-    user = await auth.getUserByEmail(email);
-    await auth.updateUser(user.uid, { password });
+    const existing = await auth.getUserByEmail(email);
+    uid = existing.uid;
+    await auth.updateUser(uid, { password });
   } catch {
-    user = await auth.createUser({ email, password, emailVerified: true });
+    const seedApp = createClientApp(`tenant-seed-${email.replace(/[^a-zA-Z0-9]/g, '-')}`);
+    const seedAuth = createClientAuth(seedApp);
+
+    try {
+      const credential = await createUserWithEmailAndPassword(seedAuth, email, password);
+      uid = credential.user.uid;
+    } finally {
+      await deleteApp(seedApp);
+    }
   }
 
-  await auth.setCustomUserClaims(user.uid, { tenantId, role });
-  await auth.revokeRefreshTokens(user.uid);
+  await auth.setCustomUserClaims(uid, { tenantId, role });
+  await auth.revokeRefreshTokens(uid);
 
-  return user.uid;
+  return uid;
 }
 
 async function seedData() {
@@ -321,6 +389,8 @@ async function main() {
     );
     return;
   }
+
+  PROJECT_ID = await resolveProjectIdFromAuthEmulator();
 
   const seed = await seedData();
 
