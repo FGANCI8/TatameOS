@@ -79,7 +79,7 @@ export default function FeedbacksDoAlunoPage() {
   const openModal = () => {
     setModalAberto(true);
     setFormError(null);
-    setProfessorId(import.meta.env.VITE_DEFAULT_PROFESSOR_ID || '');
+    setProfessorId(userId || '');
   };
 
   const closeModal = () => {

@@ -12,7 +12,7 @@ const origemLabels: Record<FeedbackOrigemTipo, string> = {
   campeonato: 'Campeonato',
 };
 
-const origemOptions: FeedbackOrigemTipo[] = ['treino', 'luta', 'campeonato'];
+const origemOptions: FeedbackOrigemTipo[] = ['falha', 'treino', 'luta', 'campeonato'];
 
 const statusLabels: Record<Feedback['status'], string> = {
   aberto: 'Aberto',
@@ -62,6 +62,11 @@ export default function FeedbacksDoAlunoPage() {
   const [enviando, setEnviando] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
 
+  const professorIdPadrao = useMemo(() => {
+    const feedbackMaisRecente = [...feedbacks].sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())[0];
+    return feedbackMaisRecente?.professorId ?? '';
+  }, [feedbacks]);
+
   useEffect(() => {
     if (userId) {
       listarFeedbacksPorAluno(userId);
@@ -88,7 +93,7 @@ export default function FeedbacksDoAlunoPage() {
   const openModal = () => {
     setModalAberto(true);
     setFormError(null);
-    setProfessorId(import.meta.env.VITE_DEFAULT_PROFESSOR_ID || '');
+    setProfessorId(professorIdPadrao);
   };
 
   const closeModal = () => {
@@ -153,6 +158,9 @@ export default function FeedbacksDoAlunoPage() {
           </h1>
           <p className="mt-2 max-w-xl font-body text-zinc-400">
             Registre suas falhas, acompanhe a resposta do professor e volte ao tatame com uma correção mais clara.
+          </p>
+          <p className="mt-3 text-[10px] font-black uppercase tracking-[0.25em] text-zinc-500">
+            Professor sugerido: {professorIdPadrao ? 'derivado do histórico real' : 'informe o UID do professor'}
           </p>
         </div>
 

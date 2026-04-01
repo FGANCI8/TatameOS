@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTreino } from '../../hooks/useTreino';
 
 export default function RegistroDeTreino() {
@@ -9,6 +9,29 @@ export default function RegistroDeTreino() {
   const [notas, setNotas] = useState('');
   const [feedback, setFeedback] = useState<{ type: 'error' | 'success'; msg: string } | null>(null);
   const [tipoAula, setTipoAula] = useState<'GI' | 'NO-GI' | 'DRILLS'>('GI');
+
+  const treinoInsights = useMemo(() => {
+    const totalSessoes = treinos.length;
+    const mediaEsforco =
+      totalSessoes > 0
+        ? treinos.reduce((acc, treino) => acc + treino.dificuldadePercebida, 0) / totalSessoes
+        : 0;
+
+    const tecnicaMaisFrequente = treinos.reduce<Record<string, number>>((acc, treino) => {
+      acc[treino.tecnicaId] = (acc[treino.tecnicaId] || 0) + 1;
+      return acc;
+    }, {});
+
+    const tecnicaPrincipal = Object.entries(tecnicaMaisFrequente).sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
+    const ultimaSessao = treinos[0] ?? null;
+
+    return {
+      totalSessoes,
+      mediaEsforco,
+      tecnicaPrincipal,
+      ultimaSessao,
+    };
+  }, [treinos]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +65,35 @@ export default function RegistroDeTreino() {
           <h2 className="font-headline text-4xl font-black uppercase leading-none tracking-tight text-white md:text-5xl">
             Nova sessão
           </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
+            O histórico real do seu treino ajuda a montar uma leitura imediata da rotina: volume, intensidade e técnica mais repetida.
+          </p>
         </header>
+
+        <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Sessões totais</p>
+            <p className="mt-2 font-headline text-3xl font-black uppercase text-white">{treinoInsights.totalSessoes}</p>
+          </div>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Esforço médio</p>
+            <p className="mt-2 font-headline text-3xl font-black uppercase text-white">
+              {treinoInsights.mediaEsforco > 0 ? treinoInsights.mediaEsforco.toFixed(1) : '0.0'}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Técnica mais usada</p>
+            <p className="mt-2 text-sm font-black uppercase tracking-tight text-white">
+              {treinoInsights.tecnicaPrincipal || 'Ainda sem padrão'}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Última sessão</p>
+            <p className="mt-2 text-sm font-black uppercase tracking-tight text-white">
+              {treinoInsights.ultimaSessao ? new Date(treinoInsights.ultimaSessao.data).toLocaleDateString('pt-BR') : 'Sem registro'}
+            </p>
+          </div>
+        </section>
 
         <form onSubmit={handleSubmit} className="space-y-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 shadow-none md:p-8">
           {feedback ? (
