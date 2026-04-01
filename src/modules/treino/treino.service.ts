@@ -1,10 +1,18 @@
 import { ServiceResult } from '../core/types';
 import { Treino } from './types';
 
-// Loose interface check via any or exact type.
-// We will simply accept the unified repository instance
+interface TreinoRepositoryLike {
+  createTreino(treino: Treino, tenantId: string): Promise<Treino>;
+  registrarTreinoComHoras?(treino: Treino, tenantId: string, horasAdicionais: number): Promise<Treino>;
+  listTreinosByUser(userId: string, tenantId: string): Promise<Treino[]>;
+}
+
+interface AlunoServiceLike {
+  adicionarHoras(alunoId: string, horas: number, tenantId: string): Promise<{ success: boolean; error?: string }>;
+}
+
 export class TreinoService {
-  constructor(private treinoRepository: any, private alunoService?: any) {}
+  constructor(private treinoRepository: TreinoRepositoryLike, private alunoService?: AlunoServiceLike) {}
 
   async registrarTreino(data: Omit<Treino, 'id' | 'data' | 'tenantId'>, tenantId: string): Promise<ServiceResult<Treino>> {
     try {
@@ -32,8 +40,8 @@ export class TreinoService {
       }
 
       return { success: true, data: resultado };
-    } catch (error: any) {
-      return { success: false, error: error.message };
+    } catch (error: unknown) {
+      return { success: false, error: error instanceof Error ? error.message : 'Erro inesperado.' };
     }
   }
 
@@ -41,8 +49,8 @@ export class TreinoService {
     try {
       const treinos = await this.treinoRepository.listTreinosByUser(alunoId, tenantId);
       return { success: true, data: treinos };
-    } catch (error: any) {
-      return { success: false, error: error.message };
+    } catch (error: unknown) {
+      return { success: false, error: error instanceof Error ? error.message : 'Erro inesperado.' };
     }
   }
 }

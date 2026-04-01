@@ -4,6 +4,7 @@ export const COMING_SOON_ROUTES = new Set([
   '/anotacoes-tecnicas-do-replay',
   '/area-do-responsavel',
   '/biblioteca-do-professor',
+  '/conquistas-e-evolucao',
   '/checklist-mental-pr-luta',
   '/coach-mental-do-app',
   '/detalhe-da-aula',
@@ -26,6 +27,7 @@ export const COMING_SOON_ROUTES = new Set([
   '/feed-da-comunidade',
   '/busca-inteligente',
   '/biblioteca-de-tecnicas',
+  '/tecnicas-recomendadas',
   '/biblioteca-de-videos-de-luta',
 ]);
 
