@@ -1,12 +1,15 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NotificationCenterWidget } from '../../components/dashboard/NotificationCenterWidget';
+import { VisualExperienceSurface } from '../../components/visual-experience/VisualExperienceSurface';
 import { useAuth } from '../../hooks/useAuth';
 import { useTreino } from '../../hooks/useTreino';
 import { useAluno } from '../../modules/aluno/hooks/useAluno';
 import { useFrequenciaAluno } from '../../modules/frequencia/hooks/useFrequenciaAluno';
 import { useFeedbacks } from '../../modules/feedbacks/hooks/useFeedbacks';
 import type { Feedback, FeedbackMetricasAluno } from '../../modules/feedbacks/types';
+import type { VisualScreenContext } from '../../services/visual-experience/contracts/screen-context.contract';
+import { visualExperienceService } from '../../services/visual-experience/visual-experience.service';
 
 const FrequenciaResumoCard = lazy(() => import('./FrequenciaResumoCard'));
 
@@ -22,7 +25,7 @@ export default function DashboardDoAluno() {
     actions: { refresh: refreshAluno, refreshHistorico },
   } = useAluno();
   const { data: treinos } = useTreino();
-  const { userId } = useAuth();
+  const { userId, tenantId } = useAuth();
   const {
     data: feedbacks,
     loading: loadingFeedbacks,
@@ -85,6 +88,36 @@ export default function DashboardDoAluno() {
   const statusProntidao = prontidaoGraduacao?.status ?? 'em_progresso';
   const hasPendingFeedback = feedbackStats.aguardando > 0;
   const frequenciaResumo = frequenciaPainel?.resumo ?? null;
+  const visualExperienceRequest = useMemo<VisualScreenContext>(
+    () => ({
+      screenId: 'dashboard-do-aluno',
+      module: 'student-dashboard',
+      route: '/dashboard-do-aluno',
+      userRole: 'aluno',
+      flowPhase: 'progress',
+      stateType: 'dashboard',
+      actionIntent: 'continuar rotina de treino e check-in',
+      emphasisLevel: hasPendingFeedback ? 'high' : 'medium',
+      tenantContext: {
+        tenantId: tenantId ?? undefined,
+      },
+      domainContext: {
+        totalTreinos: treinos.length,
+        feedbacksPendentes: feedbackStats.aguardando,
+        sequenciaAtual: frequenciaResumo?.sequenciaAtual ?? 0,
+        prontidaoPercentual: prontidaoPercentual.toFixed(1),
+      },
+    }),
+    [
+      feedbackStats.aguardando,
+      frequenciaResumo?.sequenciaAtual,
+      hasPendingFeedback,
+      prontidaoPercentual,
+      tenantId,
+      treinos.length,
+    ],
+  );
+  const visualExperience = visualExperienceService.build(visualExperienceRequest);
 
   if (loadingAluno && !perfil) {
     return (
@@ -132,6 +165,13 @@ export default function DashboardDoAluno() {
   return (
     <main className="relative mx-auto max-w-6xl space-y-8 px-4 pb-28 pt-20 md:px-6">
       <section className="absolute inset-0 -z-10 bg-zinc-950 bg-dot-grid opacity-70" />
+
+      <VisualExperienceSurface
+        output={visualExperience}
+        request={visualExperienceRequest}
+        ctaTo="/dashboard-do-aluno/checkin"
+        eyebrow="Visao contextual do aluno"
+      />
 
       <section className="flex flex-col justify-between gap-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:flex-row md:items-end md:p-8">
         <div>

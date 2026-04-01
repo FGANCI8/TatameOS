@@ -9,6 +9,8 @@ import { ConvitesRepositoryFirestore } from './modules/convites/repository';
 import { buildInviteEmailPayload, buildMilestoneEmailPayload, createEmailService } from './modules/convites/email.service';
 import { ConvitesServiceFirestore } from './modules/convites/service';
 import { executarSnapshotsMensaisCron } from './modules/snapshots-mensais/runner';
+import type { ImageGenerationRequest } from './services/visual-experience/contracts/image-generation.contract';
+import { ImageGenerationService } from './services/visual-experience/image-generation.service';
 
 type AcademiaPlano = 'starter' | 'pro' | 'enterprise';
 type ResponsavelRole = 'admin' | 'professor';
@@ -91,6 +93,7 @@ const TECNICAS_INICIAIS = [
 ];
 
 const callableCooldowns = new Map<string, number>();
+const visualImageService = new ImageGenerationService();
 
 function isPlaceholderValue(value: string): boolean {
   const normalized = value.toLowerCase();
@@ -495,6 +498,35 @@ export const provisionAcademia = onCall(async (request) => {
     },
     conviteEnviado: true,
   };
+});
+
+export const generateVisualExperienceImage = onCall(async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Faça login para solicitar geração visual.');
+  }
+
+  const data = request.data as Partial<ImageGenerationRequest> | undefined;
+  const imagePrompt = String(data?.imagePrompt || '').trim();
+  const imageConcept = String(data?.imageConcept || '').trim();
+  const screenId = String(data?.screenId || '').trim();
+  const module = String(data?.module || '').trim();
+  const tenantId = String(data?.tenantId || '').trim() || undefined;
+  const stateType = String(data?.stateType || '').trim() || undefined;
+
+  if (!imagePrompt || !imageConcept || !screenId || !module) {
+    throw new HttpsError('invalid-argument', 'Campos obrigatórios ausentes para gerar a imagem.');
+  }
+
+  assertCallableCooldown('generateVisualExperienceImage', `${request.auth.uid}:${tenantId ?? 'no-tenant'}:${screenId}`, 15000);
+
+  return visualImageService.generate({
+    imagePrompt,
+    imageConcept,
+    screenId,
+    module,
+    tenantId,
+    stateType,
+  });
 });
 
 export const validateInvite = onCall(async (request) => {

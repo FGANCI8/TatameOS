@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gerarSnapshotsMensaisAgendado = exports.onAlunoMilestoneReached = exports.activateInvite = exports.broadcastAvisoGeral = exports.revokeInvite = exports.resendInvite = exports.listStudentInvites = exports.listInvites = exports.inviteStudent = exports.validateInvite = exports.provisionAcademia = void 0;
+exports.gerarSnapshotsMensaisAgendado = exports.onAlunoMilestoneReached = exports.activateInvite = exports.broadcastAvisoGeral = exports.revokeInvite = exports.resendInvite = exports.listStudentInvites = exports.listInvites = exports.inviteStudent = exports.validateInvite = exports.generateVisualExperienceImage = exports.provisionAcademia = void 0;
 const node_crypto_1 = require("node:crypto");
 const app_1 = require("firebase-admin/app");
 const firestore_1 = require("firebase-admin/firestore");
@@ -12,6 +12,7 @@ const repository_1 = require("./modules/convites/repository");
 const email_service_1 = require("./modules/convites/email.service");
 const service_1 = require("./modules/convites/service");
 const runner_1 = require("./modules/snapshots-mensais/runner");
+const image_generation_service_1 = require("./services/visual-experience/image-generation.service");
 const FAIXAS_PADRAO = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'];
 const MILESTONE_HOURS = 40;
 const CATEGORIAS_FALHAS = [
@@ -33,6 +34,7 @@ const TECNICAS_INICIAIS = [
     'Chave de Braco',
 ];
 const callableCooldowns = new Map();
+const visualImageService = new image_generation_service_1.ImageGenerationService();
 function isPlaceholderValue(value) {
     const normalized = value.toLowerCase();
     return (normalized.startsWith('dummy') ||
@@ -369,6 +371,30 @@ exports.provisionAcademia = (0, https_1.onCall)(async (request) => {
         },
         conviteEnviado: true,
     };
+});
+exports.generateVisualExperienceImage = (0, https_1.onCall)(async (request) => {
+    if (!request.auth) {
+        throw new https_1.HttpsError('unauthenticated', 'Faça login para solicitar geração visual.');
+    }
+    const data = request.data;
+    const imagePrompt = String(data?.imagePrompt || '').trim();
+    const imageConcept = String(data?.imageConcept || '').trim();
+    const screenId = String(data?.screenId || '').trim();
+    const module = String(data?.module || '').trim();
+    const tenantId = String(data?.tenantId || '').trim() || undefined;
+    const stateType = String(data?.stateType || '').trim() || undefined;
+    if (!imagePrompt || !imageConcept || !screenId || !module) {
+        throw new https_1.HttpsError('invalid-argument', 'Campos obrigatórios ausentes para gerar a imagem.');
+    }
+    assertCallableCooldown('generateVisualExperienceImage', `${request.auth.uid}:${tenantId ?? 'no-tenant'}:${screenId}`, 15000);
+    return visualImageService.generate({
+        imagePrompt,
+        imageConcept,
+        screenId,
+        module,
+        tenantId,
+        stateType,
+    });
 });
 exports.validateInvite = (0, https_1.onCall)(async (request) => {
     initAdminApp();

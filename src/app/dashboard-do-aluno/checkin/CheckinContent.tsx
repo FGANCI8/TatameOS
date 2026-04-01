@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import QRCode from 'qrcode';
+import { VisualExperienceSurface } from '../../../components/visual-experience/VisualExperienceSurface';
 import { useFrequenciaAluno } from '../../../modules/frequencia/hooks/useFrequenciaAluno';
+import type { VisualScreenContext } from '../../../services/visual-experience/contracts/screen-context.contract';
+import { visualExperienceService } from '../../../services/visual-experience/visual-experience.service';
 
 function formatCountdown(seconds: number): string {
   const safe = Math.max(0, seconds);
@@ -18,10 +21,18 @@ function formatDateTime(date: Date): string {
   }).format(date);
 }
 
-function LoadingPanel() {
+function LoadingPanel({
+  output,
+  request,
+}: {
+  output: ReturnType<typeof visualExperienceService.build>;
+  request: VisualScreenContext;
+}) {
   return (
-    <section className="grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-      <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+    <section className="space-y-6">
+      <VisualExperienceSurface output={output} request={request} eyebrow="Check-in contextual" />
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="space-y-3">
           <div className="h-3 w-32 animate-pulse rounded-full bg-zinc-800/60" />
           <div className="h-8 w-64 animate-pulse rounded-2xl bg-zinc-800/60" />
@@ -48,6 +59,7 @@ function LoadingPanel() {
             <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
@@ -104,6 +116,40 @@ export default function CheckinContent() {
   }, [now, painel?.resumo.expiresAt]);
 
   const proximoMarco = painel?.resumo.proximoMarco;
+  const visualExperienceRequest = useMemo<VisualScreenContext>(
+    () => ({
+      screenId: 'dashboard-do-aluno-checkin',
+      module: 'student-checkin',
+      route: '/dashboard-do-aluno/checkin',
+      userRole: 'aluno',
+      flowPhase: 'validation',
+      stateType: loading && !painel ? 'loading' : error || !painel ? 'error' : 'instructional',
+      actionIntent: 'apresentar o QR e concluir a entrada',
+      emphasisLevel: error || !painel ? 'high' : 'medium',
+      tenantContext: {
+        tenantId: painel?.aluno.tenantId,
+        tenantName: painel?.aluno.nome,
+      },
+      domainContext: {
+        tempoRestante,
+        totalPresencasAno: painel?.resumo.totalPresencasAno ?? 0,
+        sequenciaAtual: painel?.resumo.sequenciaAtual ?? 0,
+        hasQrToken: Boolean(painel?.resumo.qrToken),
+      },
+    }),
+    [
+      error,
+      loading,
+      painel?.aluno.nome,
+      painel?.aluno.tenantId,
+      painel?.resumo.qrToken,
+      painel?.resumo.sequenciaAtual,
+      painel?.resumo.totalPresencasAno,
+      painel,
+      tempoRestante,
+    ],
+  );
+  const visualExperience = visualExperienceService.build(visualExperienceRequest);
 
   const copiarToken = async () => {
     if (!painel?.resumo.qrToken || !navigator.clipboard) {
@@ -116,12 +162,13 @@ export default function CheckinContent() {
   };
 
   if (loading && !painel) {
-    return <LoadingPanel />;
+    return <LoadingPanel output={visualExperience} request={visualExperienceRequest} />;
   }
 
   if (error || !painel) {
     return (
-      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+      <section className="space-y-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <VisualExperienceSurface output={visualExperience} request={visualExperienceRequest} eyebrow="Check-in contextual" />
         <div className="rounded-[28px] border border-brand-red/20 bg-brand-red/10 p-6 text-center">
           <span className="material-symbols-outlined text-4xl text-brand-red">warning</span>
           <h2 className="mt-3 font-headline text-2xl font-black uppercase tracking-tight text-zinc-100">

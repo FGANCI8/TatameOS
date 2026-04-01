@@ -1,5 +1,8 @@
-import { type FormEvent, useState } from 'react';
+import { type FormEvent, useMemo, useState } from 'react';
+import { VisualExperienceSurface } from '../../../components/visual-experience/VisualExperienceSurface';
 import { useAcademiaProvisioning } from '../../../modules/academias/hooks/useAcademiaProvisioning';
+import type { VisualScreenContext } from '../../../services/visual-experience/contracts/screen-context.contract';
+import { visualExperienceService } from '../../../services/visual-experience/visual-experience.service';
 
 const PLANOS = [
   { value: 'starter', label: 'Starter' },
@@ -18,6 +21,30 @@ export default function SuperAdminOnboardingPage() {
   const convitesPendentes = success?.seeds?.length ? success.seeds.length : 0;
   const convitesEnviados = hasAcademia ? 1 : 0;
   const systemStatus = hasAcademia ? 'Sistema pronto para uso' : 'Faltam etapas para ativar';
+  const visualExperienceRequest = useMemo<VisualScreenContext>(
+    () => ({
+      screenId: 'super-admin-onboarding',
+      module: 'admin-onboarding',
+      route: '/super-admin/onboarding',
+      userRole: 'super-admin',
+      flowPhase: 'setup',
+      stateType: loading ? 'loading' : error ? 'error' : success ? 'confirmation' : 'onboarding',
+      actionIntent: hasAcademia ? 'convidar equipe e concluir configuracao' : 'criar a primeira academia',
+      emphasisLevel: hasAcademia ? 'medium' : 'high',
+      tenantContext: {
+        tenantId: success?.tenantId,
+        tenantName: success?.academia?.nome,
+      },
+      domainContext: {
+        convitesPendentes,
+        convitesEnviados,
+        hasAcademia,
+        plano,
+      },
+    }),
+    [convitesEnviados, convitesPendentes, error, hasAcademia, loading, plano, success?.academia?.nome, success?.tenantId, success],
+  );
+  const visualExperience = visualExperienceService.build(visualExperienceRequest);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -51,6 +78,15 @@ export default function SuperAdminOnboardingPage() {
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-400">
           Configure sua academia em poucos passos e comece a gerenciar alunos, treinos e equipe com visão clara do que já existe e do que falta.
         </p>
+      </div>
+
+      <div className="mb-6">
+        <VisualExperienceSurface
+          output={visualExperience}
+          request={visualExperienceRequest}
+          ctaTo="#onboarding-form"
+          eyebrow="Onboarding contextual"
+        />
       </div>
 
       <div className="mb-6 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
