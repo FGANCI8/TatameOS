@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { filterOperationalRoutes } from '../modules/navigation/route-policy';
 
 type MainLink = {
   to: string;
@@ -24,7 +25,6 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
   const mainLinks: MainLink[] = [
     { to: '/dashboard-do-aluno', label: 'Início', icon: 'home' },
     ...(role === 'aluno' ? [studentCheckinLink] : []),
-    { to: '/biblioteca-de-tecnicas', label: 'Técnicas', icon: 'library_books' },
     { to: '/plano-de-treino', label: 'Treinos', icon: 'fitness_center' },
     { to: '/desempenho-competitivo', label: 'Competição', icon: 'trophy' },
     ...(isProfessorOrAdmin
@@ -102,7 +102,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
             <option value="" className="bg-zinc-950">
               Telas do sistema
             </option>
-            {routes
+            {filterOperationalRoutes(routes)
               .filter((r) => {
                 if (!isProfessorOrAdmin && r.pathName.includes('professor')) {
                   return false;

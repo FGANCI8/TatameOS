@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import { filterOperationalRoutes } from '../../modules/navigation/route-policy';
 
 type NavItem = {
   to: string;
@@ -21,7 +22,6 @@ export function BottomNavBar() {
 
   const navItems: NavItem[] = [
     { to: '/dashboard-do-aluno', icon: 'home', label: 'Início' },
-    { to: '/biblioteca-de-tecnicas', icon: 'video_library', label: 'Biblioteca' },
     { to: '/plano-de-treino', icon: 'insights', label: 'Trilha' },
     { to: '/registro-de-treino', icon: 'fitness_center', label: 'Treino' },
     { to: '/area-do-professor', icon: 'school', label: 'Professor' },
@@ -36,7 +36,7 @@ export function BottomNavBar() {
     }
 
     return true;
-  });
+  }).filter((item) => filterOperationalRoutes([{ pathName: item.to }]).length > 0);
 
   const isActiveRoute = (to: string) => location.pathname === to || location.pathname.startsWith(`${to}/`);
 

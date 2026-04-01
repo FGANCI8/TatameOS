@@ -2,10 +2,12 @@ import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { LoginScreen } from './components/LoginScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { ComingSoonPage } from './components/ComingSoonPage';
 import { MainLayout } from './components/layout/MainLayout';
 import { AuthProvider } from './context/AuthProvider';
 import { GymProvider } from './contexts/GymContext';
 import { useAuth } from './hooks/useAuth';
+import { filterOperationalRoutes, isComingSoonRoute } from './modules/navigation/route-policy';
 
 interface AppRoute {
   name: string;
@@ -24,7 +26,6 @@ const restrictedProfessorRoutes = new Set([
   '/area-do-professor/avisos',
   '/area-do-professor/trilhas',
   '/painel-do-professor',
-  '/biblioteca-do-professor',
 ]);
 
 const restrictedAdminRoutes = new Set(['/super-admin/onboarding', '/super-admin/convites', '/area-do-professor/relatorios']);
@@ -92,7 +93,7 @@ function AppRouterContent() {
   const navigate = useNavigate();
   const { isAuthenticated, loading, isProfessorOrAdmin, isAdmin } = useAuth();
   const isPublicRoute = publicRoutes.has(location.pathname);
-  const mainLayoutRoutes = routes.filter((route) => !publicRoutes.has(route.pathName));
+  const mainLayoutRoutes = filterOperationalRoutes(routes.filter((route) => !publicRoutes.has(route.pathName)));
   const landingRoute = getLandingRoute(isAdmin, isProfessorOrAdmin);
 
   useEffect(() => {
@@ -148,11 +149,12 @@ function AppRouterContent() {
               React.createElement(Route, {
                 key: pathName,
                 path: pathName,
-                element:
-                  (restrictedProfessorRoutes.has(pathName) && !isProfessorOrAdmin) ||
+                element: isComingSoonRoute(pathName) ? (
+                  <ComingSoonPage title={name.replace(/-/g, ' ')} />
+                ) : (restrictedProfessorRoutes.has(pathName) && !isProfessorOrAdmin) ||
                   (restrictedAdminRoutes.has(pathName) && !isAdmin) ? (
-                    <Navigate to={landingRoute} replace />
-                  ) : (
+                  <Navigate to={landingRoute} replace />
+                ) : (
                     <ErrorBoundary routeName={name}>
                       <Suspense fallback={<RouteFallback />}>
                         <Component />
