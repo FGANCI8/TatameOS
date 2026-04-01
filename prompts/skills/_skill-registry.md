@@ -35,6 +35,10 @@
 - Feedback loop: signals, telemetry, issue-to-fix routing.
 - Playbooks: how-to procedures for task execution and validation.
 
+## Canonical additions
+- Research: [bjj-youtube-library-engine](./19-research/bjj-youtube-library-engine.md)
+- Ops / Release: [google-drive-sync-engine](./ops/google-drive-sync-engine.md)
+
 ## Legacy notice
 Legacy trees are documented in [../LEGACY.md](../LEGACY.md). Do not use them as primary reference.
 

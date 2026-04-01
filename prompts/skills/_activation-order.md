@@ -98,6 +98,15 @@ Always start with [./_entry-router.md](./_entry-router.md).
 - Optional: architecture, frontend, backend, product
 - Blocker: source quality is weak or adaptation is not grounded
 - Done: pattern is adapted, not copied
+- Task-specific: `bjj-youtube-library-engine`
+
+### Ops / Release
+- Read: entry router, mandatory consultation, core, testing, release
+- Required: ci-cd, observability, security, tenant
+- Optional: performance
+- Blocker: release gate failure or unclear rollback
+- Done: release readiness is proven truthfully
+- Task-specific: `google-drive-sync-engine`
 
 ### Refactor
 - Read: entry router, mandatory consultation, core, architecture, refactoring
