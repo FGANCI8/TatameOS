@@ -11,7 +11,7 @@ export default function CorreODaFalha() {
 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 {/*  Main Technical Visual  */}
 <div className="md:col-span-8 relative aspect-video bg-zinc-950 border-l-4 border-brand-red/20 overflow-hidden">
-<img className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-500" data-alt="high angle technical jiu-jitsu shot showing the leg positioning for a triangle choke on a blue mat with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiw1ujLaVOhwyIBnKJD5m_0UlJXgpJFEROmNreFZPsb0iQDQWVxBuuaaCdPjpZA-_5-sT-GKSN5Q-Ao15XlyvRj6ZJRmRfjUwkBY6jkf7p458KrXS6hkGWS_O7I_3qjfdRGRaLyYnGwrdu0GcZxE4qgJ1jN3NBet67wt5qdi9Mu_y2mEBxfNrGZXzFS6Kjnx-oTzvSNBPLLIBBr_dep0ZpXZLDOgyps5hVf7UkXwxBEE4KSbjBLQPFNrVDVrdEaiv31NU2PUgRNY-Q"/>
+<img className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-500" alt="high angle technical jiu-jitsu shot showing the leg positioning for a triangle choke on a blue mat with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiw1ujLaVOhwyIBnKJD5m_0UlJXgpJFEROmNreFZPsb0iQDQWVxBuuaaCdPjpZA-_5-sT-GKSN5Q-Ao15XlyvRj6ZJRmRfjUwkBY6jkf7p458KrXS6hkGWS_O7I_3qjfdRGRaLyYnGwrdu0GcZxE4qgJ1jN3NBet67wt5qdi9Mu_y2mEBxfNrGZXzFS6Kjnx-oTzvSNBPLLIBBr_dep0ZpXZLDOgyps5hVf7UkXwxBEE4KSbjBLQPFNrVDVrdEaiv31NU2PUgRNY-Q"/>
 <div className="absolute inset-0 flex items-center justify-center">
 <div className="w-16 h-16 bg-brand-red/10/90 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
 <span className="material-symbols-outlined text-white text-4xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_arrow</span>
@@ -41,13 +41,13 @@ export default function CorreODaFalha() {
 {/*  Correction Matrix: Bento Style  */}
 <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
 {/*  Error Common  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col gap-4">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col gap-4">
 <div className="flex items-center gap-2">
 <div className="w-2 h-8 bg-brand-red/60"></div>
 <h3 className="font-headline text-xl font-black uppercase tracking-tighter italic">Erro Comum</h3>
 </div>
 <div className="aspect-square bg-zinc-800/80 flex items-center justify-center p-4">
-<img className="w-full h-full object-cover mix-blend-luminosity" data-alt="close up of jiu jitsu fighters, highlighting a common mistake in posture with red technical overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFF1iAEs5G2qJWYn4Bp-lsQ-q-h6pGfi4cnzOTIQ5hepNfH09iKA77JQ7ctUly4_MxU_nSjdAaVvBhXs--ccr2qCBOcH2MloEC7yH1_gCxEHLt5sxxqt2NtJQBZqc1pq514L_JtfCaldRizHPH8PEOr_zUTeUJfWBJFr9Y7m4rFEYfcWhKsCejvtFYlp8SZuPswTuXeLUpIIDtj5LZsJdIRcslpNaqWEFKVNyxcl9SMTK5vntZg56NSnniVqd_D-nmzWe7V6ViKG3f"/>
+<img className="w-full h-full object-cover mix-blend-luminosity" alt="close up of jiu jitsu fighters, highlighting a common mistake in posture with red technical overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFF1iAEs5G2qJWYn4Bp-lsQ-q-h6pGfi4cnzOTIQ5hepNfH09iKA77JQ7ctUly4_MxU_nSjdAaVvBhXs--ccr2qCBOcH2MloEC7yH1_gCxEHLt5sxxqt2NtJQBZqc1pq514L_JtfCaldRizHPH8PEOr_zUTeUJfWBJFr9Y7m4rFEYfcWhKsCejvtFYlp8SZuPswTuXeLUpIIDtj5LZsJdIRcslpNaqWEFKVNyxcl9SMTK5vntZg56NSnniVqd_D-nmzWe7V6ViKG3f"/>
 </div>
 <p className="text-sm font-medium leading-relaxed">
                     Deixar o braço do oponente solto ou permitir que ele coloque o joelho no chão para ganhar postura. Isso alivia a pressão carotídea instantaneamente.
@@ -75,7 +75,7 @@ export default function CorreODaFalha() {
 </ul>
 </div>
 {/*  Focus Points  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col gap-4">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col gap-4">
 <div className="flex items-center gap-2">
 <div className="w-2 h-8 bg-on-background"></div>
 <h3 className="font-headline text-xl font-black uppercase tracking-tighter italic">Pontos de Atenção</h3>
@@ -97,7 +97,7 @@ export default function CorreODaFalha() {
 </div>
 </section>
 {/*  Performance Streak Component  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 mb-8 border border-zinc-800/10">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 mb-8 border border-zinc-800/10">
 <div className="flex justify-between items-center mb-4">
 <h4 className="font-headline text-lg font-black uppercase italic italic tracking-tighter">Progresso de Ajuste Técnico</h4>
 <span className="font-label text-[10px] font-bold bg-zinc-800/80 px-2 py-1 uppercase">Sincronia 88%</span>

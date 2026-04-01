@@ -1,7 +1,7 @@
 export default function BibliotecaDeVideosDeLuta() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Analytics hub</p>
         <h1 className="mt-2 font-headline text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
           Biblioteca de vídeos
@@ -66,7 +66,7 @@ export default function BibliotecaDeVideosDeLuta() {
         ))}
       </section>
 
-      <section className="rounded-[28px] border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center md:p-8">
+      <section className="rounded-[28px] border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center md:p-8">
         <span className="material-symbols-outlined text-4xl text-brand-red">add_circle</span>
         <p className="mt-3 font-headline text-xl font-black uppercase tracking-tight text-white">Adicionar vídeo</p>
         <p className="mt-2 text-sm text-zinc-400">Novo combate ou treino</p>

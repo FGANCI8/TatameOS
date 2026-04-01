@@ -69,7 +69,7 @@ export default function RotinaDaSemana() {
 {/*  Bento Routine Grid  */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {/*  Main Session (Asymmetric Large Card)  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between border-l-8 border-brand-red/20 relative overflow-hidden">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-8 border-brand-red/20 relative overflow-hidden">
 <div className="absolute top-0 right-0 p-4 opacity-10">
 <span className="material-symbols-outlined text-9xl" data-icon="fitness_center">fitness_center</span>
 </div>
@@ -132,7 +132,7 @@ export default function RotinaDaSemana() {
 </div>
 </div>
 {/*  Secondary Session / Rest  */}
-<div className="mt-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div className="mt-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
 <div className="flex items-center gap-6">
 <div className="w-16 h-16 bg-zinc-800/80 flex items-center justify-center">
 <span className="material-symbols-outlined text-3xl opacity-30" data-icon="bedtime">bedtime</span>

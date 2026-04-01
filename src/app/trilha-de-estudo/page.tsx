@@ -1,7 +1,7 @@
 export default function TrilhaDeEstudo() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Sua evolução técnica</p>
         <h1 className="mt-2 font-headline text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
           Trilha do guarda aberta
@@ -24,7 +24,7 @@ export default function TrilhaDeEstudo() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Mapa da trilha</p>
           <div className="mt-6 space-y-4">
             {[
@@ -48,7 +48,7 @@ export default function TrilhaDeEstudo() {
         </article>
 
         <aside className="grid gap-4">
-          <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Recomendações</p>
             <h3 className="mt-2 font-headline text-2xl font-black uppercase tracking-tight text-white">
               Drills de reposição
@@ -58,7 +58,7 @@ export default function TrilhaDeEstudo() {
             </button>
           </article>
 
-          <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Horas totais de mat</p>
             <p className="mt-2 font-headline text-4xl font-black italic text-white">124</p>
           </article>

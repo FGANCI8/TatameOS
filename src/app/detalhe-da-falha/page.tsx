@@ -78,7 +78,6 @@ export default function DetalheDaFalha() {
               <img
                 alt="Jiu Jitsu Analysis"
                 className="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-500 group-hover:grayscale-0"
-                data-alt="Birds-eye view of two Jiu-Jitsu practitioners on a black mat, one trapped in a triangle choke, highlighted with red tactical overlays"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDofv2-tPMIf4APV_rOK5PKbrlXW9Y9JWKI7GyeejhryanEQX-pZZ2apJzNVFbK_RS6QTxLJDqf3MGRfv_Ce4GP7on8cdx_1V-o1nqq-taqBRYSMcGVV5kChcUPWkYIl3onyL86JWHOPPDXRyufnUbdv125gBaX_fwbxJ5cCSH2oAScCqhuJ4jfWdHZ18sUKhOCIV3k2E1IVIWIaLkb27V1HL09Uy3a-HQfRobn2oiWVVf5wqj6_HNA3ZjotUo-LQUXybQN5naOolkZ"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent" />

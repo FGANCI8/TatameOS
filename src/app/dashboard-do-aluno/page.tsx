@@ -13,12 +13,13 @@ const FrequenciaResumoCard = lazy(() => import('./FrequenciaResumoCard'));
 export default function DashboardDoAluno() {
   const {
     perfil,
+    error,
     prontidaoGraduacao,
     historicoRecente,
     historicoLoading,
     historicoError,
     loading: loadingAluno,
-    actions: { refreshHistorico },
+    actions: { refresh: refreshAluno, refreshHistorico },
   } = useAluno();
   const { data: treinos } = useTreino();
   const { userId } = useAuth();
@@ -93,6 +94,36 @@ export default function DashboardDoAluno() {
           <span className="font-headline text-sm font-black uppercase tracking-[0.35em] text-zinc-400">
             Sincronizando tatame...
           </span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error && !perfil) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-zinc-950 px-6">
+        <div className="w-full max-w-xl rounded-[28px] border border-brand-red/30 bg-brand-red/10 px-8 py-10 text-center">
+          <span className="material-symbols-outlined text-4xl text-brand-red">warning</span>
+          <p className="mt-4 text-[10px] font-black uppercase tracking-[0.35em] text-brand-red">Dashboard indisponível</p>
+          <h1 className="mt-3 font-headline text-3xl font-black uppercase tracking-tight text-white">
+            Não foi possível carregar seu perfil
+          </h1>
+          <p className="mt-3 text-sm leading-7 text-zinc-300">{error}</p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => void refreshAluno()}
+              className="rounded-2xl border border-brand-red/20 bg-brand-red/10 px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition hover:bg-brand-red/20"
+            >
+              Tentar novamente
+            </button>
+            <Link
+              to="/"
+              className="rounded-2xl border border-zinc-800 bg-zinc-950/60 px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-zinc-100 transition hover:bg-zinc-800"
+            >
+              Voltar ao login
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -394,9 +425,9 @@ export default function DashboardDoAluno() {
           <div>
             <span className="material-symbols-outlined text-zinc-400">local_fire_department</span>
             <h3 className="mt-2 text-4xl font-black uppercase italic leading-none">
-              {stats.totalSessoes > 0 ? '07' : '00'} dias
+              {frequenciaResumo?.sequenciaAtual ?? 0} dias
             </h3>
-            <p className="mt-1 text-xs uppercase tracking-widest text-zinc-400">Sequência estimada</p>
+            <p className="mt-1 text-xs uppercase tracking-widest text-zinc-400">Sequência atual</p>
           </div>
           <div className="mt-4 border-t border-zinc-800 pt-4">
             <p className="text-xs italic text-zinc-400">"A consistência supera o talento quando o talento não treina."</p>

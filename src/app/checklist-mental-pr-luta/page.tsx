@@ -9,7 +9,7 @@ export default function ChecklistMentalPrLuta() {
 <div className="h-1 w-24 bg-[#FF1A1A]"></div>
 </section>
 {/*  Progress Overview  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-4">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-4">
 <div className="flex justify-between items-end">
 <div className="space-y-1">
 <p className="font-['Inter'] text-[10px] font-bold tracking-widest text-zinc-400">STATUS ATUAL</p>

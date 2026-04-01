@@ -18,7 +18,7 @@ export default function MapaDeVulnerabilidades() {
 {/*  Main Visualization Grid  */}
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
 {/*  Performance Radar / Hexagon  */}
-<div className="lg:col-span-7 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden flex flex-col items-center justify-center min-h-[450px]">
+<div className="lg:col-span-7 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden flex flex-col items-center justify-center min-h-[450px]">
 <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ /* background-image: radial-gradient(circle at 50% 50%, #FF1A1A 0%, transparent 70%); */ }}></div>
 {/*  Radar Chart Visualization (CSS/HTML Hybrid)  */}
 <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
@@ -119,7 +119,7 @@ export default function MapaDeVulnerabilidades() {
 <div className="bg-zinc-950/60 group cursor-pointer overflow-hidden border border-white/5 hover:border-brand-red/20 transition-colors">
 <div className="flex h-32">
 <div className="w-1/3 relative">
-<img alt="BJJ Drill" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="close up of two jiu-jitsu practitioners drilling a submission in a dark gritty gym setting with spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGW9BpiuEHg09cibL6b4976if6u08E-scu7vr_xlkOpiTwYAu9yYmhK2wnIES-zMHZ8uIOVyIe6IqLV-3fgVT2zWwL6jjG6xQd_h9Pg_3gRraRBEixjbGD-F8JZzY5RhXZdzXF6jGfwd3lykxL84GzQdCRxPmQQ8udZQdNz_2585uIXcC-lHXVjaE209kCLm9XysvLafy_E9FXM1yXEXBQIVgVmUzoULLA844R3r8alkjhyVsF5eV4ZOU4PDx2fsGwKPCBmSeWiIMp"/>
+<img alt="BJJ Drill" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGW9BpiuEHg09cibL6b4976if6u08E-scu7vr_xlkOpiTwYAu9yYmhK2wnIES-zMHZ8uIOVyIe6IqLV-3fgVT2zWwL6jjG6xQd_h9Pg_3gRraRBEixjbGD-F8JZzY5RhXZdzXF6jGfwd3lykxL84GzQdCRxPmQQ8udZQdNz_2585uIXcC-lHXVjaE209kCLm9XysvLafy_E9FXM1yXEXBQIVgVmUzoULLA844R3r8alkjhyVsF5eV4ZOU4PDx2fsGwKPCBmSeWiIMp"/>
 </div>
 <div className="w-2/3 p-4 flex flex-col justify-center">
 <p className="font-label text-[10px] font-black text-brand-red uppercase mb-1">Defesa de Pescoço</p>
@@ -134,7 +134,7 @@ export default function MapaDeVulnerabilidades() {
 <div className="bg-zinc-950/60 group cursor-pointer overflow-hidden border border-white/5 hover:border-brand-red/20 transition-colors">
 <div className="flex h-32">
 <div className="w-1/3 relative">
-<img alt="Takedown Drill" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="professional athletes practicing takedowns in a high-end martial arts studio with dramatic high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDAPzcEwi5fjiRdiCFS9U6odwoDcanWakEbZ-JVO1zmrjvF1OkeMhxJARA5bf3jSa8f3SHXAviYDu2FkrVnKxk9HmsPzcHgs3tlx2iNgfbzjbSdU1qlCQOkpkH-uiHxKI8diEZKFx4zCEA-y3T4FSBJcfXKktFPxuCRJloV6UyAzaPOpZDuz5H0Po1X52kZgAi0JVoFA6gjjYVVA_bW9vC9lEx5W6z-4YSxkVCaBSao46T54HlPRfykj1YhHbjPQN0FvOdgYD8qmGO"/>
+<img alt="Takedown Drill" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDAPzcEwi5fjiRdiCFS9U6odwoDcanWakEbZ-JVO1zmrjvF1OkeMhxJARA5bf3jSa8f3SHXAviYDu2FkrVnKxk9HmsPzcHgs3tlx2iNgfbzjbSdU1qlCQOkpkH-uiHxKI8diEZKFx4zCEA-y3T4FSBJcfXKktFPxuCRJloV6UyAzaPOpZDuz5H0Po1X52kZgAi0JVoFA6gjjYVVA_bW9vC9lEx5W6z-4YSxkVCaBSao46T54HlPRfykj1YhHbjPQN0FvOdgYD8qmGO"/>
 </div>
 <div className="w-2/3 p-4 flex flex-col justify-center">
 <p className="font-label text-[10px] font-black text-brand-red uppercase mb-1">Explosividade</p>

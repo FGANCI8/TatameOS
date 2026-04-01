@@ -5,7 +5,7 @@ export default function MomentosCrTicosNaLuta() {
 {/*  Video Canvas Section  */}
 <section className="mb-8 relative bg-zinc-950 overflow-hidden group">
 <div className="aspect-video w-full bg-black relative">
-<img alt="training video frame" className="w-full h-full object-cover opacity-80" data-alt="wide shot of two jiu-jitsu practitioners grappling on dark mats in a high-intensity training facility with industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs2p2kMIJMqWIVj2G2Jj_q4Kj_4hM1cHltVw1j2olygKhlIs1lShgDjhL23dALRqRzwGdByHtwXZ571X4_lg3VlVZj0ysOvwSu9A_W1Omr3KqIo4hulH5PZSU2BKl7kAtOx0beJMdZQWElvoly5FGHYtcUAMMQupyhYxo3ToLNrPFj7_sqMiTSUajhjJr27do2dh_WEqh4WWT_T7t2IGvv8TjXA6Epd5hTB9n8SJXj91T_ExI8W5sMU5PkHjhJRGaWC3qnfGVsG8DB"/>
+<img alt="training video frame" className="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs2p2kMIJMqWIVj2G2Jj_q4Kj_4hM1cHltVw1j2olygKhlIs1lShgDjhL23dALRqRzwGdByHtwXZ571X4_lg3VlVZj0ysOvwSu9A_W1Omr3KqIo4hulH5PZSU2BKl7kAtOx0beJMdZQWElvoly5FGHYtcUAMMQupyhYxo3ToLNrPFj7_sqMiTSUajhjJr27do2dh_WEqh4WWT_T7t2IGvv8TjXA6Epd5hTB9n8SJXj91T_ExI8W5sMU5PkHjhJRGaWC3qnfGVsG8DB"/>
 {/*  Overlay Gradient for UI Legibility  */}
 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 {/*  Play Center Button  */}
@@ -96,7 +96,7 @@ export default function MomentosCrTicosNaLuta() {
 </button>
 </div>
 {/*  Telemetry Data Strip  */}
-<div className="mt-8 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-wrap gap-8 justify-between">
+<div className="mt-8 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-wrap gap-8 justify-between">
 <div className="flex flex-col">
 <span className="text-[10px] font-bold text-zinc-500 tracking-[0.2em] uppercase">INTENSIDADE MÉDIA</span>
 <span className="text-3xl font-black font-headline text-zinc-100 uppercase">84%</span>

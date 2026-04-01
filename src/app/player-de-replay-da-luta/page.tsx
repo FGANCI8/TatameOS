@@ -4,7 +4,7 @@ export default function PlayerDeReplayDaLuta() {
 <main className="pb-24 lg:pb-0">
 {/*  Video Player Section  */}
 <section className="relative w-full aspect-video bg-black group">
-<img className="w-full h-full object-cover opacity-80" data-alt="Wide shot of two MMA fighters in a cage, one delivering a mid-kick, high-speed photography, cinematic lighting with atmospheric dust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi8ENgBhTD6aN6MSnPI-evP3THZv_FB6r4CfxdZUww-HUvETRWarDriDSMo6AeIKtNUe-z-qfj6fzqfUjd7qV3_txZ8uWGWPDF1bw7rF_C7b5vAd6-o_4bMKJNaw3ZAvw57ofP63dil13pqbKa5ctI8p2lt1qpnXQUpDi6KwmSuhBUgCFCOcJqZPFI1OPAkcRCiJsduSEXJNBAwFgW_YpVBh2d-FpQnV1-a34s2ps8-lJyyDDw9tl9X5kES3OgWZ6Mqmz_aGg9PJ-h"/>
+<img className="w-full h-full object-cover opacity-80" alt="Wide shot of two MMA fighters in a cage, one delivering a mid-kick, high-speed photography, cinematic lighting with atmospheric dust" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi8ENgBhTD6aN6MSnPI-evP3THZv_FB6r4CfxdZUww-HUvETRWarDriDSMo6AeIKtNUe-z-qfj6fzqfUjd7qV3_txZ8uWGWPDF1bw7rF_C7b5vAd6-o_4bMKJNaw3ZAvw57ofP63dil13pqbKa5ctI8p2lt1qpnXQUpDi6KwmSuhBUgCFCOcJqZPFI1OPAkcRCiJsduSEXJNBAwFgW_YpVBh2d-FpQnV1-a34s2ps8-lJyyDDw9tl9X5kES3OgWZ6Mqmz_aGg9PJ-h"/>
 {/*  Video Overlay UI  */}
 <div className="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/80 via-transparent to-black/40">
 <div className="flex justify-between items-start">
@@ -47,7 +47,7 @@ export default function PlayerDeReplayDaLuta() {
 </div>
 </section>
 {/*  Timeline & Precision Controls  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-8">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-8">
 {/*  Timeline Visual  */}
 <div className="relative pt-4">
 <div className="h-2 w-full bg-zinc-800/80 relative overflow-hidden">

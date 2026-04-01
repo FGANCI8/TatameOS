@@ -16,7 +16,7 @@ export default function SuporteEAjuda() {
       </div>
       {/*  Support Actions Bento Grid  */}
       <div className="grid grid-cols-2 gap-3 mb-12">
-        <div className="col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+        <div className="col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between min-h-[160px] relative overflow-hidden">
           <div className="z-10">
             <span className="font-label font-bold text-[10px] uppercase tracking-widest text-brand-red mb-2 block">Contato Direto</span>
             <h3 className="font-headline font-extrabold text-2xl uppercase italic">Falar com a Academia</h3>

@@ -34,14 +34,14 @@ export default function EvoluOCompetitiva() {
 {/*  Timeline Node 01: The Breakthrough  */}
 <div className="grid grid-cols-1 md:grid-cols-4 bg-zinc-900/80 gap-1 p-1">
 <div className="md:col-span-1 relative min-h-[300px] overflow-hidden group">
-<img alt="MMA Fighter" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="Intense close-up of a martial artist with sweat on skin, dramatic low-key lighting with sharp shadows in a dark gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-l8HWsZ71e1lB31CS0DCbqZAIXZGS4VW6mFUeLskkXNpQMc-CH3kc5KCbDato3Mz4aXMgjOOwHH4qLkGYgCd5Xs8sCbujqGCZoq77ypTmpiNIWJ-ams2vtRfi7zGrXAeTg8nDOm6I2Q8TpS1ujELf2o3GgWvrAKNG8xN9FP0xBgVKfQ8WtTLYLWVGrocp6zxVED6R9dSTMKaNw2Cr7elpJbMCdELAJHwQKmAqbp9R0DpXoAUpZOLOYepkiPs3UEneSEy6KxcC3lbU"/>
+<img alt="MMA Fighter" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-l8HWsZ71e1lB31CS0DCbqZAIXZGS4VW6mFUeLskkXNpQMc-CH3kc5KCbDato3Mz4aXMgjOOwHH4qLkGYgCd5Xs8sCbujqGCZoq77ypTmpiNIWJ-ams2vtRfi7zGrXAeTg8nDOm6I2Q8TpS1ujELf2o3GgWvrAKNG8xN9FP0xBgVKfQ8WtTLYLWVGrocp6zxVED6R9dSTMKaNw2Cr7elpJbMCdELAJHwQKmAqbp9R0DpXoAUpZOLOYepkiPs3UEneSEy6KxcC3lbU"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
 <div className="absolute bottom-4 left-4">
 <span className="bg-brand-red/10 text-white text-[10px] font-black px-2 py-1 uppercase italic">CURRENT PEAK</span>
 <p className="font-headline text-2xl font-black mt-1">NATIONAL OPEN</p>
 </div>
 </div>
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <h3 className="font-headline text-sm font-black text-brand-red tracking-widest uppercase mb-4">TECHNICAL EVOLUTION</h3>
 <p className="font-body text-lg leading-relaxed text-zinc-100 mb-6">Transitioned from defensive striking to a high-pressure grappling integration. Increased submission accuracy by 22% through refined hip control and kinetic chain alignment.</p>
@@ -76,7 +76,7 @@ export default function EvoluOCompetitiva() {
 <p className="font-headline text-lg font-black uppercase">REGIONAL FINALS</p>
 </div>
 </div>
-<div className="md:col-span-3 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+<div className="md:col-span-3 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
 <div className="flex justify-between items-start mb-8">
 <div className="max-w-md">
 <h3 className="font-headline text-sm font-black text-zinc-300 tracking-widest uppercase mb-2">PATTERN RECOGNITION</h3>
@@ -97,13 +97,13 @@ export default function EvoluOCompetitiva() {
 {/*  Timeline Node 03: The Foundation  */}
 <div className="grid grid-cols-1 md:grid-cols-4 bg-zinc-900/80 gap-1 p-1 opacity-60 hover:opacity-100 transition-opacity">
 <div className="md:col-span-1 relative h-48 md:h-full overflow-hidden grayscale">
-<img alt="Training Session" className="absolute inset-0 w-full h-full object-cover" data-alt="Cinematic shot of a gym floor with kettlebells and heavy bags, moody lighting with grain texture, high contrast athletic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy74TmxfLs5aLMzwC10GGOAVSF2-y_bPkWhNznUgISPi2IpI2-SAec6dKzsYO6yUBQS6ZDAk1hvGlNnrilBH8O1jyuiO6nT_UFtB7U-0_5YKMOQKlNe4bYGVuunAQPkrYVXjdTOh4L7vvxLxFKu6kKA5vNuDHCTd9a3ySXaYN2DnPiBGcOwIv71x6tuaPqg5sniYbzzfQhx6wZ4Y1ijGoMip_OYEj8bt1fpJHp5GJX_aqsPAjtMoTmb-kyRwMMXJS-kJ-WsD0buG-z"/>
+<img alt="Training Session" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy74TmxfLs5aLMzwC10GGOAVSF2-y_bPkWhNznUgISPi2IpI2-SAec6dKzsYO6yUBQS6ZDAk1hvGlNnrilBH8O1jyuiO6nT_UFtB7U-0_5YKMOQKlNe4bYGVuunAQPkrYVXjdTOh4L7vvxLxFKu6kKA5vNuDHCTd9a3ySXaYN2DnPiBGcOwIv71x6tuaPqg5sniYbzzfQhx6wZ4Y1ijGoMip_OYEj8bt1fpJHp5GJX_aqsPAjtMoTmb-kyRwMMXJS-kJ-WsD0buG-z"/>
 </div>
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
 <h3 className="font-headline text-sm font-black text-zinc-400 tracking-widest uppercase mb-4">THE ORIGIN</h3>
 <p className="font-body text-sm text-zinc-400">First competitive appearance. Focus on pure endurance and raw agility. Baseline metrics established for future kinetic growth.</p>
 </div>
-<div className="md:col-span-1 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-center border-t md:border-t-0 md:border-l border-zinc-800/10">
+<div className="md:col-span-1 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-center border-t md:border-t-0 md:border-l border-zinc-800/10">
 <div className="flex items-center gap-2 mb-2">
 <span className="material-symbols-outlined text-sm" data-icon="history">history</span>
 <span className="font-label text-[10px] font-black uppercase tracking-widest">LEGACY DATA</span>
@@ -118,7 +118,7 @@ export default function EvoluOCompetitiva() {
 <section className="mt-24">
 <h2 className="font-headline text-2xl font-black uppercase tracking-widest mb-8 text-center">BIOMETRIC CONSOLIDATION</h2>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-1 bg-zinc-950/60 p-1">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto h-64">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto h-64">
 <span className="font-label text-[10px] font-black text-brand-red tracking-[0.3em] uppercase">WIN RATE</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline text-7xl font-black tracking-tighter italic">92</span>
@@ -128,7 +128,7 @@ export default function EvoluOCompetitiva() {
 <div className="bg-brand-red/10 h-full w-[92%]"></div>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto h-64">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto h-64">
 <span className="font-label text-[10px] font-black text-zinc-300 tracking-[0.3em] uppercase">PEAK FORCE</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline text-7xl font-black tracking-tighter italic">1.2</span>
@@ -136,7 +136,7 @@ export default function EvoluOCompetitiva() {
 </div>
 <p className="font-label text-[10px] text-zinc-400 uppercase tracking-widest">MEASURED AT CONTACT POINT</p>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto h-64">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto h-64">
 <span className="font-label text-[10px] font-black text-zinc-400 tracking-[0.3em] uppercase">CONSISTENCY</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline text-7xl font-black tracking-tighter italic">A+</span>

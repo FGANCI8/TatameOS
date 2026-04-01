@@ -4,7 +4,7 @@ export default function DetalheDaTCnica() {
 <main className="pt-16 max-w-5xl mx-auto">
 {/*  Highlighted Video Section  */}
 <section className="relative aspect-video w-full bg-zinc-950 overflow-hidden">
-<img className="w-full h-full object-cover opacity-60" data-alt="cinematic action shot of two jiu jitsu athletes performing a high-level technical guard pass in a dark high-performance gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoton6xf7h8zGudzel6x9fvndaHK3VKpOAPbnOyhmiBqEDtu0QbtAKz7IttF4aWmjDK8G_azjmwxgiHgzz75bsrEIsesaflsyuXr3J34Tf6IN1v_1wRGMWisW82k3cJYSHqxXbKKYJ7Ils2S8oYTVj_F0EeTPzWmT_wA0WSuDWJo36Cf_Uarwl8PsbUFjAtLqVeWr-DCvgMr4IQ-ebfEyhGVaJtRTStnoQJdJUwu9qW0UDgjkLLvkQS_QJ8G2EFmSY6Qj0ckzYHIBW"/>
+<img className="w-full h-full object-cover opacity-60" alt="cinematic action shot of two jiu jitsu athletes performing a high-level technical guard pass in a dark high-performance gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoton6xf7h8zGudzel6x9fvndaHK3VKpOAPbnOyhmiBqEDtu0QbtAKz7IttF4aWmjDK8G_azjmwxgiHgzz75bsrEIsesaflsyuXr3J34Tf6IN1v_1wRGMWisW82k3cJYSHqxXbKKYJ7Ils2S8oYTVj_F0EeTPzWmT_wA0WSuDWJo36Cf_Uarwl8PsbUFjAtLqVeWr-DCvgMr4IQ-ebfEyhGVaJtRTStnoQJdJUwu9qW0UDgjkLLvkQS_QJ8G2EFmSY6Qj0ckzYHIBW"/>
 <div className="absolute inset-0 flex items-center justify-center">
 <button className="w-20 h-20 bg-[#FF1A1A] flex items-center justify-center active:scale-95 transition-transform">
 <span className="material-symbols-outlined text-white text-5xl" data-icon="play_arrow" data-weight="fill" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_arrow</span>
@@ -57,7 +57,7 @@ export default function DetalheDaTCnica() {
 </div>
 </section>
 {/*  Common Errors Section  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-8 border-brand-red/20">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-8 border-brand-red/20">
 <h3 className="font-['Lexend'] font-black uppercase tracking-widest text-brand-red text-sm mb-6 flex items-center gap-2">
 <span className="material-symbols-outlined" data-icon="warning">warning</span>
                         Erros Comuns
@@ -81,10 +81,10 @@ export default function DetalheDaTCnica() {
 {/*  Sidebar: Teacher Notes & Metrics  */}
 <aside className="lg:col-span-4 space-y-6">
 {/*  Teacher Notes Card  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-t-2 border-zinc-800">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-t-2 border-zinc-800">
 <div className="flex items-center gap-4 mb-6">
 <div className="w-12 h-12 bg-zinc-800/80 flex items-center justify-center overflow-hidden">
-<img alt="Professor" className="w-full h-full object-cover" data-alt="professional brazilian jiu jitsu master professor profile picture with black belt visible around neck" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6xAIPSk-LfQpKUc7BFXf6ysYDgeXyYssct7ZdF2qwJroUmpeJa-pNvvbs0fo0Gq9mcehBXZvL9uk4lS6gafuBEjtJm1fD9HwEabMnyOevO8ch1ZPAutJ4w47nvZoFnAPtVr2uked_3dElTs-47d8-kdMXDOmjr1STktBvo7rHZB5MSCvjDC3BJdv_i1BDDT2HKjAX-Rd8XLixc3mYcED7qRbKH1kR4Ol96QcoFK1AcIVlG9vIOCRVl17sOf-nQUzODNN-yPM22D0Q"/>
+<img alt="Professor" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6xAIPSk-LfQpKUc7BFXf6ysYDgeXyYssct7ZdF2qwJroUmpeJa-pNvvbs0fo0Gq9mcehBXZvL9uk4lS6gafuBEjtJm1fD9HwEabMnyOevO8ch1ZPAutJ4w47nvZoFnAPtVr2uked_3dElTs-47d8-kdMXDOmjr1STktBvo7rHZB5MSCvjDC3BJdv_i1BDDT2HKjAX-Rd8XLixc3mYcED7qRbKH1kR4Ol96QcoFK1AcIVlG9vIOCRVl17sOf-nQUzODNN-yPM22D0Q"/>
 </div>
 <div>
 <p className="font-['Lexend'] font-black text-white text-xs uppercase opacity-60">Professor Responde</p>

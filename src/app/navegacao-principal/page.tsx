@@ -3,7 +3,7 @@ export default function NavegaOPrincipal() {
     <>
 <main className="flex-grow flex flex-col md:flex-row">
 {/*  SideNav (Desktop)  */}
-<aside className="hidden md:flex flex-col w-64 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-8 h-[calc(100vh-72px)] sticky top-[72px]">
+<aside className="hidden md:flex flex-col w-64 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-8 h-[calc(100vh-72px)] sticky top-[72px]">
 <nav className="space-y-4">
 <div className="group flex items-center gap-4 px-4 py-3 bg-gradient-to-br from-[#FF1A1A] to-[#C00100] text-white transition-all cursor-pointer">
 <span className="material-symbols-outlined" style={{ /* font-variation-settings: 'FILL' 1; */ }}>home</span>
@@ -42,7 +42,7 @@ export default function NavegaOPrincipal() {
 {/*  Hero Stats Bento  */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 <div className="md:col-span-8 relative h-64 md:h-80 bg-zinc-900/80 overflow-hidden group">
-<img alt="Training highlight" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Dynamic shot of two Brazilian Jiu-Jitsu practitioners grappling on a black mat, high contrast, rim lighting, intense athletic action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9SSDnLz-z_IsCRIF2ixk3ulTTnUO4mODNTq4fCp6IzPSgIKEyri3OPpEjERcYSeLc1IrUoF_m67GVkNN_X4nH85OePkpK6y92bSXm1Dey8yPFccPk49lhWd-jUfc4v2MoFFUzB2sesVzHzMebyei-txc-0ZSWGG7K8IS4S__EGC91vWTDCbxZAgdwmlKpE1Oty4ur_JpLoQHr_K5HJWivICgfaIZdvgUiQKjrYvVxFpMN2VEh3RHOJr6BUwO8qdF8EFwLrzKixTDN"/>
+<img alt="Training highlight" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9SSDnLz-z_IsCRIF2ixk3ulTTnUO4mODNTq4fCp6IzPSgIKEyri3OPpEjERcYSeLc1IrUoF_m67GVkNN_X4nH85OePkpK6y92bSXm1Dey8yPFccPk49lhWd-jUfc4v2MoFFUzB2sesVzHzMebyei-txc-0ZSWGG7K8IS4S__EGC91vWTDCbxZAgdwmlKpE1Oty4ur_JpLoQHr_K5HJWivICgfaIZdvgUiQKjrYvVxFpMN2VEh3RHOJr6BUwO8qdF8EFwLrzKixTDN"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 <div className="absolute bottom-8 left-8">
 <span className="font-label text-xs font-bold text-[#FF1A1A] uppercase tracking-[0.3em] mb-2 block">Próxima Aula</span>
@@ -68,7 +68,7 @@ export default function NavegaOPrincipal() {
 {/*  Architecture Grid  */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {/*  Activity Monolith  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col gap-8">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col gap-8">
 <div className="flex justify-between items-start">
 <h4 className="font-headline text-xl font-bold uppercase italic tracking-tight">Atividade</h4>
 <span className="material-symbols-outlined text-zinc-300">analytics</span>
@@ -90,7 +90,7 @@ export default function NavegaOPrincipal() {
 </div>
 </div>
 {/*  Assistente IA Card  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between relative overflow-hidden group">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between relative overflow-hidden group">
 <div className="relative z-10">
 <div className="flex justify-between items-start mb-4">
 <h4 className="font-headline text-xl font-bold uppercase italic tracking-tight text-white">Assistente IA</h4>

@@ -115,7 +115,6 @@ export default function ResumoFinalDaRevisao() {
               <img
                 alt="technique thumbnail"
                 className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                data-alt="Athletic trainer demonstrating a defensive boxing stance with hands high and elbows tucked in a cinematic gym setting"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDau4q-2kxuP1w0rcTaLgmSpenJVnVqtJtF8laA5_ndaZY90GMUT1E3ABxJ4yKDWJbec00c1dtKEeZxanW1MajcrpNFj3B80P8gkMJRwkTRyk7FaXwnrb_pHkjjYkBXHOzCZORhbBST8qYcZP9LCzMlNI9KMgerUQm7LhqbjaHSS7BIT70nl65NfwP3ap74opsvTHG1HR4wj5jksVcEI4TiQozCJ7enIG4DaeYOis5Pn_TM8NS2DWd2ODRkXoWONQwcOvINMLSSAqW_"
               />
               <div className="absolute bottom-4 right-4 bg-brand-red/10 p-2">

@@ -64,7 +64,7 @@ export default function ModoAgenteIa() {
                 <div className="h-16 w-16 flex-shrink-0 bg-zinc-800/80">
                   <img
                     className="h-full w-full object-cover opacity-50 grayscale contrast-125"
-                    data-alt="Infographic or diagram showing joint rotation and mechanical force vectors in a technical martial arts movement"
+                    alt="Infographic or diagram showing joint rotation and mechanical force vectors in a technical martial arts movement"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8SsviIcDBlntrfOsGipa2nSsdq2IwBrf4XPpAQHK7l6h7MCqLozusd9C6FKKzeeJAp2KOSTAC7Mi0GOqym5Q3MhbBtiGtoXDyAZPUl6kkszlivKxZ-WFkvVqQfM1gX5OBE8SG1PEoLxHAcBjM1aGy4fM7gaGseuHlSAX_9KHKz5g9yqNmp5DPINDU6R8-wJ4xiRjPv0XsI14wR5L_H7Px5jnn1Ny-80fzK0G9Pmoq0ZRosOTzHDmrpjA3x_xyMtnrBw1ZpOSLHQJ7"
                   />
                 </div>

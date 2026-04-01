@@ -20,7 +20,7 @@ const plans = [
 export default function PlanosDeAcesso() {
   return (
     <main className="mx-auto max-w-6xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Evolução sem limites</p>
         <h1 className="mt-3 font-headline text-4xl font-black uppercase tracking-tight text-zinc-100 md:text-5xl">
           Escolha seu nível
@@ -82,7 +82,7 @@ export default function PlanosDeAcesso() {
         ))}
       </section>
 
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Comparativo técnico</p>
         <div className="mt-6 overflow-hidden rounded-[24px] border border-zinc-800">
           {[

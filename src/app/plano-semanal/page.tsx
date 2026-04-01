@@ -88,7 +88,7 @@ export default function PlanoSemanal() {
 {/*  Video Card 1  */}
 <div className="bg-zinc-900 group flex items-center hover:bg-zinc-800/80 transition-all cursor-pointer">
 <div className="w-24 h-24 bg-zinc-800/80 flex-shrink-0 overflow-hidden relative">
-<img alt="Technique Preview" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Action shot of a Jiu-Jitsu guard pass technique with dynamic motion blur in a high-contrast gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSn164cuRk0QNW--yioDiLwIPnuJ-MTSU9RQMlo9plWWsy6QPkDg5JlPwkWqvkIQ5lCc1pDRwL09BZ-TTq9OU0SMwiMYS8hHSgiuVrlIgESN9cAMpIx9Z8aqslbUcasaZlDISQuBuyZiAYB3IChooa6EX2Lu0M3r1Nv-Oo03hoXRcDfzYY8Wg8ckRAmXy0mrUHZPKZVSjbNEgygg7dGUg07JU9dr6q0miFjwEsjtK5LcrLoK_iBRUDoP1orjE75x3t7ZiXSWsIstz"/>
+<img alt="Technique Preview" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSn164cuRk0QNW--yioDiLwIPnuJ-MTSU9RQMlo9plWWsy6QPkDg5JlPwkWqvkIQ5lCc1pDRwL09BZ-TTq9OU0SMwiMYS8hHSgiuVrlIgESN9cAMpIx9Z8aqslbUcasaZlDISQuBuyZiAYB3IChooa6EX2Lu0M3r1Nv-Oo03hoXRcDfzYY8Wg8ckRAmXy0mrUHZPKZVSjbNEgygg7dGUg07JU9dr6q0miFjwEsjtK5LcrLoK_iBRUDoP1orjE75x3t7ZiXSWsIstz"/>
 <div className="absolute inset-0 bg-brand-red/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
 <span className="material-symbols-outlined text-white" data-icon="play_arrow">play_arrow</span>
 </div>
@@ -105,7 +105,7 @@ export default function PlanoSemanal() {
 {/*  Video Card 2  */}
 <div className="bg-zinc-900 group flex items-center hover:bg-zinc-800/80 transition-all cursor-pointer">
 <div className="w-24 h-24 bg-zinc-800/80 flex-shrink-0 overflow-hidden relative">
-<img alt="Technique Preview" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Overhead view of two grapplers in a intense ground position, dramatic lighting highlighting muscular detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwGRl49eN5lBBk_sSFZ6w38fOUFV1wXMhlhEOZVtM7H4iVpH1n2fHbAb4xCcg3kjx5qCwOu6pOggVRfQDUIHTcBQHn2VNNGV9KKJwmCtEyiFKZFCw68Wxq5eZWpAscQ6HXCA4qO6WYCd70PhYwRiAK9G4Rgw9p03SFfsq4kz3ynJJWHGOSyK72Zbnnygjr5a4h8hAhienNYcNER2nYhHx2fscmSjd6WWwrfmkVSbIGztq9vo5RglZPB_fuqzOPrbkXqCLNqUyNSDaQ"/>
+<img alt="Technique Preview" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwGRl49eN5lBBk_sSFZ6w38fOUFV1wXMhlhEOZVtM7H4iVpH1n2fHbAb4xCcg3kjx5qCwOu6pOggVRfQDUIHTcBQHn2VNNGV9KKJwmCtEyiFKZFCw68Wxq5eZWpAscQ6HXCA4qO6WYCd70PhYwRiAK9G4Rgw9p03SFfsq4kz3ynJJWHGOSyK72Zbnnygjr5a4h8hAhienNYcNER2nYhHx2fscmSjd6WWwrfmkVSbIGztq9vo5RglZPB_fuqzOPrbkXqCLNqUyNSDaQ"/>
 <div className="absolute inset-0 bg-brand-red/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
 <span className="material-symbols-outlined text-white" data-icon="play_arrow">play_arrow</span>
 </div>

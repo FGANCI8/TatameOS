@@ -52,7 +52,7 @@ const sessions: Session[] = [
 export default function AgendaDeAulas() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Agenda semanal</p>
@@ -70,7 +70,7 @@ export default function AgendaDeAulas() {
         </div>
       </section>
 
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Dias ativos</p>
         <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
           {['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map((day, index) => {

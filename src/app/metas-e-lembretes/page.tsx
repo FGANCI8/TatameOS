@@ -9,7 +9,7 @@ export default function MetasELembretes() {
 <h2 className="font-headline text-4xl font-black italic tracking-tighter uppercase text-zinc-100">DISCIPLINA <span className="text-brand-red">ATIVA</span></h2>
 </div>
 {/*  Performance Streak Component  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-brand-red/20">
 <div className="flex justify-between items-end mb-4">
 <div>
 <div className="font-headline text-5xl font-black text-zinc-100 tracking-tighter">75%</div>
@@ -35,7 +35,7 @@ export default function MetasELembretes() {
 {/*  Bento Grid: Reminders & Goals  */}
 <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
 {/*  Reminders Card  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-6">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-6">
 <div className="flex items-center gap-3">
 <span className="material-symbols-outlined text-brand-red" data-icon="lightbulb">lightbulb</span>
 <h3 className="font-headline font-bold text-xl uppercase tracking-tight">Revisão de Técnica</h3>
@@ -87,7 +87,7 @@ export default function MetasELembretes() {
             </h3>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 {/*  Goal Item  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-b-2 border-zinc-800/80 flex justify-between items-center group hover:bg-zinc-900/80 transition-colors">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-b-2 border-zinc-800/80 flex justify-between items-center group hover:bg-zinc-900/80 transition-colors">
 <div className="space-y-1">
 <p className="font-headline text-lg font-black uppercase text-zinc-100">GRADUAÇÃO FAIXA AZUL</p>
 <p className="font-label text-xs text-zinc-500">Estimativa: Dezembro 2024</p>
@@ -97,7 +97,7 @@ export default function MetasELembretes() {
 </div>
 </div>
 {/*  Goal Item  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-b-2 border-zinc-800/80 flex justify-between items-center group hover:bg-zinc-900/80 transition-colors">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-b-2 border-zinc-800/80 flex justify-between items-center group hover:bg-zinc-900/80 transition-colors">
 <div className="space-y-1">
 <p className="font-headline text-lg font-black uppercase text-zinc-100">PRIMEIRA COMPETIÇÃO</p>
 <p className="font-label text-xs text-zinc-500">Status: Inscrição Pendente</p>
@@ -109,7 +109,7 @@ export default function MetasELembretes() {
 </div>
 </section>
 {/*  Quick Habits  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-zinc-800/10">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-zinc-800/10">
 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
 <div className="max-w-md">
 <h4 className="font-headline font-black text-2xl uppercase italic text-zinc-100">Check-list Diário</h4>

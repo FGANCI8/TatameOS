@@ -22,7 +22,7 @@ export default function EvoluODaFalha() {
 {/*  Bento Grid Visualization  */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 {/*  Main Chart Area  */}
-<div className="md:col-span-8 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden group">
+<div className="md:col-span-8 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden group">
 <div className="flex justify-between items-start mb-12">
 <div>
 <h3 className="font-headline font-bold text-xl uppercase italic">Frequência da Falha</h3>
@@ -76,7 +76,7 @@ export default function EvoluODaFalha() {
 {/*  Side Metrics  */}
 <div className="md:col-span-4 flex flex-col gap-6">
 {/*  Confidence Indicator  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF1A1A]">Nível de Confiança</span>
 <h4 className="font-headline font-black text-4xl mt-2 italic">88%</h4>
@@ -139,7 +139,7 @@ export default function EvoluODaFalha() {
 {/*  Technical Narrative Section  */}
 <div className="md:col-span-12 bg-zinc-950 p-10 flex flex-col md:flex-row gap-10 items-center">
 <div className="w-full md:w-1/3 aspect-square bg-zinc-900/80 relative overflow-hidden">
-<img className="w-full h-full object-cover grayscale contrast-125" data-alt="black and white dynamic high contrast photography of two people practicing brazilian jiu jitsu focusing on a hip escape movement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnT8bOyfeANW1FQ2sAc1g7NMqP7Z-E9QFZfvNhNCkzEFxSd4HxM245zrhcYXo7Lpy6PJQcsLUO_AljoJKF805VA7XUi0ex1dTV9ODwJb4NbL6rrLirnrDDR7FMp5dnOsYVwnIeiBiEdFM7eqtsOCz0ZgmgLyP_MbFVgnAQ5FjC3axVkzGQ6HUCMweWcJWxuCrGgJI1z4OSmgD3hLet5dx8Ev1qMENR3mu8dls8Z9ydpXrBuY4T5KCSJZvJOSoCpVFG2pOdLByZiDhK"/>
+<img className="w-full h-full object-cover grayscale contrast-125" alt="black and white dynamic high contrast photography of two people practicing brazilian jiu jitsu focusing on a hip escape movement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnT8bOyfeANW1FQ2sAc1g7NMqP7Z-E9QFZfvNhNCkzEFxSd4HxM245zrhcYXo7Lpy6PJQcsLUO_AljoJKF805VA7XUi0ex1dTV9ODwJb4NbL6rrLirnrDDR7FMp5dnOsYVwnIeiBiEdFM7eqtsOCz0ZgmgLyP_MbFVgnAQ5FjC3axVkzGQ6HUCMweWcJWxuCrGgJI1z4OSmgD3hLet5dx8Ev1qMENR3mu8dls8Z9ydpXrBuY4T5KCSJZvJOSoCpVFG2pOdLByZiDhK"/>
 <div className="absolute inset-0 bg-[#FF1A1A]/10 mix-blend-multiply"></div>
 </div>
 <div className="flex-1">

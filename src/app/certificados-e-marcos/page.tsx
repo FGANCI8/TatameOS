@@ -22,7 +22,7 @@ export default function CertificadosEMarcos() {
 </div>
 </div>
 {/*  The Performance Streak Component  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-4 sharp-edge relative overflow-hidden group">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-4 sharp-edge relative overflow-hidden group">
 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/10/5 -mr-12 -mt-12 rotate-45 pointer-events-none"></div>
 <div className="flex justify-between items-center">
 <span className="font-headline font-bold text-sm tracking-widest uppercase italic">Progresso Faixa Roxa</span>
@@ -48,7 +48,7 @@ export default function CertificadosEMarcos() {
 {/*  Cert 1 (Large)  */}
 <div className="md:col-span-2 bg-zinc-950/60 group cursor-pointer overflow-hidden sharp-edge flex flex-col md:flex-row h-full">
 <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
-<img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="high quality digital certificate mockup with red and gold wax seal on dark textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO-BBimtZsPZxjW8219VHSEnEingXKivq0O25ameY5X9PsHzPK70CsimACRzsvCPPd69JYwPFgf_L_td-EIVnd7MX2n8Kx2kBrHx41sjvQS6uYrE-T0lwulUza02luAwxgkHce9uEUYiYXsk2DuAtl0lJIqzZjM3bZsPzNHUQhVheasmzT1eheBpkU3eOSFeKAVdQhzoyb0Z9Cs_vtwVZFNUFIQk5CIdpK2jwzxv3mYhRYPpV-4fTvHBY9PSB5U3MwLXt_4nvz8EF8"/>
+<img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt="high quality digital certificate mockup with red and gold wax seal on dark textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO-BBimtZsPZxjW8219VHSEnEingXKivq0O25ameY5X9PsHzPK70CsimACRzsvCPPd69JYwPFgf_L_td-EIVnd7MX2n8Kx2kBrHx41sjvQS6uYrE-T0lwulUza02luAwxgkHce9uEUYiYXsk2DuAtl0lJIqzZjM3bZsPzNHUQhVheasmzT1eheBpkU3eOSFeKAVdQhzoyb0Z9Cs_vtwVZFNUFIQk5CIdpK2jwzxv3mYhRYPpV-4fTvHBY9PSB5U3MwLXt_4nvz8EF8"/>
 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div className="absolute bottom-4 left-4">
 <span className="bg-[#FF1A1A] text-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">OFFICIAL SEMINAR</span>
@@ -68,7 +68,7 @@ export default function CertificadosEMarcos() {
 {/*  Cert 2  */}
 <div className="bg-zinc-950/60 group cursor-pointer overflow-hidden sharp-edge flex flex-col h-full">
 <div className="relative h-48 overflow-hidden">
-<img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="dynamic close up of jiu jitsu athletes grappling during a workshop with moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAn3zRhKfKcMudwziKQ2XD1YWlTrE_9nGaT65PZYG8OeiHf4vIWEFgyN-JPDWC6I-OixtT4IOkvMX4G-o80yPcfjzD5Xi3JjO5o2CiCyWG3g7ABEdbM2FsV7_eo2QcC2mRhLA9aQxtljSehZwTRkaMObC7Igt0nKmkNPsj8PxAzWfDr4Uq6zWgnENl67Cqn1HVuIHJFYSs_TqKHNLNrREQY4dR1xqNDBjfZvtbmlKuYOZfodh9Yb5_1Dfo3FJIVQL9clGf9Y5-tJUb"/>
+<img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt="dynamic close up of jiu jitsu athletes grappling during a workshop with moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAn3zRhKfKcMudwziKQ2XD1YWlTrE_9nGaT65PZYG8OeiHf4vIWEFgyN-JPDWC6I-OixtT4IOkvMX4G-o80yPcfjzD5Xi3JjO5o2CiCyWG3g7ABEdbM2FsV7_eo2QcC2mRhLA9aQxtljSehZwTRkaMObC7Igt0nKmkNPsj8PxAzWfDr4Uq6zWgnENl67Cqn1HVuIHJFYSs_TqKHNLNrREQY4dR1xqNDBjfZvtbmlKuYOZfodh9Yb5_1Dfo3FJIVQL9clGf9Y5-tJUb"/>
 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div className="absolute bottom-4 left-4">
 <span className="bg-zinc-800/80 text-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">WORKSHOP</span>
@@ -85,7 +85,7 @@ export default function CertificadosEMarcos() {
 {/*  Cert 3  */}
 <div className="bg-zinc-950/60 group cursor-pointer overflow-hidden sharp-edge flex flex-col h-full">
 <div className="relative h-48 overflow-hidden">
-<img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="black and white photo of a jiu jitsu belt showing signs of wear and heavy training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfCY2jYxUb446AlN4yAaaAFIfSvlVYOnDWThUg3B6OIc_IQJo6Ckh7PH9B3HGJxYL5jD2KuZ3b8rcxFxPR_XRD4F0aiLuSekCkz4KBOIgnUyb9ZDY7Az7MQtwWCW4bI1mWCcbpVkzzjGhBg5s90Z69DSRjaha_S45a9ONbxQc5OarLXiwppmGO-Wyte2qspUx3qQDFinn7kjCMG-2GYZUzPHD4xKTfwwPSGMRQtk-DvOEzm4a64Q7bSkiWIHlJRUtKwPro8m0g77Bx"/>
+<img className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" alt="black and white photo of a jiu jitsu belt showing signs of wear and heavy training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfCY2jYxUb446AlN4yAaaAFIfSvlVYOnDWThUg3B6OIc_IQJo6Ckh7PH9B3HGJxYL5jD2KuZ3b8rcxFxPR_XRD4F0aiLuSekCkz4KBOIgnUyb9ZDY7Az7MQtwWCW4bI1mWCcbpVkzzjGhBg5s90Z69DSRjaha_S45a9ONbxQc5OarLXiwppmGO-Wyte2qspUx3qQDFinn7kjCMG-2GYZUzPHD4xKTfwwPSGMRQtk-DvOEzm4a64Q7bSkiWIHlJRUtKwPro8m0g77Bx"/>
 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 <div className="absolute bottom-4 left-4">
 <span className="bg-[#FF1A1A] text-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">RANK UP</span>
@@ -101,7 +101,7 @@ export default function CertificadosEMarcos() {
 </div>
 {/*  Cert 4 (Full Width Graphic)  */}
 <div className="md:col-span-2 bg-[#1C1B1B] group cursor-pointer overflow-hidden sharp-edge p-1 relative min-h-[160px] flex items-center justify-center">
-<div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&amp;w=1200&amp;auto=format&amp;fit=crop')] bg-cover bg-center grayscale" data-alt="abstract architectural background with sharp red lighting and shadows"></div>
+<div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&amp;w=1200&amp;auto=format&amp;fit=crop')] bg-cover bg-center grayscale"></div>
 <div className="relative z-10 text-center space-y-2 px-8">
 <h4 className="font-headline font-black text-3xl italic uppercase tracking-tighter">DESBLOQUEAR NOVO CERTIFICADO</h4>
 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF1A1A]">Conclua o curso de Defesa Pessoal Nível II</p>
@@ -152,8 +152,8 @@ export default function CertificadosEMarcos() {
 </div>
 <h4 className="font-headline font-black text-xl uppercase italic">PRIMEIRA COMPETIÇÃO INTERNA</h4>
 <div className="grid grid-cols-2 gap-2 mt-4">
-<img className="w-full aspect-square object-cover grayscale sharp-edge" data-alt="two jiu jitsu fighters locked in a struggle on the mat during a tournament" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlteau0Ja5iOJrnfOucSTIhaUt-i3ypnw3AuDOP3LLxbx7nenQ0CjLiVMTCAFXwyw0yOpLsPycNsKV1eBfgGe0w_lIlr-phzVVKGxz3QARGGGfr0EHlTuf-gg4-_bmAtEIDikrgrPPn3EDepnKgPL2darBxbOILjTP3RMfwp-tWKP2EGKsW26uEa63vLiOqu70dsB_dV66ckJkkpPg6zsh63QXo-Vkno3Dd7frscD3Im5CrgZQFyQkTLyFtXTHO7o361jWgHC5fESj"/>
-<img className="w-full aspect-square object-cover grayscale sharp-edge" data-alt="jiu jitsu practitioner tying their white belt focused before training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjou6Jd5VbNkQu_YYe9PycIo2uXe_E5qG4CigGyfotbT2eY4DXeltofrurdsV7ZCwAGPJaKJMB_3-qjjVA9QDzUSuzgUaIqpRT4zWZUWmk1j0emh339QsqZkf0rz4YzAFbunI3lbXnrDM2lJBGDS7OK_lCzSkJYtaboxl3T0c9AfDbGPhZC2y7Rf52POylPCGf7WWuYwq9joqYGPQhV6AoybdZukQMiR9W_vfzecrfWK4Of0BQpNfjH__S0h1-OH5dQwv2yACwIWKs"/>
+<img className="w-full aspect-square object-cover grayscale sharp-edge" alt="two jiu jitsu fighters locked in a struggle on the mat during a tournament" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlteau0Ja5iOJrnfOucSTIhaUt-i3ypnw3AuDOP3LLxbx7nenQ0CjLiVMTCAFXwyw0yOpLsPycNsKV1eBfgGe0w_lIlr-phzVVKGxz3QARGGGfr0EHlTuf-gg4-_bmAtEIDikrgrPPn3EDepnKgPL2darBxbOILjTP3RMfwp-tWKP2EGKsW26uEa63vLiOqu70dsB_dV66ckJkkpPg6zsh63QXo-Vkno3Dd7frscD3Im5CrgZQFyQkTLyFtXTHO7o361jWgHC5fESj"/>
+<img className="w-full aspect-square object-cover grayscale sharp-edge" alt="jiu jitsu practitioner tying their white belt focused before training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjou6Jd5VbNkQu_YYe9PycIo2uXe_E5qG4CigGyfotbT2eY4DXeltofrurdsV7ZCwAGPJaKJMB_3-qjjVA9QDzUSuzgUaIqpRT4zWZUWmk1j0emh339QsqZkf0rz4YzAFbunI3lbXnrDM2lJBGDS7OK_lCzSkJYtaboxl3T0c9AfDbGPhZC2y7Rf52POylPCGf7WWuYwq9joqYGPQhV6AoybdZukQMiR9W_vfzecrfWK4Of0BQpNfjH__S0h1-OH5dQwv2yACwIWKs"/>
 </div>
 </div>
 </div>

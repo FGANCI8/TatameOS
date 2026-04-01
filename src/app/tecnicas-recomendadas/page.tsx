@@ -22,7 +22,7 @@ export default function TCnicasRecomendadas() {
 {/*  Featured Technical Insight (Bento Large Item)  */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
 <div className="md:col-span-2 bg-zinc-950/60 group cursor-pointer overflow-hidden relative">
-<img alt="Mastering Grips" className="w-full h-96 object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" data-alt="BJJ fighters struggling for grip control on a dark mat with high contrast cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6INFrwQV_wL3iF3xko3iA13ykiiifWUCBbecpNWUzCoPjj39JtR7RI5kSkJbanNivq1Tu8xeSQSYrURwS5DNRSYn6IGOxGs_nR14oq8xqhZAh53tL0T7VEBsPfGcgb5CH8C91qwXJTC6iuA8fdNQfyZt-bezbv3eXAUtA16hF2qVZCoU2WU96Oi-MS4ancD5fDqdqA9YcurwaNhi5PP_QIETmUzEyhUzlwf-KhVu9VPN9ZSq67mdmy2CswUrxUCvUZDHteJUZoOXJ"/>
+<img alt="Mastering Grips" className="w-full h-96 object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6INFrwQV_wL3iF3xko3iA13ykiiifWUCBbecpNWUzCoPjj39JtR7RI5kSkJbanNivq1Tu8xeSQSYrURwS5DNRSYn6IGOxGs_nR14oq8xqhZAh53tL0T7VEBsPfGcgb5CH8C91qwXJTC6iuA8fdNQfyZt-bezbv3eXAUtA16hF2qVZCoU2WU96Oi-MS4ancD5fDqdqA9YcurwaNhi5PP_QIETmUzEyhUzlwf-KhVu9VPN9ZSq67mdmy2CswUrxUCvUZDHteJUZoOXJ"/>
 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
 <div className="absolute bottom-0 left-0 p-8">
 <span className="bg-brand-red/10 text-white px-3 py-1 font-label text-[10px] font-black uppercase mb-4 inline-block">Aula Master</span>
@@ -77,7 +77,7 @@ export default function TCnicasRecomendadas() {
 {/*  Technique Card 1  */}
 <div className="bg-zinc-950/60 group cursor-pointer hover:bg-zinc-900 transition-all duration-300">
 <div className="aspect-video relative overflow-hidden bg-zinc-800/80">
-<img alt="Empilhamento" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="High angle shot of a Jiu-Jitsu practitioner performing a pressure pass on a dark mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJF8vG6Ci4EoVzZRMu_3Vk4BZRVwoaJ-IrmgsyVfoL0p4V8-0qNVT5tAc1etAcNd066BJ8tfl6G4_1SHNPMVBW_Wbu2NB1q62hy5Dp8mbTCaUAYLoslL6dUsO2eBPlzmGgBU6NJuPRP-JYsqYg6aiw5UK-IHVzfOCkgcwpRnCfNupMLjGplKPdWHp1Uc2MAtu2C_QPfCcbiCNspgiFbr8WCa3Evalr7jVgHvCF0b5aTAUw9sqDSF_r2WIR0I4_qAS2enCNmz7bvW2O"/>
+<img alt="Empilhamento" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJF8vG6Ci4EoVzZRMu_3Vk4BZRVwoaJ-IrmgsyVfoL0p4V8-0qNVT5tAc1etAcNd066BJ8tfl6G4_1SHNPMVBW_Wbu2NB1q62hy5Dp8mbTCaUAYLoslL6dUsO2eBPlzmGgBU6NJuPRP-JYsqYg6aiw5UK-IHVzfOCkgcwpRnCfNupMLjGplKPdWHp1Uc2MAtu2C_QPfCcbiCNspgiFbr8WCa3Evalr7jVgHvCF0b5aTAUw9sqDSF_r2WIR0I4_qAS2enCNmz7bvW2O"/>
 <div className="absolute bottom-3 right-3 bg-black/80 px-2 py-1 text-[10px] font-bold text-white uppercase tracking-tighter">08:20</div>
 </div>
 <div className="p-6">
@@ -95,7 +95,7 @@ export default function TCnicasRecomendadas() {
 {/*  Technique Card 2  */}
 <div className="bg-zinc-950/60 group cursor-pointer hover:bg-zinc-900 transition-all duration-300">
 <div className="aspect-video relative overflow-hidden bg-zinc-800/80">
-<img alt="Posture Control" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Dynamic shot of a martial arts training session showing technical hand position in low light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvSfP8uI7wuhHbs6_QLV39_Qq2_MnhshH8afytFuwcnLz_ehzDxDBj82sLrktv8XgnIZGdkMyi-1U5Kw-VGazSDDWpKB_KzfgNUA62fixpiNNzeR_EtdLb1D8FFY21pt9bW8kJGELNQPkse9k2nOKLdo7pVmt7bfu2CPlnLzY05MBdN7NrvGYXz4zEi9uh90ikB4YMIZVYGcHSN0_mg_xvyA9DY2GBvOn_zAGVPkJE3Kne0-OzKGDC5S9aId-N7ihotlIj0T6KMsk-"/>
+<img alt="Posture Control" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvSfP8uI7wuhHbs6_QLV39_Qq2_MnhshH8afytFuwcnLz_ehzDxDBj82sLrktv8XgnIZGdkMyi-1U5Kw-VGazSDDWpKB_KzfgNUA62fixpiNNzeR_EtdLb1D8FFY21pt9bW8kJGELNQPkse9k2nOKLdo7pVmt7bfu2CPlnLzY05MBdN7NrvGYXz4zEi9uh90ikB4YMIZVYGcHSN0_mg_xvyA9DY2GBvOn_zAGVPkJE3Kne0-OzKGDC5S9aId-N7ihotlIj0T6KMsk-"/>
 <div className="absolute bottom-3 right-3 bg-black/80 px-2 py-1 text-[10px] font-bold text-white uppercase tracking-tighter">05:15</div>
 </div>
 <div className="p-6">
@@ -113,7 +113,7 @@ export default function TCnicasRecomendadas() {
 {/*  Technique Card 3  */}
 <div className="bg-zinc-950/60 group cursor-pointer hover:bg-zinc-900 transition-all duration-300">
 <div className="aspect-video relative overflow-hidden bg-zinc-800/80">
-<img alt="Leg Weave" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Intense close up of BJJ athletes' legs during a leg weave pass on a high quality training mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tKVpkCQpZzCbadLPKpGyPama4MlOYzuH3BfsUpxuaYdcHcWSkq4cMgCItepP4tGDEDEY6H961JqhDXX_hT2bJ7ZXREG3enq4EszR-DoJKSOBu-0RVrTMPN07M2tDFebWqEZqGjUD7Gkfn68JWDNLSlzBOgHH2mluoqxTFgWrwca1WhPfvR6gEAi11wOicXRLA0HtmeMfCbtGIl2iGi09GL1ElPcXVP6-NcOIbQM11gq4kHGaY7_CedlmJiEKLAidxOGhD1ShWgDh"/>
+<img alt="Leg Weave" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tKVpkCQpZzCbadLPKpGyPama4MlOYzuH3BfsUpxuaYdcHcWSkq4cMgCItepP4tGDEDEY6H961JqhDXX_hT2bJ7ZXREG3enq4EszR-DoJKSOBu-0RVrTMPN07M2tDFebWqEZqGjUD7Gkfn68JWDNLSlzBOgHH2mluoqxTFgWrwca1WhPfvR6gEAi11wOicXRLA0HtmeMfCbtGIl2iGi09GL1ElPcXVP6-NcOIbQM11gq4kHGaY7_CedlmJiEKLAidxOGhD1ShWgDh"/>
 <div className="absolute bottom-3 right-3 bg-black/80 px-2 py-1 text-[10px] font-bold text-white uppercase tracking-tighter">10:30</div>
 </div>
 <div className="p-6">
@@ -140,7 +140,7 @@ export default function TCnicasRecomendadas() {
 </button>
 </div>
 <div className="hidden md:block w-1/3 aspect-square bg-zinc-900 relative">
-<img alt="Academy View" className="w-full h-full object-cover opacity-60" data-alt="Wide shot of a minimalist, high-end BJJ academy with red and black mats and modern industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ZjCjK0HyL_2DvMNznzWALpreeF8qexUTDBxBqtm9fj4s3ijRKVcpGLLHS3DBBlq0BEs2HQpRDsjDwO3P3ydGqSTzn6Buq-zLmKrj9cqORa-zQjmsOjI15n8Pqvew37EF14uowu97wKWarXLuSPJolBqamNGC7dN1aBCzQ5uHYhxNjKsqmAUa4iGFR8nCEUB6dQ-smNRFjKGnm1VaXAUt7isEHEwUVlRsnio5XA9DAH8Tmdqt8civFjppVRFSGdWUBlCuysfJ7cDJ"/>
+<img alt="Academy View" className="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ZjCjK0HyL_2DvMNznzWALpreeF8qexUTDBxBqtm9fj4s3ijRKVcpGLLHS3DBBlq0BEs2HQpRDsjDwO3P3ydGqSTzn6Buq-zLmKrj9cqORa-zQjmsOjI15n8Pqvew37EF14uowu97wKWarXLuSPJolBqamNGC7dN1aBCzQ5uHYhxNjKsqmAUa4iGFR8nCEUB6dQ-smNRFjKGnm1VaXAUt7isEHEwUVlRsnio5XA9DAH8Tmdqt8civFjppVRFSGdWUBlCuysfJ7cDJ"/>
 <div className="absolute -top-4 -left-4 w-full h-full border border-brand-red/20 -z-10"></div>
 </div>
 </section>

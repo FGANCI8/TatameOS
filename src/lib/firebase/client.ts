@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { connectAuthEmulator, getAuth } from 'firebase/auth';
+import { connectFirestoreEmulator, getFirestore } from 'firebase/firestore';
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions';
 import { readRequiredEnv } from '../env';
 
@@ -18,11 +18,23 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const functions = getFunctions(app, 'us-central1');
 
-const functionsEmulatorHost =
-  import.meta.env.VITE_FIREBASE_FUNCTIONS_EMULATOR_HOST ||
-  (import.meta.env.DEV ? '127.0.0.1' : '');
-const functionsEmulatorPort = Number(import.meta.env.VITE_FIREBASE_FUNCTIONS_EMULATOR_PORT || '5001');
+// --- Emulator connections ---
+const useEmulators = import.meta.env.DEV || !!import.meta.env.VITE_USE_EMULATORS;
 
-if (functionsEmulatorHost) {
-  connectFunctionsEmulator(functions, functionsEmulatorHost, functionsEmulatorPort);
+if (useEmulators) {
+  const emulatorHost = import.meta.env.VITE_FIREBASE_EMULATOR_HOST || '127.0.0.1';
+
+  // Auth emulator
+  const authPort = Number(import.meta.env.VITE_FIREBASE_AUTH_EMULATOR_PORT || '9099');
+  connectAuthEmulator(auth, `http://${emulatorHost}:${authPort}`, { disableWarnings: true });
+
+  // Firestore emulator
+  const firestorePort = Number(import.meta.env.VITE_FIREBASE_FIRESTORE_EMULATOR_PORT || '8080');
+  connectFirestoreEmulator(db, emulatorHost, firestorePort);
+
+  // Functions emulator
+  const functionsPort = Number(import.meta.env.VITE_FIREBASE_FUNCTIONS_EMULATOR_PORT || '5001');
+  connectFunctionsEmulator(functions, emulatorHost, functionsPort);
+
+  console.info('[TatameOS] Emuladores Firebase conectados:', { emulatorHost, authPort, firestorePort, functionsPort });
 }

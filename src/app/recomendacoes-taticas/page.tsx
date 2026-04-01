@@ -34,7 +34,7 @@ export default function RecomendaEsTTicas() {
                 </div>
 </div>
 {/*  Side Card: Patience  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-[400px] border-b-4 border-zinc-800">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-[400px] border-b-4 border-zinc-800">
 <div>
 <span className="material-symbols-outlined text-zinc-300 text-3xl mb-4" data-icon="anchor">anchor</span>
 <h3 className="font-headline text-xl font-bold uppercase mb-2">Paciência no Controle Lateral</h3>
@@ -51,7 +51,7 @@ export default function RecomendaEsTTicas() {
 </div>
 </div>
 {/*  Third Strategic Card: Grip Selection  */}
-<div className="md:col-span-12 lg:col-span-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col md:flex-row gap-8 items-center border-r-4 border-on-secondary-fixed-variant">
+<div className="md:col-span-12 lg:col-span-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center border-r-4 border-on-secondary-fixed-variant">
 <div className="flex-1">
 <div className="flex items-center gap-2 mb-4">
 <span className="material-symbols-outlined text-zinc-100-fixed-variant" data-icon="handshake">handshake</span>
@@ -64,13 +64,13 @@ export default function RecomendaEsTTicas() {
 </button>
 </div>
 <div className="w-full md:w-48 h-48 bg-zinc-800/80 shrink-0 relative">
-<img alt="BJJ Grip" className="w-full h-full object-cover mix-blend-luminosity opacity-50" data-alt="close-up of two martial artists hands gripping a thick white bjj gi fabric with dramatic lighting and high texture contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9OwTutoCNoZxQeDrs6FTiLqmR-BRInxsGQIdLxxb0Awi417pdaEMKwYLrnTL3Anvgxqe5rN6IkfGRSBEFJ6gXkxuTqw8gDCFCFypc71RYgPDQ7kTQqKAYqAreocdzg-HZ_5nChJEcB1evHPtrhM3JssUJgzSAMabudY_lbS3CEgjThJ0xkgQme-A6oGkuDb4W4gSXitVJpZUlv4T-IJ7vv-ancmQgRWMiQ-H44hcBO4Oe4wX_1Q-7oGsbV9Mp6DO3Qatc-X3_anAk"/>
+<img alt="BJJ Grip" className="w-full h-full object-cover mix-blend-luminosity opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9OwTutoCNoZxQeDrs6FTiLqmR-BRInxsGQIdLxxb0Awi417pdaEMKwYLrnTL3Anvgxqe5rN6IkfGRSBEFJ6gXkxuTqw8gDCFCFypc71RYgPDQ7kTQqKAYqAreocdzg-HZ_5nChJEcB1evHPtrhM3JssUJgzSAMabudY_lbS3CEgjThJ0xkgQme-A6oGkuDb4W4gSXitVJpZUlv4T-IJ7vv-ancmQgRWMiQ-H44hcBO4Oe4wX_1Q-7oGsbV9Mp6DO3Qatc-X3_anAk"/>
 <div className="absolute inset-0 bg-on-secondary-fixed-variant/20"></div>
 </div>
 </div>
 {/*  Motivator / Data Insights  */}
 <div className="md:col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between border-t border-zinc-800">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-t border-zinc-800">
 <span className="text-[10px] font-black text-zinc-500 tracking-[0.3em] uppercase">Status Atual</span>
 <div>
 <div className="text-4xl font-headline font-black text-brand-red">ELITE</div>

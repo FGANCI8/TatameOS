@@ -69,7 +69,7 @@ export default function CoachMentalDoApp() {
           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden bg-zinc-800/80">
             <img
               className="h-full w-full object-cover"
-              data-alt="Professional athlete profile icon in a dark setting"
+              alt="Professional athlete profile icon in a dark setting"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKoAZLtliAtSuRTK-j1tB060KAGjLw5yXY7xK7K7LMvgU-iOLPLjV4ZxenZBQ0ViWujLJZgdTmawqlpJuSJjw9gY3YkzJEXIksTjc04whVTX908YNTMzTCOKz3RmV-K8ZJz0p3jlio6fX8mtkaeisW6-apZGXu0SrcEeD6manQfHKtmW_gcrhvzvX2oVZ1In3jrPt9O55Lnl_Csj2kdTg-pnd5fLcDkR1TPD6WlAjzBjSzZTrc4-e9cseewChqRKCpdrW6UcitgUZS"
             />
           </div>

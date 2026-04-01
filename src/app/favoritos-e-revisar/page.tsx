@@ -9,12 +9,12 @@ export default function FavoritosERevisar() {
         </div>
         <h2 className="text-5xl font-black font-headline uppercase tracking-tighter text-zinc-100 leading-none mb-8">BIBLIOTECA</h2>
         {/*  Bento Resume Card  */}
-        <div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col md:flex-row gap-6 items-center border-l-4 border-brand-red/20 relative overflow-hidden">
+        <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center border-l-4 border-brand-red/20 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-2 opacity-10">
             <span className="material-symbols-outlined text-9xl">play_circle</span> 
           </div>
           <div className="w-full md:w-48 aspect-video bg-zinc-800/80 flex-shrink-0 relative">
-            <img className="w-full h-full object-cover grayscale opacity-60" data-alt="professional bjj athletes grappling in a dark high-end gym environment with intense shadows and moody red lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgyzOiAK-SkaROG7G8g_OmboplNw1aOivmR23xI80AUVkGRSl0Mz3E8CVKxQeRiGHmLhGMc5ACzm1fhlDmYaZOEnzd1lmHWHSKXwmmmR-87XytE9s9FmIZlhe44KKxRH3GWJbvDJKWPzSngeFAhkLsSllEXcO3zpe4TNor0KqOff6BNTs9XnHvCLAZZasF56meCGzxeoJLboz_JXrY9LYDvaTaDB7TTqKRy_VWi8-gE7AMcbcMI0OC8v4v6jnL6408exEjSwew9-c"/>
+            <img className="w-full h-full object-cover grayscale opacity-60" alt="professional bjj athletes grappling in a dark high-end gym environment with intense shadows and moody red lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMgyzOiAK-SkaROG7G8g_OmboplNw1aOivmR23xI80AUVkGRSl0Mz3E8CVKxQeRiGHmLhGMc5ACzm1fhlDmYaZOEnzd1lmHWHSKXwmmmR-87XytE9s9FmIZlhe44KKxRH3GWJbvDJKWPzSngeFAhkLsSllEXcO3zpe4TNor0KqOff6BNTs9XnHvCLAZZasF56meCGzxeoJLboz_JXrY9LYDvaTaDB7TTqKRy_VWi8-gE7AMcbcMI0OC8v4v6jnL6408exEjSwew9-c"/>
             <div className="absolute inset-0 flex items-center justify-center">     
               <span className="material-symbols-outlined text-brand-red text-4xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_arrow</span>
             </div>
@@ -57,7 +57,7 @@ export default function FavoritosERevisar() {
         {/*  Horizontal Card 1  */}
         <div className="group bg-zinc-900/80 flex h-32 md:h-40 overflow-hidden hover:bg-zinc-900 transition-all">
           <div className="w-32 md:w-56 flex-shrink-0 relative overflow-hidden">   
-            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" data-alt="close up shot of a bjj gi collar and belt with motion blur highlighting high-intensity grappling action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDZk2gMKAXrgUg4uq9BD9wk0jYRrfkbIVHS4pa24bjb9rYH25JuQdnrZTt4GMdknWo1gzaE_0I69FfecdU4tJdZBFXHPTMlh1Q9ACrtvewELMDGas4ys4dWeMmYjJY0QI63L7op-2FW7m5RocvFJOTuuf5KqAEgPnK2ZEZeHT8MfsqxkT2zOpIaZLWVJy47Tq8PJK16_1gtJmP_7cX_Zt1nWS-Lsha7qhYkgmtNpejmzHZijCtB0uav0MQv_KeALgIP7S87DMnQAAI"/>
+            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" alt="close up shot of a bjj gi collar and belt with motion blur highlighting high-intensity grappling action" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDZk2gMKAXrgUg4uq9BD9wk0jYRrfkbIVHS4pa24bjb9rYH25JuQdnrZTt4GMdknWo1gzaE_0I69FfecdU4tJdZBFXHPTMlh1Q9ACrtvewELMDGas4ys4dWeMmYjJY0QI63L7op-2FW7m5RocvFJOTuuf5KqAEgPnK2ZEZeHT8MfsqxkT2zOpIaZLWVJy47Tq8PJK16_1gtJmP_7cX_Zt1nWS-Lsha7qhYkgmtNpejmzHZijCtB0uav0MQv_KeALgIP7S87DMnQAAI"/>
             <div className="absolute top-2 left-2">
               <span className="bg-black/60 backdrop-blur-md text-[9px] font-black px-2 py-1 uppercase tracking-widest text-white">08:45</span>
             </div>
@@ -79,7 +79,7 @@ export default function FavoritosERevisar() {
         {/*  Horizontal Card 2  */}
         <div className="group bg-zinc-900/80 flex h-32 md:h-40 overflow-hidden hover:bg-zinc-900 transition-all">
           <div className="w-32 md:w-56 flex-shrink-0 relative overflow-hidden">   
-            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" data-alt="athletes practicing bjj takedowns on a clean mat with geometric shadows from large warehouse windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLKZ5xgqugm4Abs6DM6VQi5qmezPENnQC7nwN7XFSDub1Crt8ghLxcHHu-JKwQJvNnVo0h4G0fkMu3zwxEjhl9L5lKWVciSgnE1HExflvb_UFno06wj9-G-TS_BBHFylIkJlSJqFaBc1m424QV8QYnMTtcy06UORVN1bdsKxXbc08zV7LwDRH5t3zeEJ9BLNzV7E1x2YUGqlXl4KCwJFJtXl27hMRZFJwPKLgtgZBrH04ylibN5benLLuQFXzVDWHsbItJCcvCY5ec"/>
+            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" alt="athletes practicing bjj takedowns on a clean mat with geometric shadows from large warehouse windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLKZ5xgqugm4Abs6DM6VQi5qmezPENnQC7nwN7XFSDub1Crt8ghLxcHHu-JKwQJvNnVo0h4G0fkMu3zwxEjhl9L5lKWVciSgnE1HExflvb_UFno06wj9-G-TS_BBHFylIkJlSJqFaBc1m424QV8QYnMTtcy06UORVN1bdsKxXbc08zV7LwDRH5t3zeEJ9BLNzV7E1x2YUGqlXl4KCwJFJtXl27hMRZFJwPKLgtgZBrH04ylibN5benLLuQFXzVDWHsbItJCcvCY5ec"/>
             <div className="absolute top-2 left-2">
               <span className="bg-black/60 backdrop-blur-md text-[9px] font-black px-2 py-1 uppercase tracking-widest text-white">12:10</span>
             </div>
@@ -104,7 +104,7 @@ export default function FavoritosERevisar() {
         {/*  Horizontal Card 3  */}
         <div className="group bg-zinc-900/80 flex h-32 md:h-40 overflow-hidden hover:bg-zinc-900 transition-all">
           <div className="w-32 md:w-56 flex-shrink-0 relative overflow-hidden">   
-            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" data-alt="close up of hands gripping a thick white bjj gi with tension showing the strength and technique of a grip" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl1QOz9gSEI2dtddel-M5n413bnq4rcGvzRDQW6F92fk8V_eufvrBnT35O3P82GWKM1WTGGHzTtuqRK_nnjkQzfKm9p__I25PClJltJOs33uRE4nlyfW-aYvzvmGKQuTq69-Tp1eB-tQ9Pyu5EWsayv6LQrYC0i_i839o50I2zRHR4k06svSAAw8QxAdSn5xQrdVK8H9VBnTQdQ4qg-21jOAkT_cpcVxBcVTqiMq4egO-O6azqdhTLhi2ZEqzx2nQnBsw5InDm4kSf"/>
+            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" alt="close up of hands gripping a thick white bjj gi with tension showing the strength and technique of a grip" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl1QOz9gSEI2dtddel-M5n413bnq4rcGvzRDQW6F92fk8V_eufvrBnT35O3P82GWKM1WTGGHzTtuqRK_nnjkQzfKm9p__I25PClJltJOs33uRE4nlyfW-aYvzvmGKQuTq69-Tp1eB-tQ9Pyu5EWsayv6LQrYC0i_i839o50I2zRHR4k06svSAAw8QxAdSn5xQrdVK8H9VBnTQdQ4qg-21jOAkT_cpcVxBcVTqiMq4egO-O6azqdhTLhi2ZEqzx2nQnBsw5InDm4kSf"/>
             <div className="absolute top-2 left-2">
               <span className="bg-black/60 backdrop-blur-md text-[9px] font-black px-2 py-1 uppercase tracking-widest text-white">05:30</span>
             </div>
@@ -126,7 +126,7 @@ export default function FavoritosERevisar() {
         {/*  Horizontal Card 4  */}
         <div className="group bg-zinc-900/80 flex h-32 md:h-40 overflow-hidden hover:bg-zinc-900 transition-all opacity-80">        
           <div className="w-32 md:w-56 flex-shrink-0 relative overflow-hidden">   
-            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" data-alt="shadowy silhouette of a bjj practitioner performing a stretch in a high-contrast industrial gym space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHy-HuZmsCemNqqDBJ-kIeSGUUHWZ4MQQ2S9ecLEaP6al1DSdkaYSBq6wwhcglU8P7LSlfwzaCYim92Yo2Z9CcxhVhLoKfAnwl2MexqCCO56XImNW7ddxV5fbsz_g76JLqhzGASIObmehlnFE8OHM_j5eftRNp23saetMlmen8FHzocBfBoTckr4l9-__IuDSA2fx1XxRgCmc1FlhjyZ48jemU1Zpkln38Z5XWyevve1KGzddckJzs6KVqLubpngcKOG5EKJrIvMHQ"/>
+            <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale" alt="shadowy silhouette of a bjj practitioner performing a stretch in a high-contrast industrial gym space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHy-HuZmsCemNqqDBJ-kIeSGUUHWZ4MQQ2S9ecLEaP6al1DSdkaYSBq6wwhcglU8P7LSlfwzaCYim92Yo2Z9CcxhVhLoKfAnwl2MexqCCO56XImNW7ddxV5fbsz_g76JLqhzGASIObmehlnFE8OHM_j5eftRNp23saetMlmen8FHzocBfBoTckr4l9-__IuDSA2fx1XxRgCmc1FlhjyZ48jemU1Zpkln38Z5XWyevve1KGzddckJzs6KVqLubpngcKOG5EKJrIvMHQ"/>
             <div className="absolute top-2 left-2">
               <span className="bg-black/60 backdrop-blur-md text-[9px] font-black px-2 py-1 uppercase tracking-widest text-white">15:50</span>
             </div>

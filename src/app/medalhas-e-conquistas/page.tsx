@@ -17,7 +17,7 @@ export default function MedalhasEConquistas() {
 {/*  Bento Grid Highlights  */}
 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 {/*  Main Highlight: Gold  */}
-<div className="md:col-span-2 md:row-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between group cursor-pointer hover:bg-zinc-900 transition-all border border-transparent hover:border-brand-red/20">
+<div className="md:col-span-2 md:row-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between group cursor-pointer hover:bg-zinc-900 transition-all border border-transparent hover:border-brand-red/20">
 <div className="flex justify-between items-start">
 <span className="material-symbols-outlined medal-gold text-7xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
 <div className="text-right">
@@ -35,7 +35,7 @@ export default function MedalhasEConquistas() {
 </div>
 </div>
 {/*  Secondary Highlight: Silver  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between hover:bg-zinc-900 transition-all">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between hover:bg-zinc-900 transition-all">
 <span className="material-symbols-outlined medal-silver text-5xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
 <div>
 <p className="font-headline text-2xl font-black uppercase">15</p>
@@ -43,7 +43,7 @@ export default function MedalhasEConquistas() {
 </div>
 </div>
 {/*  Secondary Highlight: Bronze  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between hover:bg-zinc-900 transition-all">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between hover:bg-zinc-900 transition-all">
 <span className="material-symbols-outlined medal-bronze text-5xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
 <div>
 <p className="font-headline text-2xl font-black uppercase">19</p>
@@ -51,7 +51,7 @@ export default function MedalhasEConquistas() {
 </div>
 </div>
 {/*  Participation Certs  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex items-center gap-6 hover:bg-zinc-900 transition-all">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex items-center gap-6 hover:bg-zinc-900 transition-all">
 <div className="w-24 h-24 bg-zinc-800/80 flex items-center justify-center">
 <span className="material-symbols-outlined text-zinc-300 text-4xl">workspace_premium</span>
 </div>
@@ -72,7 +72,7 @@ export default function MedalhasEConquistas() {
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {/*  Card 1  */}
 <div className="relative aspect-[4/5] bg-zinc-950/60 overflow-hidden group">
-<img className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="Intense martial artist standing on a podium under dramatic spotlight holding a golden trophy in a dark stadium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOQ8TwkEBIWyJHieA3k2jOnCXOphnOm5QQJqpNCLTORrBm2lRgdtdvxueEINfhH6oL7gO31WNdMaC6j_du5bwlf_Q1WiAHOLDZrduu2cKjEKJ6aGnOqbmKao5v9UYUR6LhcKnO3siueo4TVsMerGtPdrkYC1k2hQgIWW1jtdwqqVEJO4NdMnz48EavMmH4aT0W1I8TicpeRbbTQ34YgoG6muvtzx8f0aWeg-HMkoocPP3YzHlpq3kqXEsIN_eHEwelDcztv3as338u"/>
+<img className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" alt="Intense martial artist standing on a podium under dramatic spotlight holding a golden trophy in a dark stadium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOQ8TwkEBIWyJHieA3k2jOnCXOphnOm5QQJqpNCLTORrBm2lRgdtdvxueEINfhH6oL7gO31WNdMaC6j_du5bwlf_Q1WiAHOLDZrduu2cKjEKJ6aGnOqbmKao5v9UYUR6LhcKnO3siueo4TVsMerGtPdrkYC1k2hQgIWW1jtdwqqVEJO4NdMnz48EavMmH4aT0W1I8TicpeRbbTQ34YgoG6muvtzx8f0aWeg-HMkoocPP3YzHlpq3kqXEsIN_eHEwelDcztv3as338u"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 <div className="absolute bottom-0 left-0 p-6 w-full">
 <p className="text-[10px] font-black uppercase text-brand-red tracking-[0.2em] mb-1">DEC 2023</p>
@@ -87,7 +87,7 @@ export default function MedalhasEConquistas() {
 </div>
 {/*  Card 2  */}
 <div className="relative aspect-[4/5] bg-zinc-950/60 overflow-hidden group">
-<img className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="Cinematic shot of a competition arena with neon lights and a fighter raising hands in victory during medal ceremony" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABf4cExh12d2OeXtvAVp5futwdjL7BUjaErpfEdhlr8IUOP8b48A0LpQzsPS8YxY9kXZiuKYQqcT4Jdq7km0pJnCcPw2mlpRH0Okvb0F0KKniv9SRvriImT9HtJ5N0K4uhEV3E9ea8gwW6r2S4hhrkW49b34wXUAelIdkqClEz2JilId6uOd3Rdritap0LTCn6OSL7b_u0SUMCyAsIJurSvPNs4A-Y5UXSotcHHXh8sfZ4kM_JSxHhqtYbItYQWaJoJgLKxWmv5F67"/>
+<img className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" alt="Cinematic shot of a competition arena with neon lights and a fighter raising hands in victory during medal ceremony" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABf4cExh12d2OeXtvAVp5futwdjL7BUjaErpfEdhlr8IUOP8b48A0LpQzsPS8YxY9kXZiuKYQqcT4Jdq7km0pJnCcPw2mlpRH0Okvb0F0KKniv9SRvriImT9HtJ5N0K4uhEV3E9ea8gwW6r2S4hhrkW49b34wXUAelIdkqClEz2JilId6uOd3Rdritap0LTCn6OSL7b_u0SUMCyAsIJurSvPNs4A-Y5UXSotcHHXh8sfZ4kM_JSxHhqtYbItYQWaJoJgLKxWmv5F67"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 <div className="absolute bottom-0 left-0 p-6 w-full">
 <p className="text-[10px] font-black uppercase text-brand-red tracking-[0.2em] mb-1">OCT 2023</p>
@@ -102,7 +102,7 @@ export default function MedalhasEConquistas() {
 </div>
 {/*  Card 3  */}
 <div className="relative aspect-[4/5] bg-zinc-950/60 overflow-hidden group">
-<img className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" data-alt="Athletic medals hanging on a wall with dark moody lighting highlighting the gold and silver reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOtQwPufk079axbE43CRG5VtVId94rj2NiWh0Oa1N1SgFZVA-BErNoNY9KywrV4cZLZ70sNZ7k0ZbXSqhiH6F-vxnjoeqHT1et7sKxfq8ZKGLsnu8O7SrjbWSapwcURCH5Pf1hQqdvd-aKLsEkgERBXFdCTcX_5Lvtcowyo3QO5Gvfshei9zWjOaJEtA86nMgyENLnFGXNwDEx-zss3Yqluxn0CYj3VQ90NivqS8VfYZKfAjqfD3wzdvyTxeBmbpPwAaWFh7GGMNt5"/>
+<img className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700" alt="Athletic medals hanging on a wall with dark moody lighting highlighting the gold and silver reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOtQwPufk079axbE43CRG5VtVId94rj2NiWh0Oa1N1SgFZVA-BErNoNY9KywrV4cZLZ70sNZ7k0ZbXSqhiH6F-vxnjoeqHT1et7sKxfq8ZKGLsnu8O7SrjbWSapwcURCH5Pf1hQqdvd-aKLsEkgERBXFdCTcX_5Lvtcowyo3QO5Gvfshei9zWjOaJEtA86nMgyENLnFGXNwDEx-zss3Yqluxn0CYj3VQ90NivqS8VfYZKfAjqfD3wzdvyTxeBmbpPwAaWFh7GGMNt5"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 <div className="absolute bottom-0 left-0 p-6 w-full">
 <p className="text-[10px] font-black uppercase text-brand-red tracking-[0.2em] mb-1">AUG 2023</p>
@@ -118,7 +118,7 @@ export default function MedalhasEConquistas() {
 </div>
 </section>
 {/*  Performance Streak Component  */}
-<section className="mb-16 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-zinc-800/10">
+<section className="mb-16 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-zinc-800/10">
 <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
 <div className="max-w-xs">
 <h3 className="font-headline text-2xl font-black uppercase">EVOLUTION TRACK</h3>

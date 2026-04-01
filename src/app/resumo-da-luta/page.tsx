@@ -1,7 +1,7 @@
 export default function ResumoDaLuta() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Resumo da luta</p>
@@ -25,7 +25,7 @@ export default function ResumoDaLuta() {
           ['Punições', '00'],
           ['Resultado', 'Vitória'],
         ].map(([label, value]) => (
-          <article key={label} className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <article key={label} className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">{label}</p>
             <p className="mt-2 font-headline text-4xl font-black italic text-white">{value}</p>
           </article>
@@ -33,7 +33,7 @@ export default function ResumoDaLuta() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Posição decisiva</p>
           <h2 className="mt-2 font-headline text-3xl font-black uppercase tracking-tight text-white">
             Controle lateral para montada
@@ -44,7 +44,7 @@ export default function ResumoDaLuta() {
           <div className="mt-6 h-64 rounded-2xl border border-zinc-800 bg-zinc-950/60" />
         </article>
 
-        <aside className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <aside className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Métricas de performance</p>
           <div className="mt-4 space-y-4">
             {[

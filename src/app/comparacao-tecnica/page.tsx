@@ -15,7 +15,7 @@ export default function ComparaOTCnica() {
 {/*  THE ERROR CARD (LEFT)  */}
 <div className="bg-zinc-950/60 border-l-4 border-brand-red/20 p-1">
 <div className="relative aspect-video w-full bg-zinc-800/80 overflow-hidden">
-<img alt="Erro de pegada" className="w-full h-full object-cover opacity-60 grayscale" data-alt="High angle shot of a Jiu-Jitsu match showing incorrect low grip on the lapel, messy posture, dark moody lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC8dWtid28Nh4gg_5kqLbxgX-RNffWxiX1HYdYnjHpMswKrcR0moeq9p6hkI8s8ToTPvZ4s3aCw1ZNQX7LNkOKxv4Ri0H5DDZ2kGvLFEJYSpZmHAUFPXHWp6ccAHt4L0pmgE_ZUX4xh5TRjOIElHlaGASSva6HFh-wsUFQzcLme_T5PaSrBmi2cw5-y7eh66sknJ1PQbrmM-lCjUS0mLUDA6q73rJlbJ_PY2PW6KmEYvzs61CZumu7nSHdBX_Mmkgobhxd3isR_O1u"/>
+<img alt="Erro de pegada" className="w-full h-full object-cover opacity-60 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC8dWtid28Nh4gg_5kqLbxgX-RNffWxiX1HYdYnjHpMswKrcR0moeq9p6hkI8s8ToTPvZ4s3aCw1ZNQX7LNkOKxv4Ri0H5DDZ2kGvLFEJYSpZmHAUFPXHWp6ccAHt4L0pmgE_ZUX4xh5TRjOIElHlaGASSva6HFh-wsUFQzcLme_T5PaSrBmi2cw5-y7eh66sknJ1PQbrmM-lCjUS0mLUDA6q73rJlbJ_PY2PW6KmEYvzs61CZumu7nSHdBX_Mmkgobhxd3isR_O1u"/>
 <div className="absolute top-4 left-4 bg-brand-red/10 text-white px-3 py-1 font-headline font-bold text-xs uppercase italic">
                         Critical Error
                     </div>
@@ -47,7 +47,7 @@ export default function ComparaOTCnica() {
 {/*  THE EXECUTION CARD (RIGHT)  */}
 <div className="bg-zinc-900 border-l-4 border-zinc-800 p-1">
 <div className="relative aspect-video w-full bg-zinc-800/80 overflow-hidden">
-<img alt="Execução Ideal" className="w-full h-full object-cover" data-alt="Close up of a perfect high lapel grip in BJJ, knuckles visible, tight elbow, high contrast athletic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtLioeXuiV7oSM0_jXE8VF1aNl9bfdNyuuXjj7plP7e-eIgG0XTLpJZfHSvcKjKPcvwPl8S7pXXTNWZAFRqH9VzyNgoxbQwu_NG8WXkUxausoYGLS-jEK2pKcioF3x6pDNchgBYFL3_6qlTNDJq4m_3ZRCc9YT80lq26x2-DNHhy76jjy0h-i6rgYeBaQD0Iv8tEutr_QaxCxuz9xmRpfqYkLhI9Zc46Ri7QnnB0eV7DqdM5JJP0tRk7ZlyaMaj942tD1U1OKYMjZ"/>
+<img alt="Execução Ideal" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtLioeXuiV7oSM0_jXE8VF1aNl9bfdNyuuXjj7plP7e-eIgG0XTLpJZfHSvcKjKPcvwPl8S7pXXTNWZAFRqH9VzyNgoxbQwu_NG8WXkUxausoYGLS-jEK2pKcioF3x6pDNchgBYFL3_6qlTNDJq4m_3ZRCc9YT80lq26x2-DNHhy76jjy0h-i6rgYeBaQD0Iv8tEutr_QaxCxuz9xmRpfqYkLhI9Zc46Ri7QnnB0eV7DqdM5JJP0tRk7ZlyaMaj942tD1U1OKYMjZ"/>
 <div className="absolute top-4 left-4 bg-zinc-800 text-zinc-100 px-3 py-1 font-headline font-bold text-xs uppercase italic">
                         Ideal Execution
                     </div>

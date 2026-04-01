@@ -2,7 +2,7 @@ export default function PlanoDeTreino() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-28 pt-24 md:px-8">
       <section className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 lg:col-span-8">
+        <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 lg:col-span-8">
           <div className="relative z-10">
             <span className="text-xs font-black uppercase tracking-widest text-brand-red">Prioridade máxima</span>
             <h2 className="mt-2 mb-4 text-5xl font-black uppercase leading-none tracking-tight text-white md:text-7xl">
@@ -32,7 +32,7 @@ export default function PlanoDeTreino() {
       </section>
 
       <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="flex flex-col space-y-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <div className="flex flex-col space-y-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-extrabold uppercase tracking-tight text-white">Checklist técnico</h3>
             <span className="material-symbols-outlined text-brand-red">fact_check</span>
@@ -52,7 +52,7 @@ export default function PlanoDeTreino() {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <div className="flex flex-col space-y-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <h3 className="text-xl font-extrabold uppercase tracking-tight text-white">Drills de exaustão</h3>
           <div className="flex-1 space-y-4">
             <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition-all hover:bg-zinc-900">
@@ -78,7 +78,7 @@ export default function PlanoDeTreino() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <div className="flex flex-col justify-between rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div>
             <h3 className="mb-6 text-xl font-extrabold uppercase tracking-tight text-white">Progresso disciplinar</h3>
             <div className="space-y-6">
@@ -110,7 +110,7 @@ export default function PlanoDeTreino() {
         </div>
       </section>
 
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-10">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-10">
         <h3 className="mb-10 inline-block border-b-4 border-brand-red/20 text-3xl font-black uppercase tracking-tighter text-white">
           Cronograma de guerra
         </h3>
@@ -147,7 +147,7 @@ export default function PlanoDeTreino() {
       <section className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-[28px] border border-zinc-800/80 bg-black">
         <img
           className="absolute inset-0 h-full w-full object-cover opacity-40 grayscale"
-          data-alt="close-up dramático em preto e branco de mãos de um lutador amarrando a faixa preta com textura detalhada do tecido"
+          alt="close-up dramático em preto e branco de mãos de um lutador amarrando a faixa preta com textura detalhada do tecido"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5K_OgmNhrVikjXAtFU6zthQYxup79koKUZVNRW9Nr8gOI9qWrpFINvhBwChEXOcAPY5qsci1M1Yu2jAE3YC48x39ZjY7IWJARQq26iGc5hQRWYua9D4y1tZ3RV4nzoLohEYy7EHP2RsZ8mLl1Fve0H3eYcKCvvxoVMrxRn9RHdCFx11GJ36xnLS2U3Bvb6tPqvVFD2GeaVsep1FCsuvWPHKH-0sjK6JGIgzQwvNyZjhYs7vWdhuuaPgLUBBm1rML6VvJH9H76EWnQ"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />

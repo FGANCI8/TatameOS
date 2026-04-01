@@ -75,7 +75,7 @@ export default function PrioridadesTCnicas() {
 </section>
 {/*  Telemetry Data Section  */}
 <section className="mt-12">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
 <div className="flex items-center gap-2 mb-6">
 <span className="w-2 h-2 bg-[#FF1A1A]"></span>
 <h2 className="text-xs font-black tracking-[0.2em] uppercase text-zinc-100">Métricas de Rendimento</h2>

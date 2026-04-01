@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function BoasVindas() {
   return (
     <>
@@ -5,7 +7,7 @@ export default function BoasVindas() {
         <div className="absolute inset-0 z-0">
           <img
             className="h-full w-full object-cover grayscale opacity-35 brightness-50"
-            data-alt="Imagem cinematográfica em preto e branco de dois atletas de jiu-jitsu em luta."
+            alt="Imagem cinematográfica em preto e branco de dois atletas de jiu-jitsu em luta."
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQS_3NdC0DkLrj3p7eUmdd3pqa_26AjtFc5-MCwUgI-VPNDTr5i1jOaXleXcsQHW-ia5u4ItDwrkQGgjQBvXdGZOyMv1hn2GqI_byAu_HZh0sHnPEAhtJUAmPt62dHyMcWvWJZPf17iOoaJqiouyTh1jM974VLpS_t_uRD3ZUbM2hPFrP_749DZ1_7MH2yriwhW4KAGeHQF5y-Q9m1gagZyMlUHQUsb_gbE3dJh69kFUh4nFlCEuNBNtGwvII18hplM91sMS31YPUV"
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,26,26,0.18),transparent_35%),linear-gradient(180deg,rgba(3,7,18,0.45),rgba(3,7,18,0.95))]" />
@@ -108,12 +110,15 @@ export default function BoasVindas() {
           <div className="hidden md:block">
             <span className="font-headline text-2xl font-black italic text-brand-red">Tatame OSS</span>
           </div>
-          <button className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-brand-red/20 bg-brand-red/10 px-8 py-4 text-white transition duration-200 hover:scale-105 hover:bg-brand-red/20 md:w-auto">
+          <Link
+            to="/dashboard-do-aluno"
+            className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-brand-red/20 bg-brand-red/10 px-8 py-4 text-white transition duration-200 hover:scale-105 hover:bg-brand-red/20 md:w-auto"
+          >
             <span className="font-headline text-lg font-black uppercase tracking-[0.22em] text-brand-red">
               Iniciar jornada
             </span>
             <span className="material-symbols-outlined">arrow_forward</span>
-          </button>
+          </Link>
         </div>
       </section>
     </>

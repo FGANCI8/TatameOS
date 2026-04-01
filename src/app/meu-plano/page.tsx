@@ -6,7 +6,7 @@ export default function MeuPlano() {
       <section className="mb-12">
         <div className="flex flex-col md:flex-row gap-6">
           {/*  Current Plan Card  */}
-          <div className="flex-1 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden group">
+          <div className="flex-1 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 monolith-gradient opacity-10 blur-3xl -mr-16 -mt-16 group-hover:opacity-20 transition-opacity"></div>
             <div className="relative z-10">     
               <span className="font-['Inter'] uppercase text-[10px] font-bold tracking-[0.2em] text-brand-red mb-2 block">STATUS ATUAL</span>
@@ -124,7 +124,7 @@ export default function MeuPlano() {
       <section className="mb-12">
         <div className="bg-zinc-900 flex flex-col md:flex-row items-center p-8 gap-8 border border-brand-red/20">
           <div className="w-full md:w-1/3 aspect-video bg-zinc-950 overflow-hidden">
-            <img alt="BJJ Camp" className="w-full h-full object-cover grayscale opacity-50 hover:grayscale-0 transition-all duration-500" data-alt="black and white intense bjj rolling session in a clean modern academy with natural light shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ6JopgjV703P09Gu8o54zMnwcgkN472mckQNkJKmUFJmnlhaVfGwJtWK87lIjm42BNndg29uZr9Vr4UFceC65COSuTakvm3m4LRLCjiXv9yrpjcrJonJNHc9EV83yfatwAWB9x81U1oHeIZ1AQuw6mxFLOr-qkRYMy-IpaAjbMQhq8KTmOuATRX3te9qegcSfbbfF4PXgDLSyEyW9W5lcZrXoMCR1rIQaxZ10B9gy2xIGYMR87rZSVcT3fq6KloyPmNAu0Rd-BnOJ"/>
+            <img alt="BJJ Camp" className="w-full h-full object-cover grayscale opacity-50 hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ6JopgjV703P09Gu8o54zMnwcgkN472mckQNkJKmUFJmnlhaVfGwJtWK87lIjm42BNndg29uZr9Vr4UFceC65COSuTakvm3m4LRLCjiXv9yrpjcrJonJNHc9EV83yfatwAWB9x81U1oHeIZ1AQuw6mxFLOr-qkRYMy-IpaAjbMQhq8KTmOuATRX3te9qegcSfbbfF4PXgDLSyEyW9W5lcZrXoMCR1rIQaxZ10B9gy2xIGYMR87rZSVcT3fq6KloyPmNAu0Rd-BnOJ"/>
           </div>
           <div className="flex-1">
             <h5 className="font-['Lexend'] text-xl font-black uppercase mb-2">CAMP EXCLUSIVO: KINETIC ELITE</h5>        

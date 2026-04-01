@@ -1,7 +1,7 @@
 export default function ComparativoTatico() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl space-y-3">
             <span className="inline-flex w-fit items-center rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
@@ -23,7 +23,7 @@ export default function ComparativoTatico() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <article className="rounded-[28px] border border-brand-red/20 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-brand-red/20 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Sua escolha</p>
@@ -38,7 +38,6 @@ export default function ComparativoTatico() {
             <img
               alt="BJJ Technical error"
               className="h-64 w-full object-cover opacity-70"
-              data-alt="Detailed capture of a jiu-jitsu americana lock attempt showing excessive muscular tension and incorrect leverage, dark cinematic studio lighting"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3sB_7_6AHnzSIG0kZJ2lZZx56FaJeefvpwyl-pYIj5XG-hP1ZS2_BPL4Wuml_wNL0DbzYzeAAqVXoMLvVht9GdKSDypLkJvCKU1MNFFEN0o9PjF4jiy_Hmu6S_RkbBmIQ_PY6Ywi4y8gF752WT3d3AGrlR4UnJTc8Xchx5ioQaOhfgjA6TvCegd09BSgAw350IeXlMXYyvGBng09d6T51O3z_OJgpyjkSih_ByVykxPrqzC8zK-m_x2bx-J0TAf4_oehw39e0JdCu"
             />
           </div>
@@ -55,7 +54,7 @@ export default function ComparativoTatico() {
           </div>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Ideal professor</p>
@@ -70,7 +69,6 @@ export default function ComparativoTatico() {
             <img
               alt="BJJ Ideal Technique"
               className="h-64 w-full object-cover opacity-80"
-              data-alt="Technical jiu-jitsu transition to North-South position, fluid motion, professional lighting, athlete wearing white gi, dark grey mats"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1H8jPLXssz9s9GYCYR4FvFLoGmSLFxIFsBYIKK-Rcsz0aVQfrRt8FsNeDFeIIPmitFMtzZH7gSVxcgPY-ghFqmNOe52TtsGNcnOPr3FERdfetI-OIwGnTsTS7Sq8iRWehO9EshNDZeRtdbXY4lpwA5D7i5fIcZGG0rdpSw88n9K31-XjZT2suvENjx2J5TPMMMKDapOKDnoM5XJHaBwH2t1u5yNk459_47rQxdBx8wy9PKAMPCZpsGA-r6UEiA0HhNhe9CjVINRbr"
             />
           </div>
@@ -89,7 +87,7 @@ export default function ComparativoTatico() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:col-span-2 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:col-span-2 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Raio-X técnico</p>
           <h3 className="mt-2 font-headline text-2xl font-black uppercase tracking-tight text-white">Vantagem tática</h3>
           <p className="mt-4 text-sm leading-relaxed text-zinc-400">
@@ -107,13 +105,13 @@ export default function ComparativoTatico() {
           </p>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Feedback cognitivo</p>
           <p className="mt-3 font-headline text-5xl font-black italic text-white">A-</p>
           <p className="mt-2 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Ponto de atenção</p>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:col-span-2 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:col-span-2 md:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Próximo drill</p>

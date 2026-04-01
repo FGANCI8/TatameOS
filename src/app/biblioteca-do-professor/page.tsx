@@ -1,7 +1,7 @@
 export default function BibliotecaDoProfessor() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl space-y-3">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Biblioteca do professor</p>
@@ -26,7 +26,7 @@ export default function BibliotecaDoProfessor() {
           ['Marrom', 'Eficiência'],
           ['Preta', 'Mestria'],
         ].map(([title, subtitle], index) => (
-          <article key={title} className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <article key={title} className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">{subtitle}</p>
             <h2 className="mt-2 font-headline text-3xl font-black uppercase tracking-tight text-white">{title}</h2>
             <div className="mt-6 h-32 rounded-2xl border border-zinc-800 bg-zinc-950/60" />
@@ -35,7 +35,7 @@ export default function BibliotecaDoProfessor() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Trilhas</p>
@@ -54,13 +54,13 @@ export default function BibliotecaDoProfessor() {
         </article>
 
         <aside className="grid gap-4">
-          <div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Curta duração</p>
             <h3 className="mt-2 font-headline text-xl font-black uppercase tracking-tight text-white">
               Drills de mobilidade
             </h3>
           </div>
-          <div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Estratégia</p>
             <h3 className="mt-2 font-headline text-xl font-black uppercase tracking-tight text-white">
               Mentalidade de competição
@@ -69,7 +69,7 @@ export default function BibliotecaDoProfessor() {
         </aside>
       </section>
 
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex items-center justify-between gap-3">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Adicionados recentemente</p>
           <button className="rounded-2xl border border-brand-red/20 bg-brand-red/10 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-brand-red transition hover:bg-brand-red/20">

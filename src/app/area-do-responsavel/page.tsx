@@ -3,7 +3,7 @@ export default function ReaDoResponsVel() {
   return (
     <main className="pt-20 pb-28 px-4 max-w-5xl mx-auto space-y-8">
       {/*  Welcome Hero Section (Asymmetric Layout)  */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-0 border-l-4 border-brand-red/20 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-0 border-l-4 border-brand-red/20 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="md:col-span-8">
           <span className="font-label text-xs font-bold text-zinc-500 tracking-[0.2em] uppercase">Área do Responsável</span>
           <h2 className="font-headline text-4xl font-black italic tracking-tighter mt-2 leading-none uppercase">Evolução de <span className="text-brand-red">Lucas Silva</span></h2>
@@ -79,7 +79,7 @@ export default function ReaDoResponsVel() {
         </div>
       </section>
       {/*  Technical Evolution Graph (Editorial Style)  */}
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-r-4 border-brand-red/20">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-r-4 border-brand-red/20">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
             <h3 className="font-headline font-black text-3xl italic uppercase tracking-tighter">Evolução Técnica</h3>
@@ -161,7 +161,7 @@ export default function ReaDoResponsVel() {
             </p>
             <div className="mt-6 flex items-center gap-3">
               <div className="w-8 h-8 rounded-full overflow-hidden">
-                <img alt="Professor" className="w-full h-full object-cover" data-alt="Close-up portrait of a professional athletic coach with a serious but kind expression, gym setting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPJg2e1BqWF8mLEsoyUzQExCYz-eBEiMINLtPvvaXs9wedQPwh096QihCCNlVlZhNSPoV3zaHj8r-nXZ2O4F0aloOFMdABdMo2EXHFhFZPnWWUPFBw_x82DJxuD0Jcu2Nr7k-PA_FiPsQWG07tq-nZXJ1rF84m1A9XFwr39Fl1hPlIPOY93PG_bacvpcVxNjhtuVCbrPG5PvxDV5av1yo_qekfSowgobrCYkt_oWuOPs9l8Yc_3LLr1BgQXcsaDsmzBTAnxTf8QPwS"/>
+                <img alt="Professor" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPJg2e1BqWF8mLEsoyUzQExCYz-eBEiMINLtPvvaXs9wedQPwh096QihCCNlVlZhNSPoV3zaHj8r-nXZ2O4F0aloOFMdABdMo2EXHFhFZPnWWUPFBw_x82DJxuD0Jcu2Nr7k-PA_FiPsQWG07tq-nZXJ1rF84m1A9XFwr39Fl1hPlIPOY93PG_bacvpcVxNjhtuVCbrPG5PvxDV5av1yo_qekfSowgobrCYkt_oWuOPs9l8Yc_3LLr1BgQXcsaDsmzBTAnxTf8QPwS"/>
               </div>
               <div>
                 <p className="text-[10px] font-black uppercase text-brand-red">Prof. Ricardo</p>

@@ -145,7 +145,7 @@ export default function FeedbacksDoAlunoPage() {
     <main className="relative mx-auto max-w-6xl space-y-8 px-4 pb-28 pt-20">
       <section className="absolute inset-0 -z-10 bg-zinc-950 bg-dot-grid opacity-70" />
 
-      <section className="flex flex-col justify-between gap-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:flex-row md:items-end">
+      <section className="flex flex-col justify-between gap-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:flex-row md:items-end">
         <div>
           <p className="mb-1 text-xs font-label uppercase tracking-[0.3em] text-zinc-400">Meu espaço de evolução</p>
           <h1 className="font-headline text-4xl font-black uppercase leading-none tracking-tight md:text-5xl">
@@ -173,26 +173,26 @@ export default function FeedbacksDoAlunoPage() {
       </section>
 
       <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <div className="rounded-2xl border border-brand-red/20 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="rounded-2xl border border-brand-red/20 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Total</span>
           <div className="mt-2 text-4xl font-headline font-black text-white">{stats.total}</div>
         </div>
-        <div className="rounded-2xl border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="rounded-2xl border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Aguardando</span>
           <div className="mt-2 text-4xl font-headline font-black text-white">{stats.aguardando}</div>
         </div>
-        <div className="rounded-2xl border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="rounded-2xl border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Corrigidos</span>
           <div className="mt-2 text-4xl font-headline font-black text-white">{stats.corrigidos}</div>
         </div>
-        <div className="rounded-2xl border border-brand-red/20 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="rounded-2xl border border-brand-red/20 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Com resposta</span>
           <div className="mt-2 text-4xl font-headline font-black text-white">{stats.comResposta}</div>
         </div>
       </section>
 
       {loading && feedbacks.length === 0 ? (
-        <div className="animate-pulse rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="animate-pulse rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="mb-6 h-8 w-72 rounded-2xl bg-zinc-800/80" />
           <div className="space-y-4">
             <div className="h-28 rounded-2xl bg-zinc-800" />
@@ -210,7 +210,7 @@ export default function FeedbacksDoAlunoPage() {
       ) : null}
 
       {!loading && feedbacks.length === 0 ? (
-        <section className="rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <section className="rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Sem registros</p>
           <h2 className="mt-4 text-3xl font-headline font-black uppercase tracking-tighter text-white">
             Nenhum feedback criado ainda
@@ -385,7 +385,7 @@ export default function FeedbacksDoAlunoPage() {
               ) : null}
             </div>
 
-            <div className="flex items-center justify-between gap-4 border-t border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 md:p-8">
+            <div className="flex items-center justify-between gap-4 border-t border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
               <button
                 type="button"
                 onClick={closeModal}

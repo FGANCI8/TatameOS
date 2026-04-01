@@ -7,7 +7,7 @@ export default function MetasPrXimoEvento() {
 <header className="bg-[#131313] dark:bg-neutral-950 fixed top-0 w-full z-50 border-0 flex justify-between items-center px-6 py-4">
 <div className="flex items-center gap-3">
 <div className="w-10 h-10 bg-zinc-800/80 overflow-hidden">
-<img className="w-full h-full object-cover grayscale contrast-125" data-alt="Intense close-up profile portrait of a focused Brazilian Jiu-Jitsu athlete with sweat on face in a dark gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1-Qtuz-Am0rB3FZpQOeQf85FLTui5SNvbmBGCBjjdNOgkgmDPpV5CoCjDoX7FFINYbGFOBRCXgu_6SRspyXYK6tsAQTtyBnJvgU25SZyVrFFxv9dYbkqNsEBQZlFc2QOR22Qtfkj9891htm7SBjLRczGt5n5AYRY00dMY15ozJfdaquj1NDQaRqUmiQkxoHZcgSowhqSvQ73nJRvkAykmH-d4glFNskdzz6tAVXPLmtoZP8x4h6vKees2lid9YE5d01i61WBxWOOs"/>
+<img className="w-full h-full object-cover grayscale contrast-125" alt="Intense close-up profile portrait of a focused Brazilian Jiu-Jitsu athlete with sweat on face in a dark gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1-Qtuz-Am0rB3FZpQOeQf85FLTui5SNvbmBGCBjjdNOgkgmDPpV5CoCjDoX7FFINYbGFOBRCXgu_6SRspyXYK6tsAQTtyBnJvgU25SZyVrFFxv9dYbkqNsEBQZlFc2QOR22Qtfkj9891htm7SBjLRczGt5n5AYRY00dMY15ozJfdaquj1NDQaRqUmiQkxoHZcgSowhqSvQ73nJRvkAykmH-d4glFNskdzz6tAVXPLmtoZP8x4h6vKees2lid9YE5d01i61WBxWOOs"/>
 </div>
 <h1 className="font-headline font-black italic tracking-tighter uppercase text-2xl text-[#FF1A1A]">KINETIC_MONOLITH</h1>
 </div>
@@ -29,7 +29,7 @@ export default function MetasPrXimoEvento() {
 {/*  Bento Grid: Priority Goals  */}
 <div className="grid grid-cols-1 gap-4 mb-8">
 {/*  Goal Item: High Priority  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden group">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden group">
 <div className="absolute top-0 right-0 p-2 bg-[#FF1A1A] font-label font-black text-[10px] tracking-widest text-white uppercase">PRIORIDADE ALTA</div>
 <div className="flex items-start gap-4">
 <span className="material-symbols-outlined text-4xl text-[#FF1A1A]" data-icon="shield" style={{ /* font-variation-settings: 'FILL' 1; */ }}>shield</span>
@@ -47,7 +47,7 @@ export default function MetasPrXimoEvento() {
 </div>
 </div>
 {/*  Goal Item: Medium Priority  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 group">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 group">
 <div className="flex justify-between items-start mb-4">
 <div className="flex items-center gap-3">
 <span className="material-symbols-outlined text-2xl text-[#BDC2FF]" data-icon="fitness_center">fitness_center</span>
@@ -61,7 +61,7 @@ export default function MetasPrXimoEvento() {
 </div>
 </div>
 {/*  Goal Item: Low Priority  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex justify-between items-center">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex justify-between items-center">
 <div className="flex items-center gap-4">
 <div className="w-2 h-10 bg-zinc-800/80"></div>
 <div>
@@ -83,7 +83,7 @@ export default function MetasPrXimoEvento() {
             </button>
 </div>
 {/*  Performance Metric  */}
-<div className="mt-12 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l border-zinc-800/80">
+<div className="mt-12 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l border-zinc-800/80">
 <div className="flex justify-between items-end">
 <div>
 <h4 className="font-label font-black text-[10px] text-[#343D96] tracking-[0.3em] uppercase mb-4">MÉTRICA DE CONSISTÊNCIA</h4>

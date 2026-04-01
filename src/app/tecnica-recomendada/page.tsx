@@ -9,7 +9,7 @@ export default function TCnicaRecomendada() {
 <div className="h-[1px] flex-grow bg-zinc-800/80"></div>
 </div>
 <h2 className="font-headline font-black text-5xl md:text-7xl leading-none uppercase tracking-tighter mb-4 italic">Defesa de Triângulo</h2>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 monolith-border">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 monolith-border">
 <p className="text-zinc-500 font-body text-sm leading-relaxed max-w-2xl">
                     Identificamos uma vulnerabilidade recorrente na sua postura durante a transição da guarda aberta. A falha na manutenção da <span className="text-zinc-100 font-bold italic">Linha de Ombro</span> está permitindo o fechamento do cadeado.
                 </p>
@@ -19,7 +19,7 @@ export default function TCnicaRecomendada() {
 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
 {/*  Video Feature  */}
 <div className="lg:col-span-2 relative aspect-video bg-zinc-950 group cursor-pointer overflow-hidden">
-<img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Two BJJ athletes practicing a triangle choke defense on a dark blue mat with cinematic overhead lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtdXv1u0JdjXtyLX_69QMEGukwTSsP_W2OLJaGNJyIUVyTkZmRcjvz-qLsTer3VNLvmCpaB74W3Axayc0hk40MCxoSOeoZVvSF8draT9KHXQ01Xi9adXOrIocXVrqGPuikmBKB257F89hOY8ZT503g1iBg7AoAtU5M0fCY_p02n481bpEPLp3vC4YH8G5p8PTpNEx050cssd4NfnXiH21In2Qgb_006J_aeeITWemDlwhZohWht23qWvlTlT5Y2dft9QPWqVfq2gS"/>
+<img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Two BJJ athletes practicing a triangle choke defense on a dark blue mat with cinematic overhead lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtdXv1u0JdjXtyLX_69QMEGukwTSsP_W2OLJaGNJyIUVyTkZmRcjvz-qLsTer3VNLvmCpaB74W3Axayc0hk40MCxoSOeoZVvSF8draT9KHXQ01Xi9adXOrIocXVrqGPuikmBKB257F89hOY8ZT503g1iBg7AoAtU5M0fCY_p02n481bpEPLp3vC4YH8G5p8PTpNEx050cssd4NfnXiH21In2Qgb_006J_aeeITWemDlwhZohWht23qWvlTlT5Y2dft9QPWqVfq2gS"/>
 <div className="absolute inset-0 flex items-center justify-center">
 <div className="w-20 h-20 bg-brand-red/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
 <span className="material-symbols-outlined text-white text-4xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_arrow</span>
@@ -30,7 +30,7 @@ export default function TCnicaRecomendada() {
 </div>
 </div>
 {/*  Reaction Steps  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <h3 className="font-headline font-black text-2xl uppercase italic mb-6 border-b border-zinc-800/80 pb-2">Reação Correta</h3>
 <ul className="space-y-6">
@@ -79,7 +79,7 @@ export default function TCnicaRecomendada() {
 </div>
 </div>
 {/*  Card 2  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-64 group cursor-pointer hover:bg-zinc-900 transition-colors border-t-4 border-zinc-800">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-64 group cursor-pointer hover:bg-zinc-900 transition-colors border-t-4 border-zinc-800">
 <div>
 <span className="material-symbols-outlined text-zinc-300 mb-4">directions_run</span>
 <h4 className="font-headline font-black text-xl uppercase leading-tight mb-2">Saída de<br/>Quadril</h4>

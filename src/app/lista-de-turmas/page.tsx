@@ -19,7 +19,7 @@ export default function ListaDeTurmas() {
 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 {/*  Highlight Card: Elite Competição  */}
 <div className="md:col-span-8 bg-zinc-950/60 group relative overflow-hidden flex flex-col justify-end p-8 min-h-[400px]">
-<div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700 bg-[url('https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&amp;w=2000')] bg-cover bg-center" data-alt="professional jiu jitsu athletes competing on a mat in a dark arena with dramatic spotlighting and high contrast"></div>
+<div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700 bg-[url('https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&amp;w=2000')] bg-cover bg-center"></div>
 <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
 <div className="relative z-10">
 <div className="flex items-center gap-2 mb-4">
@@ -44,7 +44,7 @@ export default function ListaDeTurmas() {
 </div>
 </div>
 {/*  Side Card: Iniciantes No-Gi  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between border-l-4 border-zinc-800 transition-all hover:bg-zinc-800/80">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-4 border-zinc-800 transition-all hover:bg-zinc-800/80">
 <div>
 <div className="flex justify-between items-start mb-6">
 <span className="material-symbols-outlined text-zinc-300 text-4xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>fitness_center</span>
@@ -65,9 +65,9 @@ export default function ListaDeTurmas() {
 </div>
 </div>
 {/*  Card: Feminino  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col gap-6 hover:bg-zinc-900 transition-colors">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col gap-6 hover:bg-zinc-900 transition-colors">
 <div className="h-48 w-full bg-zinc-800/80 overflow-hidden">
-<img className="w-full h-full object-cover grayscale contrast-125" data-alt="group of women in white jiu jitsu gis practicing techniques in a bright studio with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoJ7oWF1dO2oc5OC5h5o3kFTSr7mWRouiCMCniDNDMAN2PFhdjVTP8zWQmyntvY29YXuvk_fS3FrJxATU--F3s4qkWG5zUUjFRvHLW4BPH4TGxYXPempvPEJFTASHRg1ijTHQivt68Ng94-s0rSzmoC_Z5yaxSacwCyWqB7fZfdWqd0mwfEjFQ6395jUiDceUrPYDa7JGaOY_Sp___mxDO56rfkmq0NVwz4kaeqKweezVuhH8w8cgVmQAABqR5jxnZ5OVEoWygnVqf"/>
+<img className="w-full h-full object-cover grayscale contrast-125" alt="group of women in white jiu jitsu gis practicing techniques in a bright studio with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoJ7oWF1dO2oc5OC5h5o3kFTSr7mWRouiCMCniDNDMAN2PFhdjVTP8zWQmyntvY29YXuvk_fS3FrJxATU--F3s4qkWG5zUUjFRvHLW4BPH4TGxYXPempvPEJFTASHRg1ijTHQivt68Ng94-s0rSzmoC_Z5yaxSacwCyWqB7fZfdWqd0mwfEjFQ6395jUiDceUrPYDa7JGaOY_Sp___mxDO56rfkmq0NVwz4kaeqKweezVuhH8w8cgVmQAABqR5jxnZ5OVEoWygnVqf"/>
 </div>
 <div>
 <h3 className="font-headline text-xl font-black uppercase tracking-tight mb-2">Feminino</h3>
@@ -88,7 +88,7 @@ export default function ListaDeTurmas() {
 </div>
 </div>
 {/*  Card: Infantil  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative group cursor-pointer overflow-hidden">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative group cursor-pointer overflow-hidden">
 <div className="relative z-10">
 <span className="material-symbols-outlined text-brand-red text-4xl mb-4" style={{ /* font-variation-settings: 'FILL' 1; */ }}>child_care</span>
 <h3 className="font-headline text-2xl font-black uppercase mb-2 tracking-tight">Infantil</h3>
@@ -108,7 +108,7 @@ export default function ListaDeTurmas() {
 </div>
 </div>
 {/*  Card: Master/Executivo  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <h3 className="font-headline text-2xl font-black uppercase mb-4 tracking-tight">Executivo 30+</h3>
 <div className="flex flex-col gap-4">

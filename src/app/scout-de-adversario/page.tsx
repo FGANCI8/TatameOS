@@ -1,7 +1,7 @@
 export default function ScoutDeAdversario() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Scout</p>
         <h1 className="mt-2 font-headline text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
           Inteligência do adversário
@@ -17,7 +17,7 @@ export default function ScoutDeAdversario() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-        <aside className="space-y-3 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <aside className="space-y-3 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Active targets</p>
           {[
             ['Marcus Shark Silva', 'Aggressive', true],
@@ -40,7 +40,7 @@ export default function ScoutDeAdversario() {
         </aside>
 
         <section className="space-y-4">
-          <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="aspect-square rounded-2xl border border-zinc-800 bg-zinc-950/60" />
               <div className="flex flex-col justify-between">
@@ -64,7 +64,7 @@ export default function ScoutDeAdversario() {
             </div>
           </article>
 
-          <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Tactical notes</p>
             <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 text-sm leading-relaxed text-zinc-400">
               Shark costuma puxar para o double pull nos primeiros 30 segundos. A transição de De La Riva para K-Guard é
@@ -72,7 +72,7 @@ export default function ScoutDeAdversario() {
             </div>
           </article>
 
-          <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+          <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Match tempo</p>

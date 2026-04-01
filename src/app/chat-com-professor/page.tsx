@@ -39,7 +39,6 @@ export default function ChatComProfessor() {
               <img
                 alt="Análise de técnica"
                 className="h-full w-full object-cover opacity-60"
-                data-alt="Wide shot of two martial artists in white and blue gis practicing jiu-jitsu on black mats in a professional athletic facility."
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAar2BTyyiee-nFwPcTG6-Qhb6gek7XIMeGKLdku6f6NCGiEcrFnNc3fvKOYAbbDQVMq8D5gjf6rWOBKlMmnGJE2XvbkGIERfzFi42uO5vy41mW9JtjoCYxwZPlTPmgVZ6k950hc3Veva4UtmfQbM59WYIl_JV72V2w5gaD9V7DHGKdmbHNlf5z5ZrOsRllV0yyffH_5vrKuC8qNMDPZ4NQGsTsSx2bktKf7INFJ4RPi4r_ba6mx81KhSgZz5zrQRYhe4hknYyRPpl"
               />
               <div className="absolute inset-0 flex items-center justify-center">

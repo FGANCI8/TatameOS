@@ -13,7 +13,7 @@ export default function LiEsMentaisDoCampeonato() {
 {/*  Bento Grid Insights  */}
 <div className="grid grid-cols-2 gap-4 mb-8">
 {/*  Major Insight Card  */}
-<div className="col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden">
+<div className="col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden">
 <div className="absolute top-0 right-0 p-4 opacity-10">
 <span className="material-symbols-outlined text-8xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>psychology</span>
 </div>

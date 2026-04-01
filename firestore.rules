@@ -684,6 +684,14 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    match /academias/{academiaId} {
+      allow get: if signedIn() && sameTenant(resource.data);
+      allow list: if signedIn() && sameTenant(resource.data);
+      allow create: if hasRole('admin') && sameTenant(request.resource.data);
+      allow update: if hasRole('admin') && sameTenant(resource.data) && sameTenant(request.resource.data);
+      allow delete: if false;
+    }
+
     match /convites/{conviteId} {
       allow read, write: if false;
     }

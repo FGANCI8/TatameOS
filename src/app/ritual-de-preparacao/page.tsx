@@ -11,7 +11,7 @@ export default function RitualDePreparaO() {
 </div>
 </section>
 {/*  Focus Phrase Bento  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 mb-8 relative overflow-hidden group">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 mb-8 relative overflow-hidden group">
 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
 <span className="material-symbols-outlined text-8xl">format_quote</span>
 </div>
@@ -89,7 +89,7 @@ export default function RitualDePreparaO() {
 </div>
 {/*  Tactical Visual  */}
 <div className="h-48 w-full bg-zinc-900/80 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
-<img alt="Training" className="w-full h-full object-cover" data-alt="Dynamic shot of two jiu-jitsu practitioners engaged in a tactical grip fight on a dark blue mat, dramatic high-contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdZwTcqsWeiYQIzPHxALslTCAotd34K35fKJY38sJxLRWILMGf0eqnxlCjrh9tAQDjM3NuZrHbRyanCnZmdAa6GOVB1RVZMo3ZCk9ofLtu0Dqen9UFwhC8mchuLaEEd5frpTfAt-agj1BENgb8JQZlJNuQZ6pe2gZSu04hsjsNNI3PsQv1s7amg4z_Jd3aAMW5AXf_jG9eiURj6x1527aIXVfN8L-GNWT_1LnBMCFlkDvsW7YJCdAwDA7uRJL5rp_Ha1qg9DSEw9Ko"/>
+<img alt="Training" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdZwTcqsWeiYQIzPHxALslTCAotd34K35fKJY38sJxLRWILMGf0eqnxlCjrh9tAQDjM3NuZrHbRyanCnZmdAa6GOVB1RVZMo3ZCk9ofLtu0Dqen9UFwhC8mchuLaEEd5frpTfAt-agj1BENgb8JQZlJNuQZ6pe2gZSu04hsjsNNI3PsQv1s7amg4z_Jd3aAMW5AXf_jG9eiURj6x1527aIXVfN8L-GNWT_1LnBMCFlkDvsW7YJCdAwDA7uRJL5rp_Ha1qg9DSEw9Ko"/>
 <div className="absolute inset-0 bg-gradient-to-t from-[#131313] to-transparent"></div>
 <div className="absolute bottom-4 left-6">
 <p className="font-label text-[10px] font-black tracking-[0.3em] text-brand-red mb-1 uppercase">SENSEI INSIGHT</p>

@@ -4,14 +4,14 @@ export default function RankingEDesempenho() {
 <main className="pt-24 pb-32 px-4 max-w-4xl mx-auto space-y-10">
 {/*  Performance Hero Stats  */}
 <section className="grid grid-cols-1 md:grid-cols-3 gap-1">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-video md:aspect-square">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-video md:aspect-square">
 <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 font-['Lexend']">Sua Posição</span>
 <div className="flex items-baseline gap-2">
 <span className="text-7xl font-black font-['Lexend'] text-white italic">3º</span>
 <span className="text-sm font-bold text-brand-red">RANKING GERAL</span>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-video md:aspect-square">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-video md:aspect-square">
 <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 font-['Lexend']">Consistência</span>
 <div className="flex flex-col">
 <span className="text-5xl font-black font-['Lexend'] text-zinc-100 italic">94%</span>
@@ -35,7 +35,7 @@ export default function RankingEDesempenho() {
 <h2 className="text-2xl font-black font-['Lexend'] uppercase tracking-tight italic">Desempenho Semanal</h2>
 <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Frequência e Intensidade</span>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 h-64 flex items-end justify-between gap-2 border-l-2 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 h-64 flex items-end justify-between gap-2 border-l-2 border-brand-red/20">
 {/*  Mock Chart Bars  */}
 <div className="flex flex-col items-center gap-2 w-full group">
 <div className="w-full bg-zinc-800/80 h-24 relative overflow-hidden">
@@ -90,7 +90,7 @@ export default function RankingEDesempenho() {
 <div className="flex items-center gap-6">
 <span className="text-2xl font-black font-['Lexend'] text-zinc-400 italic w-8">01</span>
 <div className="w-12 h-12 bg-zinc-800/80 flex-shrink-0">
-<img alt="Rank 1" className="w-full h-full object-cover" data-alt="Intense athlete with focused expression, dark moody background, high contrast fitness photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxe5l9WcprC1mR15Cds_sSTAOtc5nUn0Sed7wGCFH6-FfcY__SJcFm7h4Dy1oGBtl34e1icpYrOl0LXOR2f8Gz6rCh7wxH_vn3marF4oH0Z5AKRUb1oX0t7ulQunQKsysIoOd0BShJf5CriJl0B6KeXdxIn36F363-M0p7F7nO0lgFQ3m7jcc8tt7r0UtYchtIOHBnHMe6b0t65RHoBE63qnrFHYkeWvcr3WCpnqWNVr-T4p7WgMGbA24Pw2hbL8lkBDe96qo125Jc"/>
+<img alt="Rank 1" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxe5l9WcprC1mR15Cds_sSTAOtc5nUn0Sed7wGCFH6-FfcY__SJcFm7h4Dy1oGBtl34e1icpYrOl0LXOR2f8Gz6rCh7wxH_vn3marF4oH0Z5AKRUb1oX0t7ulQunQKsysIoOd0BShJf5CriJl0B6KeXdxIn36F363-M0p7F7nO0lgFQ3m7jcc8tt7r0UtYchtIOHBnHMe6b0t65RHoBE63qnrFHYkeWvcr3WCpnqWNVr-T4p7WgMGbA24Pw2hbL8lkBDe96qo125Jc"/>
 </div>
 <div className="flex flex-col">
 <span className="text-sm font-black uppercase font-['Lexend']">Marcos Almeida</span>
@@ -106,7 +106,7 @@ export default function RankingEDesempenho() {
 <div className="flex items-center gap-6">
 <span className="text-2xl font-black font-['Lexend'] text-zinc-400 italic w-8">02</span>
 <div className="w-12 h-12 bg-zinc-800/80 flex-shrink-0">
-<img alt="Rank 2" className="w-full h-full object-cover" data-alt="Dynamic shot of a combat athlete in motion, sweating, monochrome palette with red accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe0l2lUXeCZtYzQODvQnQK0n1tDoijLc2xX446Dt3bdwrGg0GiAbPHcSGzbSCK1g_UQh6swqOHesjTgpEVDRbYlPi822Uf5OX3qQu7S9DV_mgMXaqf8-U5VWHnVJQMs3C8poFhPmtikSZFSX7r4QBIuBSj8_ypmVPAksQpqApgZYdVB348vYNNxA0u5n-BBcW1Q6m9Xw2Sih9x8qsBKTp-vVzNAVW8M7xgd2UM6srDrm8zh1qmNjWEhuLs36F72BYiWTA8BLglV6mM"/>
+<img alt="Rank 2" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe0l2lUXeCZtYzQODvQnQK0n1tDoijLc2xX446Dt3bdwrGg0GiAbPHcSGzbSCK1g_UQh6swqOHesjTgpEVDRbYlPi822Uf5OX3qQu7S9DV_mgMXaqf8-U5VWHnVJQMs3C8poFhPmtikSZFSX7r4QBIuBSj8_ypmVPAksQpqApgZYdVB348vYNNxA0u5n-BBcW1Q6m9Xw2Sih9x8qsBKTp-vVzNAVW8M7xgd2UM6srDrm8zh1qmNjWEhuLs36F72BYiWTA8BLglV6mM"/>
 </div>
 <div className="flex flex-col">
 <span className="text-sm font-black uppercase font-['Lexend']">Carlos Eduardo</span>
@@ -123,7 +123,7 @@ export default function RankingEDesempenho() {
 <div className="flex items-center gap-6">
 <span className="text-3xl font-black font-['Lexend'] text-brand-red italic w-8">03</span>
 <div className="w-14 h-14 bg-zinc-900 ring-2 ring-brand-red/20/30 ring-offset-2 ring-offset-surface flex-shrink-0">
-<img alt="Bruno Silva" className="w-full h-full object-cover" data-alt="Portrait of Bruno Silva, an athletic young man in a white jiu-jitsu gi, looking determined, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlMQjpGuIwFn7ITnB-1DlODlz3vO6dv8Ji8z6iDwDubbibBIv3_ce2Vj5DHF25Ny3WxmSIl4YeR69jSNRx266bGoSOj4wz7a1mgiL9uuYDLhoRhZL3MQ_JpFrp58DYz2B8GUcnkLys6S05XfTznbBuCrpG8YIoCNy-7D_3ee2OEYqyofMtCwjim2qebyc67B-l4npavlUpo1PNfsOCPfHOLlk5wHbw_37NFmL5Wa3d1auzN1YEVmz33c0uo7ztVLL96sCib0APQQPt"/>
+<img alt="Bruno Silva" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlMQjpGuIwFn7ITnB-1DlODlz3vO6dv8Ji8z6iDwDubbibBIv3_ce2Vj5DHF25Ny3WxmSIl4YeR69jSNRx266bGoSOj4wz7a1mgiL9uuYDLhoRhZL3MQ_JpFrp58DYz2B8GUcnkLys6S05XfTznbBuCrpG8YIoCNy-7D_3ee2OEYqyofMtCwjim2qebyc67B-l4npavlUpo1PNfsOCPfHOLlk5wHbw_37NFmL5Wa3d1auzN1YEVmz33c0uo7ztVLL96sCib0APQQPt"/>
 </div>
 <div className="flex flex-col">
 <span className="text-base font-black uppercase font-['Lexend'] text-white">Bruno Silva</span>
@@ -146,7 +146,7 @@ export default function RankingEDesempenho() {
 <div className="flex items-center gap-6">
 <span className="text-2xl font-black font-['Lexend'] text-zinc-400 italic w-8">04</span>
 <div className="w-12 h-12 bg-zinc-800/80 flex-shrink-0">
-<img alt="Rank 4" className="w-full h-full object-cover" data-alt="Woman tying her bjj belt, focus on the knot, cinematic athletic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjNR4xIPtft4KG9QJ-DV9hubUo6huoBZp1Fdx0CouxHbzbguIWryG5Wr3Y2bsy6zb4-Zdp9OfW0fy6VOuPLYI9jphWJtEaITesg6C06dIbQZeeVUXEqexF-pJY30eiW_EsGCrhcZuplUsVllTW7W6ojAI_FFMcn6U1ic-NuWW659b-uTBr1vFqjON9Pha_IvO-HhMY2JzEPCLfEZ-KMvCfEEWQA63RdytEcGT01t0uFg5NfDQXOFHMKVSV1JV2WZMUZXY_3PAzqp"/>
+<img alt="Rank 4" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjNR4xIPtft4KG9QJ-DV9hubUo6huoBZp1Fdx0CouxHbzbguIWryG5Wr3Y2bsy6zb4-Zdp9OfW0fy6VOuPLYI9jphWJtEaITesg6C06dIbQZeeVUXEqexF-pJY30eiW_EsGCrhcZuplUsVllTW7W6ojAI_FFMcn6U1ic-NuWW659b-uTBr1vFqjON9Pha_IvO-HhMY2JzEPCLfEZ-KMvCfEEWQA63RdytEcGT01t0uFg5NfDQXOFHMKVSV1JV2WZMUZXY_3PAzqp"/>
 </div>
 <div className="flex flex-col">
 <span className="text-sm font-black uppercase font-['Lexend']">Ana Luiza</span>
@@ -161,7 +161,7 @@ export default function RankingEDesempenho() {
 </section>
 {/*  Dynamic Insights (Asymmetric Card)  */}
 <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-t-4 border-zinc-800 flex flex-col justify-between">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-t-4 border-zinc-800 flex flex-col justify-between">
 <div>
 <span className="material-symbols-outlined text-zinc-300 text-5xl mb-4" data-icon="rocket_launch">rocket_launch</span>
 <h3 className="text-xl font-black font-['Lexend'] uppercase italic leading-tight mb-2">Pico de Performance</h3>
@@ -174,7 +174,7 @@ export default function RankingEDesempenho() {
 <span className="text-[10px] font-black uppercase text-zinc-300">Acelerar Plano</span>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-t-4 border-brand-red/20 flex flex-col justify-between relative overflow-hidden">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-t-4 border-brand-red/20 flex flex-col justify-between relative overflow-hidden">
 <div className="absolute -right-10 -bottom-10 opacity-10">
 <span className="material-symbols-outlined text-[160px]" data-icon="fitness_center">fitness_center</span>
 </div>

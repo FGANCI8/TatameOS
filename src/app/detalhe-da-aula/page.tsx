@@ -4,7 +4,7 @@ export default function DetalheDaAula() {
 <main className="flex-grow pb-24">
 {/*  Hero Section: Instructor & Name  */}
 <section className="relative h-[397px] w-full overflow-hidden">
-<img alt="Kinetic BJJ Hero" className="w-full h-full object-cover" data-alt="Intense Brazilian Jiu-Jitsu instructor in a black gi standing in a dark, moody training facility with dramatic top lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvn-MCwQVv61mIpIdSTuMeCJosHPBe1WpQe4NAWrB9zAQIihFTg4fsrvmfV11iFpQ0OkcOJX2JMGQFERZO0qUypJP7wfvCX9osgnpl_c2c80ddF4YnQZawjUQkkd5in_Wl3086uSi3U9YrA33dX1AL3G7Lr3rdikflUCyKfbr-qQfpgN7ZCqdcIWeR4lA9qSJM0uDJN90T4ex4mG3mhYSleFjlilWk4cQYg99CMYxu9AvQ7Wa5nOHepTAimmsaDM6g9Um-zRMw5YSq"/>
+<img alt="Kinetic BJJ Hero" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvn-MCwQVv61mIpIdSTuMeCJosHPBe1WpQe4NAWrB9zAQIihFTg4fsrvmfV11iFpQ0OkcOJX2JMGQFERZO0qUypJP7wfvCX9osgnpl_c2c80ddF4YnQZawjUQkkd5in_Wl3086uSi3U9YrA33dX1AL3G7Lr3rdikflUCyKfbr-qQfpgN7ZCqdcIWeR4lA9qSJM0uDJN90T4ex4mG3mhYSleFjlilWk4cQYg99CMYxu9AvQ7Wa5nOHepTAimmsaDM6g9Um-zRMw5YSq"/>
 <div className="absolute inset-0 bg-gradient-to-t from-[#131313] via-[#131313]/40 to-transparent"></div>
 <div className="absolute bottom-0 left-0 p-6 w-full">
 <div className="flex flex-col gap-1">
@@ -14,7 +14,7 @@ export default function DetalheDaAula() {
                     </h2>
 <div className="flex items-center gap-3 mt-4">
 <div className="w-12 h-12 bg-zinc-900 overflow-hidden border border-[#353534]">
-<img alt="Professor Avatar" data-alt="Portrait of an experienced martial arts master with grey-flecked beard and calm, focused eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADqTgGE0UK5GUIJV1opS1E7_Xo4G7NZ7LXcFajRJi-CajdGEqpZThnOjxub3_lWNEqSJ1ySPBoTVchdLhSrwS3oAXwazhOY7KOCZatgW6ZQ0P9VgLIDU2iwqX0BBzrgvofdw3PBuFKNKwf_5QeZTCgzd-yLvkqeHzHBt7Ewk-I-wBVDOfzNNSl66vNO_WoZkWipScV4HQqdV9Y8IEpsUjZbD1irwvY8ShmqxYeAMVIcOjfB9kWD05sqDIfNC8qaaS-lHovPbPBiLHW"/>
+<img alt="Professor Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADqTgGE0UK5GUIJV1opS1E7_Xo4G7NZ7LXcFajRJi-CajdGEqpZThnOjxub3_lWNEqSJ1ySPBoTVchdLhSrwS3oAXwazhOY7KOCZatgW6ZQ0P9VgLIDU2iwqX0BBzrgvofdw3PBuFKNKwf_5QeZTCgzd-yLvkqeHzHBt7Ewk-I-wBVDOfzNNSl66vNO_WoZkWipScV4HQqdV9Y8IEpsUjZbD1irwvY8ShmqxYeAMVIcOjfB9kWD05sqDIfNC8qaaS-lHovPbPBiLHW"/>
 </div>
 <div>
 <p className="text-[10px] font-['Lexend'] text-zinc-400 uppercase tracking-widest">INSTRUCTOR</p>
@@ -78,7 +78,7 @@ export default function DetalheDaAula() {
 <span className="font-['Lexend'] text-xl font-black uppercase tracking-tighter">Confirmar Presença</span>
 <span className="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-2">arrow_forward</span>
 </button>
-<p className="text-center mt-6 text-xs text-surface-variant font-bold uppercase tracking-widest">
+<p className="text-center mt-6 text-xs text-zinc-500 font-bold uppercase tracking-widest">
                 Cancelamento permitido até 2 horas antes do início
             </p>
 </section>

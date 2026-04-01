@@ -5,7 +5,7 @@ export default function HistRicoDeAtividades() {
 {/*  Performance Goals Summary  */}
 <section className="mb-10">
 <div className="grid grid-cols-2 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-40 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-40 border-l-4 border-brand-red/20">
 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Progresso Semanal</span>
 <div className="mt-auto">
 <div className="text-4xl font-black font-headline tracking-tighter">85<span className="text-lg text-brand-red">%</span></div>
@@ -14,7 +14,7 @@ export default function HistRicoDeAtividades() {
 </div>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-40 border-l-4 border-zinc-800">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-40 border-l-4 border-zinc-800">
 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Técnicas Dominadas</span>
 <div className="mt-auto">
 <div className="text-4xl font-black font-headline tracking-tighter text-zinc-300">12<span className="text-lg text-zinc-300">/15</span></div>
@@ -90,7 +90,7 @@ export default function HistRicoDeAtividades() {
 </div>
 <div className="flex items-center gap-4 mb-3">
 <div className="w-16 h-10 bg-zinc-950 border border-zinc-800/10 overflow-hidden">
-<img alt="Technique Study" className="w-full h-full object-cover grayscale opacity-60" data-alt="Close up of two martial artists engaging in a technical grappling position on a black mat, focus on hand placement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpYiykZZuv41Xy0ZXBQzHNrgouH_cLcrYHkqzqr-uGCWOb0N43E2IjmIEI01WVJIJcpU3M7O62s5QB6819_ARA7wYcRfdmw89csOjkuSoCLFJziYlEwTh-GOaWuK4wZZwI0J288J6AUdau9jEoqDiNw_YvNwEvKld7iYj_nnVbTUTXph5vgbzRLdkhrX4bjHke4pQUD9-M9USskcLz-n0SU6p_ZDIrPDw5vdzOfD_rDjL6ccG323iq2kJKt2bhR5loXs1iRFnu1mjX"/>
+<img alt="Technique Study" className="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpYiykZZuv41Xy0ZXBQzHNrgouH_cLcrYHkqzqr-uGCWOb0N43E2IjmIEI01WVJIJcpU3M7O62s5QB6819_ARA7wYcRfdmw89csOjkuSoCLFJziYlEwTh-GOaWuK4wZZwI0J288J6AUdau9jEoqDiNw_YvNwEvKld7iYj_nnVbTUTXph5vgbzRLdkhrX4bjHke4pQUD9-M9USskcLz-n0SU6p_ZDIrPDw5vdzOfD_rDjL6ccG323iq2kJKt2bhR5loXs1iRFnu1mjX"/>
 </div>
 <div>
 <h4 className="text-xs font-bold text-zinc-100 uppercase tracking-wide">Triângulo Invertido</h4>

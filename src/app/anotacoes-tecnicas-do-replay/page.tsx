@@ -6,7 +6,6 @@ export default function AnotacoesTecnicasDoReplay() {
           <img
             alt="training session"
             className="h-full w-full object-cover opacity-80"
-            data-alt="high angle wide shot of two athletes grappling on a black mat in a high-performance training facility with moody lighting"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0kyjcWr9MDHmn1H5-9PVEd6PI9vA548_kXxPn5Zkc87D65P49p2VpTaMRU8ciQAAwVZF8y1feJDvU9uM5ODBUgB965uc51s4qbFBYvqAnPzkrXT-1P_5FSnwU76SMbf_omX5rcre9DMFx-dEHNX2HymzHxWTQINVnooOzKHYlVKVsADzAlBScEcYDY0bcnd-tGQsMKRetRprK719Xvh8ctLl8LeAJALVsMQhhJbKfKapC3WUwlKSwrJsYJ3zU8ourY_urzVORN1QU"
           />
           <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6">

@@ -212,7 +212,7 @@ export default function AreaDoProfessorAlunosPage() {
     }
 
     if (!paymentValor.trim() || Number(paymentValor) <= 0) {
-      setPaymentError('Informe um valor vÃ¡lido.');
+      setPaymentError('Informe um valor válido.');
       return;
     }
 
@@ -228,7 +228,7 @@ export default function AreaDoProfessorAlunosPage() {
     if (ok) {
       closePaymentModal();
     } else {
-      setPaymentError('NÃ£o foi possÃ­vel registrar o pagamento agora.');
+      setPaymentError('Não foi possível registrar o pagamento agora.');
     }
   };
 
@@ -242,7 +242,7 @@ export default function AreaDoProfessorAlunosPage() {
   return (
     <div className="relative isolate min-h-full overflow-hidden space-y-6 px-4 py-6 md:px-8 lg:px-10">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] [background-size:22px_22px] opacity-20" />
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-3">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-zinc-300">
@@ -381,7 +381,7 @@ export default function AreaDoProfessorAlunosPage() {
               ))}
             </div>
           ) : studentsToDisplay.length === 0 ? (
-            <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center">
+            <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center">
               <span className="material-symbols-outlined text-4xl text-brand-red">military_tech</span>
               <p className="mt-3 text-lg font-black uppercase tracking-tight text-white">Nenhum aluno pronto ainda</p>
               <p className="mt-2 text-sm text-[#8f8f95]">
@@ -464,7 +464,7 @@ export default function AreaDoProfessorAlunosPage() {
 
       {isBatchOpen && (
         <div className="fixed inset-0 z-[140] flex items-center justify-center bg-black/80 px-4 py-8 backdrop-blur-sm">
-          <div className="w-full max-w-3xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 shadow-none">
+          <div className="w-full max-w-3xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#8f8f95]">Confirmação em lote</p>
@@ -555,7 +555,7 @@ export default function AreaDoProfessorAlunosPage() {
             ))}
           </div>
         ) : convitesPendentes.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center">
+          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center">
             <span className="material-symbols-outlined text-4xl text-brand-red">mark_email_unread</span>
             <p className="mt-3 text-lg font-black uppercase tracking-tight text-white">Nenhum convite pendente</p>
             <p className="mt-2 text-sm text-[#8f8f95]">
@@ -616,7 +616,7 @@ export default function AreaDoProfessorAlunosPage() {
             ))}
           </div>
         ) : studentsWithProgress.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center">
+          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center">
             <span className="material-symbols-outlined text-4xl text-brand-red">group_off</span>
             <p className="mt-3 text-lg font-black uppercase tracking-tight text-white">Nenhum aluno cadastrado</p>
             <p className="mt-2 text-sm text-[#8f8f95]">
@@ -741,7 +741,7 @@ export default function AreaDoProfessorAlunosPage() {
 
       {isInviteOpen && (
         <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/80 px-4 py-8 backdrop-blur-sm">
-          <div className="w-full max-w-xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 shadow-none">
+          <div className="w-full max-w-xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#8f8f95]">Novo convite</p>
@@ -814,7 +814,7 @@ export default function AreaDoProfessorAlunosPage() {
 
       {isPaymentOpen && selectedPaymentStudent && (
         <div className="fixed inset-0 z-[125] flex items-center justify-center bg-black/80 px-4 py-8 backdrop-blur-sm">
-          <div className="w-full max-w-xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 shadow-none">
+          <div className="w-full max-w-xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#8f8f95]">Financeiro</p>
@@ -909,7 +909,7 @@ export default function AreaDoProfessorAlunosPage() {
 
       {isEditOpen && selectedStudent && (
         <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/80 px-4 py-8 backdrop-blur-sm">
-          <div className="w-full max-w-xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 shadow-none">
+          <div className="w-full max-w-xl rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#8f8f95]">Gerenciar aluno</p>

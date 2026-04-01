@@ -7,7 +7,7 @@ export default function ConquistasEEvoluO() {
 <header className="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-6 py-4 w-full">
 <div className="flex items-center gap-4">
 <div className="w-10 h-10 bg-zinc-800/80 overflow-hidden">
-<img className="w-full h-full object-cover" data-alt="close-up profile portrait of a focused jiu-jitsu athlete with sweat on face in a dark moody gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC2bmW-1ldZ0GB1bccypyJ954WJFKd0z1Ccd_vlQXeUaiIpM1nqpEnv9TWQtDWDQs0YZqkgmr6Zkr9WD_zAa49E80wN7BQztwf8VkHAQYbtGtcwQrVKdFtSd-Tx1SFz-rEIB89uususj-VElbxkgnlSBIBlgZsJJ9Ljkma2QgqSL2XgpGAsPmyUxhlqkUxis84lgB2bZHxFw7wY2WOLQoEBSfYuxuLwwQXpTf4N3OnUPCnsMxhxLS0PkuFpXEkSCa_WkLn5SYvY8cj"/>
+<img className="w-full h-full object-cover" alt="close-up profile portrait of a focused jiu-jitsu athlete with sweat on face in a dark moody gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC2bmW-1ldZ0GB1bccypyJ954WJFKd0z1Ccd_vlQXeUaiIpM1nqpEnv9TWQtDWDQs0YZqkgmr6Zkr9WD_zAa49E80wN7BQztwf8VkHAQYbtGtcwQrVKdFtSd-Tx1SFz-rEIB89uususj-VElbxkgnlSBIBlgZsJJ9Ljkma2QgqSL2XgpGAsPmyUxhlqkUxis84lgB2bZHxFw7wY2WOLQoEBSfYuxuLwwQXpTf4N3OnUPCnsMxhxLS0PkuFpXEkSCa_WkLn5SYvY8cj"/>
 </div>
 <h1 className="font-['Lexend'] uppercase tracking-tighter text-2xl font-black italic text-[#FF1A1A]">KINETIC BJJ</h1>
 </div>
@@ -35,7 +35,7 @@ export default function ConquistasEEvoluO() {
 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
 {/*  Left Column: Metrics  */}
 <div className="md:col-span-1 flex flex-col gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48 border-l-4 border-brand-red/20">
 <span className="font-label uppercase text-xs tracking-widest text-zinc-400">TREINOS SEGUIDOS</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline font-black text-5xl text-zinc-100">14</span>
@@ -43,7 +43,7 @@ export default function ConquistasEEvoluO() {
 </div>
 <p className="text-xs text-zinc-500 uppercase leading-tight font-bold">RECORDE PESSOAL: 22 DIAS</p>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48">
 <span className="font-label uppercase text-xs tracking-widest text-zinc-400">TEMPO DE TATAME</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline font-black text-5xl text-zinc-100">342</span>
@@ -53,7 +53,7 @@ export default function ConquistasEEvoluO() {
 </div>
 </div>
 {/*  Center/Right: Achievements Gallery  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
 <div className="flex justify-between items-center mb-8">
 <h2 className="font-headline font-black text-3xl uppercase tracking-tighter">CONQUISTAS</h2>
 <span className="font-label text-[10px] uppercase font-bold tracking-widest text-zinc-400">VER TODAS (24/80)</span>

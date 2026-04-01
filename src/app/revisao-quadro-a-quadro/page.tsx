@@ -24,7 +24,6 @@ export default function RevisaoQuadroAQuadro() {
             <img
               alt="Main analysis frame"
               className="h-full w-full object-cover opacity-80"
-              data-alt="action shot of two MMA fighters in a clinch, dramatic low-key lighting, highlight on technical grip and body tension"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz0BIRW4SMYO5h1_SrirK2YZHFKphSm9oXfGYc-MX4sGUuUYuyPgvxi7LEQX36TTJ2dtltKqr2JITKZr5WHQiuHpG6IVPSmX3YIrsluaPkOL6Wvr6FNWvK1DlU9mVKA1zomfaIH2zL2_30ovuAP-clGQUB8gsrQ57LHzGEEpGg-yNoZj19SD4VpcC9mFjkksyeLoINJQhEFFN0b_Q5pa7mYuySOq-ccty4k-Si6ML5-CiPwishyLw8BRc6dAA_9VR95gNul054BD8f"
             />
             <div className="pointer-events-none absolute inset-0">
@@ -118,7 +117,6 @@ export default function RevisaoQuadroAQuadro() {
                 <img
                   alt={`Frame ${frame}`}
                   className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                  data-alt="blurred motion shot of a fighter preparing for a take down, cinematic lighting"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkLk4Nso-ikVGljZETI-EdP2Fmi8hPcgt16K8xtkiQhnCffLdiZ1Hyvme4irEKvjdcL6gp4J9gZtKDu5FM8UFSWhIBIjORjiP7pqgATHyAsxzkTosFygAjqmlpHEFcdwd5az_Rp_gLRQ1-dvrM4No3ADTl99OfK8GdZqlndKqNYBNI_uuSm6vZyDsUj2L8YA8McfsiPME3UlDYWxDrUmYl4DPnG8uD87y331OrsquGPVpIVehylE5FQVLLJ1hAq0FzeUi3CnjaovxS"
                 />
                 <span

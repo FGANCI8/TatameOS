@@ -103,7 +103,6 @@ export default function RevisaoPosCampeonato() {
           <img
             alt="BJJ Action"
             className="h-full w-full object-cover grayscale opacity-50"
-            data-alt="Action shot of a Jiu Jitsu match in a high-intensity professional arena with dramatic overhead stadium lighting and grit"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCenRiClsNRU1gTtScUhbBweHTWhgJOPGAu1o_Jh4GAqpCXSBKj71A6Gmotw0-3bKLGfd_I7fxTAbYgG9RKqWYfvjwJ7zaw0dGkixQxJl1j4bcFC5oObJ3juW7uYF5BRy-2BxsnQV1bmudmhw9qQAOE-tbuJCQ90piLJ-iFaKtDHr2DkHOpcV8BNg6OWKdAK70PWpxzF3n5Jl1b5IflgWPBe0XJTtzhJLTRDxjsR6hoPyBmT1HGixeptdmGIUOPtkkivhNyXv4per1y"
           />
         </div>

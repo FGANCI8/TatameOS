@@ -6,7 +6,7 @@ export default function VideoVsTecnicaRecomendada() {
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 to-transparent" />
           <img
             className="h-full w-full object-cover opacity-80"
-            data-alt="Cinematic wide shot of two Brazilian Jiu-Jitsu athletes grappling on a dark mat, focusing on a triangle choke attempt with dramatic shadows"
+            alt="Cinematic wide shot of two Brazilian Jiu-Jitsu athletes grappling on a dark mat, focusing on a triangle choke attempt with dramatic shadows"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIVz6F3qJSDO15arL-foiUKFx37KXRr1u8BgWrBEESn2BJ9GaN7gt0UjsCZ9R2X5AyufCD9zI931gw7HK5cIVofOza7RI8hE0-Gsn93KvSgYHGcGgtwR6ijnqekdKMAO_cqnFDvG0qz_ylLa2-Ii3h8_5AWP_NfDN03DZpRdzwHv_6du4PcKIBGSF4rOHB9rKvQhc1aN64f7WngdyOqmoXGuypSBmaiA_0fOAuhzRBL0dcQbO7dGEjAQaAL5O92UdGBRQpCErUcG9T"
           />
           <div className="absolute inset-0 z-20 flex flex-col justify-between p-6">
@@ -107,7 +107,7 @@ export default function VideoVsTecnicaRecomendada() {
               <div className="relative h-48 overflow-hidden md:h-auto md:w-1/3">
                 <img
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  data-alt="Professional Jiu-Jitsu instructor explaining technique on the mat, soft studio lighting, high resolution fitness photography"
+                  alt="Professional Jiu-Jitsu instructor explaining technique on the mat, soft studio lighting, high resolution fitness photography"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_LrvInYm1_cd22oam5IsuvLwkoHPVR5J4IKN4JEmzt7FmNBfXudT1hmJfTBixHCPS1VAPmgayIBWB__nprx8TuWtUnOlJeG4Od7_3qbgq8lEmMteVyhhbT2QEm9Oeprwab5suH1fI0wx2-dFiGBtFG8JIyo9A6tFbZuRkWuBkiUteMH43ULyTnwu3z-X-t_lxdazQzlj56NuT2Vg9jgsystQGYjWqKE-zyVHBkicXKHExk0EYXzQtPDLbnqUApHjjCOLfLPDJtw1w"
                 />
                 <div className="absolute inset-0 bg-brand-red/20 transition-colors group-hover:bg-transparent" />

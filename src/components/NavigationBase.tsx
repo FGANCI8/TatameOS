@@ -22,8 +22,7 @@ export function NavigationBase({ routes }: { routes: { pathName: string; name: s
   };
 
   const mainLinks: MainLink[] = [
-    { to: '/boas-vindas', label: 'Início', icon: 'home' },
-    { to: '/dashboard-do-aluno', label: 'Dashboard', icon: 'dashboard' },
+    { to: '/dashboard-do-aluno', label: 'Início', icon: 'home' },
     ...(role === 'aluno' ? [studentCheckinLink] : []),
     { to: '/biblioteca-de-tecnicas', label: 'Técnicas', icon: 'library_books' },
     { to: '/plano-de-treino', label: 'Treinos', icon: 'fitness_center' },

@@ -20,6 +20,55 @@ function faixaTone(faixa: Aluno['faixa']) {
   }
 }
 
+function LoadingPanel() {
+  return (
+    <section className="grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+      <div className="space-y-6">
+        <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="space-y-3">
+            <div className="h-3 w-28 animate-pulse rounded-full bg-zinc-800/60" />
+            <div className="h-8 w-64 animate-pulse rounded-2xl bg-zinc-800/60" />
+            <div className="h-4 w-full max-w-xl animate-pulse rounded-full bg-zinc-800/60" />
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          </div>
+        </section>
+
+        <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="h-4 w-32 animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          </div>
+        </section>
+      </div>
+
+      <div className="space-y-6">
+        <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="h-4 w-32 animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="mt-4 space-y-3">
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          </div>
+        </section>
+
+        <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="h-4 w-28 animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="mt-4 space-y-3">
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          </div>
+        </section>
+      </div>
+    </section>
+  );
+}
+
 export default function FrequenciaContent() {
   const { painel, loading, error, actions } = useFrequenciaProfessor();
   const [qrToken, setQrToken] = useState('');
@@ -75,7 +124,7 @@ export default function FrequenciaContent() {
   };
 
   if (loading && !painel) {
-    return null;
+    return <LoadingPanel />;
   }
 
   if (error || !painel) {

@@ -4,14 +4,14 @@ export default function HistRicoDeCampeonatos() {
 <main className="pt-24 pb-32 px-4 max-w-5xl mx-auto space-y-12">
 {/*  Hero Summary Section  */}
 <section className="grid grid-cols-1 md:grid-cols-3 gap-1">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-end min-h-[160px]">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-end min-h-[160px]">
 <span className="font-headline text-label-sm uppercase tracking-widest text-zinc-500 mb-2">VITÓRIAS TOTAIS</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline text-6xl font-black text-zinc-100">42</span>
 <span className="text-brand-red font-black text-xl">/ 50</span>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-end min-h-[160px]">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-end min-h-[160px]">
 <span className="font-headline text-label-sm uppercase tracking-widest text-zinc-500 mb-2">TAXA DE FINALIZAÇÃO</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline text-6xl font-black text-zinc-100">68</span>
@@ -38,7 +38,7 @@ export default function HistRicoDeCampeonatos() {
 {/*  Tournament Card 1: Gold  */}
 <div className="bg-zinc-950/60 group flex flex-col md:flex-row items-stretch overflow-hidden">
 <div className="relative w-full md:w-48 h-48 md:h-auto bg-zinc-800/80 flex-shrink-0">
-<img className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity grayscale hover:grayscale-0" data-alt="Intense close-up of a Brazilian Jiu-Jitsu gold medal with red ribbon resting on a black tatami mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAB3eQg3U2YpEDnuPpm7onypKSw2kcWzK5vp-lIVX_zhL_e4cSORAqJDncITKo2zAPD43yazKbRy2yS2oHr_2gArS0rE_czYyFVEWHn92keabMToBXID06lgameA1biWuc9OcfEaO8ujFt3qT0ZFux-YGu5zkoXf4h42rWaeAv--lcvwY7pMSXck1mGPTByw65v8qyJk6-4h7JV0Jvruh2sz9BMufKrheGn2ZULDhPRoETL6ktf-WzA5f0YuXjkAhzpoOZb29sQBba"/>
+<img className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity grayscale hover:grayscale-0" alt="Intense close-up of a Brazilian Jiu-Jitsu gold medal with red ribbon resting on a black tatami mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAB3eQg3U2YpEDnuPpm7onypKSw2kcWzK5vp-lIVX_zhL_e4cSORAqJDncITKo2zAPD43yazKbRy2yS2oHr_2gArS0rE_czYyFVEWHn92keabMToBXID06lgameA1biWuc9OcfEaO8ujFt3qT0ZFux-YGu5zkoXf4h42rWaeAv--lcvwY7pMSXck1mGPTByw65v8qyJk6-4h7JV0Jvruh2sz9BMufKrheGn2ZULDhPRoETL6ktf-WzA5f0YuXjkAhzpoOZb29sQBba"/>
 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
 <div className="absolute top-4 left-4">
 <span className="material-symbols-outlined text-5xl medal-gold drop-shadow-lg" data-icon="military_tech" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
@@ -67,7 +67,7 @@ export default function HistRicoDeCampeonatos() {
 {/*  Tournament Card 2: Silver  */}
 <div className="bg-zinc-950/60 group flex flex-col md:flex-row items-stretch overflow-hidden">
 <div className="relative w-full md:w-48 h-48 md:h-auto bg-zinc-800/80 flex-shrink-0">
-<img className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity grayscale hover:grayscale-0" data-alt="High action shot of two jiu-jitsu athletes grappling on a competition mat under dramatic arena lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1GbaSFr01D6OY2b06kAwqPUGJIP72N6om7QveKGSLfTmEdblPhdqjoGGbATwK7sa47q_zuXtOn-otDLBrQ3L7VQCJDv7rS59rDrLz-0DVso-oRN2NC4nqqPPG7iit4fD7Hm5dOfV862ubpp6Ss8nTV2gkXZra3ahKX_3qiSKJ8Lo2VkzFKjqnecjnR4uP9Yg-J_uypQ3mALBVnXyZ3CJimziY6c2Xv_ucajfKVRvqpsV1ujT2Ev_-VaSf1CjDwZqAC33UGlNG7wHe"/>
+<img className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity grayscale hover:grayscale-0" alt="High action shot of two jiu-jitsu athletes grappling on a competition mat under dramatic arena lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1GbaSFr01D6OY2b06kAwqPUGJIP72N6om7QveKGSLfTmEdblPhdqjoGGbATwK7sa47q_zuXtOn-otDLBrQ3L7VQCJDv7rS59rDrLz-0DVso-oRN2NC4nqqPPG7iit4fD7Hm5dOfV862ubpp6Ss8nTV2gkXZra3ahKX_3qiSKJ8Lo2VkzFKjqnecjnR4uP9Yg-J_uypQ3mALBVnXyZ3CJimziY6c2Xv_ucajfKVRvqpsV1ujT2Ev_-VaSf1CjDwZqAC33UGlNG7wHe"/>
 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
 <div className="absolute top-4 left-4">
 <span className="material-symbols-outlined text-5xl medal-silver drop-shadow-lg" data-icon="military_tech" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
@@ -96,7 +96,7 @@ export default function HistRicoDeCampeonatos() {
 {/*  Tournament Card 3: Bronze  */}
 <div className="bg-zinc-950/60 group flex flex-col md:flex-row items-stretch overflow-hidden">
 <div className="relative w-full md:w-48 h-48 md:h-auto bg-zinc-800/80 flex-shrink-0">
-<img className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity grayscale hover:grayscale-0" data-alt="Athletic arena background with blurred silhouettes of spectators and bright overhead sports lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnUgdzJkBMZ5FNsG8d5Qs6GOd3cNpoFCgqehTWGukH54z1FeZE8rAOKKwpe9gUldzMBI9CrVEmiq1Ft-vmzowFW3WIkE3s0WVh1b14CmbMwPdR19srXEyqMPf7IZrfKN5ii7tl7_gzNPMepqxjj4H8EN7znlcJGro24m-00ZcbUyEZU43O4dC6nYEJf0sHOkoGTvP-Awv9lbsMt-5TGKPOojQFzgeOwf3H0orrpN7MpT6rz8H_pk0GNYzLonyFkSsuoxw705Sn9RTO"/>
+<img className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity grayscale hover:grayscale-0" alt="Athletic arena background with blurred silhouettes of spectators and bright overhead sports lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnUgdzJkBMZ5FNsG8d5Qs6GOd3cNpoFCgqehTWGukH54z1FeZE8rAOKKwpe9gUldzMBI9CrVEmiq1Ft-vmzowFW3WIkE3s0WVh1b14CmbMwPdR19srXEyqMPf7IZrfKN5ii7tl7_gzNPMepqxjj4H8EN7znlcJGro24m-00ZcbUyEZU43O4dC6nYEJf0sHOkoGTvP-Awv9lbsMt-5TGKPOojQFzgeOwf3H0orrpN7MpT6rz8H_pk0GNYzLonyFkSsuoxw705Sn9RTO"/>
 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
 <div className="absolute top-4 left-4">
 <span className="material-symbols-outlined text-5xl medal-bronze drop-shadow-lg" data-icon="military_tech" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
@@ -125,7 +125,7 @@ export default function HistRicoDeCampeonatos() {
 {/*  Tournament Card 4: Participation  */}
 <div className="bg-zinc-950/60 group flex flex-col md:flex-row items-stretch overflow-hidden opacity-80 grayscale">
 <div className="relative w-full md:w-48 h-48 md:h-auto bg-zinc-800/80 flex-shrink-0">
-<img className="w-full h-full object-cover opacity-40" data-alt="Black and white textured gym wall with high contrast shadows and industrial athletic vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe_Q7VUqwCWUCsjv675_YqguBkt6eJunDSj9fwZG_hxpFoftPM3-010m_8fGvyEopU5zsJbc-zW6I-cKIYJxDGr46q1-qxznjv2bcxlAeFhMmX7VkJlXQVyOsmEQolGFqgQEeBVmB7hbDhz0U0FPFjXe-kmNzNk0qsmebcXrDJ4IAPgsEy4ll0T_KAsrLg7xglpQh10aKEe1keI0UeaHwKZQt_nQu8otIl6SYrECR9KwSY1UypZ60QxjhqDYNwvj69k8WXZu_lkij5"/>
+<img className="w-full h-full object-cover opacity-40" alt="Black and white textured gym wall with high contrast shadows and industrial athletic vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe_Q7VUqwCWUCsjv675_YqguBkt6eJunDSj9fwZG_hxpFoftPM3-010m_8fGvyEopU5zsJbc-zW6I-cKIYJxDGr46q1-qxznjv2bcxlAeFhMmX7VkJlXQVyOsmEQolGFqgQEeBVmB7hbDhz0U0FPFjXe-kmNzNk0qsmebcXrDJ4IAPgsEy4ll0T_KAsrLg7xglpQh10aKEe1keI0UeaHwKZQt_nQu8otIl6SYrECR9KwSY1UypZ60QxjhqDYNwvj69k8WXZu_lkij5"/>
 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
 <div className="absolute top-4 left-4">
 <span className="material-symbols-outlined text-5xl text-zinc-500 drop-shadow-lg" data-icon="emoji_events">emoji_events</span>

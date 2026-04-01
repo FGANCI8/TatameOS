@@ -1,7 +1,7 @@
 export default function EstadoVazioElegante() {
   return (
     <main className="flex min-h-[calc(100vh-5rem)] items-center justify-center px-4 pb-24 pt-24 md:px-6">
-      <div className="relative w-full max-w-2xl overflow-hidden rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <div className="relative w-full max-w-2xl overflow-hidden rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="absolute inset-0 bg-dot-grid opacity-40" />
         <div className="relative z-10">
           <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[28px] border border-zinc-800 bg-zinc-950/60">

@@ -18,7 +18,7 @@ export default function AnLiseDeFalhasTCnicas() {
 {/*  Bento Grid for Fault Analysis  */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
 {/*  Guard Analysis Card  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between min-h-[320px]">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between min-h-[320px]">
 <div className="flex justify-between items-start">
 <div>
 <span className="material-symbols-outlined text-brand-red text-4xl mb-4" data-icon="security">security</span>
@@ -38,7 +38,7 @@ export default function AnLiseDeFalhasTCnicas() {
 </div>
 </div>
 {/*  Takedown Card  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <span className="material-symbols-outlined text-zinc-300 text-4xl mb-4" data-icon="directions_run">directions_run</span>
 <h3 className="font-headline text-2xl font-bold uppercase italic leading-tight">QUEDAS<br/>PERDIDAS</h3>
@@ -67,7 +67,7 @@ export default function AnLiseDeFalhasTCnicas() {
 <p className="text-[10px] font-bold uppercase tracking-widest mt-4 opacity-40">MÉDIA DE REAÇÃO: 1.2s</p>
 </div>
 {/*  Specific Submission Threats  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
 <div className="space-y-6">
 <h4 className="font-headline text-xl font-bold uppercase italic border-b border-brand-red/30 pb-2">RISCOS TÉCNICOS</h4>
 <div className="flex items-center gap-4">
@@ -99,7 +99,7 @@ export default function AnLiseDeFalhasTCnicas() {
 </div>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-white/5 relative overflow-hidden">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-white/5 relative overflow-hidden">
 <div className="absolute top-0 right-0 p-2">
 <span className="material-symbols-outlined text-[60px] opacity-5 pointer-events-none" data-icon="bolt">bolt</span>
 </div>
@@ -140,7 +140,7 @@ export default function AnLiseDeFalhasTCnicas() {
 </div>
 </section>
 {/*  Visual Prompt for context (Decorative)  */}
-<div className="mt-16 w-full h-[200px] bg-cover bg-center grayscale contrast-125 opacity-30 mix-blend-screen" data-alt="dramatic close up of a jiu-jitsu black belt knot with intense focus and dark shadows athletic textures and red highlights" style={{ /* background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALwsj78MLvP1Mle2IsKCtToJJ4ZLkv08si6lwdAHgvqU19AriU2MLItYxAOBRq-CP0D_pvxbSV0EGxifw5VCJ5a03zh26GePjSgTiwGXKJ8EinVQe2EV5pZ6yTXJeOBgWERvtYjOYW5EJ6ATMJ86xyD6OIaWonyusdkHCQ_LYjB3PEWJ5dLgI4QrfeOqj0eCZ9LZ1w-eOja5rFPpsHtiAXKrZezQquTcOlTxWFCptub2d9CXJlpVebG9_A5FzDCPk2PQCdh6Fphqwh') */ }}>
+<div className="mt-16 w-full h-[200px] bg-cover bg-center grayscale contrast-125 opacity-30 mix-blend-screen" style={{ /* background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALwsj78MLvP1Mle2IsKCtToJJ4ZLkv08si6lwdAHgvqU19AriU2MLItYxAOBRq-CP0D_pvxbSV0EGxifw5VCJ5a03zh26GePjSgTiwGXKJ8EinVQe2EV5pZ6yTXJeOBgWERvtYjOYW5EJ6ATMJ86xyD6OIaWonyusdkHCQ_LYjB3PEWJ5dLgI4QrfeOqj0eCZ9LZ1w-eOja5rFPpsHtiAXKrZezQquTcOlTxWFCptub2d9CXJlpVebG9_A5FzDCPk2PQCdh6Fphqwh') */ }}>
 </div>
 </main>
     </>

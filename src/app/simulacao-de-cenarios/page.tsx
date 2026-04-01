@@ -10,7 +10,7 @@ export default function SimulaODeCenRios() {
 </div>
 <div className="relative bg-zinc-950/60 overflow-hidden group">
 <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent z-10"></div>
-<img className="w-full h-64 md:h-80 object-cover grayscale opacity-40 group-hover:grayscale-0 transition-all duration-700" data-alt="high contrast black and white photo of two jiu-jitsu athletes grappling on a mat with intense focus and muscle tension" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVhs30ocL-Ywj1SMyU_SEN23iz1gYdjHN-Rv6XEhBlgIpxeNem4o0cs2gt-gnL3k6gtpsuQlW_pRVB7GU6SNCRwTdp0Zh5PYfAqdYMKHqRksB-PEnCu9xZ43XTy9FPEMf9FaYjvVFosu_Wc4M_LHg-ubEQuEWGK_TlS9D8cG7BX0PRIQlkbPHWHSdAuOxoxMUT4yJRz9MOryO73he2KeWlJYMuO-iD8ZtuZd3lPUSvi0BE9tJ_pABA5Q5-x2a8nPAKQ3Le89iNr7Tr"/>
+<img className="w-full h-64 md:h-80 object-cover grayscale opacity-40 group-hover:grayscale-0 transition-all duration-700" alt="high contrast black and white photo of two jiu-jitsu athletes grappling on a mat with intense focus and muscle tension" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVhs30ocL-Ywj1SMyU_SEN23iz1gYdjHN-Rv6XEhBlgIpxeNem4o0cs2gt-gnL3k6gtpsuQlW_pRVB7GU6SNCRwTdp0Zh5PYfAqdYMKHqRksB-PEnCu9xZ43XTy9FPEMf9FaYjvVFosu_Wc4M_LHg-ubEQuEWGK_TlS9D8cG7BX0PRIQlkbPHWHSdAuOxoxMUT4yJRz9MOryO73he2KeWlJYMuO-iD8ZtuZd3lPUSvi0BE9tJ_pABA5Q5-x2a8nPAKQ3Le89iNr7Tr"/>
 <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
 <div className="flex flex-wrap items-center gap-4 mb-4">
 <span className="bg-brand-red/10 text-white px-3 py-1 text-[10px] font-black tracking-widest uppercase">CRITICAL PRESSURE</span>
@@ -37,25 +37,25 @@ export default function SimulaODeCenRios() {
 </div>
 <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
 {/*  Step 1  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-brand-red/20">
 <span className="font-headline font-black text-4xl text-zinc-700 mb-4 block">01</span>
 <h3 className="font-headline font-bold text-zinc-100 text-lg uppercase mb-2">Posture Up</h3>
 <p className="text-zinc-400 text-xs leading-relaxed uppercase font-medium">Drive your hips forward and lift your chin to break the opponent's angle.</p>
 </div>
 {/*  Step 2  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-zinc-800 opacity-80">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-zinc-800 opacity-80">
 <span className="font-headline font-black text-4xl text-zinc-700 mb-4 block">02</span>
 <h3 className="font-headline font-bold text-zinc-100 text-lg uppercase mb-2">Shoulder Pin</h3>
 <p className="text-zinc-400 text-xs leading-relaxed uppercase font-medium">Drive your free shoulder into their chin to create discomfort and space.</p>
 </div>
 {/*  Step 3  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-zinc-800/80 opacity-50">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-zinc-800/80 opacity-50">
 <span className="font-headline font-black text-4xl text-zinc-500 mb-4 block">03</span>
 <h3 className="font-headline font-bold text-zinc-100 text-lg uppercase mb-2">Hip Clear</h3>
 <p className="text-zinc-400 text-xs leading-relaxed uppercase font-medium">Step over and square up to fully dissolve the leg triangle lock.</p>
 </div>
 {/*  Step 4  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-2 border-dashed border-zinc-800/80 flex flex-col items-center justify-center text-center">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-2 border-dashed border-zinc-800/80 flex flex-col items-center justify-center text-center">
 <span className="material-symbols-outlined text-zinc-700 text-4xl mb-2">lock_open</span>
 <span className="text-zinc-700 font-headline font-black text-sm uppercase tracking-widest">Locked</span>
 </div>
@@ -75,7 +75,7 @@ export default function SimulaODeCenRios() {
 {/*  Scenario 1: Hard  */}
 <div className="bg-zinc-950/60 group hover:bg-zinc-900/80 transition-all cursor-pointer">
 <div className="relative h-48 overflow-hidden">
-<img className="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" data-alt="overhead shot of two athletes wrestling in a competitive match under dramatic spotlights on a blue mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWdS-uTgh6C1NXo9HBU5p7ptyScJvxQWLEzdqbF75YsNPaay7ppi8UXyHruM_by3BTNyV9S5d9_gQCXP_-85U9cFEPSoPRsdJcUS75_X1UxobFCO5t0RRaw7PZrOBTTnimRT7dG__ytckdsGhYUEhnDV3rPISb8R8Z4xgS0aOpzHV2hSxt_7q3yZAp7JjoNY6bpkemj0GXo4k-RNtz7YUJKygcDDvK5DXA4NB9RUKJcy2X9kS-I6y6kCmV6yNam7a-WqqM1RjgXIPN"/>
+<img className="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" alt="overhead shot of two athletes wrestling in a competitive match under dramatic spotlights on a blue mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWdS-uTgh6C1NXo9HBU5p7ptyScJvxQWLEzdqbF75YsNPaay7ppi8UXyHruM_by3BTNyV9S5d9_gQCXP_-85U9cFEPSoPRsdJcUS75_X1UxobFCO5t0RRaw7PZrOBTTnimRT7dG__ytckdsGhYUEhnDV3rPISb8R8Z4xgS0aOpzHV2hSxt_7q3yZAp7JjoNY6bpkemj0GXo4k-RNtz7YUJKygcDDvK5DXA4NB9RUKJcy2X9kS-I6y6kCmV6yNam7a-WqqM1RjgXIPN"/>
 <span className="absolute top-4 right-4 bg-brand-red/10 text-brand-red px-3 py-1 text-[10px] font-black tracking-widest uppercase">HARD</span>
 </div>
 <div className="p-6">
@@ -90,7 +90,7 @@ export default function SimulaODeCenRios() {
 {/*  Scenario 2: Med  */}
 <div className="bg-zinc-950/60 group hover:bg-zinc-900/80 transition-all cursor-pointer">
 <div className="relative h-48 overflow-hidden">
-<img className="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" data-alt="intense close-up of a martial artist's hands gripping a heavy punching bag in a dark industrial gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAskRxuBnXN5NBftH1zh_Y8g7KYgdgp3grqM10ecgH_fcQkYEoZcfbQgT2FM-si1xnX09bnp_LLST4f6QHh_0fDdRKRukvYYK0jmDfQ7SBBC9UlfNw6RsvA_Ydx--FzYROgvTUCFP0TF3nU3gwcybXj3p-jithdAxFPz9knYq7oulGFqAinxnN-_bTjWWSzpzdKp6ei2QgaRsGqRsvTYVMJURN4UrKGduQ3mGZq7G6GG1MHD5x36Iobr8hzGfp5H8gAaP48nDPPBFbf"/>
+<img className="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" alt="intense close-up of a martial artist's hands gripping a heavy punching bag in a dark industrial gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAskRxuBnXN5NBftH1zh_Y8g7KYgdgp3grqM10ecgH_fcQkYEoZcfbQgT2FM-si1xnX09bnp_LLST4f6QHh_0fDdRKRukvYYK0jmDfQ7SBBC9UlfNw6RsvA_Ydx--FzYROgvTUCFP0TF3nU3gwcybXj3p-jithdAxFPz9knYq7oulGFqAinxnN-_bTjWWSzpzdKp6ei2QgaRsGqRsvTYVMJURN4UrKGduQ3mGZq7G6GG1MHD5x36Iobr8hzGfp5H8gAaP48nDPPBFbf"/>
 <span className="absolute top-4 right-4 bg-zinc-900 text-zinc-100 px-3 py-1 text-[10px] font-black tracking-widest uppercase">MED</span>
 </div>
 <div className="p-6">

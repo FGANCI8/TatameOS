@@ -63,7 +63,7 @@ export default function CalendRioDeTreinos() {
 <section className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 {/*  Weekly Summary (Bento Style)  */}
 <div className="lg:col-span-4 space-y-6">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-brand-red/20">
 <h3 className="font-headline font-black text-2xl uppercase italic leading-tight">Status da Trilha</h3>
 <div className="mt-6 space-y-4">
 <div className="flex justify-between items-end">

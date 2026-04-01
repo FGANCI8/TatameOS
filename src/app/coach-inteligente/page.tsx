@@ -105,7 +105,6 @@ export default function CoachInteligente() {
                 <img
                   alt="Diagrama técnico 1"
                   className="h-full w-full object-cover opacity-50 grayscale transition-all hover:grayscale-0"
-                  data-alt="Illustration of a BJJ leg hook position with telemetry overlays and red pressure points."
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcau8JmXWwdO2XwUEjc1LkDSXwU9j0nDQEb9Kegm4MRHquhUUl1-btBaMOotiiRK6dbgqBaLFXwWMNU9GskRaN3Yo7VpuTLsecbBoqFDw0qiclZ88f8fghrKGFiInYgp4GVH310UGSUuSQa4HV1WGJJWBav_xry-q35ox4Uv4-fUDIhYuWEt_m-QhetaX0kYL8itIpO3J6SkKYTNqklvN0diT-Y_SOJxZpzteEQR7h9Twrew_LUvHNSGICSFFtxOBxVR2lWRb22mvD"
                 />
               </div>
@@ -113,7 +112,6 @@ export default function CoachInteligente() {
                 <img
                   alt="Diagrama técnico 2"
                   className="h-full w-full object-cover opacity-50 grayscale transition-all hover:grayscale-0"
-                  data-alt="Digital skeleton model showing spine alignment during a grappling transition."
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuQD7ursl9XIjNY9fNqzq_3P_Zv_9ToUbQe9kBB_aQ1dk6nGsWxY1HnwLkNPsXfwAAsuItuFmb-tqPymTM09mcvqums6NNDVMJXyGZcqDwKOwSr73wrZV0a6PXVIcK-3ffXwzg7rppGdCmTGkWtqURGhTsAIys0w9iz5lUdphpr6vJS38jaEOMa38l9i8LKp6bm9_nRJMYheIw30evG8xghNMxSWYLG3isxdggXxIFqkPmIskq8PzA-axAyhXk5KPNxjDwjEvIf0YH"
                 />
               </div>

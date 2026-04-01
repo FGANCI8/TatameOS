@@ -1,7 +1,7 @@
 export default function ResumoDoAtleta() {
   return (
     <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Resumo do atleta</p>
@@ -23,7 +23,7 @@ export default function ResumoDoAtleta() {
           ['Horas', '78h'],
           ['Sequência', '12 dias'],
         ].map(([label, value]) => (
-          <article key={label} className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <article key={label} className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">{label}</p>
             <p className="mt-2 font-headline text-4xl font-black italic text-white">{value}</p>
           </article>
@@ -31,7 +31,7 @@ export default function ResumoDoAtleta() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 lg:col-span-2">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 lg:col-span-2">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Linha temporal</p>
           <div className="mt-6 space-y-3">
             {['Treino técnico', 'Sparring intenso', 'Check-in completo'].map((item) => (
@@ -43,7 +43,7 @@ export default function ResumoDoAtleta() {
           </div>
         </article>
 
-        <article className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Métrica chave</p>
           <p className="mt-2 font-headline text-4xl font-black italic text-white">94%</p>
           <div className="mt-4 h-2 overflow-hidden rounded-full bg-zinc-800">

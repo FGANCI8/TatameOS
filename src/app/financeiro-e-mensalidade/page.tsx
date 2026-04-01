@@ -15,12 +15,12 @@ export default function FinanceiroEMensalidade() {
 </div>
 {/*  Bento Layout Main Card  */}
 <div className="grid grid-cols-2 gap-px bg-zinc-800/80">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-2">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-2">
 <span className="material-symbols-outlined text-[#FF1A1A]" data-icon="event_repeat">event_repeat</span>
 <p className="font-['Inter'] uppercase text-[10px] font-bold tracking-widest text-zinc-400">PRÓXIMO VENCIMENTO</p>
 <p className="font-['Lexend'] text-2xl font-extrabold text-zinc-100">15 NOV</p>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-2 border-l border-zinc-800/80">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-2 border-l border-zinc-800/80">
 <span className="material-symbols-outlined text-[#FF1A1A]" data-icon="payments">payments</span>
 <p className="font-['Inter'] uppercase text-[10px] font-bold tracking-widest text-zinc-400">VALOR MENSAL</p>
 <p className="font-['Lexend'] text-2xl font-extrabold text-zinc-100">R$ 280</p>

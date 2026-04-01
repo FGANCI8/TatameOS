@@ -34,28 +34,28 @@ export default function DetalheDoCampeonato() {
 </section>
 {/*  Stats Grid (Bento Style)  */}
 <section className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48">
 <span className="material-symbols-outlined text-brand-red">sports_kabaddi</span>
 <div>
 <h3 className="font-['Lexend'] text-5xl font-black text-zinc-100">05</h3>
 <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">LUTAS TOTAIS</p>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48">
 <span className="material-symbols-outlined text-zinc-300">trending_up</span>
 <div>
 <h3 className="font-['Lexend'] text-5xl font-black text-zinc-100">42</h3>
 <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">PONTOS ACUMULADOS</p>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48">
 <span className="material-symbols-outlined text-brand-red">timer</span>
 <div>
 <h3 className="font-['Lexend'] text-5xl font-black text-zinc-100">32<span className="text-xl">min</span></h3>
 <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">TEMPO EM TATAME</p>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48">
 <span className="material-symbols-outlined text-zinc-300">verified</span>
 <div>
 <h3 className="font-['Lexend'] text-5xl font-black text-zinc-100">60%</h3>
@@ -71,7 +71,7 @@ export default function DetalheDoCampeonato() {
 <div className="h-[2px] flex-grow mx-6 bg-zinc-800/80"></div>
 </div>
 {/*  Round 1  */}
-<div className="group relative rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 transition-all hover:bg-zinc-900/80">
+<div className="group relative rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 transition-all hover:bg-zinc-900/80">
 <div className="absolute left-0 top-0 bottom-0 w-1 bg-zinc-800 group-hover:w-2 transition-all"></div>
 <div className="flex flex-col md:flex-row justify-between gap-6">
 <div className="flex-1">
@@ -103,7 +103,7 @@ export default function DetalheDoCampeonato() {
 </div>
 </div>
 {/*  Round 2  */}
-<div className="group relative rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 transition-all hover:bg-zinc-900/80">
+<div className="group relative rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 transition-all hover:bg-zinc-900/80">
 <div className="absolute left-0 top-0 bottom-0 w-1 bg-zinc-800 group-hover:w-2 transition-all"></div>
 <div className="flex flex-col md:flex-row justify-between gap-6">
 <div className="flex-1">
@@ -135,7 +135,7 @@ export default function DetalheDoCampeonato() {
 </div>
 </div>
 {/*  Round 3 (Semi)  */}
-<div className="group relative rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 transition-all hover:bg-zinc-900/80">
+<div className="group relative rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 transition-all hover:bg-zinc-900/80">
 <div className="absolute left-0 top-0 bottom-0 w-1 bg-zinc-800 group-hover:w-2 transition-all"></div>
 <div className="flex flex-col md:flex-row justify-between gap-6">
 <div className="flex-1">
@@ -188,7 +188,7 @@ export default function DetalheDoCampeonato() {
 <aside className="space-y-8">
 <div>
 <h3 className="font-['Lexend'] text-xl font-black uppercase mb-4 tracking-tighter">ANÁLISE DE SCORE</h3>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-6">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-6">
 {/*  Score Bars  */}
 <div>
 <div className="flex justify-between text-[10px] font-bold uppercase mb-2">
@@ -230,7 +230,7 @@ export default function DetalheDoCampeonato() {
 </div>
 <div>
 <h3 className="font-['Lexend'] text-xl font-black uppercase mb-4 tracking-tighter">SUMMARY DE PERFORMANCE</h3>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
 <p className="text-sm text-zinc-500 leading-relaxed mb-4 italic">
                             "Domínio excepcional na guarda aberta. 85% das tentativas de raspagem foram convertidas. Foco necessário em defesa de quedas iniciais, sofrendo 4 pontos no início do round 2."
                         </p>

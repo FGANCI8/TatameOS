@@ -18,6 +18,41 @@ function formatDateTime(date: Date): string {
   }).format(date);
 }
 
+function LoadingPanel() {
+  return (
+    <section className="grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+      <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <div className="space-y-3">
+          <div className="h-3 w-32 animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="h-8 w-64 animate-pulse rounded-2xl bg-zinc-800/60" />
+          <div className="h-4 w-full max-w-xl animate-pulse rounded-full bg-zinc-800/60" />
+        </div>
+        <div className="mt-6 aspect-square w-full animate-pulse rounded-[28px] border border-zinc-800 bg-zinc-800/60" />
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+        </div>
+      </article>
+      <div className="space-y-6">
+        <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="h-4 w-28 animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-24 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          </div>
+        </div>
+        <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="h-4 w-32 animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="mt-4 space-y-3">
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+            <div className="h-20 animate-pulse rounded-2xl border border-zinc-800 bg-zinc-800/60" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function CheckinContent() {
   const { painel, loading, error, actions } = useFrequenciaAluno();
   const [qrDataUrl, setQrDataUrl] = useState('');
@@ -81,7 +116,7 @@ export default function CheckinContent() {
   };
 
   if (loading && !painel) {
-    return null;
+    return <LoadingPanel />;
   }
 
   if (error || !painel) {
@@ -173,7 +208,7 @@ export default function CheckinContent() {
             {painel.aluno.nome}
           </h2>
           <p className="mt-2 text-sm leading-7 text-zinc-400">
-            {painel.aluno.faixa} faixa, grau {painel.aluno.grau}. As marcos de constância ajudam a medir seu ritmo no tatame.
+            {painel.aluno.faixa} faixa, grau {painel.aluno.grau}. Os marcos de constância ajudam a medir seu ritmo no tatame.
           </p>
 
           <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">

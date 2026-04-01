@@ -4,7 +4,7 @@ export default function ResumoPrCampeonato() {
 <main className="pt-16 pb-24 min-h-screen relative overflow-hidden">
 {/*  Hero Background Athlete  */}
 <div className="absolute inset-0 z-0">
-<img className="w-full h-full object-cover opacity-30 grayscale" data-alt="Professional athlete sitting on mats in a dark arena, dramatic overhead spotlight highlighting muscles and intensity, deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0-b2lA_5YifZj1c2pQ--LFkQeXX8eoK8fvvRqrJgKCyT1Ypjt_a76K9Ynq2IJ5soeSD8TZM3Tuzlp4wcgY5pLHU2wnXSaDq_W0ZyvYf79SEm_zJ-kl5LvebIDwUVFAZyr6VzRlg247KtBvzxr6SeUIgd10HD3O8x0qSQrT3XSnwLKepTVo08E5WvYMRie2NtCaMmyKuPhDdFpSITiZ_9wEdRLBQ-WKbp-HVA2V-qdYUnjgQ50dljtTLamYEJ28AJ_6X-GtAc0BwHb"/>
+<img className="w-full h-full object-cover opacity-30 grayscale" alt="Professional athlete sitting on mats in a dark arena, dramatic overhead spotlight highlighting muscles and intensity, deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0-b2lA_5YifZj1c2pQ--LFkQeXX8eoK8fvvRqrJgKCyT1Ypjt_a76K9Ynq2IJ5soeSD8TZM3Tuzlp4wcgY5pLHU2wnXSaDq_W0ZyvYf79SEm_zJ-kl5LvebIDwUVFAZyr6VzRlg247KtBvzxr6SeUIgd10HD3O8x0qSQrT3XSnwLKepTVo08E5WvYMRie2NtCaMmyKuPhDdFpSITiZ_9wEdRLBQ-WKbp-HVA2V-qdYUnjgQ50dljtTLamYEJ28AJ_6X-GtAc0BwHb"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
 </div>
 <div className="relative z-10 px-6 py-8">
@@ -16,7 +16,7 @@ export default function ResumoPrCampeonato() {
 {/*  Bento Grid Summary  */}
 <div className="grid grid-cols-12 gap-4">
 {/*  Technical Confidence Monolith  */}
-<div className="col-span-12 md:col-span-7 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between border-l-4 border-brand-red/20 relative">
+<div className="col-span-12 md:col-span-7 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-4 border-brand-red/20 relative">
 <div className="mb-8">
 <span className="material-symbols-outlined text-brand-red mb-4" style={{ /* font-variation-settings: 'FILL' 1; */ }}>analytics</span>
 <h3 className="font-headline text-sm font-bold tracking-widest text-zinc-500 mb-1 uppercase">TECHNICAL CONFIDENCE</h3>
@@ -63,7 +63,7 @@ export default function ResumoPrCampeonato() {
 </div>
 </div>
 {/*  Risks - Leglocks  */}
-<div className="col-span-12 md:col-span-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-t border-zinc-800/30 flex flex-col justify-between">
+<div className="col-span-12 md:col-span-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-t border-zinc-800/30 flex flex-col justify-between">
 <div className="flex justify-between items-start">
 <h4 className="font-label text-[10px] font-black tracking-widest text-brand-red uppercase">VULNERABILITY ALERT</h4>
 <span className="material-symbols-outlined text-brand-red" data-icon="warning" style={{ /* font-variation-settings: 'FILL' 1; */ }}>warning</span>

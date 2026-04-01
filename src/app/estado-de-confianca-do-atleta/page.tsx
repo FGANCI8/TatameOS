@@ -9,7 +9,7 @@ export default function EstadoDeConfianADoAtleta() {
 </section>
 {/*  Main Confidence Meter (Bento Style)  */}
 <div className="grid grid-cols-6 gap-2 mb-8">
-<div className="col-span-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden">
+<div className="col-span-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden">
 <div className="flex justify-between items-end mb-4 relative z-10">
 <div>
 <span className="font-headline font-black text-6xl text-zinc-100">92</span>

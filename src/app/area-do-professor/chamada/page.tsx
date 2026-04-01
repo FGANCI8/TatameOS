@@ -37,7 +37,7 @@ export default function AreaDoProfessorChamadaPage() {
   return (
     <div className="relative isolate min-h-full overflow-hidden space-y-6 px-4 py-6 md:px-8 lg:px-10">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] [background-size:22px_22px] opacity-20" />
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.35)]">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-[0_20px_70px_rgba(0,0,0,0.35)]">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-3">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-zinc-300">
@@ -100,7 +100,7 @@ export default function AreaDoProfessorChamadaPage() {
             ))}
           </div>
         ) : alunos.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center">
+          <div className="rounded-3xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 text-center">
             <span className="material-symbols-outlined text-4xl text-zinc-300">person_off</span>
             <p className="mt-3 text-lg font-black uppercase tracking-tight text-white">Nenhum aluno disponível</p>
             <p className="mt-2 text-sm text-zinc-400">

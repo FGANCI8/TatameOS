@@ -21,9 +21,9 @@ export default function RecomendaEsPersonalizadas() {
 {/*  Bento Grid: Personalized Content  */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 {/*  Main Suggested Technique  */}
-<div className="md:col-span-8 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden flex flex-col justify-end min-h-[400px]">
+<div className="md:col-span-8 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden flex flex-col justify-end min-h-[400px]">
 <div className="absolute inset-0 z-0">
-<img alt="Brazilian Jiu-Jitsu Technique" className="w-full h-full object-cover opacity-40" data-alt="dramatic action shot of two athletes performing a triangle choke in BJJ, cinematic lighting with high contrast and dark shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPH2HqWGz9t4RHR5M4BluHqsLlP7zmzhV_kazqBKL4B1db3HmKsNvgcNgHR2GYGwwTLtzyxoStn_DyCAw_GFlHt-lzyT2I6My0nzvgCLXALsSWXvkMmnOw5ikO-BCdxADOiSc0WpbiTbexwKnat-H6Bsq4dS7bfqBeHm2Wc81Ek3LoY1l0Nd0wB6eA6rzy5LuNTTCfAsjDK5i8rLFKMZbjmWq0_25nMW5dADafoPtdE57XN2iDa5lhxbDTt-2NmjD-z1dHkf2stiw8"/>
+<img alt="Brazilian Jiu-Jitsu Technique" className="w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPH2HqWGz9t4RHR5M4BluHqsLlP7zmzhV_kazqBKL4B1db3HmKsNvgcNgHR2GYGwwTLtzyxoStn_DyCAw_GFlHt-lzyT2I6My0nzvgCLXALsSWXvkMmnOw5ikO-BCdxADOiSc0WpbiTbexwKnat-H6Bsq4dS7bfqBeHm2Wc81Ek3LoY1l0Nd0wB6eA6rzy5LuNTTCfAsjDK5i8rLFKMZbjmWq0_25nMW5dADafoPtdE57XN2iDa5lhxbDTt-2NmjD-z1dHkf2stiw8"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
 </div>
 <div className="relative z-10">
@@ -36,7 +36,7 @@ export default function RecomendaEsPersonalizadas() {
 </div>
 </div>
 {/*  Ideal Path  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <span className="font-label text-[10px] font-bold uppercase tracking-widest text-zinc-300 mb-4 block">PRÓXIMO PASSO</span>
 <h3 className="font-headline text-2xl font-black uppercase tracking-tighter mb-4 italic">TRILHA: MESTRE DA MEIA-GUARDA</h3>
@@ -112,7 +112,7 @@ export default function RecomendaEsPersonalizadas() {
 </div>
 </div>
 <div className="hidden md:block relative h-full min-h-[400px]">
-<img alt="Athletic training" className="absolute inset-0 w-full h-full object-cover" data-alt="monochromatic high-contrast image of an athlete tying their white belt, focus on the knot and hands, dark gym background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrz7_vmmluFrVVzrLsDBIedXOaCJx1NPoVwiQN2iVU06DmCoMAPDciFQfsvwAgMd98keYhw40wFJuXMGj6djGPJKVPq79Sz5JB_1y0PqJNxIjAZgb1AooFd3ssJ8du0SkjUSVSEBPn-6a8jE-eSDqx7hz-BQiTfLAXHIbQ9QKszrHG_uy6EF2a2KpElJudFIYhbjeca23w-c9MHC8XDw9dN8hGwowiCJcdFieMFUzPIPvgoZ-T7yXfAIs2alAwTD4cMKxorTGFZtSd"/>
+<img alt="Athletic training" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrz7_vmmluFrVVzrLsDBIedXOaCJx1NPoVwiQN2iVU06DmCoMAPDciFQfsvwAgMd98keYhw40wFJuXMGj6djGPJKVPq79Sz5JB_1y0PqJNxIjAZgb1AooFd3ssJ8du0SkjUSVSEBPn-6a8jE-eSDqx7hz-BQiTfLAXHIbQ9QKszrHG_uy6EF2a2KpElJudFIYhbjeca23w-c9MHC8XDw9dN8hGwowiCJcdFieMFUzPIPvgoZ-T7yXfAIs2alAwTD4cMKxorTGFZtSd"/>
 </div>
 </section>
 </main>

@@ -13,14 +13,14 @@ export default function DashboardDeEvoluO() {
 </section>
 {/*  Win/Loss Ratio Bento Grid  */}
 <section className="grid grid-cols-2 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between border-l-4 border-brand-red/20 h-40">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-4 border-brand-red/20 h-40">
 <span className="font-['Inter'] font-bold text-[10px] tracking-widest uppercase text-zinc-500">VITÓRIAS</span>
 <div className="flex items-baseline gap-2">
 <span className="font-['Lexend'] font-black text-6xl text-zinc-100">42</span>
 <span className="text-brand-red font-black text-xl italic">W</span>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between border-l-4 border-zinc-100 h-40">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-4 border-zinc-100 h-40">
 <span className="font-['Inter'] font-bold text-[10px] tracking-widest uppercase text-zinc-500">DERROTAS</span>
 <div className="flex items-baseline gap-2">
 <span className="font-['Lexend'] font-black text-6xl text-zinc-100">08</span>
@@ -29,7 +29,7 @@ export default function DashboardDeEvoluO() {
 </div>
 </section>
 {/*  Maturity Level  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden">
 <div className="flex justify-between items-start relative z-10">
 <div className="space-y-1">
 <span className="font-['Inter'] font-bold text-[10px] tracking-widest uppercase text-zinc-500">MATURIDADE TÉCNICA</span>
@@ -98,7 +98,7 @@ export default function DashboardDeEvoluO() {
 </div>
 </section>
 {/*  Recurring Failures Section  */}
-<section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-2 border-zinc-800/20">
+<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-2 border-zinc-800/20">
 <div className="flex items-center gap-2 mb-4">
 <span className="material-symbols-outlined text-brand-red" data-icon="report">report</span>
 <h3 className="font-['Lexend'] font-black italic text-xl uppercase text-brand-red">FALHAS RECORRENTES</h3>

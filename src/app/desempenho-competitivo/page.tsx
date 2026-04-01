@@ -9,11 +9,11 @@ export default function DesempenhoCompetitivo() {
 <h1 className="font-headline text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter italic">BATTLE<br/><span className="text-zinc-100/20">METRICS</span></h1>
 </div>
 <div className="grid grid-cols-2 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-brand-red/20">
 <span className="block font-label text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1">WIN RATE</span>
 <span className="block font-headline text-5xl font-black text-zinc-100">74<span className="text-2xl text-brand-red">%</span></span>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-zinc-800/80">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-zinc-800/80">
 <span className="block font-label text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-1">TOTAL FIGHTS</span>
 <span className="block font-headline text-5xl font-black text-zinc-100">142</span>
 </div>
@@ -22,7 +22,7 @@ export default function DesempenhoCompetitivo() {
 {/*  Bento Grid Analysis  */}
 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
 {/*  Win/Loss Distribution  */}
-<section className="md:col-span-8 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden">
+<section className="md:col-span-8 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden">
 <div className="flex justify-between items-start mb-12">
 <div>
 <h2 className="font-headline text-2xl font-black uppercase italic tracking-tight mb-1">Outcome Distribution</h2>
@@ -36,7 +36,7 @@ export default function DesempenhoCompetitivo() {
 <span className="text-[10px] font-bold text-center text-zinc-400">SUB</span>
 </div>
 <div className="flex-1 flex flex-col justify-end gap-2 group">
-<div className="bg-brand-red/10/60 w-full h-[60%] group-hover:brightness-125 transition-all"></div>
+<div className="bg-brand-red/20 w-full h-[60%] group-hover:brightness-125 transition-all"></div>
 <span className="text-[10px] font-bold text-center text-zinc-400">PTS</span>
 </div>
 <div className="flex-1 flex flex-col justify-end gap-2 group">
@@ -55,7 +55,7 @@ export default function DesempenhoCompetitivo() {
 </div>
 </section>
 {/*  Combat Radar (Conceptual)  */}
-<section className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<section className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <h2 className="font-headline text-2xl font-black uppercase italic tracking-tight mb-6 text-white">Aptitude Profile</h2>
 <div className="aspect-square relative flex items-center justify-center border border-zinc-100/5">
@@ -79,7 +79,7 @@ export default function DesempenhoCompetitivo() {
 </div>
 </section>
 {/*  Submission Analytics  */}
-<section className="md:col-span-5 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+<section className="md:col-span-5 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
 <h2 className="font-headline text-2xl font-black uppercase italic tracking-tight mb-8">Submission Tech</h2>
 <div className="space-y-6">
 <div>
@@ -112,7 +112,7 @@ export default function DesempenhoCompetitivo() {
 </div>
 </section>
 {/*  Vulnerability Check  */}
-<section className="md:col-span-7 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-zinc-800/20">
+<section className="md:col-span-7 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-zinc-800/20">
 <div className="flex gap-4 mb-8">
 <div className="bg-brand-red/10 p-3">
 <span className="material-symbols-outlined text-brand-red" data-icon="warning">warning</span>
@@ -127,7 +127,7 @@ export default function DesempenhoCompetitivo() {
 <span className="block text-[10px] font-black text-brand-red uppercase mb-4 tracking-tighter">Leg Lock Exposure</span>
 <div className="flex items-center gap-4">
 <div className="flex-1 h-8 bg-zinc-800/80 relative">
-<div className="absolute inset-y-0 left-0 bg-brand-red/60/40" style={{ /* width: 65% */ }}></div>
+<div className="absolute inset-y-0 left-0 bg-brand-red/30" style={{ /* width: 65% */ }}></div>
 </div>
 <span className="font-headline text-xl font-black italic">HIGH</span>
 </div>
@@ -136,7 +136,7 @@ export default function DesempenhoCompetitivo() {
 <span className="block text-[10px] font-black text-brand-red uppercase mb-4 tracking-tighter">Gas Tank (R3)</span>
 <div className="flex items-center gap-4">
 <div className="flex-1 h-8 bg-zinc-800/80 relative">
-<div className="absolute inset-y-0 left-0 bg-brand-red/60/40" style={{ /* width: 30% */ }}></div>
+<div className="absolute inset-y-0 left-0 bg-brand-red/30" style={{ /* width: 30% */ }}></div>
 </div>
 <span className="font-headline text-xl font-black italic">MOD</span>
 </div>
@@ -165,7 +165,7 @@ export default function DesempenhoCompetitivo() {
 <div className="relative group">
 <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-brand-red/20"></div>
 <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-right-4 border-zinc-800/80"></div>
-<img alt="MMA combat analysis" className="w-full grayscale brightness-50 group-hover:grayscale-0 transition-all duration-700" data-alt="dramatic close-up of a high-intensity martial arts training session in a dark gym with harsh spotlighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5zXgGFUga3PgJX4AuForHSKqF3lhEwIs7mQAvX79q5xoWG2AvuwKB2gW792z1V9bKBJt6OHuMVsGs06XhI6o_gzP35_K7LM2WSTj61VzHHduMfLu98TopTp8xX3Y7uCRrNFWT_eNuZB_qrlIi7dVmXHnaJYzRO6TLr-Y59LFEwlWJQ3HFst_9Y51kp2Psftn0AtANro5aroKAgxMinGFg7WnXhwvUbUjyCLsHJakSfnPkPvm3-zT_iEyn0FdIQAegGQcpXxC6_csc"/>
+<img alt="MMA combat analysis" className="w-full grayscale brightness-50 group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5zXgGFUga3PgJX4AuForHSKqF3lhEwIs7mQAvX79q5xoWG2AvuwKB2gW792z1V9bKBJt6OHuMVsGs06XhI6o_gzP35_K7LM2WSTj61VzHHduMfLu98TopTp8xX3Y7uCRrNFWT_eNuZB_qrlIi7dVmXHnaJYzRO6TLr-Y59LFEwlWJQ3HFst_9Y51kp2Psftn0AtANro5aroKAgxMinGFg7WnXhwvUbUjyCLsHJakSfnPkPvm3-zT_iEyn0FdIQAegGQcpXxC6_csc"/>
 </div>
 <div>
 <span className="text-brand-red font-label text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">NEURAL ENGINE FEEDBACK</span>

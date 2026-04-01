@@ -18,7 +18,7 @@ export default function EstratGiaDeLuta() {
 {/*  Hero Tactical Viz  */}
 <div className="md:col-span-8 bg-zinc-950/60 h-[400px] relative overflow-hidden group">
 <div className="absolute inset-0 hud-scan-line opacity-20"></div>
-<img className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700" data-alt="Dynamic shot of two grapplers in a standoff, low angle, atmospheric smoke, sharp focus on muscular tension and gi texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_WZt-1-oRlbBAI4G2kU6GxxGA9yTBqyEWySjyTbtwy-F5RYQKEqBVYJInoB8pyVvFT7LxohBaZGor_6sUO4asY8ugtYlHTUXGMaBwrWpLZxkGWofB7J49m6XpLRsoL1Nn1SLv52za1bS844krvNCRUvS4O8vrEibLzeGuahoJng_yDQliQrnOj8TXNpeAV-SBvJSMwmzEbu9JU5di_3LjdbALS4kBaPNUQFQUIdzoGLO98ayXOg3xpSWTTm1SKE2v86SkgjP9EiQ9"/>
+<img className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700" alt="Dynamic shot of two grapplers in a standoff, low angle, atmospheric smoke, sharp focus on muscular tension and gi texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_WZt-1-oRlbBAI4G2kU6GxxGA9yTBqyEWySjyTbtwy-F5RYQKEqBVYJInoB8pyVvFT7LxohBaZGor_6sUO4asY8ugtYlHTUXGMaBwrWpLZxkGWofB7J49m6XpLRsoL1Nn1SLv52za1bS844krvNCRUvS4O8vrEibLzeGuahoJng_yDQliQrnOj8TXNpeAV-SBvJSMwmzEbu9JU5di_3LjdbALS4kBaPNUQFQUIdzoGLO98ayXOg3xpSWTTm1SKE2v86SkgjP9EiQ9"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 <div className="absolute top-6 left-6 flex flex-col gap-1">
 <div className="bg-brand-red/10 text-white px-3 py-1 text-xs font-black tracking-widest uppercase">Initial Posture</div>
@@ -42,7 +42,7 @@ export default function EstratGiaDeLuta() {
 </div>
 </div>
 {/*  Priority Grips Section  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between">
 <div>
 <h2 className="text-xs font-black text-brand-red tracking-widest uppercase mb-4 flex items-center gap-2">
 <span className="w-2 h-2 bg-brand-red/10"></span>
@@ -122,7 +122,7 @@ export default function EstratGiaDeLuta() {
 </div>
 </div>
 {/*  Movements to Avoid  */}
-<div className="md:col-span-12 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col md:flex-row items-center gap-8">
+<div className="md:col-span-12 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
 <div className="flex items-center gap-4 bg-brand-red/10 text-white p-4 min-w-[300px]">
 <span className="material-symbols-outlined text-4xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>do_not_disturb_on</span>
 <div>

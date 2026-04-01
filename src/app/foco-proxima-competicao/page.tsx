@@ -11,7 +11,7 @@ export default function FocoPrXimaCompetiO() {
 </div>
 <h2 className="font-headline text-6xl md:text-8xl font-black uppercase leading-none tracking-tighter">Próxima<br/><span className="text-brand-red">Competição</span></h2>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 space-y-4 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 space-y-4 border-l-4 border-brand-red/20">
 <div className="flex justify-between items-baseline">
 <span className="font-label text-xs font-bold text-zinc-400 uppercase">Contagem Regressiva</span>
 <span className="font-headline text-4xl font-black text-zinc-100 tracking-widest italic">28:14:02</span>
@@ -25,7 +25,7 @@ export default function FocoPrXimaCompetiO() {
 {/*  Bento Grid: Essentials & Priorities  */}
 <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {/*  Priority 1: Drill Sequence  */}
-<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 relative overflow-hidden group">
+<div className="md:col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden group">
 <div className="absolute top-0 right-0 p-4 font-headline text-8xl opacity-10 font-black italic">01</div>
 <div className="relative z-10 space-y-8">
 <h3 className="font-headline text-3xl font-black uppercase italic tracking-tighter">Sequência de Treino Recomendada</h3>
@@ -69,7 +69,7 @@ export default function FocoPrXimaCompetiO() {
 </div>
 </div>
 {/*  Calendar: 4-Week Roadmap  */}
-<div className="md:col-span-3 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-t-8 border-zinc-800/80">
+<div className="md:col-span-3 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-t-8 border-zinc-800/80">
 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
 <h3 className="font-headline text-3xl font-black uppercase italic tracking-tighter">Cronograma de 4 Semanas</h3>
 <div className="flex gap-2">
@@ -132,7 +132,7 @@ export default function FocoPrXimaCompetiO() {
 </div>
 </div>
 <div className="relative aspect-video bg-zinc-950/60 overflow-hidden group">
-<img alt="Training Session Preview" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Dramatic high-contrast photo of a gritty BJJ gym interior with light streaming through industrial windows onto a blue mat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk8V6Dw-omTHOmVj0C5iuy0QhNfHfEQSeVyrE4OHlgRLQJCcoDZcjigXqyIs8AkPjg002p9udKSZQT-Flzi_wpsrOoKB2-fLDxaW7FuDkS7MNMkRmWKRYOCB5CchYBbDvUi-GMtJgULNKooLX6C4m2vPdfdde58BgMFWQVpAsHE71K6ADbS6APNdV0holNqfG8rpRutclWircd_UsmJmV0eWqfs1XRPdcuNCfrsf3CAB-Njt0_ufNoxK2QLAkbRw9BWr7eutQRuJYi"/>
+<img alt="Training Session Preview" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk8V6Dw-omTHOmVj0C5iuy0QhNfHfEQSeVyrE4OHlgRLQJCcoDZcjigXqyIs8AkPjg002p9udKSZQT-Flzi_wpsrOoKB2-fLDxaW7FuDkS7MNMkRmWKRYOCB5CchYBbDvUi-GMtJgULNKooLX6C4m2vPdfdde58BgMFWQVpAsHE71K6ADbS6APNdV0holNqfG8rpRutclWircd_UsmJmV0eWqfs1XRPdcuNCfrsf3CAB-Njt0_ufNoxK2QLAkbRw9BWr7eutQRuJYi"/>
 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent flex items-end p-8">
 <div className="flex items-center gap-4">
 <div className="w-12 h-12 bg-brand-red/10 flex items-center justify-center">

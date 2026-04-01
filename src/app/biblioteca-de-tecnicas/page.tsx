@@ -78,7 +78,7 @@ export default function BibliotecaDeTecnicas() {
                 <div className="relative aspect-[4/5]">
                   <img
                     className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
-                    data-alt={item.nome}
+                    alt={item.nome}
                     src={
                       item.thumbnailUrl ||
                       'https://lh3.googleusercontent.com/aida-public/AB6AXuBMF044ZceGf2C3zME2b-FmW-MBj-Y2TePdzE3x0Gc9O4-RPvMOdqEpe8-29MtxT6aJ9ioJbt9PV1CauNyQYKaFCoyGGiSjVe3qOnLEfYogG8m6CV_JkRw7GeoOWVo3ATsvawdOj-db37rL0pCZnNcYSbKmE9YE4trjbOc0t0VsKUzS9Sbia-2A8_k91AZrrmszbmloioLoZctl69zkoj14lkCXfeGvxwE4GId-A3EwkRPTdBM1bCyJinuwKbX1r8swdxORUgyHrxeQ'

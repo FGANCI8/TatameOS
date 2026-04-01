@@ -15,7 +15,7 @@ export default function DesafioSemanal() {
                 Domine a transição mais técnica do Jiu-Jitsu moderno. Precisão, repetição e controle absoluto do adversário.
             </p>
 {/*  Progress Monolith  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 mb-10 relative group overflow-hidden">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 mb-10 relative group overflow-hidden">
 <div className="flex justify-between items-end mb-4">
 <div>
 <span className="block text-xs font-black text-zinc-500 tracking-widest uppercase mb-1">Status Atual</span>
@@ -56,7 +56,7 @@ export default function DesafioSemanal() {
 <div className="bg-zinc-900/80 flex items-center p-4 group hover:bg-zinc-900 transition-colors">
 <div className="w-12 text-2xl font-headline font-black italic text-brand-red italic">01</div>
 <div className="w-14 h-14 bg-zinc-800/80 overflow-hidden mr-4">
-<img alt="Athlete 1" className="w-full h-full object-cover" data-alt="Intense athlete sweating after training in a dark martial arts gym with moody red lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8VDtrynMSQ91_vh_I2qLYsVHwWbeU55dONvknR0EvKr-RyOujtHkyjuA4yIZvyczu8yjZQWd2nNtrFDin0S3YfHGALQF6KBtZVsPw_7VmQN9P53vhExd1td7RlftEnc4MJst5zczSiMdlGYWlC3xTUnpTsirCMr3hcLhr-VSYKH9vxKQ1fQ5lxXzfvMO_gSKTyaD4N7q87Oa0s3AX6y-SBju32xm1nhtm459i3CHWnZMAtoT3scxY-5hG2hY8UN3zITSoLphMQLWo"/>
+<img alt="Athlete 1" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8VDtrynMSQ91_vh_I2qLYsVHwWbeU55dONvknR0EvKr-RyOujtHkyjuA4yIZvyczu8yjZQWd2nNtrFDin0S3YfHGALQF6KBtZVsPw_7VmQN9P53vhExd1td7RlftEnc4MJst5zczSiMdlGYWlC3xTUnpTsirCMr3hcLhr-VSYKH9vxKQ1fQ5lxXzfvMO_gSKTyaD4N7q87Oa0s3AX6y-SBju32xm1nhtm459i3CHWnZMAtoT3scxY-5hG2hY8UN3zITSoLphMQLWo"/>
 </div>
 <div className="flex-grow">
 <h4 className="font-headline font-bold text-zinc-100 uppercase text-sm tracking-wide">Ricardo "Tanque" Silva</h4>
@@ -71,7 +71,7 @@ export default function DesafioSemanal() {
 <div className="bg-zinc-900/80 flex items-center p-4 group hover:bg-zinc-900 transition-colors">
 <div className="w-12 text-2xl font-headline font-black italic text-zinc-100/50 italic">02</div>
 <div className="w-14 h-14 bg-zinc-800/80 overflow-hidden mr-4">
-<img alt="Athlete 2" className="w-full h-full object-cover" data-alt="Young female martial artist tying her black belt in a dimly lit high performance training center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPpIvRTmeaBOfyCKaM8CQuiBToRowNeBbCqHE7BgvNlt6xNaf4qP3zqjGoU8q8FYsbzLKXRorWljhNsS_t0IHV9f63t72X1GFdRZg5DFiCZ1curyjdjavLvw2PvN6tsjmFXhIuXWJGNKEDZJnuHH-hMtBatWK-fMDpMX-lHfvFvUI3EnWx8ScoE9h3PA7iJ4wxGzz8XLt5s_jXVo9B6qc-WrO0nKwWyO6bZEWmbKpULI8UweUGMG50bgGdyNSiP9FzH0alao3nw7xA"/>
+<img alt="Athlete 2" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPpIvRTmeaBOfyCKaM8CQuiBToRowNeBbCqHE7BgvNlt6xNaf4qP3zqjGoU8q8FYsbzLKXRorWljhNsS_t0IHV9f63t72X1GFdRZg5DFiCZ1curyjdjavLvw2PvN6tsjmFXhIuXWJGNKEDZJnuHH-hMtBatWK-fMDpMX-lHfvFvUI3EnWx8ScoE9h3PA7iJ4wxGzz8XLt5s_jXVo9B6qc-WrO0nKwWyO6bZEWmbKpULI8UweUGMG50bgGdyNSiP9FzH0alao3nw7xA"/>
 </div>
 <div className="flex-grow">
 <h4 className="font-headline font-bold text-zinc-100 uppercase text-sm tracking-wide">Beatriz Mendes</h4>
@@ -86,7 +86,7 @@ export default function DesafioSemanal() {
 <div className="bg-zinc-900/80 flex items-center p-4 group hover:bg-zinc-900 transition-colors">
 <div className="w-12 text-2xl font-headline font-black italic text-zinc-100/50 italic">03</div>
 <div className="w-14 h-14 bg-zinc-800/80 overflow-hidden mr-4">
-<img alt="Athlete 3" className="w-full h-full object-cover" data-alt="Muscular jiu jitsu practitioner resting against a wall in a gritty dark training facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJTfreXrXRnpSvPbih0VCqSSv10i_7zo8hMl183PwmVFE1Y3gexg6iqFxAMnw_Fld73HHMUTV9jo4JNLNOGskSm9BglrnsoRLEU8liobvVTlfA9OLz4e-bQqI09KzMDAr0jDTBfqXCk0wufDfxCs34tnTFZ3uhCvr9BotYFY686Wlwz7O_wbPVnD_xpKyDhKVv407IUv1BwY6K7tjZICbcm4m86iBm_XTQ7HY406hlXeKA8NFzhsotagrCGMcZJxCsQBqChHqSJx"/>
+<img alt="Athlete 3" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZrJTfreXrXRnpSvPbih0VCqSSv10i_7zo8hMl183PwmVFE1Y3gexg6iqFxAMnw_Fld73HHMUTV9jo4JNLNOGskSm9BglrnsoRLEU8liobvVTlfA9OLz4e-bQqI09KzMDAr0jDTBfqXCk0wufDfxCs34tnTFZ3uhCvr9BotYFY686Wlwz7O_wbPVnD_xpKyDhKVv407IUv1BwY6K7tjZICbcm4m86iBm_XTQ7HY406hlXeKA8NFzhsotagrCGMcZJxCsQBqChHqSJx"/>
 </div>
 <div className="flex-grow">
 <h4 className="font-headline font-bold text-zinc-100 uppercase text-sm tracking-wide">Felipe Arona</h4>

@@ -44,14 +44,13 @@ export default function RegistroDeTreino() {
           </h2>
         </header>
 
-        <form onSubmit={handleSubmit} className="space-y-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none md:p-8">
+        <form onSubmit={handleSubmit} className="space-y-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 shadow-none md:p-8">
           {feedback ? (
             <div
-              className={`rounded-2xl border p-4 text-sm font-bold ${
-                feedback.type === 'error'
+              className={`rounded-2xl border p-4 text-sm font-bold ${feedback.type === 'error'
                   ? 'border-brand-red/30 bg-brand-red/10 text-brand-red'
                   : 'border-zinc-800 bg-zinc-950/60 text-zinc-200'
-              }`}
+                }`}
             >
               {feedback.msg}
             </div>
@@ -77,11 +76,10 @@ export default function RegistroDeTreino() {
                     key={item.key}
                     type="button"
                     onClick={() => setTipoAula(item.key as 'GI' | 'NO-GI' | 'DRILLS')}
-                    className={`flex flex-col items-center justify-center gap-2 rounded-2xl border px-4 py-4 transition duration-200 ${
-                      active
+                    className={`flex flex-col items-center justify-center gap-2 rounded-2xl border px-4 py-4 transition duration-200 ${active
                         ? 'border-brand-red/20 bg-brand-red/10 text-brand-red'
                         : 'border-zinc-800 bg-zinc-950/60 text-zinc-400 hover:border-zinc-700 hover:bg-zinc-900'
-                    }`}
+                      }`}
                   >
                     <span className="material-symbols-outlined text-[18px]">{item.icon}</span>
                     <span className="text-[10px] font-black uppercase tracking-wider">{item.label}</span>
@@ -179,14 +177,14 @@ export default function RegistroDeTreino() {
           ))}
 
           {treinos.length === 0 && !loading ? (
-            <div className="rounded-2xl border border-dashed border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 text-center text-sm text-zinc-400">
+            <div className="rounded-[28px] border border-dashed border-zinc-800/80 bg-zinc-900/80 p-6 text-center text-sm text-zinc-400 md:p-8">
               Nenhuma sessão registrada recentemente.
             </div>
           ) : null}
           {loading ? <p className="animate-pulse font-black text-zinc-200">Carregando sessões...</p> : null}
         </div>
 
-        <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="relative overflow-hidden rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="relative z-10">
             <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Consistency engine</p>
             <div className="mb-2 flex items-baseline gap-2">

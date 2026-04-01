@@ -21,7 +21,7 @@ export default function MomentoCrTico() {
 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 {/*  Video/Graphic Placeholder  */}
 <div className="md:col-span-8 bg-zinc-950/60 relative aspect-video group overflow-hidden">
-<img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Cinematic wide shot of two jiu-jitsu fighters grappling on a dark mat, one attempting a guillotine choke, high contrast red and blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnVE4BHQV2JTYmyYpNdWVR2Zs1Tq-q_OJI9qeDG8Z0wtOwnb0nTkIqpfEsnASyQzLXevQ8lsPGJJxyqNjdk4GWfncFkqFQuRwPMgbKnh86G3RkSlTniRyxPSb1bD46yOJKqrhrhGt9gsifAiKPCULFs8BJ4vRfIK_r9mJt9_B8qwXxcs3IVxm93JotxgZIke7RmpB7iVt874WQJJtHymTf64QB7clXVuAHPKXrb4ilot3cnsiYsRqlOdqgLMv4zd0OWgrnhw2qbsfb"/>
+<img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Cinematic wide shot of two jiu-jitsu fighters grappling on a dark mat, one attempting a guillotine choke, high contrast red and blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnVE4BHQV2JTYmyYpNdWVR2Zs1Tq-q_OJI9qeDG8Z0wtOwnb0nTkIqpfEsnASyQzLXevQ8lsPGJJxyqNjdk4GWfncFkqFQuRwPMgbKnh86G3RkSlTniRyxPSb1bD46yOJKqrhrhGt9gsifAiKPCULFs8BJ4vRfIK_r9mJt9_B8qwXxcs3IVxm93JotxgZIke7RmpB7iVt874WQJJtHymTf64QB7clXVuAHPKXrb4ilot3cnsiYsRqlOdqgLMv4zd0OWgrnhw2qbsfb"/>
 <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
 {/*  Overlay Telemetry  */}
 <div className="absolute top-4 left-4 flex gap-2">
@@ -37,7 +37,7 @@ export default function MomentoCrTico() {
 </div>
 </div>
 {/*  Situation Summary Card  */}
-<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between space-y-6">
+<div className="md:col-span-4 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between space-y-6">
 <div className="space-y-4">
 <h3 className="font-headline font-black text-xl uppercase tracking-tight text-white">Anatomia do Erro</h3>
 <div className="space-y-4 relative">
@@ -64,7 +64,7 @@ export default function MomentoCrTico() {
 </div>
 </div>
 {/*  Tension Graph Section  */}
-<div className="md:col-span-12 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-zinc-800/20">
+<div className="md:col-span-12 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-zinc-800/20">
 <div className="flex justify-between items-center mb-8">
 <h3 className="font-headline font-black text-2xl uppercase tracking-tighter italic">Gráfico de Tensão de Luta</h3>
 <div className="flex gap-4">
@@ -108,7 +108,7 @@ export default function MomentoCrTico() {
 </div>
 </div>
 {/*  Insights / Next Actions  */}
-<div className="md:col-span-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex gap-6 items-center">
+<div className="md:col-span-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex gap-6 items-center">
 <div className="bg-zinc-900 p-4">
 <span className="material-symbols-outlined text-zinc-100 text-3xl">psychology</span>
 </div>

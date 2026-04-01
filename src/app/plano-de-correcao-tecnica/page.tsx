@@ -9,7 +9,7 @@ export default function PlanoDeCorreOTCnica() {
 <span className="font-label text-xs font-bold uppercase tracking-widest text-zinc-400">Análise Pós-Campeonato</span>
 <h2 className="font-headline text-5xl font-black uppercase leading-none mt-2 text-zinc-100">Correção <br/><span className="text-brand-red">Técnica</span></h2>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex items-center gap-8">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex items-center gap-8">
 <div className="text-center">
 <p className="font-label text-[10px] text-zinc-500 uppercase tracking-tighter">Impacto Global</p>
 <p className="font-headline text-4xl font-bold text-zinc-300">88%</p>
@@ -46,14 +46,14 @@ export default function PlanoDeCorreOTCnica() {
 </div>
 {/*  Image Support Section  */}
 <div className="md:col-span-4 bg-zinc-800/80 relative min-h-[300px]">
-<img alt="BJJ Training Action" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" data-alt="Intense close-up of two brazilian jiu-jitsu athletes grappling on black mats, dramatic lighting emphasizing muscle tension" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjAt9UO3Wk51J5m85t_jSlKwsCF48ZwL_p3tkgxVbV9UeY2GQxTEmUpWdoDZD7qEmI6iw0cir67wVNS0SzieZBE7ZwPMf9AfzlCwy5NR8iNrwys5-rQq1FJoAYcbj7GOyoq0YzEBE324Mfs5zXG42sKe_l92oUNSHExTo8sJuY-KHl9WplSBy02FG2bwlRLbUk1F0Y85V6GzCP6Cu9F8nYnYem2yoj7Mv2AsdqXDakBXlYKLRGcfdhfO2mzE62CtcLDg1mRENTvitM"/>
+<img alt="BJJ Training Action" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjAt9UO3Wk51J5m85t_jSlKwsCF48ZwL_p3tkgxVbV9UeY2GQxTEmUpWdoDZD7qEmI6iw0cir67wVNS0SzieZBE7ZwPMf9AfzlCwy5NR8iNrwys5-rQq1FJoAYcbj7GOyoq0YzEBE324Mfs5zXG42sKe_l92oUNSHExTo8sJuY-KHl9WplSBy02FG2bwlRLbUk1F0Y85V6GzCP6Cu9F8nYnYem2yoj7Mv2AsdqXDakBXlYKLRGcfdhfO2mzE62CtcLDg1mRENTvitM"/>
 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent p-6 flex flex-col justify-end">
 <span className="font-label text-[10px] text-zinc-300 font-bold uppercase tracking-widest">Referência Professor</span>
 <p className="font-headline text-xl font-bold text-zinc-100">Assista ao erro no round 4</p>
 </div>
 </div>
 {/*  Medium Priority Card  */}
-<div className="md:col-span-6 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-8 border-zinc-800 flex flex-col justify-between">
+<div className="md:col-span-6 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-8 border-zinc-800 flex flex-col justify-between">
 <div>
 <div className="flex justify-between items-start mb-6">
 <div className="px-3 py-1 bg-zinc-800 text-zinc-100 font-label text-[10px] font-black uppercase tracking-widest">Média Prioridade</div>

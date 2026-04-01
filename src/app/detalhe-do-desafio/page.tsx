@@ -4,7 +4,7 @@ export default function DetalheDoDesafio() {
 <main className="pt-16 pb-32">
 {/*  Video Hero Section  */}
 <section className="relative w-full aspect-video bg-zinc-950 overflow-hidden group">
-<img className="w-full h-full object-cover opacity-60" data-alt="lutador de jiu jitsu executando uma técnica de raspagem em câmera lenta, iluminação cinematográfica de alto contraste" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKPhHR1IK3pWGEICUK7SaABa27RJv6YARBZE2X0xCsSIXX-ut0FcEdD7oum3uZTB-FkrTbTL17bvi_qlQPYXjM0PPJTg5DSFpSgCtHIT4N4HqTt8se7ONVeGJR09Uxo1zmFUzYGqRpxWimAkVjtTw4hV5J7wupkIRibq2-jN_b_1z5mWdmdnP8xOiVYyA7xOjVyUa_2enLgFKXEYaNk5zVJa6jXsb0F6zXTO66JNlWd5GgEgWsU1r0mi3da4ZuVQZV_aXNGLJpwkX1"/>
+<img className="w-full h-full object-cover opacity-60" alt="lutador de jiu jitsu executando uma técnica de raspagem em câmera lenta, iluminação cinematográfica de alto contraste" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKPhHR1IK3pWGEICUK7SaABa27RJv6YARBZE2X0xCsSIXX-ut0FcEdD7oum3uZTB-FkrTbTL17bvi_qlQPYXjM0PPJTg5DSFpSgCtHIT4N4HqTt8se7ONVeGJR09Uxo1zmFUzYGqRpxWimAkVjtTw4hV5J7wupkIRibq2-jN_b_1z5mWdmdnP8xOiVYyA7xOjVyUa_2enLgFKXEYaNk5zVJa6jXsb0F6zXTO66JNlWd5GgEgWsU1r0mi3da4ZuVQZV_aXNGLJpwkX1"/>
 <div className="absolute inset-0 flex items-center justify-center">
 <div className="w-20 h-20 bg-brand-red/10 flex items-center justify-center cursor-pointer transition-transform duration-200 active:scale-95 shadow-2xl">
 <span className="material-symbols-outlined text-white text-4xl" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_arrow</span>
@@ -39,7 +39,7 @@ export default function DetalheDoDesafio() {
 <div className="p-8 bg-zinc-900/80">
 <div className="flex items-center gap-4">
 <div className="w-14 h-14 bg-zinc-800/80 overflow-hidden">
-<img className="w-full h-full object-cover" data-alt="professor de jiu jitsu veterano com kimono preto, cicatrizes de batalha sutis e expressão de liderança, fundo neutro escuro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARrfAhDHhJFXZDSWsKW4NRFhs54i6Egp02I8jTBGMT0mrjhX3IJxozR7Ds1jFm2sXNs9FWt4PNarWpDjW9W5nEELDdHWRwxbVLkUv34bBeI7TmHVa2r2PrM-LNbKCwDZOWC04wty_AGuo--OFQ-qMt5xl3k8S5aPl9YlsstkAKMPQsWRykhPk9amAC7kdNnRoOaTYGxBgOgXWz8HTgY3TwTUcckwE2Tf29c6AJLa0W4qOgft85dEsAWkIM0TFECIrvfjP0jt4Gt3bS"/>
+<img className="w-full h-full object-cover" alt="professor de jiu jitsu veterano com kimono preto, cicatrizes de batalha sutis e expressão de liderança, fundo neutro escuro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARrfAhDHhJFXZDSWsKW4NRFhs54i6Egp02I8jTBGMT0mrjhX3IJxozR7Ds1jFm2sXNs9FWt4PNarWpDjW9W5nEELDdHWRwxbVLkUv34bBeI7TmHVa2r2PrM-LNbKCwDZOWC04wty_AGuo--OFQ-qMt5xl3k8S5aPl9YlsstkAKMPQsWRykhPk9amAC7kdNnRoOaTYGxBgOgXWz8HTgY3TwTUcckwE2Tf29c6AJLa0W4qOgft85dEsAWkIM0TFECIrvfjP0jt4Gt3bS"/>
 </div>
 <div>
 <p className="font-label font-bold text-[10px] uppercase tracking-widest text-zinc-500">Responsável</p>
@@ -99,7 +99,7 @@ export default function DetalheDoDesafio() {
 </div>
 {/*  Bento Rewards Section  */}
 <div className="grid grid-cols-2 gap-2">
-<div className="col-span-2 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-[16/7]">
+<div className="col-span-2 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-[16/7]">
 <span className="material-symbols-outlined text-brand-red text-4xl mb-4">military_tech</span>
 <div>
 <p className="font-label font-bold text-[10px] uppercase tracking-widest text-zinc-500">Prêmio Principal</p>

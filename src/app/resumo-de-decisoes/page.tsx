@@ -10,7 +10,7 @@ export default function ResumoDeDecisEs() {
 <div className="h-1 w-24 bg-brand-red/10"></div>
 </div>
 <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-40">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-40">
 <span className="text-label-sm uppercase font-bold tracking-widest text-zinc-400 opacity-60">Eficiência</span>
 <div className="flex items-baseline gap-2">
 <span className="text-6xl font-black font-headline">64</span>
@@ -151,10 +151,10 @@ export default function ResumoDeDecisEs() {
 </section>
 {/*  Visual Analysis Section  */}
 <section className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-zinc-800/10">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-zinc-800/10">
 <h4 className="font-headline font-black uppercase text-sm tracking-[0.2em] mb-6">Mapa de Calor: Fadiga vs Erro</h4>
 <div className="aspect-square relative bg-neutral-900 overflow-hidden">
-<img className="w-full h-full object-cover opacity-50 mix-blend-screen" data-alt="Abstract visualization of kinetic energy and heat mapping with red and blue light trails over a dark textured surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR68q3sRoNGoo_JXkhOiHURa8AvK7-j3oMnE9hF4nBGSjjc0ab9ZGvSrCf_BitUh9D9PC02mUUjqrqow4qM7wcOx4sFY7O8WzRuu2UW-Wz_YQY6xgzZFMbBiaBq8KWxasDx750h0irr-oDiy5eLNK8SQvDcQrAwNcMHUrL4o63rWI6s10DaD8EFjZ9Yb2LMSo3Hp-CddUEOkIqtyOKkfKByxQpBoxf71by8YUIVrmtYdSLKjCdc69djSN9f8W1iA3wj5eebrtTFwga"/>
+<img className="w-full h-full object-cover opacity-50 mix-blend-screen" alt="Abstract visualization of kinetic energy and heat mapping with red and blue light trails over a dark textured surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR68q3sRoNGoo_JXkhOiHURa8AvK7-j3oMnE9hF4nBGSjjc0ab9ZGvSrCf_BitUh9D9PC02mUUjqrqow4qM7wcOx4sFY7O8WzRuu2UW-Wz_YQY6xgzZFMbBiaBq8KWxasDx750h0irr-oDiy5eLNK8SQvDcQrAwNcMHUrL4o63rWI6s10DaD8EFjZ9Yb2LMSo3Hp-CddUEOkIqtyOKkfKByxQpBoxf71by8YUIVrmtYdSLKjCdc69djSN9f8W1iA3wj5eebrtTFwga"/>
 <div className="absolute inset-0 flex items-center justify-center">
 <div className="text-center">
 <span className="text-4xl font-black text-brand-red font-headline">CRITICAL ZONE</span>

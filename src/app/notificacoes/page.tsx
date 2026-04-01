@@ -16,7 +16,7 @@ export default function NotificaEs() {
         {/*  Notifications Feed  */}
         <div className="flex flex-col gap-3">
           {/*  Notification: New Technique (Unread)  */}
-          <div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex gap-6 relative overflow-hidden group">
+          <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex gap-6 relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-1 h-full bg-brand-red/10"></div>
             <div className="flex-shrink-0 w-12 h-12 bg-zinc-800/80 flex items-center justify-center">
               <span className="material-symbols-outlined text-brand-red" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_circle</span>
@@ -35,10 +35,10 @@ export default function NotificaEs() {
             <div className="absolute top-4 right-4 w-2 h-2 bg-brand-red/10 rounded-full shadow-[0_0_10px_rgba(255,26,26,0.6)]"></div>
           </div>
           {/*  Notification: Comment (Unread)  */}
-          <div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex gap-6 relative group">
+          <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex gap-6 relative group">
             <div className="absolute top-0 left-0 w-1 h-full bg-brand-red/10"></div>
             <div className="flex-shrink-0 w-12 h-12 overflow-hidden bg-zinc-800/80">
-              <img className="w-full h-full object-cover" data-alt="Professional profile photo of an older man with a grey beard and authoritative look in a gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG1zFSPRsSz0GPzpYzUlc_9nfEMaHRKtDwP5GPUqs8ZJivRNEziVAPJEaubTiMYuGX8tkmmTTBDmv8JlueKJ1TtVQvaiU8lTkoVZ7B6TFCnX3iqxTMHNqzPVYmqzPBr6gGxc37U6kb-nZ2gQrgABYSnEOfcMJc1gxsVPhNMwH31Ywd2_CplFz5yWxYtQORGKd2nippoyjozw-fwikXUPgSMcigZyduiw0QiUQi0YB1qQANLQai3_Rid3fSrdllWj0yHaLJci23Jjkn"/>
+              <img className="w-full h-full object-cover" alt="Professional profile photo of an older man with a grey beard and authoritative look in a gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG1zFSPRsSz0GPzpYzUlc_9nfEMaHRKtDwP5GPUqs8ZJivRNEziVAPJEaubTiMYuGX8tkmmTTBDmv8JlueKJ1TtVQvaiU8lTkoVZ7B6TFCnX3iqxTMHNqzPVYmqzPBr6gGxc37U6kb-nZ2gQrgABYSnEOfcMJc1gxsVPhNMwH31Ywd2_CplFz5yWxYtQORGKd2nippoyjozw-fwikXUPgSMcigZyduiw0QiUQi0YB1qQANLQai3_Rid3fSrdllWj0yHaLJci23Jjkn"/>
             </div>
             <div className="flex-grow">
               <div className="flex justify-between items-start mb-1">

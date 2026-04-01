@@ -143,7 +143,7 @@ export default function FeedbacksDoAlunoPage() {
     <main className="relative mx-auto max-w-6xl space-y-8 px-4 pb-28 pt-20 md:px-6">
       <section className="absolute inset-0 -z-10 bg-zinc-950 bg-dot-grid opacity-70" />
 
-      <section className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 shadow-none">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="space-y-3">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-zinc-300">
@@ -196,7 +196,7 @@ export default function FeedbacksDoAlunoPage() {
       </section>
 
       {loading && feedbacks.length === 0 ? (
-        <div className="animate-pulse rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <div className="animate-pulse rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <div className="mb-6 h-8 w-72 rounded-2xl bg-zinc-800/80" />
           <div className="space-y-4">
             <div className="h-28 rounded-2xl bg-zinc-800" />
@@ -214,7 +214,7 @@ export default function FeedbacksDoAlunoPage() {
       ) : null}
 
       {!loading && feedbacks.length === 0 ? (
-        <section className="rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8">
+        <section className="rounded-[28px] border border-zinc-800 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">Sem registros</p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-tighter text-white">
             Nenhum feedback criado ainda

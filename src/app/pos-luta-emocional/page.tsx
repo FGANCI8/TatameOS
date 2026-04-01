@@ -50,7 +50,7 @@ export default function PSLutaEmocional() {
 </section>
 {/*  Reflection Area  */}
 <section className="mb-12">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border border-zinc-800/10">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border border-zinc-800/10">
 <div className="flex justify-between items-end mb-4">
 <h3 className="font-['Inter'] font-bold text-xs tracking-widest text-zinc-100 uppercase">REFLEXÃO DO TATAME</h3>
 <span className="text-[10px] text-zinc-400 uppercase font-mono">ID: 8829-X</span>

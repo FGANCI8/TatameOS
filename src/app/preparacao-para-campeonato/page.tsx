@@ -7,7 +7,7 @@ export default function PreparaOParaCampeonato() {
 <h2 className="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter text-zinc-100 mb-2">PREPARAÇÃO</h2>
 <p className="font-label uppercase tracking-[0.2em] text-zinc-500 text-sm mb-8">CAMPEONATO NACIONAL • SEMANA FINAL</p>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48 border-l-4 border-brand-red/20">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48 border-l-4 border-brand-red/20">
 <span className="font-label uppercase text-xs tracking-widest text-zinc-500">Status Mental</span>
 <div className="flex items-baseline gap-2">
 <span className="font-headline font-black text-6xl text-zinc-100">100</span>
@@ -20,7 +20,7 @@ export default function PreparaOParaCampeonato() {
 <span className="font-headline font-black text-4xl text-zinc-100 leading-none uppercase">ADULTO<br/>PENA</span>
 <span className="font-label text-xs text-zinc-500 uppercase">LIMITE: 76.0 KG</span>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between h-48">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between h-48">
 <span className="font-label uppercase text-xs tracking-widest text-zinc-500">Documentos</span>
 <div className="flex items-center gap-3">
 <span className="material-symbols-outlined text-brand-red text-4xl" data-icon="verified">verified</span>
@@ -33,7 +33,7 @@ export default function PreparaOParaCampeonato() {
 {/*  Bento Grid: Preparation Metrics  */}
 <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
 {/*  Weight Tracking Card  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto">
 <div>
 <h3 className="font-headline font-bold text-xl uppercase tracking-widest mb-6">PESO ATUAL</h3>
 <div className="flex items-baseline gap-4">
@@ -52,7 +52,7 @@ export default function PreparaOParaCampeonato() {
 </div>
 </div>
 {/*  Training Progress Card  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto relative overflow-hidden">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between aspect-square md:aspect-auto relative overflow-hidden">
 <div className="absolute top-0 right-0 p-4 opacity-10">
 <span className="material-symbols-outlined text-[12rem]" data-icon="fitness_center">fitness_center</span>
 </div>
@@ -82,7 +82,7 @@ export default function PreparaOParaCampeonato() {
 </section>
 {/*  Final Plan Action  */}
 <section className="bg-zinc-800/80 p-1 bg-gradient-to-br from-brand-red/20 to-transparent">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8">
 <div className="flex items-center gap-6">
 <div className="bg-brand-red/10 w-16 h-16 flex items-center justify-center">
 <span className="material-symbols-outlined text-3xl text-white" data-icon="picture_as_pdf">picture_as_pdf</span>

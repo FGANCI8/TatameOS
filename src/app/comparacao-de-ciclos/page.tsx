@@ -161,7 +161,7 @@ export default function ComparaODeCiclos() {
 <h4 className="font-headline text-lg font-bold italic uppercase">Destaques Técnicos</h4>
 <div className="bg-zinc-900 p-4 flex gap-4">
 <div className="w-16 h-16 bg-zinc-800/80 shrink-0 grayscale hover:grayscale-0 transition-all">
-<img alt="Submission Technique" className="w-full h-full object-cover" data-alt="Monochromatic gritty action shot of a jiu-jitsu submission hold, focus on hand grip and tension, dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBam0oE-tMTmko52x2U6FnhqB0MrGSkiu1UhvkVjNWRfF10eLpnllvD05gpFsrbieNNtgc8KjkZR2aLkFaOdbdCE7LcJRwCAFZY2Ig0O95YajdrVJSocTn2tD8yYblZxg0qj2eKmf36WscuCetr6gykEfLSRZmPpDnKeGYlrjEQpGqRPHP5uDgpJa1GJadHUf78XluHCexoevpChJt4Aa4jd6e6B6Yrd4aMzj1y7xlAJovO8hDqFub2bP75eH9Hj4JeI-uh5QFW_4rr"/>
+<img alt="Submission Technique" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBam0oE-tMTmko52x2U6FnhqB0MrGSkiu1UhvkVjNWRfF10eLpnllvD05gpFsrbieNNtgc8KjkZR2aLkFaOdbdCE7LcJRwCAFZY2Ig0O95YajdrVJSocTn2tD8yYblZxg0qj2eKmf36WscuCetr6gykEfLSRZmPpDnKeGYlrjEQpGqRPHP5uDgpJa1GJadHUf78XluHCexoevpChJt4Aa4jd6e6B6Yrd4aMzj1y7xlAJovO8hDqFub2bP75eH9Hj4JeI-uh5QFW_4rr"/>
 </div>
 <div className="flex-1 flex flex-col justify-center">
 <span className="text-[9px] font-black uppercase text-zinc-300 tracking-widest">MÉTRICA CHAVE</span>
@@ -171,7 +171,7 @@ export default function ComparaODeCiclos() {
 </div>
 <div className="bg-zinc-950/60 p-4 flex gap-4">
 <div className="w-16 h-16 bg-zinc-800/80 shrink-0 grayscale hover:grayscale-0 transition-all">
-<img alt="Training Strength" className="w-full h-full object-cover" data-alt="Heavily shadowed gym environment with iron weights and industrial aesthetic, cinematic high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcWp5V1inHomkKPMIbMs3jCOeTinJs6cAG-Aubhs7OhZndlxsGdaGFY9_zGKwrT0AH0r-a_00PtfCVizL2IKPpqVR1v10QvU1j70dMJOrSDh2SXCk_J8bp0GE_sMB6WCDOUChT9SpE1RpwMPmWIXKVZZyVfhVPXd3yvQq1WZErqerOKr9aoqzwXnFzpUY_lLkw5U22lfmm6-6mLwEVHY8quzBfkguveX3nf8wcCUvSuQFNyJp314P0m9Pl5agHhl1dITHl6h9Nl1YJ"/>
+<img alt="Training Strength" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcWp5V1inHomkKPMIbMs3jCOeTinJs6cAG-Aubhs7OhZndlxsGdaGFY9_zGKwrT0AH0r-a_00PtfCVizL2IKPpqVR1v10QvU1j70dMJOrSDh2SXCk_J8bp0GE_sMB6WCDOUChT9SpE1RpwMPmWIXKVZZyVfhVPXd3yvQq1WZErqerOKr9aoqzwXnFzpUY_lLkw5U22lfmm6-6mLwEVHY8quzBfkguveX3nf8wcCUvSuQFNyJp314P0m9Pl5agHhl1dITHl6h9Nl1YJ"/>
 </div>
 <div className="flex-1 flex flex-col justify-center">
 <span className="text-[9px] font-black uppercase text-brand-red tracking-widest">RESISTÊNCIA</span>

@@ -22,7 +22,7 @@ export default function ErroOuIndisponibilidade() {
 <div className="w-24 h-2 bg-brand-red/10 mb-8"></div>
 </div>
 {/*  Message Detail  */}
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 border-l-4 border-brand-red/20 w-full mb-12">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-l-4 border-brand-red/20 w-full mb-12">
 <p className="font-body text-xl md:text-2xl text-zinc-500 font-light leading-relaxed max-w-lg">
                     A conexão com os servidores de alta performance foi interrompida. Verifique sua rede e retome o combate.
                 </p>
@@ -55,7 +55,7 @@ export default function ErroOuIndisponibilidade() {
 </div>
 {/*  Asymmetric Decorative Image  */}
 <div className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-1/4 h-3/4 grayscale mix-blend-luminosity opacity-40">
-<img className="w-full h-full object-cover" data-alt="dramatic black and white close-up of a sweaty athlete's face with intense focus and dark shadows, gritty sports aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYCYBPaotv-JZAoGQmCCefTCzqnvmYRr8axgznQpZD-vUJfjwe81cpgKbbsk3YA4RnPbE4fmaLq8pkI4fC6kve-pdyJyZOhq69e9716dsbPiDKCuhqQ4rKQEjWBOa1rG51rbiPRD4BK8W_csrzGlfvDl5yJUAM7Tl2QXeLiB0IYC_K5DjAiqay9VKslznLLhQ3EUs_bltV_Sf29DOsELVkcgWx4N4BPNywjwaydbZI9azCx_SUCOckBFhF1mQ9vKOpTKxby93dXukP"/>
+<img className="w-full h-full object-cover" alt="dramatic black and white close-up of a sweaty athlete's face with intense focus and dark shadows, gritty sports aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYCYBPaotv-JZAoGQmCCefTCzqnvmYRr8axgznQpZD-vUJfjwe81cpgKbbsk3YA4RnPbE4fmaLq8pkI4fC6kve-pdyJyZOhq69e9716dsbPiDKCuhqQ4rKQEjWBOa1rG51rbiPRD4BK8W_csrzGlfvDl5yJUAM7Tl2QXeLiB0IYC_K5DjAiqay9VKslznLLhQ3EUs_bltV_Sf29DOsELVkcgWx4N4BPNywjwaydbZI9azCx_SUCOckBFhF1mQ9vKOpTKxby93dXukP"/>
 </div>
 </main>
 {/*  Bottom Status Bar (Simplified Footer)  */}

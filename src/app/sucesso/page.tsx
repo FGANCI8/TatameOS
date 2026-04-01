@@ -28,20 +28,20 @@ export default function Sucesso() {
 </div>
 {/*  Performance Stats Bento  */}
 <div className="grid grid-cols-2 gap-px bg-zinc-800/80 w-full border border-zinc-800/80">
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col items-start justify-between space-y-4">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col items-start justify-between space-y-4">
 <span className="font-label text-[10px] text-zinc-500 uppercase tracking-widest">TEMPO TOTAL</span>
 <div className="flex items-baseline gap-1">
 <span className="font-headline text-3xl font-bold">54</span>
 <span className="font-label text-xs text-zinc-400">MIN</span>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col items-start justify-between space-y-4">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col items-start justify-between space-y-4">
 <span className="font-label text-[10px] text-zinc-500 uppercase tracking-widest">INTENSIDADE</span>
 <div className="flex items-baseline gap-1">
 <span className="font-headline text-3xl font-bold text-brand-red">ALTA</span>
 </div>
 </div>
-<div className="rounded-[28px] border border-zinc-800/80 rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 md:p-8 flex flex-col items-start justify-between space-y-4 col-span-2">
+<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col items-start justify-between space-y-4 col-span-2">
 <span className="font-label text-[10px] text-zinc-500 uppercase tracking-widest">PROGRESSÃO DA TRILHA</span>
 <div className="w-full bg-zinc-800/80 h-2 relative">
 <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-zinc-800-container to-zinc-800" style={{ /* width: 75%; */ }}></div>
@@ -64,7 +64,7 @@ export default function Sucesso() {
 </div>
 {/*  Background Image for Athletic Context (Optional subtle overlay)  */}
 <div className="absolute inset-0 z-[-1] opacity-5 mix-blend-luminosity">
-<img alt="Athlete in motion" className="w-full h-full object-cover" data-alt="Close up of a muscular athlete gripping a gi collar in a dark, moody Brazilian Jiu-Jitsu gym environment with harsh cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdsNtHZheOdONsS-iLLQO2drfHT3KZMBUiAGPoL3NkD1YNMEZAhzqSmiA7_2IX_R12vODPgTbq9vNZ0w_L3KJDY7Q9cgaE0CtUEnjAHxlj3BFHZ66dNCYGAfmYz70tIcim0Obmct6H0enEoJfmq9lF58aYCBtlh4E_XdAlQ2bmiK8xmWYTT1_PTpzV5i2povhE2LhawuUZXxt75DBVZUoYwv9wkVAUhm5z9z5d2Xtpm2CunKyfBMJBpIycLoWQNA2Cu0g76Gs13owX"/>
+<img alt="Athlete in motion" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdsNtHZheOdONsS-iLLQO2drfHT3KZMBUiAGPoL3NkD1YNMEZAhzqSmiA7_2IX_R12vODPgTbq9vNZ0w_L3KJDY7Q9cgaE0CtUEnjAHxlj3BFHZ66dNCYGAfmYz70tIcim0Obmct6H0enEoJfmq9lF58aYCBtlh4E_XdAlQ2bmiK8xmWYTT1_PTpzV5i2povhE2LhawuUZXxt75DBVZUoYwv9wkVAUhm5z9z5d2Xtpm2CunKyfBMJBpIycLoWQNA2Cu0g76Gs13owX"/>
 </div>
 </main>
 {/*  Bottom Navigation Mock (Only if user needs to see it, here hidden as per transactional rule, but we keep the structure for shell consistency)  */}
