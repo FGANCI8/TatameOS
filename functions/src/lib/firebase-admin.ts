@@ -16,6 +16,8 @@ export function ensureAdminApp() {
     throw new Error('Credenciais administrativas ausentes para inicializar o Firebase Admin SDK.');
   }
 
+  const storageBucket = process.env.FIREBASE_STORAGE_BUCKET?.trim();
+
   initialized = true;
   return admin.initializeApp({
     credential: admin.credential.cert({
@@ -23,6 +25,7 @@ export function ensureAdminApp() {
       clientEmail,
       privateKey,
     }),
+    ...(storageBucket ? { storageBucket } : {}),
   });
 }
 
@@ -30,3 +33,4 @@ ensureAdminApp();
 
 export const adminAuth = admin.auth();
 export const adminDb = admin.firestore();
+export const adminStorage = admin.storage();

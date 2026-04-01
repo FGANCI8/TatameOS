@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.adminDb = exports.adminAuth = void 0;
+exports.adminStorage = exports.adminDb = exports.adminAuth = void 0;
 exports.ensureAdminApp = ensureAdminApp;
 const admin = __importStar(require("firebase-admin"));
 let initialized = false;
@@ -48,6 +48,7 @@ function ensureAdminApp() {
     if (!projectId || !clientEmail || !privateKey) {
         throw new Error('Credenciais administrativas ausentes para inicializar o Firebase Admin SDK.');
     }
+    const storageBucket = process.env.FIREBASE_STORAGE_BUCKET?.trim();
     initialized = true;
     return admin.initializeApp({
         credential: admin.credential.cert({
@@ -55,8 +56,10 @@ function ensureAdminApp() {
             clientEmail,
             privateKey,
         }),
+        ...(storageBucket ? { storageBucket } : {}),
     });
 }
 ensureAdminApp();
 exports.adminAuth = admin.auth();
 exports.adminDb = admin.firestore();
+exports.adminStorage = admin.storage();
