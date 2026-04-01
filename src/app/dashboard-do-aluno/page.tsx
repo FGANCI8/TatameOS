@@ -603,14 +603,14 @@ export default function DashboardDoAluno() {
 
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <Link
-          to="/biblioteca-de-tecnicas"
+          to="/meu-plano"
           className="group rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 transition-colors hover:bg-zinc-900 md:p-8"
         >
-          <span className="material-symbols-outlined mb-4 text-zinc-300">video_library</span>
-          <h4 className="font-headline text-xl font-bold uppercase italic text-white">Biblioteca</h4>
-          <p className="mt-2 text-xs text-zinc-400">Acesse vídeos e detalhes técnicos da base.</p>
+          <span className="material-symbols-outlined mb-4 text-zinc-300">route</span>
+          <h4 className="font-headline text-xl font-bold uppercase italic text-white">Meu plano</h4>
+          <p className="mt-2 text-xs text-zinc-400">Acompanhe assinatura, trilha e prontidao sem sair do fluxo.</p>
           <div className="mt-4 flex items-center gap-2 text-[10px] font-black uppercase text-zinc-300 opacity-0 transition-opacity group-hover:opacity-100">
-            Explorar <span className="material-symbols-outlined text-xs">arrow_forward</span>
+            Abrir <span className="material-symbols-outlined text-xs">arrow_forward</span>
           </div>
         </Link>
         <Link

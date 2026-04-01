@@ -71,11 +71,11 @@ export default function TrilhasProfessorPage() {
               Voltar ao painel
             </Link>
             <Link
-              to="/biblioteca-de-tecnicas"
+              to="/area-do-professor/alunos"
               className="inline-flex items-center gap-2 rounded-2xl border border-brand-red/20 bg-brand-red/10 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition duration-200 hover:scale-105 hover:bg-brand-red/20"
             >
-              <span className="material-symbols-outlined text-[18px]">video_library</span>
-              Abrir biblioteca
+              <span className="material-symbols-outlined text-[18px]">group</span>
+              Ver alunos
             </Link>
           </div>
         </div>

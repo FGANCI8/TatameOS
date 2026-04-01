@@ -76,11 +76,11 @@ export default function AlunoTrilhasContent() {
             <h2 className="mt-1 text-2xl font-black uppercase tracking-tight text-white">Trilhas da sua faixa</h2>
           </div>
           <Link
-            to="/biblioteca-de-tecnicas"
+            to="/meu-plano"
             className="inline-flex items-center gap-2 rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-zinc-300 transition duration-200 hover:scale-105 hover:bg-zinc-800"
           >
-            <span className="material-symbols-outlined text-[18px]">video_library</span>
-            Biblioteca
+            <span className="material-symbols-outlined text-[18px]">route</span>
+            Ver plano
           </Link>
         </div>
 

@@ -60,11 +60,11 @@ export default function TrilhasAlunoPage() {
               Voltar ao painel
             </Link>
             <Link
-              to="/biblioteca-de-tecnicas"
+              to="/meu-plano"
               className="inline-flex items-center gap-2 rounded-2xl border border-brand-red/20 bg-brand-red/10 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition duration-200 hover:scale-105 hover:bg-brand-red/20"
             >
-              <span className="material-symbols-outlined text-[18px]">video_library</span>
-              Ver biblioteca
+              <span className="material-symbols-outlined text-[18px]">route</span>
+              Ver plano
             </Link>
           </div>
         </div>
