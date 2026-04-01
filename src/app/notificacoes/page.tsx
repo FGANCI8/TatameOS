@@ -1,102 +1,189 @@
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
+import { useNotifications } from '../../modules/notificacoes/hooks/useNotifications';
+import type { NotificacaoTipo } from '../../modules/notificacoes/types';
 
-export default function NotificaEs() {
+function toneClass(tipo: NotificacaoTipo) {
+  switch (tipo) {
+    case 'alerta':
+      return 'border-brand-red/20 bg-brand-red/10 text-brand-red';
+    case 'sucesso':
+      return 'border-emerald-500/20 bg-emerald-500/10 text-emerald-300';
+    case 'info':
+    default:
+      return 'border-zinc-800 bg-zinc-950/60 text-zinc-300';
+  }
+}
+
+function NotificationSkeleton() {
   return (
-    <main className="flex-grow pt-24 pb-32 px-6 max-w-2xl mx-auto w-full">
-      <div className="flex flex-col gap-8">
-        {/*  Header Section  */}
-        <div className="flex justify-between items-end border-l-4 border-brand-red/20 pl-4 py-2">
+    <div className="space-y-4">
+      {Array.from({ length: 3 }).map((_, index) => (
+        <div key={index} className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <div className="h-3 w-32 animate-pulse rounded-full bg-zinc-800/80" />
+          <div className="mt-4 h-5 w-3/4 animate-pulse rounded-full bg-zinc-800/80" />
+          <div className="mt-3 h-4 w-full animate-pulse rounded-full bg-zinc-800/60" />
+          <div className="mt-3 h-4 w-2/3 animate-pulse rounded-full bg-zinc-800/60" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function NotificacoesPage() {
+  const { isAuthenticated, tenantId } = useAuth();
+  const { notificacoes, loading, error, total, naoLidas, actions } = useNotifications(8);
+
+  const hasContext = isAuthenticated && Boolean(tenantId);
+
+  return (
+    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 px-4 pb-32 pt-24 md:px-6">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 shadow-none md:p-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-300">Telemetry // 04</span>
-            <h2 className="text-4xl font-black font-lexend uppercase tracking-tighter leading-none mt-1">Alertas</h2>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Telemetry // 04</p>
+            <h1 className="mt-2 font-headline text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
+              Alertas reais
+            </h1>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
+              Tudo que chega para você no tenant atual, com leitura honesta de lido, não lido e atualização manual.
+            </p>
           </div>
-          <button className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-zinc-100 transition-colors">
-            Limpar Tudo
-          </button>
-        </div>
-        {/*  Notifications Feed  */}
-        <div className="flex flex-col gap-3">
-          {/*  Notification: New Technique (Unread)  */}
-          <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex gap-6 relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-1 h-full bg-brand-red/10"></div>
-            <div className="flex-shrink-0 w-12 h-12 bg-zinc-800/80 flex items-center justify-center">
-              <span className="material-symbols-outlined text-brand-red" style={{ /* font-variation-settings: 'FILL' 1; */ }}>play_circle</span>
-            </div>
-            <div className="flex-grow">
-              <div className="flex justify-between items-start mb-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-red">Novo Conteúdo</span>
-                <span className="text-[10px] font-medium text-zinc-500">AGORA</span>
-              </div>
-              <h3 className="text-lg font-bold font-lexend leading-tight uppercase mb-1">Nova Técnica Liberada: Kimeta</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">Aprenda os detalhes biomecânicos da finalização Kimeta com o Mestre Carlos.</p>
-              <div className="mt-4 flex gap-4">
-                <button className="bg-brand-red/10 text-white px-4 py-2 text-[10px] font-black uppercase tracking-widest active:scale-95 transition-transform">Assistir Agora</button>
-              </div>
-            </div>
-            <div className="absolute top-4 right-4 w-2 h-2 bg-brand-red/10 rounded-full shadow-[0_0_10px_rgba(255,26,26,0.6)]"></div>
-          </div>
-          {/*  Notification: Comment (Unread)  */}
-          <div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex gap-6 relative group">
-            <div className="absolute top-0 left-0 w-1 h-full bg-brand-red/10"></div>
-            <div className="flex-shrink-0 w-12 h-12 overflow-hidden bg-zinc-800/80">
-              <img className="w-full h-full object-cover" alt="Professional profile photo of an older man with a grey beard and authoritative look in a gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG1zFSPRsSz0GPzpYzUlc_9nfEMaHRKtDwP5GPUqs8ZJivRNEziVAPJEaubTiMYuGX8tkmmTTBDmv8JlueKJ1TtVQvaiU8lTkoVZ7B6TFCnX3iqxTMHNqzPVYmqzPBr6gGxc37U6kb-nZ2gQrgABYSnEOfcMJc1gxsVPhNMwH31Ywd2_CplFz5yWxYtQORGKd2nippoyjozw-fwikXUPgSMcigZyduiw0QiUQi0YB1qQANLQai3_Rid3fSrdllWj0yHaLJci23Jjkn"/>
-            </div>
-            <div className="flex-grow">
-              <div className="flex justify-between items-start mb-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-300">Comunidade</span>
-                <span className="text-[10px] font-medium text-zinc-500">2H ATRÁS</span>
-              </div>
-              <h3 className="text-lg font-bold font-lexend leading-tight uppercase mb-1">Professor Silva comentou no seu treino</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed italic">"Excelente ajuste no quadril durante a transição. Continue focando na pressão..."</p>
-            </div>
-            <div className="absolute top-4 right-4 w-2 h-2 bg-brand-red/10 rounded-full shadow-[0_0_10px_rgba(255,26,26,0.6)]"></div>
-          </div>
-          {/*  Notification: Reminder (Read)  */}
-          <div className="bg-zinc-950 border border-white/5 p-6 flex gap-6 group opacity-80">
-            <div className="flex-shrink-0 w-12 h-12 bg-zinc-900/80 flex items-center justify-center">
-              <span className="material-symbols-outlined text-zinc-400" style={{ /* font-variation-settings: 'FILL' 0; */ }}>calendar_today</span>
-            </div>
-            <div className="flex-grow">
-              <div className="flex justify-between items-start mb-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Cronograma</span>
-                <span className="text-[10px] font-medium text-zinc-500">5H ATRÁS</span>
-              </div>
-              <h3 className="text-lg font-bold font-lexend leading-tight uppercase mb-1">Lembrete: Treino de Amanhã</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">Seu treino de Graduados começa às 07:00. Não esqueça de confirmar sua presença.</p>
-            </div>
-          </div>
-          {/*  Notification: Achievement (Read)  */}
-          <div className="bg-zinc-950 border border-white/5 p-6 flex gap-6 group opacity-80">
-            <div className="flex-shrink-0 w-12 h-12 bg-zinc-900/80 flex items-center justify-center">
-              <span className="material-symbols-outlined text-zinc-400" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
-            </div>
-            <div className="flex-grow">
-              <div className="flex justify-between items-start mb-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Conquista</span>
-                <span className="text-[10px] font-medium text-zinc-500">1 DIA ATRÁS</span>
-              </div>
-              <h3 className="text-lg font-bold font-lexend leading-tight uppercase mb-1">Sequência de 10 Dias</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">Você manteve sua consistência por 10 dias seguidos. Performance de elite detectada.</p>
-            </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link
+              to="/dashboard-do-aluno"
+              className="inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950/60 px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-zinc-100 transition hover:bg-zinc-800"
+            >
+              Voltar ao dashboard
+            </Link>
+            {hasContext ? (
+              <button
+                type="button"
+                onClick={() => void actions.refresh()}
+                className="inline-flex items-center justify-center rounded-2xl border border-brand-red/20 bg-brand-red/10 px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition hover:bg-brand-red/20"
+              >
+                Atualizar feed
+              </button>
+            ) : null}
           </div>
         </div>
-        {/*  Bento Stats Snippet  */}
-        <div className="grid grid-cols-2 gap-3 mt-4">
-          <div className="bg-zinc-900 p-4 flex flex-col justify-between aspect-square border-r-2 border-b-2 border-brand-red/20">
-            <span className="material-symbols-outlined text-brand-red" style={{ /* font-variation-settings: 'FILL' 1; */ }}>notifications_active</span>
-            <div>
-              <div className="text-4xl font-black font-lexend leading-none">02</div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-300 mt-1">Não Lidas</div>
-            </div>
-          </div>
-          <div className="bg-zinc-950/60 p-4 flex flex-col justify-between aspect-square">
-            <span className="material-symbols-outlined text-zinc-300" style={{ /* font-variation-settings: 'FILL' 0; */ }}>history</span>
-            <div>
-              <div className="text-4xl font-black font-lexend leading-none">24</div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mt-1">Arquivadas</div>
-            </div>
-          </div>
+      </section>
+
+      <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Total</p>
+          <p className="mt-2 text-4xl font-black text-white">{total}</p>
         </div>
-      </div>
-    </main>
+        <div className="rounded-2xl border border-brand-red/20 bg-brand-red/10 p-5">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Não lidas</p>
+          <p className="mt-2 text-4xl font-black text-white">{naoLidas}</p>
+        </div>
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Escopo</p>
+          <p className="mt-2 text-sm font-black uppercase tracking-tight text-white">Tenant atual</p>
+        </div>
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/80 p-5">
+          <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Feed</p>
+          <p className="mt-2 text-sm font-black uppercase tracking-tight text-white">Atualização sob demanda</p>
+        </div>
+      </section>
+
+      {!hasContext ? (
+        <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Contexto ausente</p>
+          <h2 className="mt-3 text-3xl font-black uppercase tracking-tight text-white">
+            Entre no app para ver seus alertas
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
+            Esta tela depende de autenticação e tenant para mostrar notificações reais.
+          </p>
+        </section>
+      ) : loading && notificacoes.length === 0 ? (
+        <NotificationSkeleton />
+      ) : error ? (
+        <section className="rounded-[28px] border border-brand-red/30 bg-brand-red/10 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">Falha ao carregar</p>
+          <h2 className="mt-3 text-3xl font-black uppercase tracking-tight text-white">
+            Não foi possível montar o feed
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-zinc-200">{error}</p>
+        </section>
+      ) : notificacoes.length === 0 ? (
+        <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Sem alertas</p>
+          <h2 className="mt-3 text-3xl font-black uppercase tracking-tight text-white">
+            Seu feed está limpo por enquanto
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
+            Quando houver aviso, feedback ou lembrete relevante, ele aparece aqui sem inventar conteúdo.
+          </p>
+        </section>
+      ) : (
+        <section className="space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
+              {naoLidas} pendente(s) no tenant atual
+            </p>
+            {naoLidas > 0 ? (
+              <button
+                type="button"
+                onClick={() => void actions.marcarTodasComoLidas()}
+                className="inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-zinc-100 transition hover:bg-zinc-800"
+              >
+                Marcar todas como lidas
+              </button>
+            ) : null}
+          </div>
+
+          <div className="space-y-4">
+            {notificacoes.map((notificacao) => (
+              <article
+                key={notificacao.id}
+                className={`rounded-[28px] border p-6 shadow-none md:p-8 ${
+                  notificacao.lida ? 'border-zinc-800/80 bg-zinc-900/80' : 'border-zinc-700 bg-zinc-900'
+                }`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-3">
+                    <span
+                      className={`inline-flex items-center rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${toneClass(
+                        notificacao.tipo,
+                      )}`}
+                    >
+                      {notificacao.tipo}
+                    </span>
+                    <h3 className="text-2xl font-black uppercase tracking-tight text-white">{notificacao.titulo}</h3>
+                    <p className="max-w-2xl text-sm leading-7 text-zinc-400">{notificacao.mensagem}</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-500">
+                      {new Intl.DateTimeFormat('pt-BR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      }).format(notificacao.createdAt)}
+                    </p>
+                  </div>
+
+                  {!notificacao.lida ? (
+                    <button
+                      type="button"
+                      onClick={() => void actions.marcarComoLida(notificacao.id)}
+                      className="rounded-2xl border border-brand-red/20 bg-brand-red/10 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition hover:bg-brand-red/20"
+                    >
+                      Marcar lida
+                    </button>
+                  ) : (
+                    <span className="rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-zinc-300">
+                      Lida
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+    </main>
   );
 }

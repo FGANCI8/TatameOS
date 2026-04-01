@@ -1,138 +1,187 @@
-export default function DashboardDeEvoluO() {
+import { Link } from 'react-router-dom';
+import { useAluno } from '../../modules/aluno/hooks/useAluno';
+import { useFrequenciaAluno } from '../../modules/frequencia/hooks/useFrequenciaAluno';
+import { useTreino } from '../../hooks/useTreino';
+
+function EvolutionSkeleton() {
   return (
-    <>
-<main className="mt-20 px-6 space-y-8 animate-fade-in">
-{/*  Page Title Hero  */}
-<section className="mt-4">
-<h1 className="font-['Lexend'] font-black italic text-5xl tracking-tighter uppercase leading-none text-zinc-100">
-                EVOLUÇÃO <br/> <span className="text-brand-red">COMPETITIVA</span>
-</h1>
-<p className="font-['Inter'] font-bold text-[10px] tracking-[0.2em] uppercase text-zinc-500 mt-2">
-                SISTEMA DE TELEMETRIA DE PERFORMANCE ELITE
-            </p>
-</section>
-{/*  Win/Loss Ratio Bento Grid  */}
-<section className="grid grid-cols-2 gap-4">
-<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-4 border-brand-red/20 h-40">
-<span className="font-['Inter'] font-bold text-[10px] tracking-widest uppercase text-zinc-500">VITÓRIAS</span>
-<div className="flex items-baseline gap-2">
-<span className="font-['Lexend'] font-black text-6xl text-zinc-100">42</span>
-<span className="text-brand-red font-black text-xl italic">W</span>
-</div>
-</div>
-<div className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 flex flex-col justify-between border-l-4 border-zinc-100 h-40">
-<span className="font-['Inter'] font-bold text-[10px] tracking-widest uppercase text-zinc-500">DERROTAS</span>
-<div className="flex items-baseline gap-2">
-<span className="font-['Lexend'] font-black text-6xl text-zinc-100">08</span>
-<span className="text-zinc-100 font-black text-xl italic">L</span>
-</div>
-</div>
-</section>
-{/*  Maturity Level  */}
-<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 relative overflow-hidden">
-<div className="flex justify-between items-start relative z-10">
-<div className="space-y-1">
-<span className="font-['Inter'] font-bold text-[10px] tracking-widest uppercase text-zinc-500">MATURIDADE TÉCNICA</span>
-<h2 className="font-['Lexend'] font-black italic text-3xl uppercase text-zinc-100">FAIXA ROXA IV</h2>
-</div>
-<div className="bg-brand-red/10 px-3 py-1 font-['Lexend'] font-black text-xs italic uppercase">ELITE TIER</div>
-</div>
-<div className="mt-6 w-full h-2 bg-zinc-950 overflow-hidden">
-<div className="h-full bg-gradient-to-r from-zinc-800-container to-zinc-800-fixed-dim w-[78%]"></div>
-</div>
-<div className="mt-2 flex justify-between items-center">
-<span className="font-['Inter'] font-bold text-[10px] text-zinc-500 uppercase tracking-widest">PROGRESSO PARA MARROM</span>
-<span className="font-['Lexend'] font-black text-sm text-zinc-400 italic">78%</span>
-</div>
-{/*  Atmospheric background element  */}
-<div className="absolute -right-10 -bottom-10 opacity-10">
-<span className="material-symbols-outlined text-[160px]" style={{ /* font-variation-settings: 'FILL' 1; */ }}>military_tech</span>
-</div>
-</section>
-{/*  Techniques Mastery (Radial Mimic)  */}
-<section className="space-y-4">
-<h3 className="font-['Inter'] font-bold text-xs tracking-[0.2em] uppercase text-zinc-100 border-l-2 border-brand-red/20 pl-3">TÉCNICAS DOMINADAS</h3>
-<div className="grid grid-cols-1 gap-4">
-<div className="bg-zinc-950/60 p-4 flex items-center justify-between">
-<div className="flex items-center gap-4">
-<div className="w-12 h-12 bg-zinc-800/80 flex items-center justify-center">
-<span className="material-symbols-outlined text-brand-red" data-icon="lock_open">lock_open</span>
-</div>
-<div>
-<div className="font-['Lexend'] font-black text-lg uppercase leading-tight italic">Guarda De La Riva</div>
-<div className="font-['Inter'] font-bold text-[10px] text-zinc-500 uppercase">92% EFICIÊNCIA</div>
-</div>
-</div>
-<div className="w-16 h-1 bg-zinc-800/80">
-<div className="h-full bg-brand-red/10 w-[92%]"></div>
-</div>
-</div>
-<div className="bg-zinc-950/60 p-4 flex items-center justify-between">
-<div className="flex items-center gap-4">
-<div className="w-12 h-12 bg-zinc-800/80 flex items-center justify-center">
-<span className="material-symbols-outlined text-brand-red" data-icon="handshake">handshake</span>
-</div>
-<div>
-<div className="font-['Lexend'] font-black text-lg uppercase leading-tight italic">Triângulo de Mão</div>
-<div className="font-['Inter'] font-bold text-[10px] text-zinc-500 uppercase">85% EFICIÊNCIA</div>
-</div>
-</div>
-<div className="w-16 h-1 bg-zinc-800/80">
-<div className="h-full bg-brand-red/10 w-[85%]"></div>
-</div>
-</div>
-<div className="bg-zinc-950/60 p-4 flex items-center justify-between">
-<div className="flex items-center gap-4">
-<div className="w-12 h-12 bg-zinc-800/80 flex items-center justify-center">
-<span className="material-symbols-outlined text-brand-red" data-icon="swords">swords</span>
-</div>
-<div>
-<div className="font-['Lexend'] font-black text-lg uppercase leading-tight italic">Passagem Toureando</div>
-<div className="font-['Inter'] font-bold text-[10px] text-zinc-500 uppercase">70% EFICIÊNCIA</div>
-</div>
-</div>
-<div className="w-16 h-1 bg-zinc-800/80">
-<div className="h-full bg-brand-red/10 w-[70%]"></div>
-</div>
-</div>
-</div>
-</section>
-{/*  Recurring Failures Section  */}
-<section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 border-2 border-zinc-800/20">
-<div className="flex items-center gap-2 mb-4">
-<span className="material-symbols-outlined text-brand-red" data-icon="report">report</span>
-<h3 className="font-['Lexend'] font-black italic text-xl uppercase text-brand-red">FALHAS RECORRENTES</h3>
-</div>
-<div className="space-y-4">
-<div className="flex justify-between items-center p-3 bg-zinc-950/60">
-<span className="font-['Inter'] font-bold text-xs uppercase tracking-wider">Postura na Meia-Guarda</span>
-<span className="font-['Lexend'] font-black text-brand-red text-sm italic">CRÍTICO</span>
-</div>
-<div className="flex justify-between items-center p-3 bg-zinc-950/60">
-<span className="font-['Inter'] font-bold text-xs uppercase tracking-wider">Defesa de Berimbolo</span>
-<span className="font-['Lexend'] font-black text-zinc-500 text-sm italic">ATENÇÃO</span>
-</div>
-<div className="flex justify-between items-center p-3 bg-zinc-950/60">
-<span className="font-['Inter'] font-bold text-xs uppercase tracking-wider">Gestão de Gás (Round 3)</span>
-<span className="font-['Lexend'] font-black text-zinc-500 text-sm italic">ATENÇÃO</span>
-</div>
-</div>
-<button className="w-full mt-6 bg-zinc-800/80 py-4 font-['Lexend'] font-black text-xs uppercase tracking-[0.3em] text-zinc-100 hover:bg-neutral-800 transition-all active:scale-95">
-                ANALISAR DETALHES TÉCNICOS
-            </button>
-</section>
-{/*  CTA Performance Streak  */}
-<section className="bg-gradient-to-br from-brand-red to-brand-red p-8 flex flex-col items-center justify-center text-center space-y-4">
-<h4 className="font-['Lexend'] font-black italic text-4xl leading-none text-white uppercase">PRONTO PARA<br/>COMBATE?</h4>
-<p className="font-['Inter'] font-bold text-[10px] tracking-[0.2em] text-white/80 uppercase">INSREVA-SE NO PRÓXIMO OPEN</p>
-<div className="w-full h-1 bg-white/20 relative overflow-hidden">
-<div className="absolute inset-0 bg-gradient-to-r from-zinc-800-fixed-dim to-white opacity-40 animate-pulse"></div>
-</div>
-</section>
-</main>
-    </>
+    <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <div className="h-3 w-44 animate-pulse rounded-full bg-zinc-800/80" />
+        <div className="mt-4 h-10 w-96 animate-pulse rounded-2xl bg-zinc-800/80" />
+        <div className="mt-3 h-4 w-full max-w-2xl animate-pulse rounded-full bg-zinc-800/60" />
+      </section>
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div key={index} className="h-28 animate-pulse rounded-[28px] border border-zinc-800/80 bg-zinc-900/80" />
+        ))}
+      </section>
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className="h-72 animate-pulse rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 lg:col-span-2" />
+        <div className="h-72 animate-pulse rounded-[28px] border border-zinc-800/80 bg-zinc-900/80" />
+      </section>
+    </main>
   );
 }
 
+export default function DashboardDeEvolucao() {
+  const { perfil, loading, error, prontidaoGraduacao, historicoRecente, historicoLoading, historicoError } = useAluno();
+  const { painel: frequenciaPainel, loading: frequenciaLoading, error: frequenciaError } = useFrequenciaAluno();
+  const { data: treinos } = useTreino();
 
+  const totalTreinos = treinos.length;
+  const horasTotais = prontidaoGraduacao?.horasTotais ?? perfil?.horasTotais ?? 0;
+  const sequenciaAtual = frequenciaPainel?.resumo?.sequenciaAtual ?? 0;
+  const prontidaoPercentual = prontidaoGraduacao?.percentualConclusao ?? 0;
+  const tecnicaMaisRecente = treinos[0]?.tecnicaId ?? 'Sem treino registrado';
 
+  if (loading && !perfil) {
+    return <EvolutionSkeleton />;
+  }
+
+  if (error && !perfil) {
+    return (
+      <main className="mx-auto max-w-7xl px-4 pb-32 pt-24 md:px-6">
+        <section className="rounded-[28px] border border-brand-red/30 bg-brand-red/10 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">Dashboard indisponível</p>
+          <h1 className="mt-3 text-4xl font-black uppercase tracking-tight text-white">Não foi possível carregar a evolução</h1>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-200">{error}</p>
+          <Link
+            to="/dashboard-do-aluno"
+            className="mt-6 inline-flex items-center justify-center rounded-2xl border border-brand-red/20 bg-brand-red/10 px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-brand-red transition hover:bg-brand-red/20"
+          >
+            Abrir dashboard principal
+          </Link>
+        </section>
+      </main>
+    );
+  }
+
+  return (
+    <main className="mx-auto max-w-7xl space-y-8 px-4 pb-32 pt-24 md:px-6">
+      <section className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Evolução competitiva</p>
+            <h1 className="mt-2 font-headline text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
+              {perfil?.nome || 'Atleta'} em ritmo real
+            </h1>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
+              Painel consolidado com base em treinos, frequência e prontidão de graduação do tenant atual.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Prontidão</p>
+            <p className="mt-2 font-headline text-4xl font-black italic text-brand-red">
+              {prontidaoPercentual > 0 ? `${prontidaoPercentual.toFixed(1)}%` : '—'}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Vitórias técnicas</p>
+          <p className="mt-2 font-headline text-4xl font-black italic text-white">{totalTreinos}</p>
+        </article>
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Sequência</p>
+          <p className="mt-2 font-headline text-4xl font-black italic text-white">{sequenciaAtual} dias</p>
+        </article>
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Horas</p>
+          <p className="mt-2 font-headline text-4xl font-black italic text-white">{horasTotais}h</p>
+        </article>
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Técnica recente</p>
+          <p className="mt-2 text-sm font-black uppercase tracking-tight text-white">{tecnicaMaisRecente}</p>
+        </article>
+      </section>
+
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8 lg:col-span-2">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Leitura rápida</p>
+              <h2 className="mt-2 font-headline text-2xl font-black uppercase tracking-tight text-white">
+                Linha temporal real
+              </h2>
+            </div>
+            <Link
+              to="/resumo-do-atleta"
+              className="rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-[10px] font-black uppercase tracking-[0.22em] text-zinc-100 transition hover:bg-zinc-800"
+            >
+              Abrir resumo
+            </Link>
+          </div>
+
+          <div className="mt-6 space-y-3">
+            {historicoLoading && historicoRecente.length === 0 ? (
+              <div className="space-y-3">
+                <div className="h-16 animate-pulse rounded-2xl bg-zinc-800/80" />
+                <div className="h-16 animate-pulse rounded-2xl bg-zinc-800/80" />
+              </div>
+            ) : historicoError ? (
+              <div className="rounded-2xl border border-brand-red/30 bg-brand-red/10 p-4">
+                <p className="text-sm text-white">{historicoError}</p>
+              </div>
+            ) : historicoRecente.length === 0 ? (
+              <div className="rounded-2xl border border-dashed border-zinc-800 bg-zinc-950/60 p-6 text-sm text-zinc-400">
+                Nenhum histórico recente disponível para este tenant.
+              </div>
+            ) : (
+              historicoRecente.map((item) => (
+                <div key={item.id} className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">
+                    {new Intl.DateTimeFormat('pt-BR', {
+                      day: '2-digit',
+                      month: '2-digit',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    }).format(item.data)}
+                  </p>
+                  <h3 className="mt-1 font-black uppercase tracking-tight text-white">{item.alunoNome}</h3>
+                  <p className="mt-1 text-sm text-zinc-400">
+                    {item.horasIncrementadas}h agregadas nesta sessão
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-[28px] border border-zinc-800/80 bg-zinc-900/80 p-6 md:p-8">
+          <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Condição atual</p>
+          <h2 className="mt-2 font-headline text-2xl font-black uppercase tracking-tight text-white">
+            Estado do ciclo
+          </h2>
+          <div className="mt-6 space-y-4">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Prontidão</p>
+              <p className="mt-2 text-lg font-black uppercase tracking-tight text-white">
+                {prontidaoPercentual > 0 ? `${prontidaoPercentual.toFixed(1)}%` : 'Sem leitura'}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Frequência</p>
+              <p className="mt-2 text-lg font-black uppercase tracking-tight text-white">
+                {frequenciaLoading ? 'Carregando...' : frequenciaError ? 'Sem leitura' : `${sequenciaAtual} dias seguidos`}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-400">Uso do tatame</p>
+              <p className="mt-2 text-lg font-black uppercase tracking-tight text-white">{horasTotais} horas totais</p>
+            </div>
+          </div>
+
+          <div className="mt-6 h-2 overflow-hidden rounded-full bg-zinc-800">
+            <div
+              className="h-full rounded-full bg-brand-red/10"
+              style={{ width: `${Math.max(Math.min(prontidaoPercentual, 100), 0)}%` }}
+            />
+          </div>
+        </article>
+      </section>
+    </main>
+  );
+}
